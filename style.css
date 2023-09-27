@@ -66,13 +66,13 @@
 
 @layer components {
   .btn-primay {
-    @apply py-[26px] px-[50px] border border-solid hover:border-[#B9AB91] border-[#2D2D2B] bg-[#0F0F0F] z-10 relative hover:after:content-[''] hover:after:absolute hover:before:content-[''] hover:before:absolute hover:after:bg-[#0F0F0F] hover:before:bg-[#0F0F0F] hover:before:w-[calc(100%_+_6%)] hover:before:h-[calc(100%_-_43px)] hover:before:top-[22px] hover:before:-left-[3px] hover:after:w-[calc(100%_-_26%)] hover:after:left-[23px] hover:after:h-[calc(100%_+_6px)] hover:after:-top-[3px] transition;
+    @apply py-[26px] px-[50px] border border-solid hover:border-[#B9AB91] cursor-pointer border-[#2D2D2B] bg-[#0F0F0F] z-10 relative hover:after:content-[''] hover:after:absolute hover:before:content-[''] hover:before:absolute hover:after:bg-[#0F0F0F] hover:before:bg-[#0F0F0F] hover:before:w-[calc(100%_+_6%)] hover:before:h-[calc(100%_-_43px)] hover:before:top-[22px] hover:before:-left-[3px] hover:after:w-[calc(100%_-_26%)] hover:after:left-[23px] hover:after:h-[calc(100%_+_6px)] hover:after:-top-[3px] transition;
   }
 }
 
 @layer components {
   .btn-link {
-    @apply py-[26px] px-[50px] border border-solid border-[#B9AB91] bg-[#0F0F0F] z-10 relative after:content-[''] after:absolute before:content-[''] before:absolute after:bg-[#0F0F0F] before:bg-[#0F0F0F] before:w-[calc(100%_+_4px)] before:h-[calc(100%_-_43px)] before:top-[22px] before:-left-[3px] after:w-[calc(100%_-_26%)] after:left-[23px] after:h-[calc(100%_+_6px)] after:-top-[3px] transition-opacity hover:bg-[#B9AB91] hover:before:opacity-0 hover:after:opacity-0;
+    @apply py-[26px] px-[50px] border border-solid border-[#B9AB91] bg-[#0F0F0F] cursor-pointer z-10 relative after:content-[''] after:absolute before:content-[''] before:absolute after:bg-[#0F0F0F] before:bg-[#0F0F0F] before:w-[calc(100%_+_4px)] before:h-[calc(100%_-_43px)] before:top-[22px] before:-left-[3px] after:w-[calc(100%_-_26%)] after:left-[23px] after:h-[calc(100%_+_6px)] after:-top-[3px] transition-opacity hover:bg-[#B9AB91] hover:before:opacity-0 hover:after:opacity-0;
   }
 }
 
@@ -84,7 +84,7 @@
 
 @layer components {
   .btn {
-    @apply text-[17px] font-normal hover:bg-[#B9AB91] hover:text-black transition-colors;
+    @apply text-[17px] font-normal hover:bg-[#B9AB91] hover:text-black transition-colors cursor-pointer;
   }
 }
 
