@@ -197,7 +197,7 @@ body.active {
   display: block;
   width: 165px;
   height: 37px;
-  background-image: url('./img/pagination.svg');
+  background-image: url('/img/pagination.svg');
 }
 
 .swiper-pagination-bullet-active:after {
@@ -208,7 +208,7 @@ body.active {
   display: block;
   width: 165px;
   height: 37px;
-  background-image: url('./img/pagination.svg');
+  background-image: url('/img/pagination.svg');
 }
 
 
@@ -263,7 +263,7 @@ body.active {
   display: block;
   width: 73px;
   height: 17px;
-  background-image: url('./img/pagMobile.svg');
+  background-image: url('/img/pagMobile.svg');
 }
 
 .swiper-pagination-bullet-active:after {
@@ -274,7 +274,7 @@ body.active {
   display: block;
   width: 73px;
   height: 17px;
-  background-image: url('./img/pagMobile.svg');
+  background-image: url('/img/pagMobile.svg');
 }
 }
 
