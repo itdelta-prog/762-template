@@ -183,148 +183,91 @@
         </div>
       </section>
       <section class="px-4 md:px-0 mb-[180px]">
-          <h2 class="text-6xl font-medium leading-[72px] text-white uppercase mb-8 sm:px-5 lg:px-[90px]">Стрельба</h2>
-          <div class="block xl:hidden max-w-[498px] lg:max-w-[498px] md:max-w-[650px] text-[#878787] text-xl font-normal leading-7 mb-8 px-0 sm:px-5 lg:px-[90px]">
-                Тир 7.62 — место концентрации и стремительной энергии, где сосредоточенность и меткость воплощаются в идеальном выстреле.
-              </div>
-          <section id="splideCourse" class="splide pl-0 sm:pl-5 lg:pl-[90px] mb-12" aria-label="Splide Basic HTML Example">
-             <div class="flex-col-reverse md:flex-row flex justify-between items-start md:items-center mb-9 pr-0 sm:pr-[90px]">
-              <nav class="pageNav">
-                <div class="hidden sm:flex pageNav__tabList gap-4">
-                  <button class="pageNav__tabItem btn-primay">
-                    <span class="btn-text"> Пистолет
-                    </span>
-                </button>
-                  <button class="pageNav__tabItem btn-primay">
-                    <span class="btn-text"> Пистолет
-                    </span>
-                </button>
-                  <button class="pageNav__tabItem btn-primay ">
-                    <span class="btn-text"> Пистолет
-                    </span>
-                </button>
+          <div class="container">
+            <h2 class="text-6xl font-medium leading-[72px] text-white uppercase mb-8">Арсенал</h2>
+            <div>
+              <div class="flex gap-x-[40px] mb-16">
+                <div class="flex gap-x-3 nav-filter">
+                  <button class="btn-primay" data-filter="all" >Первое посещение</button>
+                    <div class="w-[1px] h-full bg-[#383837]"></div>
+                  <button class="btn-primay" data-filter="all">Пистолет</button>
                 </div>
-                <!-- mobile -->
-                <div class="flex items-center gap-x-2 sm:hidden">
-                  <button class="pageNav__tabItem py-5 px-8 btn-primay">
-                    <span class="btn-text"> Пистолет
-                    </span>
-                  </button>
-                  <button class="pageNav__tabItem py-5 px-8 btn-primay">
-                    <span class="btn-text"> Пистолет
-                    </span>
-                  </button>
-                  <button class="pageNav__tabItem flex items-center flex-col p-3 gap-[9px]">
-                    <div class="w-[6px] h-[6px] bg-[#D9D9D9] rounded-full"></div>
-                    <div class="w-[6px] h-[6px] bg-[#D9D9D9] rounded-full"></div>
-                    <div class="w-[6px] h-[6px] bg-[#D9D9D9] rounded-full"></div>
-                  </button>
+                <div class="flex gap-x-5 nav-gung">
+                  <button class="btn-primay" data-gun="pistol">Пистолет</button>
+                  <button class="btn-primay" data-gun="carbine">Карабин</button>
+                  <button class="btn-primay" data-gun="rifle">Винтовка</button>
+                  <button class="btn-primay" data-gun="traumatic">Травматическое</button>
+                  <button class="btn-primay" data-gun="empty">Охолощенное</button>
                 </div>
-              </nav>
-              <div class="hidden xl:block max-w-[498px] text-[#878787] text-xl font-normal leading-7">
-                Тир 7.62 — место концентрации и стремительной энергии, где сосредоточенность и меткость воплощаются в идеальном выстреле.
               </div>
-              <div class="splide__arrows hidden lg:inline-flex p-6 gap-9 bg-[#1A1A19]">
-              <button class="splide__arrow splide__arrow--prev disabled:opacity-10 transition-opacity">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
-                  <path d="M15 26L1 13.5L15 0.999999" stroke="white"/>
-                </svg>
-              </button>
-              <div class="w-[1px] h-7 bg-[#383837]"></div>
-              <button class="splide__arrow splide__arrow--next disabled:opacity-10 transition-opacity">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
-                  <path d="M1 26L15 13.5L1 0.999999" stroke="white"/>
-                </svg>
-              </button>
+              <div class="flex justify-between items-center gap-y-4 flex-wrap">
+                <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
+                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
+                    <div class="max-w-[283px] sm:max-w-[350px]">
+                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
+                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
+                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
+                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
+                    </div>
+                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
+                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
+                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
+                    </div>
+                  </div>
+                  <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
+                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
+                    <div class="max-w-[283px] sm:max-w-[350px]">
+                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
+                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
+                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
+                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
+                    </div>
+                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
+                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
+                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
+                    </div>
+                  </div>
+                  <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
+                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
+                    <div class="max-w-[283px] sm:max-w-[350px]">
+                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
+                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
+                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
+                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
+                    </div>
+                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
+                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
+                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
+                    </div>
+                  </div>
+                  <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
+                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
+                    <div class="max-w-[283px] sm:max-w-[350px]">
+                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
+                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
+                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
+                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
+                    </div>
+                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
+                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
+                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
+                    </div>
+                  </div>
+                  <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
+                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
+                    <div class="max-w-[283px] sm:max-w-[350px]">
+                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
+                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
+                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
+                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
+                    </div>
+                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
+                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
+                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
+                    </div>
+                  </div>
               </div>
-             </div>
-            <div class="splide__track">
-              <ul class="splide__list">
-                <li class="splide__slide">
-                  <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
-                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
-                    <div class="max-w-[283px] sm:max-w-[350px]">
-                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
-                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
-                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
-                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
-                    </div>
-                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
-                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
-                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
-                    </div>
-                  </div>
-                </li>
-                <li class="splide__slide">
-                  <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
-                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
-                    <div class="max-w-[283px] sm:max-w-[350px]">
-                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
-                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
-                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
-                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
-                    </div>
-                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
-                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
-                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
-                    </div>
-                  </div>
-                </li>
-                <li class="splide__slide">
-                  <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
-                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
-                    <div class="max-w-[283px] sm:max-w-[350px]">
-                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
-                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
-                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
-                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
-                    </div>
-                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
-                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
-                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
-                    </div>
-                  </div>
-                </li>
-                <li class="splide__slide">
-                  <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
-                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
-                    <div class="max-w-[283px] sm:max-w-[350px]">
-                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
-                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
-                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
-                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
-                    </div>
-                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
-                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
-                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
-                    </div>
-                  </div>
-                </li>
-                <li class="splide__slide">
-                  <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
-                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
-                    <div class="max-w-[283px] sm:max-w-[350px]">
-                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
-                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
-                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
-                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
-                    </div>
-                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
-                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
-                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
             </div>
-            <div class="my-slider-progress lg:hidden bg-[#2D2D2B] mt-4">
-              <div class="my-slider-progress-bar bg-white h-[2px] w-0" style="transition: width 400ms ease;"></div>
-            </div>
-          </section>
-          <div class="w-full flex justify-center items-center">
-            <a class="btn-link">
-              <span class="btn-text">Больше курсов</span>
-            </a>
           </div>
       </section>
       <section class="w-full px-4 py-[90px] bg-[#1B1B1A] mb-[180px]">
@@ -351,27 +294,27 @@
         <div class="swiper-wrapper pl-0">
           <div class="swiper-slide relative max-w-[856px]">
             <img src="/img/slide1.png"/>
-            <p class="absolute pl-[20px] pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[470px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
+            <p class="absolute pl-[20px] pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[500px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
           </div>
           <div class="swiper-slide relative max-w-[856px]">
             <img src="/img/slide2.png"/>
-            <p class="absolute md:pl-[20px] md:pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[470px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
+            <p class="absolute md:pl-[20px] md:pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[500px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
           </div>
           <div class="swiper-slide relative max-w-[856px]">
             <img src="/img/slide1.png"/>
-            <p class="absolute md:pl-[20px] md:pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[470px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
+            <p class="absolute md:pl-[20px] md:pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[500px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
           </div>
           <div class="swiper-slide relative max-w-[856px]">
             <img src="/img/slide2.png"/>
-            <p class="absolute md:pl-[20px] md:pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[470px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
+            <p class="absolute md:pl-[20px] md:pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[500px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
           </div>
           <div class="swiper-slide relative max-w-[856px]">
             <img src="/img/slide1.png"/>
-            <p class="absolute md:pl-[20px] md:pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[470px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
+            <p class="absolute md:pl-[20px] md:pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[500px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
           </div>
           <div class="swiper-slide relative max-w-[856px]">
             <img src="/img/slide2.png"/>
-            <p class="absolute md:pl-[20px] md:pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[470px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
+            <p class="absolute md:pl-[20px] md:pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[500px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
           </div>
         </div>
         <div class="inline-flex lg:hidden">
