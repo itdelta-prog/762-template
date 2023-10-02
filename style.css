@@ -66,7 +66,7 @@
 
 @layer components {
   .btn-primay {
-    @apply py-[26px] px-[50px] border border-solid hover:border-[#B9AB91] cursor-pointer border-[#2D2D2B] bg-[#0F0F0F] z-20 relative hover:after:content-[''] hover:after:absolute hover:before:content-[''] hover:before:absolute hover:after:bg-[#0F0F0F] hover:before:bg-[#0F0F0F] hover:before:w-[calc(100%_+_6%)] hover:before:h-[calc(100%_-_43px)] hover:before:top-[22px] hover:before:-left-[3px] hover:after:w-[calc(100%_-_26%)] hover:after:left-[23px] hover:after:h-[calc(100%_+_6px)] hover:after:-top-[3px] transition text-white;
+    @apply  2xl:py-[26px] 2xl:px-[50px] lg:py-6 lg:px-10 py-5 px-8 border border-solid hover:border-[#B9AB91] cursor-pointer border-[#2D2D2B] bg-[#0F0F0F] z-20 relative hover:after:content-[''] hover:after:absolute hover:before:content-[''] hover:before:absolute hover:after:bg-[#0F0F0F] hover:before:bg-[#0F0F0F] hover:before:w-[calc(100%_+_6%)] hover:before:h-[calc(100%_-_43px)] hover:before:top-[22px] hover:before:-left-[3px] hover:after:w-[calc(100%_-_26%)] hover:after:left-[23px] hover:after:h-[calc(100%_+_6px)] hover:after:-top-[3px] transition text-white whitespace-nowrap;
   }
 
   .btn-link {
@@ -89,15 +89,10 @@
   }
 }
 
-@layer components {
-  .container {
-    @apply max-w-[1740px] my-0 mx-auto px-3 md:px-0 ;
-  }
-}
 
 @layer components {
   .container {
-    @apply max-w-[1740px] my-0 mx-auto px-3 md:px-0 ;
+    @apply max-w-[1740px] my-0 mx-auto px-3 2xl:px-0 ;
   }
 }
 
