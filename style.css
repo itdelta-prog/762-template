@@ -73,6 +73,10 @@
     @apply py-[26px] px-[50px] border border-solid border-[#B9AB91] bg-[#0F0F0F] cursor-pointer z-10 relative after:content-[''] after:absolute before:content-[''] before:absolute after:bg-[#0F0F0F] before:bg-[#0F0F0F] before:w-[calc(100%_+_4px)] before:h-[calc(100%_-_43px)] before:top-[22px] before:-left-[3px] after:w-[calc(100%_-_26%)] after:left-[23px] after:h-[calc(100%_+_6px)] after:-top-[3px] transition-opacity hover:bg-[#B9AB91] hover:before:opacity-0 hover:after:opacity-0;
   }
 
+  .btn-primay.btn__active {
+    @apply bg-[#B9AB91] transition-opacity after:opacity-0 before:opacity-0 text-[#0F0F0F];
+  }
+
   .btn-text {
     @apply text-[17px] text-white font-normal relative z-10;
   }
@@ -80,16 +84,16 @@
   .btn {
     @apply text-[17px] font-normal hover:bg-[#B9AB91] hover:text-black transition-colors cursor-pointer;
   }
-
-  .btn__active {
-    @apply bg-[#B9AB91] transition-opacity after:opacity-0 before:opacity-0 text-[#0F0F0F]
-  }
-
   .btn__active span {
     @apply text-[#0F0F0F]
   }
 }
 
+@layer components {
+  .container {
+    @apply max-w-[1740px] my-0 mx-auto px-3 md:px-0 ;
+  }
+}
 
 @layer components {
   .container {
