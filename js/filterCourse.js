@@ -6,7 +6,6 @@ const filterCatalog = () => {
   //let activeElemFilter = filterBtn[0];
   let activeElemGang = filterBtnGun[0];
 
-  console.log(activeElemGang)
 
   if (activeElemGang) {
     activeElemGang.classList.toggle('btn__active');
@@ -37,7 +36,7 @@ const filterCatalog = () => {
   // });
 
   filterBtn.addEventListener('click', (eve) => {
-    eve.target.classList.toggle('btn__active');
+    eve.currentTarget.classList.toggle('btn__active');
   })
 
   document.querySelector('.nav-gung').addEventListener('click', (event) => {
@@ -48,7 +47,7 @@ const filterCatalog = () => {
     }
 
     filterBtn.forEach((item) => {
-      if (item.isEqualNode(event.target)) {
+      if (item.isEqualNode(event.target.parentNode)) {
         if (activeElemGang?.isEqualNode(item)) {
           item.classList.remove('btn__active');
           activeElemGang = undefined;
