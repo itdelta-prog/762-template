@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+     
     
     <title>Vite App</title>
-    <script type="module" crossorigin src="/762/assets/main-1d0d1f05.js"></script>
-    <link rel="modulepreload" crossorigin href="/762/assets/main-173aebde.js">
-    <link rel="stylesheet" href="/762/assets/main-2e0a6efd.css">
+    <script type="module" crossorigin src="/762/assets/main-d2bb129b.js"></script>
+    <link rel="modulepreload" crossorigin href="/762/assets/main-3107183f.js">
+    <link rel="stylesheet" href="/762/assets/main-9c600cc4.css">
+    <link rel="stylesheet" href="/762/assets/index-a9d8a239.css">
   </head>
   <body class="w-full h-full bg-[#0F0F0F] font-Grtsk">
     <header class="">
@@ -190,15 +191,17 @@
             <h2 class="text-6xl font-medium leading-[72px] text-white uppercase mb-8">Арсенал</h2>
             <div>
               <div class="flex gap-x-5 flex-nowrap mb-16 overflow-x-auto 2xl:overflow-hidden overflow-y-hidden">
-                <button class="btn-primay" data-filter="firstVisit">Первое посещение</button>
+                <button class="btn-primay hover:after:w-[calc(100%_-_18%)]" data-filter="firstVisit">
+                  <span class="btn-text">Первое посещение</span>
+                </button>
                     <!-- <div class="w-[1px] h-full bg-[#383837]"></div> -->
                   <!-- <button class="btn-primay" data-filter="all">Пистолет</button> -->
                 <div class="flex gap-x-5 nav-gung">
-                  <button class="btn-primay" data-gun="pistol">Пистолет</button>
-                  <button class="btn-primay" data-gun="carbine">Карабин</button>
-                  <button class="btn-primay" data-gun="rifle">Винтовка</button>
-                  <button class="btn-primay" data-gun="traumatic">Травматическое</button>
-                  <button class="btn-primay" data-gun="empty">Охолощенное</button>
+                  <button class="btn-primay" data-gun="pistol"><span class="btn-text">Пистолет</span></button>
+                  <button class="btn-primay" data-gun="carbine"><span class="btn-text">Карабин</span></button>
+                  <button class="btn-primay" data-gun="rifle"><span class="btn-text">Винтовка</span></button>
+                  <button class="btn-primay hover:after:w-[calc(100%_-_18%)]" data-gun="traumatic"><span class="btn-text">Травматическое</span></button>
+                  <button class="btn-primay hover:after:w-[calc(100%_-_22%)]" data-gun="empty"><span class="btn-text">Охолощенное</span></button>
                 </div>
               </div>
               <div class="flex justify-between items-center gap-y-4 flex-wrap">
@@ -368,7 +371,7 @@
                         <h2 class="text-[44px] font-medium leading-[52px] text-white mb-6" >300 метров</h2>
                         <p class="text-[18px] font-normal leading-[25px] text-[rgba(255,_255,_255,_0.40)]">Наша галерея предлагает диапазон стрельбы на расстоянии до 300 метров, что делает нас одним из самых длинных и современных стрелковых комплексов в регионе.</p>
                       </div>
-                      <button class="btn-link"><span class="btn-text">Подробнее</span></button>
+                      <button class="btn-link"><span class="btn-link__text">Подробнее</span></button>
                     </div> 
                     <div class="flex items-end  basis-[100%] bg-no-repeat h-[639px]" style="background-image: url(./img/gal.png)">
                       <div class="tabs__head flex p-[34px]">
@@ -394,7 +397,7 @@
                         <h2 class="text-[44px] font-medium leading-[52px] text-white mb-6" >300 метров</h2>
                         <p class="text-[18px] font-normal leading-[25px] text-[rgba(255,_255,_255,_0.40)]">Наша галерея предлагает диапазон стрельбы на расстоянии до 300 метров, что делает нас одним из самых длинных и современных стрелковых комплексов в регионе.</p>
                       </div>
-                      <button class="btn-primay"><span class="btn-text">Подробнее</span></button>
+                      <button class="btn-primay"><span class="btn-link__text">Подробнее</span></button>
                     </div> 
                     <div class="flex items-end  basis-[100%] bg-no-repeat h-[639px]" style="background-image: url(./img/gal.png)">
                       <div class="tabs__head flex p-[34px]">
@@ -481,7 +484,7 @@
                   <p class="text-[18px] font-normal leading-6 text-[#878787] mb-[44px]">fsdfsdfsdfsd</p>
                 </div>
               </div>
-              <a class="btn-link"><span class="btn-text">Построить маршрут</span></a>
+              <a class="btn-link "><span class="btn-link__text">Построить маршрут</span></a>
             </div>
           </div>
           <div class="absolute bottom-4 block sm:hidden">
@@ -673,7 +676,7 @@
         </div>
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script  src="/js/swiper-bundle.min.js"></script>
     
     
     
