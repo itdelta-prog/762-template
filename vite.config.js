@@ -1,15 +1,22 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path'
+import { resolve } from 'path';
 
 
 export default defineConfig({
-  base: '/762',
+  base: './',
+  root: 'src',
   build: {
+    outDir: '../dist',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        contact: resolve(__dirname, 'pages/contact.html')
-      }
+        main: resolve('src', 'index.html'),
+        contact: resolve('src', 'pages/contact.html')
+      },
+      output: {
+        manualChunks: false,
+        entryFileNames: '[name].js',   // currently does not work for the legacy bundle
+        assetFileNames: '[name].[ext]', // currently does not work for images
+      },
     }
   }
 });

@@ -1,18 +1,18 @@
 @font-face {
   font-family: Grtsk;
-  src: url(./font/TRYGrtsk-Regular.ttf);
+  src: url(font/TRYGrtsk-Regular.ttf);
   font-weight: 400;
 }
 
 @font-face {
   font-family: Grtsk;
-  src: url(./font/TRYGrtsk-Medium.ttf);
+  src: url(font/TRYGrtsk-Medium.ttf);
   font-weight: 500;
 }
 
 @font-face {
   font-family: Grtsk;
-  src: url(./font/TRYGrtsk-SemiBoldTera.ttf);
+  src: url(font/TRYGrtsk-SemiBoldTera.ttf);
   font-weight: 600;
 }
 
@@ -91,7 +91,11 @@
 
   .btn {
     @apply text-[17px] font-normal hover:bg-[#B9AB91] hover:text-black transition-colors cursor-pointer;
-  }
+  },
+
+  .conent__img {
+  @apply w-[200px] h-[200px] py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220]
+}
 }
 
 
@@ -150,6 +154,10 @@
 .dialog.active {
   transition: all .2s;
   height: 75%;
+}
+.conent__img {
+  width: 200px;
+  height: 200px;
 }
 
 .dialog__wrapper.active {

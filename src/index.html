@@ -7,7 +7,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Vite App</title>
   </head>
   <body class="w-full h-full bg-[#0F0F0F] font-Grtsk">
@@ -188,8 +188,8 @@
       <section class="px-4 md:px-0 mb-[180px]">
           <div class="container">
             <h2 class="text-6xl font-medium leading-[72px] text-white uppercase mb-8">Арсенал</h2>
-            <div>
-              <div class="flex gap-x-5 flex-nowrap mb-16 overflow-x-auto 2xl:overflow-hidden overflow-y-hidden">
+            <div class="relative">
+              <div class=" flex gap-x-5 flex-nowrap mb-16 overflow-x-auto 2xl:overflow-hidden overflow-y-hidden">
                 <button class="btn-primay hover:after:w-[calc(100%_-_18%)]" data-filter="firstVisit">
                   <span class="btn-text">Первое посещение</span>
                 </button>
@@ -203,74 +203,9 @@
                   <button class="btn-primay hover:after:w-[calc(100%_-_22%)]" data-gun="empty"><span class="btn-text">Охолощенное</span></button>
                 </div>
               </div>
-              <div class="flex justify-between items-center gap-y-4 flex-wrap">
-                <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
-                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
-                    <div class="max-w-[283px] sm:max-w-[350px]">
-                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
-                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
-                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
-                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
-                    </div>
-                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
-                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
-                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
-                    </div>
-                  </div>
-                  <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
-                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
-                    <div class="max-w-[283px] sm:max-w-[350px]">
-                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
-                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
-                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
-                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
-                    </div>
-                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
-                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
-                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
-                    </div>
-                  </div>
-                  <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
-                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
-                    <div class="max-w-[283px] sm:max-w-[350px]">
-                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
-                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
-                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
-                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
-                    </div>
-                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
-                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
-                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
-                    </div>
-                  </div>
-                  <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
-                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
-                    <div class="max-w-[283px] sm:max-w-[350px]">
-                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
-                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
-                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
-                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
-                    </div>
-                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
-                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
-                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
-                    </div>
-                  </div>
-                  <div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
-                    <div class="py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220] w-[294px] sm:w-auto"><img src="img/gang.png"/></div>
-                    <div class="max-w-[283px] sm:max-w-[350px]">
-                      <h3 class="sm:text-xl text-base font-medium leading-4 sm:leading-6 text-white mb-[18px]">Курс молодого бойца</h3>
-                      <p class="sm:text-base text-sm font-normal leading-[140%] text-[rgba(_255,_255,_255,_0.40)] mb-6">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
-                      <a href="#" class="inline-block sm:text-base text-sm font-normal underline text-white mb-6">Подробнее</a>
-                      <div class="w-full h-[1px] bg-[#2D2D2B]"></div>
-                    </div>
-                    <div class="flex justify-between items-center gap-x-4 sm:gap-16">
-                      <p class="text-white text-base sm:text-xl font-normal leading-6">20 500 ₽</p>
-                      <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
-                    </div>
-                  </div>
+              <div id="gungs" class="flex gap-x-[25px] items-center gap-y-4 flex-wrap">
               </div>
-            </div>
+              <div id="loader" class="absolute hidden z-50 w-[100px] left-[43%] top-[150px]"><img src="/img/loading.gif" alt=""></div>
           </div>
       </section>
       <section class="w-full px-4 py-[90px] bg-[#1B1B1A] mb-[180px]">
@@ -646,7 +581,7 @@
                 <h4 class="text-white text-xl font-normal leading-5 mb-8">Меню</h4>
                 <div class="hidden sm:flex flex-col gap-y-4">
                   <a href="" class="text-lg font-normal leading-5 text-[#878787]">Мероприятия</a>
-                  <a href="" class="text-lg font-normal leading-5 text-[#878787]">Новости</a>
+                  <a href="./pages/contact.html" class="text-lg font-normal leading-5 text-[#878787]">Новости</a>
                   <a href="" class="text-lg font-normal leading-5 text-[#878787]">Соревнования</a>
                 </div>
                 <div class="sm:hidden flex gap-x-8">
@@ -676,8 +611,8 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script type="module" src="./js/slider.js"></script>
-    <script type="module" src="./js/main.js"></script>
-    <script type="module" src="./js/filterCourse.js"></script>
+    <script type="module" src="js/slider.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/filterCourse.js"></script>
   </body>
 </html>

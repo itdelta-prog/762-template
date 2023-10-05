@@ -44,6 +44,7 @@ let swiper = new Swiper(".mySwiper", {
         dynamicBullets: true,
         clickable: true,
     renderBullet: function (index, className) {
+        console.log(index);
           return `<div class="${ className}">
             <span>0${index + 1}</span>
           </div>`;
