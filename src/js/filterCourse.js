@@ -66,7 +66,7 @@ const filterCatalog = () => {
 
     loader.classList.remove('hidden');
     content.innerHTML = '';
-    let result = await submitFitler({firstVisit:filterBtnVisit.dataset.filter, type: activeElemGang});
+    let result = await submitFitler({firstVisit:filterBtnVisit.dataset.filter, type: activeElemGang.dataset.gun});
     loader.classList.add('hidden')
     result.forEach((item) => {
       content.insertAdjacentHTML('afterBegin', `<div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
@@ -107,7 +107,6 @@ const filterCatalog = () => {
     });
     loader.classList.remove('hidden');
     content.innerHTML = '';
-    console.log(filterBtn.dataset)
     let result = await submitFitler({firstVisit: filterBtnVisit.dataset.filter, type: activeElemGang.dataset.gun});
     loader.classList.add('hidden')
     result.forEach((item) => {
