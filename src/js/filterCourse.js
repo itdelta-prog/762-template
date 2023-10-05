@@ -1,9 +1,10 @@
-async function submitFitler(type) {
+async function submitFitler(param) {
 
-
+  console.log(param)
   let response = await fetch('https://651e822d44a3a8aa47687cb1.mockapi.io/pistolet', {
-    method: 'GET',
+    method: 'POST',
     headers: {'content-type':'application/json'},
+    body: param
   });
   let res =  await response.json();
   return res;
@@ -13,7 +14,7 @@ async function submitFitler(type) {
 const filterCatalog = () => {
 
   let filterBtnGun = document.querySelectorAll('[data-gun]');
-  let filterBtn = document.querySelector('[data-filter="firstVisit"]');
+  let filterBtnVisit = document.querySelector('[data-filter="false"]');
 
   let loader = document.getElementById('loader');
 
@@ -23,7 +24,6 @@ const filterCatalog = () => {
  // let filterBtn = document.querySelectorAll('[data-filter]');
   //let activeElemFilter = filterBtn[0];
   let activeElemGang = filterBtnGun[0];
-
 
 
   if (activeElemGang) {
@@ -54,12 +54,19 @@ const filterCatalog = () => {
   //   });
   // });
 
-  filterBtn.addEventListener('click', async(eve) => {
+  filterBtnVisit.addEventListener('click', async(eve) => {
     eve.currentTarget.classList.toggle('btn__active');
+
+    if(eve.currentTarget.dataset.filter === 'false') {
+      eve.currentTarget.setAttribute('data-filter', true)
+    }
+    else {
+      eve.currentTarget.setAttribute('data-filter', false)
+    }
 
     loader.classList.remove('hidden');
     content.innerHTML = '';
-    let result = await submitFitler();
+    let result = await submitFitler({firstVisit:filterBtnVisit.dataset.filter, type: activeElemGang});
     loader.classList.add('hidden')
     result.forEach((item) => {
       content.insertAdjacentHTML('afterBegin', `<div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
@@ -100,7 +107,8 @@ const filterCatalog = () => {
     });
     loader.classList.remove('hidden');
     content.innerHTML = '';
-    let result = await submitFitler();
+    console.log(filterBtn.dataset)
+    let result = await submitFitler({firstVisit: filterBtnVisit.dataset.filter, type: activeElemGang.dataset.gun});
     loader.classList.add('hidden')
     result.forEach((item) => {
       content.insertAdjacentHTML('afterBegin', `<div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
