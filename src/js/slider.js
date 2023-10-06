@@ -57,6 +57,22 @@ let swiper = new Swiper(".mySwiper", {
 });
 
 
+swiper.on('paginationRender', function (swiper, paginationEl) {
+  let activeElement = paginationEl.querySelector('.swiper-pagination-bullet-active');
+  let element = [...paginationEl.querySelectorAll('.swiper-pagination-bullet')];
+  let indexActive = element.indexOf(activeElement);
+
+  element.forEach((item, idx) => {
+    if (indexActive + 1 !== idx && indexActive - 1 !== idx && indexActive !== idx) {
+      item.classList.add('acti');
+    }
+    else {
+      item.classList.remove('acti');
+    }
+  });
+});
+
+
 let myGallerey = new Swiper(".myGallerey", {
   navigation: {
     nextEl: ".myGallerey-custom-next",
@@ -65,21 +81,16 @@ let myGallerey = new Swiper(".myGallerey", {
 });
 
 
-swiper.on('paginationRender', function (swiper, paginationEl) {
-  let activeElement = paginationEl.querySelector('.swiper-pagination-bullet-active');
-  let element = [...paginationEl.querySelectorAll('.swiper-pagination-bullet')];
-  let indexActive = element.indexOf(activeElement);
-  
-  element.forEach((item, idx) => {
-    if (indexActive + 1 !== idx && indexActive - 1 !== idx && indexActive !== idx) {
-      item.classList.add('acti');
-    }
-    else {
-      item.classList.remove('acti');
-    }
-  })
+let myArsenal = new Swiper(".myArsenal", {
+  spaceBetween: 16,
+  //slidesPerView: 6,
+  navigation: {
+    nextEl: ".myArsenal-custom-next",
+    prevEl: ".myArsenal-custom-prev",
+  },
 });
 
+console.log('ok')
 
 // let as = swiper.pagination.el.querySelectorAll('div');
 
