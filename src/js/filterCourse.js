@@ -2,6 +2,8 @@ async function submitFitler(param) {
 
   let formData = new FormData();
 
+  console.log(param);
+
   formData.append("firstVisit", param.firstVisit);
   formData.append("type", param.type);
   let response = await fetch('https://651e822d44a3a8aa47687cb1.mockapi.io/pistolet', {
@@ -68,7 +70,8 @@ const filterCatalog = () => {
 
     loader.classList.remove('hidden');
     content.innerHTML = '';
-    let result = await submitFitler({firstVisit:filterBtnVisit.dataset.filter, type: activeElemGang.dataset.gun});
+
+    let result = await submitFitler({firstVisit:filterBtnVisit.dataset.filter, type: activeElemGang?.dataset.gun});
     loader.classList.add('hidden')
     result.forEach((item) => {
       content.insertAdjacentHTML('afterBegin', `<div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">
@@ -109,7 +112,8 @@ const filterCatalog = () => {
     });
     loader.classList.remove('hidden');
     content.innerHTML = '';
-    let result = await submitFitler({firstVisit: filterBtnVisit.dataset.filter, type: activeElemGang.dataset.gun});
+
+    let result = await submitFitler({firstVisit: filterBtnVisit.dataset.filter, type: activeElemGang?.dataset.gun});
     loader.classList.add('hidden')
     result.forEach((item) => {
       content.insertAdjacentHTML('afterBegin', `<div class="p-[18px_18px_24px_18px] sm:p-[18px_18px_32px_18px] flex flex-col items-start sm:items-center gap-6 sm:gap-8 bg-[#1A1A19]">

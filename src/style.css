@@ -73,11 +73,23 @@
     @apply py-[26px] px-[50px] border border-solid border-[#B9AB91] bg-[#0F0F0F] cursor-pointer z-10 relative after:content-[''] after:absolute before:content-[''] before:absolute after:bg-[#0F0F0F] before:bg-[#0F0F0F] before:w-[calc(100%_+_4px)] before:h-[calc(100%_-_43px)] before:top-[22px] before:-left-[3px] after:w-[calc(100%_-_26%)] after:left-[23px] after:h-[calc(100%_+_6px)] after:-top-[3px] transition-opacity hover:bg-[#B9AB91] hover:before:opacity-0 hover:after:opacity-0;
   }
 
+  .btn-catalog {
+    @apply py-[14px] px-[40px] border border-solid border-[#B9AB91] bg-[#181818] cursor-pointer z-10 relative after:content-[''] after:absolute before:content-[''] before:absolute after:bg-[#181818] before:bg-[#181818] before:w-[calc(100%_+_4px)] before:h-[calc(100%_-_43px)] before:top-[22px] before:-left-[3px] after:w-[calc(100%_-_26%)] after:left-[23px] after:h-[calc(100%_+_6px)] after:-top-[3px] transition-opacity hover:bg-[#B9AB91] hover:before:opacity-0 hover:after:opacity-0;
+  }
+
   .btn-primay.btn__active {
     @apply bg-[#B9AB91] after:opacity-0 before:opacity-0;
   }
 
   .btn-primay.btn__active span {
+    @apply text-[#0F0F0F];
+  }
+
+  .btn-catalog.tabs__caption_active {
+    @apply bg-[#B9AB91] after:opacity-0 before:opacity-0
+  }
+
+  .btn-catalog.tabs__caption_active .btn-link__text {
     @apply text-[#0F0F0F];
   }
 
@@ -94,7 +106,7 @@
   },
 
   .conent__img {
-  @apply w-[200px] h-[200px] py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220]
+  @apply w-[200px] h-[200px] py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220];
 }
 }
 

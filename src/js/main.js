@@ -29,16 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
       dropDownMenu.classList.add('hidden'); // скрываем элемент т к клик был за его пределами
     }
 
-    if (!e.composedPath().includes(routeModal) && !e.composedPath().includes(routeBtn)) {
-      routeModal.classList.remove('route__modal-active');
+    if (routeBtn) {
+      if (!e.composedPath().includes(routeModal) && !e.composedPath().includes(routeBtn)) {
+        routeModal.classList.remove('route__modal-active');
+      }
     }
   });
 
 
-  routeBtn.addEventListener('click', (eve) => {
-    eve.preventDefault();
-    routeModal.classList.toggle('route__modal-active');
-  })
+  if (routeBtn) {
+    routeBtn.addEventListener('click', (eve) => {
+      eve.preventDefault();
+      routeModal.classList.toggle('route__modal-active');
+    })
+  }
 
 
   const tabs = (tabsSelector, tabsHeadSelector, tabsBodySelector, tabsCaptionSelector, tabsCaptionActiveClass, tabsContentActiveClass) => {
@@ -88,6 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   tabs('.galleries__tabs', '.tabs__head', '.tabs__body', '.tabs__caption', 'tabs__caption_active', 'tabs__content_active');
   tabs('.route__tabs', '.tabs__head', '.tabs__body', '.tabs__caption', 'tabs__caption_active', 'tabs__content_active');
-
+  tabs('.tabs__visits', '.tabs__head', '.tabs__body', '.tabs__caption', 'tabs__caption_active', 'tabs__content_active');
 
 });

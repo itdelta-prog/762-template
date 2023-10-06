@@ -205,8 +205,8 @@
             </div>
          </div>
          <div >
-          <div class="container">
-            <div class="">
+          <div class="container flex justify-between">
+            <div>
               <h1 class="text-5xl font-normal leading-[60px] uppercase text-white">Подробное название оружия</h1>
               <div>
               <div class="w-[350px]">
@@ -237,12 +237,29 @@
               </div>
             </div>
             </div>
-            <div>
-              <h3>БРОНИРОВАНИЕ</h3>
+            <div class="flex flex-col basis-[438px] py-8 px-7 bg-[#181818]">
+              <h3 class="text-white text-2xl font-medium leading-6 uppercase">БРОНИРОВАНИЕ</h3>
               <p>Выберите день посещения</p>
-              <div>
-              <div></div> <!--  Кнопки посещения табы -->
-              <div></div> <!--  Контент посещения табы -->
+              <div class="tabs__visits">
+                <div class="tabs__head flex gap-x-[13px]">
+                  <button class="tabs__caption btn-catalog basis-[184px]" data-tab="weekdays"><span class="btn-link__text">Будни</span></button>
+                  <button class="tabs__caption btn-catalog basis-[184px]" data-tab="weekend"><span class="btn-link__text">Выходные</span></button>
+                </div> <!--  Кнопки посещения табы -->
+                <div class="tabs__body">
+                  <div class="tabs__content" data-tab="weekdays">
+                    <div class="flex justify-between">
+                      <p>Базовая стоимость</p>
+                      <p>80 000 р.</p>
+                    </div>
+                    <div>
+                      <p>Стоимость выстрелов</p>
+                      <p>55000 р.</p>
+                    </div>
+                  </div>
+                  <div class="tabs__content" data-tab="weekend">
+
+                  </div>
+                </div> <!--  Контент посещения табы -->
               </div>
             </div>
           </div>
@@ -251,6 +268,6 @@
 </main>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script type="module" src="/js/slider.js"></script>
-<!-- <script type="module" src="/js/main.js"></script> -->
+<script type="module" src="/js/main.js"></script>
 </body>
 </html>
