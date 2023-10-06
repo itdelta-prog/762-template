@@ -6,7 +6,6 @@ async function submitFitler(param) {
   formData.append("type", param.type);
   let response = await fetch('https://651e822d44a3a8aa47687cb1.mockapi.io/pistolet', {
     method: 'POST',
-    headers: { "Content-Type": "form-data" },
     body: formData
   });
   let res = await response.json();
