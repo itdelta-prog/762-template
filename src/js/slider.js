@@ -90,6 +90,16 @@ let myArsenal = new Swiper(".myArsenal", {
   },
 });
 
+let swiperNews = new Swiper(".newsSwiper", {
+  slidesPerView: 1,
+  breakpoints: {
+    1460: {
+      slidesPerView: 2,
+      spaceBetween: 33
+    }
+  },
+})
+
 
 
 // let as = swiper.pagination.el.querySelectorAll('div');
