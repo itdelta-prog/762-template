@@ -90,7 +90,7 @@ let myArsenal = new Swiper(".myArsenal", {
   },
 });
 
-console.log('ok')
+
 
 // let as = swiper.pagination.el.querySelectorAll('div');
 

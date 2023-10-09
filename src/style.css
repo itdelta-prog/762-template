@@ -113,7 +113,7 @@
 
 @layer components {
   .container {
-    @apply max-w-[1740px] my-0 mx-auto px-3 2xl:px-0 ;
+    @apply max-w-[1740px] my-0 mx-auto px-3 2xl:px-2 ;
   }
 }
 
