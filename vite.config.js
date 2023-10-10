@@ -3,7 +3,7 @@ import { resolve } from 'path';
 
 
 export default defineConfig({
-  base: './',
+  base: '/762-template',
   root: 'src',
   build: {
     outDir: '../dist',

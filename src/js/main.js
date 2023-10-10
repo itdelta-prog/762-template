@@ -11,8 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btnBurger.addEventListener("click", (eve) => {
     eve.preventDefault();
-
-
     btnBurger.classList.toggle('active');
     dialog.classList.toggle('active');
     document.body.classList.toggle('active');
@@ -33,17 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!e.composedPath().includes(routeModal) && !e.composedPath().includes(routeBtn)) {
         routeModal.classList.remove('route__modal-active');
       }
+
+      routeBtn.addEventListener('click', (eve) => {
+        eve.preventDefault();
+        routeModal.classList.toggle('route__modal-active');
+      })
     }
   });
-
-
-  if (routeBtn) {
-    routeBtn.addEventListener('click', (eve) => {
-      eve.preventDefault();
-      routeModal.classList.toggle('route__modal-active');
-    })
-  }
-
 
   const tabs = (tabsSelector, tabsHeadSelector, tabsBodySelector, tabsCaptionSelector, tabsCaptionActiveClass, tabsContentActiveClass) => {
 
