@@ -181,6 +181,19 @@ body.active {
   overflow: hidden;
 }
 
+.myProgram {
+  padding-bottom: 50px !important;
+}
+
+.swiper-pagination__custom {
+  top: 98% !important;
+  background-color: #2D2D2B !important;
+}
+
+.swiper-pagination-progressbar-fill {
+  background-color: #fff !important;
+}
+
 .pagination__custom {
 	position: absolute;
 	width: 900px !important;
@@ -224,7 +237,7 @@ body.active {
   display: block;
   width: 165px;
   height: 37px;
-  background-image: url('/img/pagination.svg');
+  background-image: url('./img/pagination.svg');
 }
 
 .swiper-pagination-bullet-active:after {
@@ -235,7 +248,7 @@ body.active {
   display: block;
   width: 165px;
   height: 37px;
-  background-image: url('/img/pagination.svg');
+  background-image: url('./img/pagination.svg');
 }
 
 
@@ -301,7 +314,7 @@ body.active {
   display: block;
   width: 73px;
   height: 17px;
-  background-image: url('/img/pagMobile.svg');
+  background-image: url('./img/pagMobile.svg');
 }
 }
 

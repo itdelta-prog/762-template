@@ -10,7 +10,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve('src', 'index.html'),
-        contact: resolve('src', 'pages/contact.html')
+        contact: resolve('src', 'pages/contact.html'),
+        news: resolve('src', 'pages/news.html')
       },
       output: {
         manualChunks: false,
