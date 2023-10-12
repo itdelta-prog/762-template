@@ -82,13 +82,32 @@ let myGallerey = new Swiper(".myGallerey", {
 
 
 let myArsenal = new Swiper(".myArsenal", {
-  spaceBetween: 16,
+  slidesPerView: "auto",
+  spaceBetween: 20,
   //slidesPerView: 6,
   navigation: {
     nextEl: ".myArsenal-custom-next",
     prevEl: ".myArsenal-custom-prev",
+    lockClass: false
   },
 });
+
+let imageGang = new Swiper(".imageGang", {
+  slidesPerView: 1,
+
+
+  pagination: {
+    el: ".imageGang-pagination",
+    type: "custom",
+    renderCustom: function (swiper, current, total) {
+      return `<span class="text-white">0${current}</span> <span class="text-[rgba(255,_255,_255,_0.30)]">/ 0${total}</span>`;
+    }
+  },
+  navigation: {
+    nextEl: ".imageGang-button-next",
+    prevEl: ".imageGang-button-prev",
+  },
+})
 
 let swiperNews = new Swiper(".newsSwiper", {
   slidesPerView: 1,
@@ -102,7 +121,6 @@ let swiperNews = new Swiper(".newsSwiper", {
 
 let myProgram = new Swiper(".myProgram", {
   slidesPerView: 1,
-
   breakpoints: {
     500: {
       slidesPerView: 2,
@@ -162,4 +180,11 @@ let myProgram = new Swiper(".myProgram", {
 //   });
 // });
 
-// splideGallery.mount(); 
+// splideGallery.mount();
+
+//     <div class="w-fit inline-flex items-center py-2 pl-2 bg-[#1A1A19]">
+//     <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+//     <img src="/img/arsenalSlide.png" alt="">
+//     </div>
+// <div class="px-4 max-w-[131px] text-base text-white">Beretta 486 Parallelo</div>
+// </div>

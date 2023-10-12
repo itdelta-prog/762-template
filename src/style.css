@@ -108,6 +108,11 @@
   .conent__img {
   @apply w-[200px] h-[200px] py-8 px-[60px] sm:p-[43px_78px_42px_81px] bg-[#222220];
 }
+
+  .btnCurrent.shortActive {
+    @apply bg-[#B8AA91] transition-all text-[#0F0F0F] border-none opacity-100 hover:text-[#0F0F0F] hover:border-none;
+  }
+
 }
 
 

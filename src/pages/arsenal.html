@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="/style.css">
     <title>Title</title>
 </head>
 <body class="w-full h-full bg-[#0F0F0F] font-Grtsk">
 <header class="border-b border-[#363636] mb-[30px]">
-    <nav class="flex items-center justify-between relative p-6 lg:px-5 lg:py-5 z-20" aria-label="Global">
+    <nav class="relative z-20 flex items-center justify-between p-6 lg:px-5 lg:py-5" aria-label="Global">
         <div class="flex items-center gap-x-12">
             <a href="/" class="">
                 <img class="h-8 w-auto" src="/img/headerLogo.svg" alt="">
             </a>
-            <div class="hidden lg:flex items-center lg:gap-x-9">
-                <a href="#" class="lg:hidden xl:block text-lg leading-6 text-white font-normal">Стрельба</a>
-                <a href="#" class="lg:hidden xl:block text-lg leading-6 text-white font-normal">Подарочные карты</a>
-                <a href="#" class="lg:hidden 2xl:block text-lg leading-6 text-white font-normal">Мероприятия</a>
-                <a href="#" class="xl:hidden 2xl:block text-lg leading-6 text-white font-normal">О клубе</a>
+            <div class="hidden items-center lg:flex lg:gap-x-9">
+                <a href="#" class="text-lg font-normal leading-6 text-white lg:hidden xl:block">Стрельба</a>
+                <a href="#" class="text-lg font-normal leading-6 text-white lg:hidden xl:block">Подарочные карты</a>
+                <a href="#" class="text-lg font-normal leading-6 text-white lg:hidden 2xl:block">Мероприятия</a>
+                <a href="#" class="text-lg font-normal leading-6 text-white xl:hidden 2xl:block">О клубе</a>
                 <div class="relative cursor-pointer">
                     <div id="dropdownDefaultButton" class="p-2" data-dropdown-toggle="dropdown">
                         <img src="/img/dot.svg"/>
                     </div>
-                    <div id="dropdown" class="max-w-[275px] z-10 absolute top-6 hidden bg-[rgba(31,_31,_31,_0.50)] backdrop-blur-xl divide-y rounded-lg shadow w-44">
-                        <ul class="py-2 text-sm " aria-labelledby="dropdownDefaultButton">
+                    <div id="dropdown"
+                         class="max-w-[275px] z-10 absolute top-6 hidden bg-[rgba(31,_31,_31,_0.50)] backdrop-blur-xl divide-y rounded-lg shadow w-44">
+                        <ul class="py-2 text-sm" aria-labelledby="dropdownDefaultButton">
                             <li>
                                 <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Парковка</a>
                             </li>
@@ -37,13 +38,15 @@
                                 <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Галерея</a>
                             </li>
                             <li>
-                                <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Раздевалки</a>
+                                <a href="#"
+                                   class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Раздевалки</a>
                             </li>
                             <li class="lg:block xl:hidden">
                                 <a href="#" class="px-4 py-2 text-white opacity-50 hover:opacity-100">Стрельба</a>
                             </li>
                             <li class="lg:block xl:hidden">
-                                <a href="#" class="px-4 py-2 text-white opacity-50 hover:opacity-100">Подарочные карты</a>
+                                <a href="#" class="px-4 py-2 text-white opacity-50 hover:opacity-100">Подарочные
+                                    карты</a>
                             </li>
                             <li class="lg:block 2xl:hidden">
                                 <a href="#" class="px-4 py-2 text-white opacity-50 hover:opacity-100">Мероприятия</a>
@@ -57,7 +60,7 @@
             </div>
         </div>
 
-        <div class="lg:hidden flex items-center gap-x-5">
+        <div class="flex items-center gap-x-5 lg:hidden">
             <a class="text-lg font-normal text-white" href="tel:+78325463143">+7 832 546 31 43</a>
             <div data-burger="menu" type="button" class="burger__menu w-[50px] h-[38px] bg-[#222220]">
                 <div class="burger__menu-line one" style="transition: opacity .2s, transform .3s;"></div>
@@ -67,8 +70,8 @@
             </div>
         </div>
 
-        <div class="hidden lg:flex items-center gap-x-3 2xl:gap-x-8">
-            <a class="hidden lg:block text-lg font-normal text-white" href="tel:+78325463143">+7 832 546 31 43</a>
+        <div class="hidden items-center gap-x-3 lg:flex 2xl:gap-x-8">
+            <a class="hidden text-lg font-normal text-white lg:block" href="tel:+78325463143">+7 832 546 31 43</a>
             <div class="w-[1px] h-9 bg-[rgba(255,_255,_255,_0.16)]"></div>
             <div class="flex items-center gap-x-2">
                 <a href="#"><img src="/img/whatsapp.svg" alt=""></a>
@@ -77,18 +80,24 @@
             </div>
             <button class="flex justify-between items-center px-[30px] py-5 bg-[#1A1A19] group hover:bg-[#B9AB91] transition-colors">
                 <span class="text-lg font-normal text-white mr-4 group-hover:text-[#222220]">Даниил</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20"
+                     viewBox="0 0 20 20" fill="white">
                     <path d="M10 3.33329C8.15905 3.33329 6.66667 4.82568 6.66667 6.66663C6.66667 8.50758 8.15905 9.99996 10 9.99996C11.8409 9.99996 13.3333 8.50758 13.3333 6.66663C13.3333 4.82568 11.8409 3.33329 10 3.33329ZM5 6.66663C5 3.9052 7.23858 1.66663 10 1.66663C12.7614 1.66663 15 3.9052 15 6.66663C15 9.42805 12.7614 11.6666 10 11.6666C7.23858 11.6666 5 9.42805 5 6.66663ZM6.66667 15C5.28595 15 4.16667 16.1192 4.16667 17.5C4.16667 17.9602 3.79357 18.3333 3.33333 18.3333C2.8731 18.3333 2.5 17.9602 2.5 17.5C2.5 15.1988 4.36548 13.3333 6.66667 13.3333H13.3333C15.6345 13.3333 17.5 15.1988 17.5 17.5C17.5 17.9602 17.1269 18.3333 16.6667 18.3333C16.2064 18.3333 15.8333 17.9602 15.8333 17.5C15.8333 16.1192 14.714 15 13.3333 15H6.66667Z"/>
                 </svg>
             </button>
             <button class="flex justify-between items-center px-[30px] py-5 bg-[#222220] group hover:bg-[#B9AB91] transition-colors">
                 <span class="text-lg font-normal text-[#E1DEB3] mr-4 group-hover:text-[#222220]">Забронировать</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="#E1DEB3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20"
+                     viewBox="0 0 20 20" fill="#E1DEB3">
                     <g clip-path="url(#clip0_85_26684)">
-                        <rect x="2.1875" y="3.66797" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-45 2.1875 3.66797)"/>
-                        <rect x="16.3203" y="2.18408" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(45 16.3203 2.18408)"/>
-                        <rect x="17.8281" y="16.3276" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(135 17.8281 16.3276)"/>
-                        <rect x="3.66406" y="17.8164" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-135 3.66406 17.8164)"/>
+                        <rect x="2.1875" y="3.66797" width="2.1055" height="7.89564" rx="1.05275"
+                              transform="rotate(-45 2.1875 3.66797)"/>
+                        <rect x="16.3203" y="2.18408" width="2.1055" height="7.89564" rx="1.05275"
+                              transform="rotate(45 16.3203 2.18408)"/>
+                        <rect x="17.8281" y="16.3276" width="2.1055" height="7.89564" rx="1.05275"
+                              transform="rotate(135 17.8281 16.3276)"/>
+                        <rect x="3.66406" y="17.8164" width="2.1055" height="7.89564" rx="1.05275"
+                              transform="rotate(-135 3.66406 17.8164)"/>
                     </g>
                     <defs>
                         <clipPath id="clip0_85_26684">
@@ -101,23 +110,26 @@
         </div>
     </nav>
 
-    <div class="dialog__wrapper w-full h-full fixed left-0 top-0 bg-[rgba(15,_15,_15,_0.90)] z-10 opacity-0 invisible" style="transition: opacity .3s, visibility .1s;"></div>
+    <div class="dialog__wrapper w-full h-full fixed left-0 top-0 bg-[rgba(15,_15,_15,_0.90)] z-10 opacity-0 invisible"
+         style="transition: opacity .3s, visibility .1s;"></div>
 
 
     <!-- Mobile menu, show/hide based on menu open state. -->
-    <div class="lg:hidden  w-full h-[0%] overflow-x-auto fixed bottom-0 bg-[#1B1B1A] z-30 dialog" role="dialog" aria-modal="true" style="transition: height .3s;">
+    <div class="lg:hidden  w-full h-[0%] overflow-x-auto fixed bottom-0 bg-[#1B1B1A] z-30 dialog" role="dialog"
+         aria-modal="true" style="transition: height .3s;">
         <div class="flex items-center gap-x-4 px-4 py-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20"
+                 viewBox="0 0 20 20" fill="white">
                 <path d="M10 3.33329C8.15905 3.33329 6.66667 4.82568 6.66667 6.66663C6.66667 8.50758 8.15905 9.99996 10 9.99996C11.8409 9.99996 13.3333 8.50758 13.3333 6.66663C13.3333 4.82568 11.8409 3.33329 10 3.33329ZM5 6.66663C5 3.9052 7.23858 1.66663 10 1.66663C12.7614 1.66663 15 3.9052 15 6.66663C15 9.42805 12.7614 11.6666 10 11.6666C7.23858 11.6666 5 9.42805 5 6.66663ZM6.66667 15C5.28595 15 4.16667 16.1192 4.16667 17.5C4.16667 17.9602 3.79357 18.3333 3.33333 18.3333C2.8731 18.3333 2.5 17.9602 2.5 17.5C2.5 15.1988 4.36548 13.3333 6.66667 13.3333H13.3333C15.6345 13.3333 17.5 15.1988 17.5 17.5C17.5 17.9602 17.1269 18.3333 16.6667 18.3333C16.2064 18.3333 15.8333 17.9602 15.8333 17.5C15.8333 16.1192 14.714 15 13.3333 15H6.66667Z"/>
             </svg>
             <span class="text-lg font-normal text-white">Даниил</span>
         </div>
         <div class="w-full h-[1px] bg-[#363636]"></div>
-        <div class="flex flex-col gap-y-[18px] px-4 py-7">
-            <a href="" class="text-[28px] font-normal text-white">Стрельба</a>
-            <a href="" class="text-[28px] font-normal text-white">Подарочные карты</a>
-            <a href="" class="text-[28px] font-normal text-white">Мероприятия</a>
-            <a href="" class="text-[28px] font-normal text-white">О клубе</a>
+        <div class="flex flex-col px-4 py-7 gap-y-[18px]">
+            <a href="" class="font-normal text-white text-[28px]">Стрельба</a>
+            <a href="" class="font-normal text-white text-[28px]">Подарочные карты</a>
+            <a href="" class="font-normal text-white text-[28px]">Мероприятия</a>
+            <a href="" class="font-normal text-white text-[28px]">О клубе</a>
             <a href="" class="text-base text-[#878787] font-normal">Парковка</a>
             <a href="" class="text-base text-[#878787] font-normal">Арсенал</a>
             <a href="" class="text-base text-[#878787] font-normal">Галереи</a>
@@ -126,8 +138,9 @@
         </div>
         <div class="w-full h-[1px] bg-[#363636]"></div>
         <div class="flex flex-col justify-center px-4 py-7">
-            <div class="flex justify-between items-center">
-                <a class="bg-[url('../img/phone.svg')] bg-no-repeat bg-[left_6px] pl-9 text-white text-lg">+7 832 546 31 43</a>
+            <div class="flex items-center justify-between">
+                <a class="bg-[url('../img/phone.svg')] bg-no-repeat bg-[left_6px] pl-9 text-white text-lg">+7 832 546 31
+                    43</a>
                 <div class="flex items-center">
                     <img src="/img/whatsapp.svg"/>
                     <img src="/img/vk.svg"/>
@@ -136,12 +149,17 @@
             </div>
             <button class="flex justify-center items-center max-w-[350px] py-6 bg-[#222220] group hover:bg-[#E1DEB3]">
                 <span class="text-lg font-normal text-[#E1DEB3] mr-4 group-hover:text-[#222220]">Забронировать</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="#E1DEB3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20"
+                     viewBox="0 0 20 20" fill="#E1DEB3">
                     <g clip-path="url(#clip0_85_26684)">
-                        <rect x="2.1875" y="3.66797" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-45 2.1875 3.66797)"/>
-                        <rect x="16.3203" y="2.18408" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(45 16.3203 2.18408)"/>
-                        <rect x="17.8281" y="16.3276" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(135 17.8281 16.3276)"/>
-                        <rect x="3.66406" y="17.8164" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-135 3.66406 17.8164)"/>
+                        <rect x="2.1875" y="3.66797" width="2.1055" height="7.89564" rx="1.05275"
+                              transform="rotate(-45 2.1875 3.66797)"/>
+                        <rect x="16.3203" y="2.18408" width="2.1055" height="7.89564" rx="1.05275"
+                              transform="rotate(45 16.3203 2.18408)"/>
+                        <rect x="17.8281" y="16.3276" width="2.1055" height="7.89564" rx="1.05275"
+                              transform="rotate(135 17.8281 16.3276)"/>
+                        <rect x="3.66406" y="17.8164" width="2.1055" height="7.89564" rx="1.05275"
+                              transform="rotate(-135 3.66406 17.8164)"/>
                     </g>
                     <defs>
                         <clipPath id="clip0_85_26684">
@@ -155,119 +173,220 @@
     </div>
 </header>
 <main>
-     <section class="hidden md:block mb-[180px] sm:px-5 2xl:px-0">
-         <div>
-           <div class="swiper myArsenal mb-[85px]">
-            <div class="container">
-              <div class="flex justify-between items-center mb-16">
-            <h2 class="max-w-[704px] text-6xl text-white font-medium leading-[72px] uppercase">галереи</h2>
-            <div class="inline-flex p-6 gap-9 bg-[#1A1A19]">
-              <button class="myArsenal-custom-prev disabled:opacity-10 transition-opacity">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
-                  <path d="M15 26L1 13.5L15 0.999999" stroke="white"/>
-                </svg>
-              </button>
-              <div class="w-[1px] h-7 bg-[#383837]"></div>
-              <button class="myArsenal-custom-next disabled:opacity-10 transition-opacity">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
-                  <path d="M1 26L15 13.5L1 0.999999" stroke="white"/>
-                </svg>
-              </button>
-              </div>
-            </div>
-            </div>
-              <div class="swiper-wrapper pl-[80px]">
-                <div class="swiper-slide w-fit">
-                  <div class="inline-flex items-center py-2 pl-2 bg-[#1A1A19]">
-                    <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
-                      <img src="/img/arsenalSlide.png" alt="">
+    <section class="hidden mb-[180px] sm:px-5 md:block 2xl:px-0">
+        <div>
+            <div class="swiper myArsenal mb-[85px]">
+                <div class="container">
+                    <div class="mb-16 flex items-center justify-between">
+                        <h2 class="text-6xl font-medium uppercase text-white max-w-[704px] leading-[72px]">галереи</h2>
+                        <div class="inline-flex p-6 gap-9 bg-[#1A1A19]">
+                            <button class="transition-opacity myArsenal-custom-prev disabled:opacity-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27"
+                                     fill="none">
+                                    <path d="M15 26L1 13.5L15 0.999999" stroke="white"/>
+                                </svg>
+                            </button>
+                            <div class="w-[1px] h-7 bg-[#383837]"></div>
+                            <button class="transition-opacity myArsenal-custom-next disabled:opacity-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27"
+                                     fill="none">
+                                    <path d="M1 26L15 13.5L1 0.999999" stroke="white"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
-                    <div class="px-4 max-w-[131px] text-base text-white">Beretta 486 Parallelo</div>
-                  </div>
                 </div>
-                <div class="swiper-slide w-fit">
-                  <div class="inline-flex items-center py-2 pl-2 bg-[#1A1A19]">
-                    <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
-                      <img src="/img/arsenalSlide2.png" alt="">
+                <div class="swiper-wrapper pl-[80px]">
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
                     </div>
-                    <div class="px-4 max-w-[131px] text-base text-white">Beretta 486 Parallelo</div>
-                  </div>
-                </div>
-                <div class="swiper-slide w-fit">
-                  <div class="inline-flex items-center py-2 pl-2 bg-[#1A1A19]">
-                    <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
-                      <img src="/img/arsenalSlide.png" alt="">
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/img/arsenalSlide2.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
                     </div>
-                    <div class="px-4 max-w-[131px] text-base text-white">Beretta 486 Parallelo</div>
-                  </div>
-                </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-         </div>
-         <div >
-          <div class="container flex justify-between">
-            <div>
-              <h1 class="text-5xl font-normal leading-[60px] uppercase text-white">Подробное название оружия</h1>
-              <div>
-              <div class="w-[350px]">
-                <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
-                  <p class="text-white text-lg font-normal leading-5 ">Калибр</p>
-                  <p class="text-white opacity-50 text-lg font-normal leading-5">5,56x45</p>
-                </div>
-                <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
-                  <p class="text-white text-lg font-normal leading-5 ">Калибр</p>
-                  <p class="text-white opacity-50 text-lg font-normal leading-5">5,56x45</p>
-                </div>
-                <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
-                  <p class="text-white text-lg font-normal leading-5 ">Калибр</p>
-                  <p class="text-white opacity-50 text-lg font-normal leading-5">5,56x45</p>
-                </div>
-                <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
-                  <p class="text-white text-lg font-normal leading-5 ">Калибр</p>
-                  <p class="text-white opacity-50 text-lg font-normal leading-5">5,56x45</p>
-                </div>
-                <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
-                  <p class="text-white text-lg font-normal leading-5 ">Калибр</p>
-                  <p class="text-white opacity-50 text-lg font-normal leading-5">5,56x45</p>
-                </div>
-                <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
-                  <p class="text-white text-lg font-normal leading-5 ">Калибр</p>
-                  <p class="text-white opacity-50 text-lg font-normal leading-5">5,56x45</p>
-                </div>
-              </div>
-            </div>
-            </div>
-            <div class="flex flex-col basis-[438px] py-8 px-7 bg-[#181818]">
-              <h3 class="text-white text-2xl font-medium leading-6 uppercase">БРОНИРОВАНИЕ</h3>
-              <p>Выберите день посещения</p>
-              <div class="tabs__visits">
-                <div class="tabs__head flex gap-x-[13px]">
-                  <button class="tabs__caption btn-catalog basis-[184px]" data-tab="weekdays"><span class="btn-link__text">Будни</span></button>
-                  <button class="tabs__caption btn-catalog basis-[184px]" data-tab="weekend"><span class="btn-link__text">Выходные</span></button>
-                </div> <!--  Кнопки посещения табы -->
-                <div class="tabs__body">
-                  <div class="tabs__content" data-tab="weekdays">
-                    <div class="flex justify-between">
-                      <p>Базовая стоимость</p>
-                      <p>80 000 р.</p>
+        </div>
+        <div>
+            <div class="container flex h-full">
+                <div class="flex flex-col max-w-[1220px]">
+                    <h1 class="mb-10 text-5xl font-normal uppercase text-white leading-[60px]">Подробное название
+                        оружия</h1>
+                    <div class="flex justify-between gap-x-[100px]">
+                        <div class="w-[350px] pt-[70px]">
+                            <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
+                                <p class="text-lg font-normal leading-5 text-white">Калибр</p>
+                                <p class="text-lg font-normal leading-5 text-white opacity-50">5,56x45</p>
+                            </div>
+                            <div class="flex py-3 justify-between items-center border-b-[1px]  border-b-[#282828]">
+                                <p class="text-lg font-normal leading-5 text-white">Калибр</p>
+                                <p class="text-lg font-normal leading-5 text-white opacity-50">5,56x45</p>
+                            </div>
+                            <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
+                                <p class="text-lg font-normal leading-5 text-white">Калибр</p>
+                                <p class="text-lg font-normal leading-5 text-white opacity-50">5,56x45</p>
+                            </div>
+                            <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
+                                <p class="text-lg font-normal leading-5 text-white">Калибр</p>
+                                <p class="text-lg font-normal leading-5 text-white opacity-50">5,56x45</p>
+                            </div>
+                            <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
+                                <p class="text-lg font-normal leading-5 text-white">Калибр</p>
+                                <p class="text-lg font-normal leading-5 text-white opacity-50">5,56x45</p>
+                            </div>
+                            <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
+                                <p class="text-lg font-normal leading-5 text-white">Калибр</p>
+                                <p class="text-lg font-normal leading-5 text-white opacity-50">5,56x45</p>
+                            </div>
+                        </div>
+                        <div class="swiper w-full h-[550px] pt-[100px] imageGang">
+                            <div class="swiper-wrapper pt-[80px]">
+                                <div class="swiper-slide">
+                                    <div class="relative w-full h-full">
+                                        <img class="absolute h-fit left-[7%]" src="/img/m16.svg" alt="">
+                                        <img class="absolute  -top-[80px] left-[18%]" src="/img/m16.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="relative w-full h-full">
+                                        <img class="absolute h-fit left-[7%]" src="/img/m16.svg" alt="">
+                                        <img class="absolute  -top-[80px] left-[18%]" src="/img/m16.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="relative w-full h-full">
+                                        <img class="absolute h-fit left-[7%]" src="/img/m16.svg" alt="">
+                                        <img class="absolute  -top-[80px] left-[18%]" src="/img/m16.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="imageGang-button-next group absolute bottom-0 left-[62%] z-50">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
+                                    <path d="M0.999998 1L15 13.5L1 26" class="group-disabled:stroke-[#383837]" stroke="white"/>
+                                </svg>
+                            </button>
+                            <button class="imageGang-button-prev group absolute bottom-0 left-[35%] z-50">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
+                                    <path d="M15 26L1 13.5L15 0.999999" class="group-disabled:stroke-[#383837]"  stroke="white"/>
+                                </svg>
+                            </button>
+                            <div class="imageGang-pagination bottom-0 absolute text-[22px] font-medium left-[46%]"></div>
+                        </div>
                     </div>
-                    <div>
-                      <p>Стоимость выстрелов</p>
-                      <p>55000 р.</p>
-                    </div>
-                  </div>
-                  <div class="tabs__content" data-tab="weekend">
 
-                  </div>
-                </div> <!--  Контент посещения табы -->
-              </div>
+                </div>
+                <div class="flex flex-col basis-[438px] py-8 px-7 bg-[#181818]">
+                    <h3 class="text-2xl font-medium uppercase leading-6 text-white">БРОНИРОВАНИЕ</h3>
+                    <p>Выберите день посещения</p>
+                    <form id="gungForm">
+                        <div class="tabs__visits mb-[31px]">
+                            <div class="flex tabs__head gap-x-[13px] mb-[31px]">
+                                <button name="weekdays" class="tabs__caption btn-catalog basis-[184px]" data-tab="weekdays"><span
+                                        class="btn-link__text">Будни</span></button>
+                                <button name="weekend" class="tabs__caption btn-catalog basis-[184px]" data-tab="weekend"><span
+                                        class="btn-link__text">Выходные</span></button>
+                            </div> <!--  Кнопки посещения табы -->
+                            <div class="tabs__body">
+                                <div class="tabs__content" data-tab="weekdays">
+                                    <div class="flex justify-between mb-[12px]">
+                                        <p class="text-white text-[18px] font-normal leading-5">Базовая стоимость</p>
+                                        <div><span class="hidden"></span> <span class="text-[18px] text-white font-normal leading-5 opacity-50">80000 р.</span></div>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <p class="text-white text-[18px] font-normal leading-5">Стоимость выстрелов</p>
+                                        <div><span class="text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">1 0 0000 р</span> <span class="text-[18px] text-[#B8AA91] font-normal leading-5">55000 р.</span></div>
+                                    </div>
+                                </div>
+                                <div class="tabs__content" data-tab="weekend">
+                                </div> <!--  Контент посещения табы -->
+                            </div>10:11 15:05
+                        </div>
+                        <div class="w-full h-[1px] bg-[#282828] mb-9"></div>
+                        <div class="current-shot flex justify-between">
+                            <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-minus="10" >-10</button>
+                            <div data-contentShort="2550" class="max-w-[103px] text-center text-white text-[18px] btnContent">2550 выстрелов</div>
+                            <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-plus="10">+10</button>
+                            <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-plus="200">+200</button>
+                        </div>
+                        <div>
+                            <button></button>
+                            <button></button>
+                            <button></button>
+                            <button></button>
+                        </div>
+                    </form>
             </div>
-          </div>
-         </div>
-      </section>
+            </div>
+    </section>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script type="module" src="/js/slider.js"></script>
 <script type="module" src="/js/main.js"></script>
+<script src="/js/arsenal.js"></script>
 </body>
 </html>
