@@ -173,7 +173,7 @@
     </div>
 </header>
 <main>
-    <section class="hidden mb-[180px] sm:px-5 md:block 2xl:px-0">
+    <section class="hidden mb-[180px] sm:px-5 md:block 2xl:px-0 mb-[93px]">
         <div>
             <div class="swiper myArsenal mb-[85px]">
                 <div class="container">
@@ -340,7 +340,7 @@
                     </div>
 
                 </div>
-                <div class="flex flex-col basis-[438px] py-8 px-7 bg-[#181818]">
+                <div class="flex flex-col basis-[500px] py-8 px-7 bg-[#181818]">
                     <h3 class="text-2xl font-medium uppercase leading-6 text-white">БРОНИРОВАНИЕ</h3>
                     <p>Выберите день посещения</p>
                     <form id="gungForm">
@@ -351,6 +351,12 @@
                                 <button name="weekend" class="tabs__caption btn-catalog basis-[184px]" data-tab="weekend"><span
                                         class="btn-link__text">Выходные</span></button>
                             </div> <!--  Кнопки посещения табы -->
+                            <div class="flex justify-between mb-[31px] person">
+                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent person-active" data-person="1">1</button>
+                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="2">2</button>
+                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="3">3</button>
+                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="4">4</button>
+                            </div>
                             <div class="tabs__body">
                                 <div class="tabs__content" data-tab="weekdays">
                                     <div class="flex justify-between mb-[12px]">
@@ -364,29 +370,107 @@
                                 </div>
                                 <div class="tabs__content" data-tab="weekend">
                                 </div> <!--  Контент посещения табы -->
-                            </div>10:11 15:05
+                            </div>
                         </div>
                         <div class="w-full h-[1px] bg-[#282828] mb-9"></div>
-                        <div class="current-shot flex justify-between">
+                        <div class="current-shot flex justify-between mb-[31px]">
                             <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-minus="10" >-10</button>
                             <div data-contentShort="2550" class="max-w-[103px] text-center text-white text-[18px] btnContent">2550 выстрелов</div>
                             <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-plus="10">+10</button>
                             <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-plus="200">+200</button>
                         </div>
-                        <div>
-                            <button></button>
-                            <button></button>
-                            <button></button>
-                            <button></button>
+                        <div class="flex flex-col gap-y-[11px] mb-[31px]">
+                            <button class="p-[12px_19px_12px_19px] btn-catalog group"><span class="opacity-20 group-hover:opacity-100 btn-link__text">Вы в группе из 4-х человек</span></button>
+                            <div class="selectCustom">
+                                <div class="select">
+                                    <span class="selected">gdfgf</span>
+                                    <div class="caret"></div>
+                                </div>
+                                <ul class="menu">
+                                    <li>Framer</li>
+                                    <li class="active">Sketch</li>
+                                    <li>Figma</li>
+                                </ul>
+                            </div>
+                            <button class="p-[12px_19px_12px_19px] btn-catalog flex justify-between group"><span class="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text">Персональный инструктор</span><span class="text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">+7 500 р.</span></button>
+                            <button class="p-[12px_19px_12px_19px] btn-catalog flex justify-between group"><span class="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text">Персональная галерея </span><span class="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text">+7500р.</span></button>
+                        </div>
+                        <div class="flex gap-x-[13px]">
+                            <button class="btn-catalog"><span
+                                    class="btn-link__text">В подарок</span></button>
+                            <button  class=" btn-catalog" data-tab="weekend"><span
+                                    class="btn-link__text">К бронированию</span></button>
                         </div>
                     </form>
             </div>
             </div>
     </section>
+    <section class="container border-t border-t-[#242424] mb-[300px] flex items-start pt-[40px]">
+        <aside class="flex flex-col basis-[406px] pr-[20px] gap-y-[60px]">
+            <div>
+                <h2 class="text-white text-2xl font-medium leading-[28px] uppercase mb-8">Пистолеты</h2>
+                <ul class="flex flex-col gap-y-[20px] mb-[32px]">
+                    <li class="text-xl text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</li>
+                    <li class="text-xl text-[rgba(255,_255,_255,_0.40)] leading-5">Обучение тренеров-инструкторов по пулевой стрельбе</li>
+                    <li class="text-xl text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</li>
+                    <li class="text-xl text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</li>
+                </ul>
+                <a class="flex items-center gap-x-4 text-[16px] text-white leading-5" href="">Все курсы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
+                    <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
+                </svg></a>
+            </div>
+            <div>
+                <h2 class="text-white text-2xl font-medium leading-[28px] uppercase mb-8">Ружье</h2>
+                <ul class="flex flex-col gap-y-[20px] mb-[32px]">
+                    <li class="text-xl text-[rgba(255,_255,_255,_0.40)] leading-5">Безопасное обращение с оружием</li>
+                    <li class="text-xl text-[rgba(255,_255,_255,_0.40)] leading-5">Обучение тренеров-инструкторов  по пулевой стрельбе</li>
+                    <li class="text-xl text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</li>
+                    <li class="text-xl text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</li>
+                </ul>
+                <a class="flex items-center gap-x-4 text-[16px] text-white leading-5" href="">Все курсы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
+                    <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
+                </svg></a>
+            </div>
+            <div>
+                <h2 class="text-white text-2xl font-medium leading-[28px] uppercase mb-8">Ружье</h2>
+                <ul class="flex flex-col gap-y-[20px] mb-[32px]">
+                    <li class="text-xl text-[rgba(255,_255,_255,_0.40)] leading-5">Безопасное обращение с оружием</li>
+                    <li class="text-xl text-[rgba(255,_255,_255,_0.40)] leading-5">Обучение тренеров-инструкторов  по пулевой стрельбе</li>
+                    <li class="text-xl text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</li>
+                    <li class="text-xl text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</li>
+                </ul>
+                <a class="flex items-center gap-x-4 text-[16px] text-white leading-5" href="">Все курсы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
+                    <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
+                </svg></a>
+            </div>
+        </aside>
+        <article class="pl-[32px] border-l border-l-[#242424]">
+            <div class="inline-flex py-[9.5px] px-8 bg-[rgba(255,_255,_255,_0.11)] text-white">Легко</div>
+            <div class="flex items-center">
+                <div class="flex flex-col basis-[698px] gap-y-[42px]">
+                    <h2 class="text-[42px] font-medium leading-[50px] uppercase text-white">Название курса <br> в две строчки</h2>
+                    <div class="flex basis-[408px]">
+                        <div>
+                            <span>Пройдено</span>
+                            <span>50%</span>
+                        </div>
+                        <div>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col basis-[519px]">
+                    <p>Описание Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.</p>
+                </div>
+            </div>
+        </article>
+    </section>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script type="module" src="/js/slider.js"></script>
 <script type="module" src="/js/main.js"></script>
-<script src="/js/arsenal.js"></script>
+<!--<script src="/js/nice-select2.js"></script>-->
+<script type="module" src="/js/arsenal.js"></script>
 </body>
 </html>

@@ -112,6 +112,9 @@
   .btnCurrent.shortActive {
     @apply bg-[#B8AA91] transition-all text-[#0F0F0F] border-none opacity-100 hover:text-[#0F0F0F] hover:border-none;
   }
+  .btnCurrent.person-active {
+    @apply bg-[#B8AA91] transition-all text-[#0F0F0F] border-none opacity-100 hover:text-[#0F0F0F] hover:border-none;
+  }
 
 }
 
@@ -145,10 +148,56 @@
 }
 
 
+
+@layer components {
+  .selectCustom {
+    @apply  relative;
+  }
+
+  .select {
+    @apply flex justify-between  py-[14px] px-[25px]  border border-white border-opacity-20 cursor-pointer transition-[0.3s] bg-[#181818];
+  }
+
+  .selected {
+    @apply text-[17px] text-white relative
+  }
+
+  .select-clicked {
+    @apply border-[#B8AA91];
+  }
+  .caret {
+    @apply absolute right-[25px] top-[16px] w-[15px] h-[15px] border-t border-t-white border-r border-r-white opacity-20 inline-block rotate-[133deg] transition-[0.3s];
+  }
+
+  .caret-rotate {
+    @apply rotate-[316deg] opacity-100 top-[26px];
+  }
+
+  .menu {
+    @apply py-3  bg-[#0F0F0F] absolute border border-[#2F2F2F] transition-[0.2s]  z-[99999] shadow-[0px_43px_26px_0px_rgba(0,_0,_0,_0.37)] text-white top-[56px] left-[50%] w-full -translate-x-2/4 opacity-0 invisible
+  }
+
+  .menu li {
+    @apply py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer
+  }
+
+  .selectCustom .active {
+    @apply bg-[#B8AA91]
+  }
+
+  .menu-open {
+    @apply block opacity-100 visible
+  }
+}
+
+
   .route__modal-active {
     visibility: visible;
     transform: translateY(0);
   }
+
+
+
 
 
 /* @layer components {
@@ -156,6 +205,8 @@
     @apply transform opacity-100 scale-100;
   }
 } */
+
+
 
 
 .splide__page__custom {
