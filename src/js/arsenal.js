@@ -1,3 +1,6 @@
+import './script.js';
+import {Tabs} from "./tabs.js";
+import {SelectDropDown, DropDownMenu} from "./selectDropDown.js";
 
 const formGung = document.getElementById('gungForm');
 const shortCurrent = () => {
@@ -50,8 +53,70 @@ const personShort = () => {
 }
 formGung.addEventListener('click', (eve) => {
     eve.preventDefault();
+});
+
+let myArsenal = new Swiper(".myArsenal", {
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    //slidesPerView: 6,
+    navigation: {
+        nextEl: ".myArsenal-custom-next",
+        prevEl: ".myArsenal-custom-prev",
+        lockClass: false
+    },
+});
+let imageGang = new Swiper(".imageGang", {
+    slidesPerView: 1,
+    spaceBetween: 15,
+    pagination: {
+        el: ".imageGang-pagination",
+        type: "custom",
+        renderCustom: function (swiper, current, total) {
+            return `<span class="text-white">0${current}</span> <span class="text-[rgba(255,_255,_255,_0.30)]">/ 0${total}</span>`;
+        }
+    },
+    navigation: {
+        nextEl: ".imageGang-button-next",
+        prevEl: ".imageGang-button-prev",
+    },
+});
+
+let GungSlider = new Swiper(".GungSlider", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+
+    navigation: {
+        nextEl: ".myGung-custom-next",
+        prevEl: ".myGung-custom-prev",
+        lockClass: false
+    }
+})
+
+let InstructorSlider = new Swiper(".InstructorSlider", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+
+    breakpoints: {
+        1500: {
+            slidesPerView: 4,
+            spaceBetween: 30
+        }
+    },
+
+    navigation: {
+        nextEl: ".InstructorSlider-custom-next",
+        prevEl: ".InstructorSlider-custom-prev",
+        lockClass: false
+    }
 })
 
 
+
+Tabs('.tabs__visits', '.tabs__head', '.tabs__body', '.tabs__caption', 'tabs__caption_active', 'tabs__content_active')
+SelectDropDown();
 personShort();
 shortCurrent();
+
+DropDownMenu(document.getElementById('gun'));
+DropDownMenu(document.getElementById('rifle'));
+DropDownMenu(document.getElementById('carabin'));

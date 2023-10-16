@@ -8,7 +8,12 @@ export default {
   ],
   theme: {
 
+    listStyleType: {
+      square: 'square',
+    },
+
     screens: {
+      '3xl': '1700px',
       'desk': '1650px',
       ...defaultTheme.screens
     },

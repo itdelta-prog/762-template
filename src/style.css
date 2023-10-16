@@ -116,6 +116,25 @@
     @apply bg-[#B8AA91] transition-all text-[#0F0F0F] border-none opacity-100 hover:text-[#0F0F0F] hover:border-none;
   }
 
+  .all-course {
+    @apply h-0 translate-y-0 opacity-0 invisible flex flex-col gap-y-[20px];
+  }
+
+  .all-course.active {
+    @apply h-full opacity-100 visible transition-all;
+  }
+
+  .all-btn {
+    @apply flex items-center gap-x-4 text-[16px] text-white leading-5 mt-[32px];
+  }
+
+  .all-btn .active {
+    @apply flex items-center gap-x-4 text-[16px] text-white leading-5 mt-[32px];
+  }
+
+  .all-btn.active svg {
+    @apply rotate-[182deg] transition-all;
+  }
 }
 
 
