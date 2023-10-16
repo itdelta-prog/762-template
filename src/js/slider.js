@@ -1,28 +1,6 @@
 // import '@splidejs/splide/css/core';
 // import Splide from '@splidejs/splide';
 
-
-// let splideCourse = new Splide('#splideCourse', {
-//   autoWidth: true,
-//   focus: 0,
-//   gap: '28px',
-//   omitEnd: true,
-//   pagination: false
-// });
-
-// let bar = splideCourse.root.querySelector('.my-slider-progress-bar');
-
-
-
-// splideCourse.on('mounted move', function () {
-
-//   var end = splideCourse.Components.Controller.getEnd() + 1;
-//   var rate = Math.min((splideCourse.index + 1) / end, 1);
-//   bar.style.width = String(100 * rate) + '%';
-// });
-
-// splideCourse.mount();
-
 let swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,
   spaceBetween: 30,
