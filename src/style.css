@@ -74,7 +74,7 @@
   }
 
   .btn-catalog {
-    @apply py-[14px] px-[40px] border border-solid border-[#B9AB91] bg-[#181818] cursor-pointer z-10 relative after:content-[''] after:absolute before:content-[''] before:absolute after:bg-[#181818] before:bg-[#181818] before:w-[calc(100%_+_4px)] before:h-[calc(100%_-_43px)] before:top-[22px] before:-left-[3px] after:w-[calc(100%_-_26%)] after:left-[23px] after:h-[calc(100%_+_6px)] after:-top-[3px] transition-opacity hover:bg-[#B9AB91] hover:before:opacity-0 hover:after:opacity-0;
+    @apply py-[14px] px-[13px] sm:px-[40px] border border-solid border-[#B9AB91] bg-[#181818] cursor-pointer z-10 relative after:content-[''] after:absolute before:content-[''] before:absolute after:bg-[#181818] before:bg-[#181818] before:w-[calc(100%_+_4px)] before:h-[calc(100%_-_43px)] before:top-[22px] before:-left-[3px] after:w-[calc(100%_-_26%)] after:left-[23px] after:h-[calc(100%_+_6px)] after:-top-[3px] transition-opacity hover:bg-[#B9AB91] hover:before:opacity-0 hover:after:opacity-0;
   }
 
   .btn-primay.btn__active {
@@ -98,7 +98,7 @@
   }
 
   .btn-link__text {
-    @apply text-[18px] text-white font-normal relative z-10;
+    @apply text-[16px] md:text-[18px] text-white font-normal relative z-10;
   }
 
   .btn {

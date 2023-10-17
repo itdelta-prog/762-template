@@ -64,6 +64,10 @@ let myArsenal = new Swiper(".myArsenal", {
         prevEl: ".myArsenal-custom-prev",
         lockClass: false
     },
+    pagination: {
+        el: ".swiper-pagination__custom",
+        type: "progressbar",
+    },
 });
 let imageGang = new Swiper(".imageGang", {
     slidesPerView: 1,
@@ -82,9 +86,27 @@ let imageGang = new Swiper(".imageGang", {
 });
 
 let GungSlider = new Swiper(".GungSlider", {
-    slidesPerView: 4,
+    slidesPerView: 1,
     spaceBetween: 30,
 
+    breakpoints: {
+        1416: {
+            slidesPerView: 4,
+        },
+
+        970: {
+            slidesPerView: 3
+        },
+
+        500: {
+            slidesPerView: 2
+        }
+
+    },
+    pagination: {
+        el: ".swiper-pagination__custom",
+        type: "progressbar",
+    },
     navigation: {
         nextEl: ".myGung-custom-next",
         prevEl: ".myGung-custom-prev",
@@ -93,15 +115,27 @@ let GungSlider = new Swiper(".GungSlider", {
 })
 
 let InstructorSlider = new Swiper(".InstructorSlider", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
 
     breakpoints: {
         1500: {
             slidesPerView: 4,
-            spaceBetween: 30
+        },
+
+        970: {
+            slidesPerView: 3
+        },
+
+        500: {
+            slidesPerView: 2
         }
     },
+    pagination: {
+        el: ".swiper-pagination__custom",
+        type: "progressbar",
+    },
+
 
     navigation: {
         nextEl: ".InstructorSlider-custom-next",

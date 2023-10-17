@@ -8,7 +8,7 @@ export const SelectDropDown = () => {
         const options = dropDown.querySelectorAll('.menu li');
         const selected = dropDown.querySelector('.selected');
 
-        dropDown.addEventListener('click', (eve) => {
+        select.addEventListener('click', (eve) => {
 
             select.classList.toggle('select-clicked');
             caret.classList.toggle('caret-rotate');
