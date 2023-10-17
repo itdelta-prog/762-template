@@ -1,4 +1,5 @@
 import './script.js';
+import './filterCourse.js';
 import {Tabs} from "./tabs.js";
 
 document.addEventListener('DOMContentLoaded', () => {

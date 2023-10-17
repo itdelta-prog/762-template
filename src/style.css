@@ -17,6 +17,20 @@
 }
 
 @tailwind base;
+
+
+.scrollCustom::-webkit-scrollbar {
+    width: 3px;
+    /* ширина для вертикального скролла */
+    background-color: rgba(210, 210, 215, 0.14);
+  }
+
+.scrollCustom::-webkit-scrollbar-thumb {
+  background-color: #B8AA91;
+  border-radius: 2px;
+}
+
+
 @tailwind components;
 @tailwind utilities;
 
@@ -274,6 +288,7 @@ body.active {
 	width: 900px !important;
 	margin: 0;
   top: 20px;
+  left: 44% !important;
   padding-bottom: 26px;
 }
 .swiper-pagination-bullet {
