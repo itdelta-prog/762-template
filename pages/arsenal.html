@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    
+    <title>Title</title>
+  <script type="module" crossorigin src="/762-template/arsenal.js"></script>
+  <link rel="modulepreload" crossorigin href="/762-template/assets/script-df64ac74.js">
+  <link rel="modulepreload" crossorigin href="/762-template/assets/tabs-0d1d1a23.js">
+  <link rel="stylesheet" href="/762-template/script.css">
+</head>
+<body class="w-full h-full bg-[#0F0F0F] font-Grtsk">
+<header class="border-b border-[#363636] mb-20">
+    <nav class="flex items-center justify-between relative p-6 lg:px-5 lg:py-5 z-20" aria-label="Global">
+        <div class="flex items-center gap-x-12">
+            <a href="/src/public" class="">
+                <img class="h-8 w-auto" src="/762-template/img/headerLogo.svg" alt="">
+            </a>
+            <div class="hidden lg:flex items-center lg:gap-x-9">
+                <a href="#" class="lg:hidden xl:block text-lg leading-6 text-white font-normal">Стрельба</a>
+                <a href="#" class="lg:hidden xl:block text-lg leading-6 text-white font-normal">Подарочные карты</a>
+                <a href="#" class="lg:hidden 2xl:block text-lg leading-6 text-white font-normal">Мероприятия</a>
+                <a href="#" class="xl:hidden 2xl:block text-lg leading-6 text-white font-normal">О клубе</a>
+                <div class="relative cursor-pointer">
+                    <div id="dropdownDefaultButton" class="p-2" data-dropdown-toggle="dropdown">
+                        <img src="/762-template/img/dot.svg"/>
+                    </div>
+                    <div id="dropdown" class="max-w-[275px] z-10 absolute top-6 hidden bg-[rgba(31,_31,_31,_0.50)] backdrop-blur-xl divide-y rounded-lg shadow w-44">
+                        <ul class="py-2 text-sm " aria-labelledby="dropdownDefaultButton">
+                            <li>
+                                <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Парковка</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Арсенал</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Галерея</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Раздевалки</a>
+                            </li>
+                            <li class="lg:block xl:hidden">
+                                <a href="#" class="px-4 py-2 text-white opacity-50 hover:opacity-100">Стрельба</a>
+                            </li>
+                            <li class="lg:block xl:hidden">
+                                <a href="#" class="px-4 py-2 text-white opacity-50 hover:opacity-100">Подарочные карты</a>
+                            </li>
+                            <li class="lg:block 2xl:hidden">
+                                <a href="#" class="px-4 py-2 text-white opacity-50 hover:opacity-100">Мероприятия</a>
+                            </li>
+                            <li class="xl:block 2xl:hidden">
+                                <a href="#" class="px-4 py-2 text-white opacity-50 hover:opacity-100">О клубе</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:hidden flex items-center gap-x-5">
+            <a class="text-lg font-normal text-white" href="tel:+78325463143">+7 832 546 31 43</a>
+            <div data-burger="menu" type="button" class="burger__menu w-[50px] h-[38px] bg-[#222220]">
+                <div class="burger__menu-line one" style="transition: opacity .2s, transform .3s;"></div>
+                <div class="burger__menu-line two" style="transition: opacity .2s, transform .3s;"></div>
+                <div class="burger__menu-line three" style="transition: opacity .2s, transform .3s;"></div>
+                <div class="burger__menu-line four" style="transition: opacity .2s, transform .3s;"></div>
+            </div>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-x-3 2xl:gap-x-8">
+            <a class="hidden lg:block text-lg font-normal text-white" href="tel:+78325463143">+7 832 546 31 43</a>
+            <div class="w-[1px] h-9 bg-[rgba(255,_255,_255,_0.16)]"></div>
+            <div class="flex items-center gap-x-2">
+                <a href="#"><img src="/762-template/img/whatsapp.svg" alt=""></a>
+                <a href="#"><img src="/762-template/img/vk.svg" alt=""></a>
+                <a href="#"><img src="/762-template/img/telegram.svg" alt=""></a>
+            </div>
+            <button class="flex justify-between items-center px-[30px] py-5 bg-[#1A1A19] group hover:bg-[#B9AB91] transition-colors">
+                <span class="text-lg font-normal text-white mr-4 group-hover:text-[#222220]">Даниил</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="white">
+                    <path d="M10 3.33329C8.15905 3.33329 6.66667 4.82568 6.66667 6.66663C6.66667 8.50758 8.15905 9.99996 10 9.99996C11.8409 9.99996 13.3333 8.50758 13.3333 6.66663C13.3333 4.82568 11.8409 3.33329 10 3.33329ZM5 6.66663C5 3.9052 7.23858 1.66663 10 1.66663C12.7614 1.66663 15 3.9052 15 6.66663C15 9.42805 12.7614 11.6666 10 11.6666C7.23858 11.6666 5 9.42805 5 6.66663ZM6.66667 15C5.28595 15 4.16667 16.1192 4.16667 17.5C4.16667 17.9602 3.79357 18.3333 3.33333 18.3333C2.8731 18.3333 2.5 17.9602 2.5 17.5C2.5 15.1988 4.36548 13.3333 6.66667 13.3333H13.3333C15.6345 13.3333 17.5 15.1988 17.5 17.5C17.5 17.9602 17.1269 18.3333 16.6667 18.3333C16.2064 18.3333 15.8333 17.9602 15.8333 17.5C15.8333 16.1192 14.714 15 13.3333 15H6.66667Z"/>
+                </svg>
+            </button>
+            <button class="flex justify-between items-center px-[30px] py-5 bg-[#222220] group hover:bg-[#B9AB91] transition-colors">
+                <span class="text-lg font-normal text-[#E1DEB3] mr-4 group-hover:text-[#222220]">Забронировать</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="#E1DEB3">
+                    <g clip-path="url(#clip0_85_26684)">
+                        <rect x="2.1875" y="3.66797" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-45 2.1875 3.66797)"/>
+                        <rect x="16.3203" y="2.18408" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(45 16.3203 2.18408)"/>
+                        <rect x="17.8281" y="16.3276" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(135 17.8281 16.3276)"/>
+                        <rect x="3.66406" y="17.8164" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-135 3.66406 17.8164)"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_85_26684">
+                            <rect width="20" height="20" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </button>
+            <!-- <a href="#" class="text-sm font-normal leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a> -->
+        </div>
+    </nav>
+
+    <div class="dialog__wrapper w-full h-full fixed left-0 top-0 bg-[rgba(15,_15,_15,_0.90)] z-10 opacity-0 invisible" style="transition: opacity .3s, visibility .1s;"></div>
+
+
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div class="lg:hidden  w-full h-[0%] overflow-x-auto fixed bottom-0 bg-[#1B1B1A] z-30 dialog" role="dialog" aria-modal="true" style="transition: height .3s;">
+        <div class="flex items-center gap-x-4 px-4 py-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="white">
+                <path d="M10 3.33329C8.15905 3.33329 6.66667 4.82568 6.66667 6.66663C6.66667 8.50758 8.15905 9.99996 10 9.99996C11.8409 9.99996 13.3333 8.50758 13.3333 6.66663C13.3333 4.82568 11.8409 3.33329 10 3.33329ZM5 6.66663C5 3.9052 7.23858 1.66663 10 1.66663C12.7614 1.66663 15 3.9052 15 6.66663C15 9.42805 12.7614 11.6666 10 11.6666C7.23858 11.6666 5 9.42805 5 6.66663ZM6.66667 15C5.28595 15 4.16667 16.1192 4.16667 17.5C4.16667 17.9602 3.79357 18.3333 3.33333 18.3333C2.8731 18.3333 2.5 17.9602 2.5 17.5C2.5 15.1988 4.36548 13.3333 6.66667 13.3333H13.3333C15.6345 13.3333 17.5 15.1988 17.5 17.5C17.5 17.9602 17.1269 18.3333 16.6667 18.3333C16.2064 18.3333 15.8333 17.9602 15.8333 17.5C15.8333 16.1192 14.714 15 13.3333 15H6.66667Z"/>
+            </svg>
+            <span class="text-lg font-normal text-white">Даниил</span>
+        </div>
+        <div class="w-full h-[1px] bg-[#363636]"></div>
+        <div class="flex flex-col gap-y-[18px] px-4 py-7">
+            <a href="" class="text-[28px] font-normal text-white">Стрельба</a>
+            <a href="" class="text-[28px] font-normal text-white">Подарочные карты</a>
+            <a href="" class="text-[28px] font-normal text-white">Мероприятия</a>
+            <a href="" class="text-[28px] font-normal text-white">О клубе</a>
+            <a href="" class="text-base text-[#878787] font-normal">Парковка</a>
+            <a href="" class="text-base text-[#878787] font-normal">Арсенал</a>
+            <a href="" class="text-base text-[#878787] font-normal">Галереи</a>
+            <a href="" class="text-base text-[#878787] font-normal">Раздевалки</a>
+            <a href="" class="text-base text-[#878787] font-normal">Соревнования</a>
+        </div>
+        <div class="w-full h-[1px] bg-[#363636]"></div>
+        <div class="flex flex-col justify-center px-4 py-7">
+            <div class="flex justify-between items-center">
+                <a class="bg-[url('../img/phone.svg')] bg-no-repeat bg-[left_6px] pl-9 text-white text-lg">+7 832 546 31 43</a>
+                <div class="flex items-center">
+                    <img src="/762-template/img/whatsapp.svg"/>
+                    <img src="/762-template/img/vk.svg"/>
+                    <img src="/762-template/img/telegram.svg"/>
+                </div>
+            </div>
+            <button class="flex justify-center items-center max-w-[350px] py-6 bg-[#222220] group hover:bg-[#E1DEB3]">
+                <span class="text-lg font-normal text-[#E1DEB3] mr-4 group-hover:text-[#222220]">Забронировать</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="#E1DEB3">
+                    <g clip-path="url(#clip0_85_26684)">
+                        <rect x="2.1875" y="3.66797" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-45 2.1875 3.66797)"/>
+                        <rect x="16.3203" y="2.18408" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(45 16.3203 2.18408)"/>
+                        <rect x="17.8281" y="16.3276" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(135 17.8281 16.3276)"/>
+                        <rect x="3.66406" y="17.8164" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-135 3.66406 17.8164)"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_85_26684">
+                            <rect width="20" height="20" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </button>
+        </div>
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+    </div>
+</header>
+<main>
+    <section class="mb-[40px] md:mb-[180px] ">
+        <div>
+            <div class="swiper myArsenal mb-[85px] pb-[30px] md:pb-0">
+                <div class="container">
+                    <h2 class="text-6xl font-medium uppercase text-white max-w-[704px] leading-[72px] mb-[50px]">Арсенал</h2>
+                    <div class="mb-16 flex items-center justify-between">
+                        <div class="flex gap-x-5  overflow-scroll mb-3">
+                            <button class="btn-primay" data-gun="pistol"><span class="btn-text">Пистолет</span></button>
+                            <button class="btn-primay" data-gun="carbine"><span class="btn-text">Ружье</span></button>
+                            <button class="btn-primay" data-gun="rifle"><span class="btn-text">Карабин</span></button>
+                        </div>
+                        <div class="hidden md:inline-flex  p-6 gap-9 bg-[#1A1A19]">
+                            <button class="transition-opacity myArsenal-custom-prev disabled:opacity-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27"
+                                     fill="none">
+                                    <path d="M15 26L1 13.5L15 0.999999" stroke="white"/>
+                                </svg>
+                            </button>
+                            <div class="w-[1px] h-7 bg-[#383837]"></div>
+                            <button class="transition-opacity myArsenal-custom-next disabled:opacity-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27"
+                                     fill="none">
+                                    <path d="M1 26L15 13.5L1 0.999999" stroke="white"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-wrapper lg:pl-[80px]">
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/762-template/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/762-template/img/arsenalSlide2.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/762-template/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/762-template/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/762-template/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/762-template/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/762-template/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/762-template/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                    <div class="w-fit swiper-slide">
+                        <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19]">
+                            <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
+                                <img src="/762-template/img/arsenalSlide.png" alt="">
+                            </div>
+                            <div class="px-4 text-base text-white max-w-[131px]">Beretta 486 Parallelo</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination__custom md:hidden z-50"></div>
+            </div>
+        </div>
+        <div>
+            <div class="container flex flex-col lg:flex-row 2xl:gap-x-[20px] h-full">
+                <div class="flex flex-col lg:max-w-[800px] 2xl:max-w-[1200px]">
+                    <h1 class="mb-10 text-5xl font-normal uppercase text-white leading-[60px]">Подробное название
+                        оружия</h1>
+                    <div class="flex flex-col-reverse items-center lg:items-start xl:flex-row gap-x-[20px] desk:gap-x-[100px]">
+                        <div class="w-full mb-[41px] lg:mb-0 lg:w-[350px] lg:pt-[70px] bg-[#181818] py-[14px] px-[24px] lg:bg-transparent lg:py-0 lg:px-0">
+                            <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
+                                <p class="text-lg font-normal leading-5 text-white">Калибр</p>
+                                <p class="text-lg font-normal leading-5 text-white opacity-50">5,56x45</p>
+                            </div>
+                            <div class="flex py-3 justify-between items-center border-b-[1px]  border-b-[#282828]">
+                                <p class="text-lg font-normal leading-5 text-white">Калибр</p>
+                                <p class="text-lg font-normal leading-5 text-white opacity-50">5,56x45</p>
+                            </div>
+                            <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
+                                <p class="text-lg font-normal leading-5 text-white">Калибр</p>
+                                <p class="text-lg font-normal leading-5 text-white opacity-50">5,56x45</p>
+                            </div>
+                            <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
+                                <p class="text-lg font-normal leading-5 text-white">Калибр</p>
+                                <p class="text-lg font-normal leading-5 text-white opacity-50">5,56x45</p>
+                            </div>
+                            <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
+                                <p class="text-lg font-normal leading-5 text-white">Калибр</p>
+                                <p class="text-lg font-normal leading-5 text-white opacity-50">5,56x45</p>
+                            </div>
+                            <div class="flex py-3 justify-between items-center border-b-[1px] border-b-[#282828]">
+                                <p class="text-lg font-normal leading-5 text-white">Калибр</p>
+                                <p class="text-lg font-normal leading-5 text-white opacity-50">5,56x45</p>
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-[550px] 2xl:w-[700px] mb-[24px] lg:mb-0">
+                            <div class="swiper w-full h-[550px] pt-[100px] imageGang">
+                                <div class="swiper-wrapper pt-[80px]">
+                                    <div class="swiper-slide ">
+                                        <div class="relative max-w-[345px] sm:max-w-[450px] md:max-w-full lg:max-w-[450px] 2xl:max-w-[650px]  h-full">
+                                            <img class="absolute h-fit left-[7%]" src="/762-template/img/m16.svg" alt="">
+                                            <img class="absolute  -top-[80px] left-[18%]" src="/762-template/img/m16.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="relative max-w-[345px] sm:max-w-[450px] md:max-w-full lg:max-w-[450px] 2xl:max-w-[650px]  h-full">
+                                            <img class="absolute h-fit left-[7%]" src="/762-template/img/m16.svg" alt="">
+                                            <img class="absolute  -top-[80px] left-[18%]" src="/762-template/img/m16.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="relative max-w-[345px] sm:max-w-[450px] md:max-w-full lg:max-w-[450px] 2xl:max-w-[650px]  h-full">
+                                            <img class="absolute h-fit left-[7%]" src="/762-template/img/m16.svg" alt="">
+                                            <img class="absolute  -top-[80px] left-[18%]" src="/762-template/img/m16.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="imageGang-button-next group absolute bottom-0 left-[70%] sm:left-[62%] z-50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
+                                        <path d="M0.999998 1L15 13.5L1 26" class="group-disabled:stroke-[#383837]" stroke="white"/>
+                                    </svg>
+                                </button>
+                                <button class="imageGang-button-prev group absolute bottom-0 left-[35%] z-50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
+                                        <path d="M15 26L1 13.5L15 0.999999" class="group-disabled:stroke-[#383837]"  stroke="white"/>
+                                    </svg>
+                                </button>
+                                <div class="imageGang-pagination bottom-0 absolute text-[22px] font-medium left-[46%]"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="flex h-fit flex-col lg:basis-[450px] desk:basis-[500px] py-8 px-4 md:px-7 bg-transparent lg:bg-[#181818]">
+                    <h3 class="text-3xl lg:text-[20px] font-medium uppercase leading-6 text-white">БРОНИРОВАНИЕ</h3>
+                    <p>Выберите день посещения</p>
+                    <form id="gungForm">
+                        <div class="tabs__visits mb-[31px]">
+                            <div class="flex tabs__head gap-x-[13px] mb-[31px]">
+                                <button name="weekdays" class="tabs__caption btn-catalog basis-[184px]" data-tab="weekdays"><span
+                                        class="btn-link__text">Будни</span></button>
+                                <button name="weekend" class="tabs__caption btn-catalog basis-[184px]" data-tab="weekend"><span
+                                        class="btn-link__text">Выходные</span></button>
+                            </div> <!--  Кнопки посещения табы -->
+                            <div class="flex justify-between mb-[31px] person">
+                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent person-active" data-person="1">1</button>
+                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="2">2</button>
+                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="3">3</button>
+                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="4">4</button>
+                            </div>
+                            <div class="tabs__body">
+                                <div class="tabs__content" data-tab="weekdays">
+                                    <div class="flex justify-between mb-[12px]">
+                                        <p class="text-white text-[18px] font-normal leading-5">Базовая стоимость</p>
+                                        <div><span class="hidden"></span> <span class="text-[18px] text-white font-normal leading-5 opacity-50">80000 р.</span></div>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <p class="text-white text-[18px] font-normal leading-5">Стоимость выстрелов</p>
+                                        <div><span class="text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">1 0 0000 р</span> <span class="text-[18px] text-[#B8AA91] font-normal leading-5">55000 р.</span></div>
+                                    </div>
+                                </div>
+                                <div class="tabs__content" data-tab="weekend">
+                                </div> <!--  Контент посещения табы -->
+                            </div>
+                        </div>
+                        <div class="w-full h-[1px] bg-[#282828] mb-9"></div>
+                        <div class="current-shot flex justify-between mb-[31px]">
+                            <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-minus="10" >-10</button>
+                            <div data-contentShort="2550" class="max-w-[103px] text-center text-white text-[18px] btnContent">2550 выстрелов</div>
+                            <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-plus="10">+10</button>
+                            <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-plus="200">+200</button>
+                        </div>
+                        <div class="flex flex-col gap-y-[11px] mb-[31px]">
+                            <button class="p-[12px_19px_12px_19px] btn-catalog group"><span class="opacity-20 group-hover:opacity-100 btn-link__text">Вы в группе из 4-х человек</span></button>
+                            <div class="selectCustom">
+                                <div class="select">
+                                    <span class="selected">gdfgf</span>
+                                    <div class="caret"></div>
+                                </div>
+                                <ul class="menu">
+                                    <li>Framer</li>
+                                    <li class="active">Sketch</li>
+                                    <li>Figma</li>
+                                </ul>
+                            </div>
+                            <button class="p-[12px_19px_12px_19px] btn-catalog flex justify-between group"><span class="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text">Персональный инструктор</span><span class="text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">+7 500 р.</span></button>
+                            <button class="p-[12px_19px_12px_19px] btn-catalog flex justify-between group"><span class="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text">Персональная галерея </span><span class="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text">+7500р.</span></button>
+                        </div>
+                        <div class="flex justify-between md:justify-normal md:gap-x-[13px]">
+                            <button class="btn-catalog"><span
+                                    class="btn-link__text">В подарок</span></button>
+                            <button  class=" btn-catalog" data-tab="weekend"><span
+                                    class="btn-link__text">К бронированию</span></button>
+                        </div>
+                    </form>
+            </div>
+            </div>
+    </section>
+    <section class="mb-[60px] md:mb-[300px]">
+            <div class="container flex-col sm:flex-row flex ">
+                <div class="hidden sm:flex max-w-[450px] flex-col basis-[400px] pr-[20px] gap-y-[60px]">
+                        <div id="gun">
+                            <h2 class="text-white text-2xl font-medium leading-[28px] uppercase mb-8">Пистолеты</h2>
+                            <div class="flex flex-col mb-[32px]">
+                                <div class="flex flex-col gap-y-[20px] mb-[20px]">
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</p>
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Обучение тренеров-инструкторов по пулевой стрельбе</p>
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</p>
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</p>
+                                </div>
+                                <div class="all-course" data-all="gun" style="transition: height .1s, opacity .2s, visibility .2s">
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</p>
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</p>
+                                </div>
+                                <button  class="all-btn">Все курсы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
+                                    <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
+                                </svg></button>
+                            </div>
+                        </div>
+                        <div id="rifle">
+                            <h2 class="text-white text-2xl font-medium leading-[28px] uppercase mb-8">РУЖЬЕ</h2>
+                            <div class="flex flex-col mb-[32px]">
+                                <div class="flex flex-col gap-y-[20px] mb-[20px]">
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Безопасное обращение с оружием</p>
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Обучение тренеров-инструкторов по пулевой стрельбе</p>
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</p>
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</p>
+                                </div>
+                                <div class="all-course" data-all="gun" style="transition: height .1s, opacity .2s, visibility .2s">
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</p>
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</p>
+                                </div>
+                                <button  class="all-btn">Все курсы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
+                                    <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
+                                </svg></button>
+                            </div>
+                        </div>
+                        <div id="carabin">
+                            <h2 class="text-white text-2xl font-medium leading-[28px] uppercase mb-8">Карабин</h2>
+                            <div class="flex flex-col mb-[32px]">
+                                <div class="flex flex-col gap-y-[20px] mb-[20px]">
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Безопасное обращение с оружием</p>
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Обучение тренеров-инструкторов по пулевой стрельбе</p>
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</p>
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</p>
+                                </div>
+                                <div class="all-course" data-all="gun" style="transition: height .1s, opacity .2s, visibility .2s">
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</p>
+                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</p>
+                                </div>
+                                <button class="all-btn">Все курсы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
+                                    <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
+                                </svg></button>
+                            </div>
+                        </div>
+                    </div>
+                <div class="sm:hidden mb-[20px]">
+                    <h2 class="text-3xl font-medium leading-[36px] uppercase text-white mb-[20px]">каталог курсов</h2>
+                    <div class="flex gap-x-5  overflow-scroll mb-3">
+                        <button class="btn-primay" data-gun="pistol"><span class="btn-text">Пистолет</span></button>
+                        <button class="btn-primay" data-gun="carbine"><span class="btn-text">Ружье</span></button>
+                        <button class="btn-primay" data-gun="rifle"><span class="btn-text">Карабин</span></button>
+                    </div>
+                    <div class="sm:hidden selectCustom">
+                        <div class="select">
+                            <span class="selected">gdfgf</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="menu">
+                            <li>Framer</li>
+                            <li class="active">Sketch</li>
+                            <li>Figma</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex flex-col max-w-full sm:max-w-[60%] lg:max-w-[80%] sm:pl-[20px] lg:pl-[32px] sm:border-l sm:border-l-[#242424]">
+                        <div class="w-[104px] py-[9.5px] px-8 bg-[rgba(255,_255,_255,_0.11)] text-white mb-[24px]">Легко</div>
+                        <div class="flex flex-col gap-y-8 lg:gap-y-0 lg:flex-row items-start lg:items-center mb-[100px]">
+                            <div class="flex flex-col lg:basis-[550px] xl:basis-[698px] gap-y-[42px]">
+                                <h2 class="text-3xl sm:text-[42px] font-medium leading-[50px] uppercase text-white">Название курса <br> в две строчки</h2>
+                                <div class="flex flex-col w-[341px] sm:w-[408px]">
+                                    <div class="flex justify-between mb-2">
+                                        <span class="text-[rgba(255,_255,_255,_0.40)] text-[12px] ">Пройдено</span>
+                                        <span class="text-[12px] text-white ">50%</span>
+                                    </div>
+                                    <div class="w-full h-[5px] bg-[#222220]">
+                                        <span class="block w-[40%] h-[5px] bg-[#B9AB91]"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col lg:basis-[519px] sm:pr-4 lg:pr-0">
+                                <p class="text-base text-[rgba(255,_255,_255,_0.40)] font-normal leading-5 mb-[24px]">Описание Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+                                <p class="text-base text-[rgba(255,_255,_255,_0.40)] font-normal leading-5">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col max-w-[500px] lg:max-w-full lg:flex-row mb-[150px] gap-y-[20px] lg:gap-y-0 lg:gap-x-[28px]">
+                            <div class="lg:basis-[635px]">
+                                <img src="/762-template/img/arsenalBg.png" alt="">
+                            </div>
+                            <div class="flex flex-col basis-[635px] px-10 pt-[81px] pb-10 " style="background: url('/762-template/img/bgBlock.png') no-repeat right top #1A1A19">
+                                <h2 class="max-w-[360px] font-medium text-white text-[30px] mb-[32px] uppercase leading-[36px]">В стоимость входит:</h2>
+                                <ul class="flex max-w-[338px] flex-col gap-y-[12px] list-square mb-[24px]">
+                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">100 выстрелов наодного стрелка</li>
+                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">инструктор</li>
+                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">аренда стрелковой галереи</li>
+                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">защитные очки и наушники</li>
+                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">разнообразные мишени</li>
+                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">сертификат о прохождении программы</li>
+                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">фотографии с занятия</li>
+                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">парковка на территории клуба</li>
+                                </ul>
+                                <a href="" class="text-white text-[16px] font-normal leading-5 mb-[55px]">Смотреть все</a>
+                                <div class="flex gap-x-[16px] flex-col-reverse gap-y-4 lg:flex-row">
+                                    <button class="btn-link"><span class="btn-link__text">В подарок</span></button>
+                                    <button class="flex  justify-between items-center px-[30px] py-5 bg-[#222220] group hover:bg-[#B9AB91] transition-colors">
+                                        <span class="text-lg font-normal text-[#E1DEB3] mr-4 group-hover:text-[#222220]">Забронировать</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="#E1DEB3">
+                                            <g clip-path="url(#clip0_85_26684)">
+                                                <rect x="2.1875" y="3.66797" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-45 2.1875 3.66797)"/>
+                                                <rect x="16.3203" y="2.18408" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(45 16.3203 2.18408)"/>
+                                                <rect x="17.8281" y="16.3276" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(135 17.8281 16.3276)"/>
+                                                <rect x="3.66406" y="17.8164" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-135 3.66406 17.8164)"/>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_85_26684">
+                                                    <rect width="20" height="20" fill="white"/>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="swiper w-full  ml-0 GungSlider pb-[30px] mb-[137px]">
+                                <div class="flex justify-between items-center mb-16">
+                                    <h2 class="max-w-[704px] text-[32px] text-white font-medium leading-[72px] uppercase">галереи</h2>
+                                    <div class="hidden md:inline-flex p-6 gap-9 bg-[#1A1A19]">
+                                        <button class="myGung-custom-prev disabled:opacity-10 transition-opacity">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
+                                                <path d="M15 26L1 13.5L15 0.999999" stroke="white"/>
+                                            </svg>
+                                        </button>
+                                        <div class="w-[1px] h-7 bg-[#383837]"></div>
+                                        <button class="myGung-custom-next disabled:opacity-10 transition-opacity">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
+                                                <path d="M1 26L15 13.5L1 0.999999" stroke="white"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="max-w-[312px] bg-[#1A1A19] px-[16px] pt-[16px]">
+                                            <div class="max-w-[280px] h-[215px] bg-[#222220] flex justify-center items-center">
+                                                <img src="/762-template/img/gang.png" alt="">
+                                            </div>
+                                            <div class="px-[8px] pt-[24px] pb-[40px]">
+                                                <h5 class="text-white text-xl font-medium uppercase">m16</h5>
+                                                <p class="max-w-[286px] text-[14px] text-[rgba(255,_255,_255,_0.40)] ">Автомат M4 является американским модульным автоматическим оружием, разработанным на базе широко известного карабина M16.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="max-w-[312px] bg-[#1A1A19] px-[16px] pt-[16px]">
+                                            <div class="max-w-[280px] h-[215px] bg-[#222220] flex justify-center items-center">
+                                                <img src="/762-template/img/gang.png" alt="">
+                                            </div>
+                                            <div class="px-[8px] pt-[24px] pb-[40px]">
+                                                <h5 class="text-white text-xl font-medium uppercase">m16</h5>
+                                                <p class="max-w-[286px] text-[14px] text-[rgba(255,_255,_255,_0.40)] ">Автомат M4 является американским модульным автоматическим оружием, разработанным на базе широко известного карабина M16.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="max-w-[312px] bg-[#1A1A19] px-[16px] pt-[16px]">
+                                            <div class="max-w-[280px] h-[215px] bg-[#222220] flex justify-center items-center">
+                                                <img src="/762-template/img/gang.png" alt="">
+                                            </div>
+                                            <div class="px-[8px] pt-[24px] pb-[40px]">
+                                                <h5 class="text-white text-xl font-medium uppercase">m16</h5>
+                                                <p class="max-w-[286px] text-[14px] text-[rgba(255,_255,_255,_0.40)] ">Автомат M4 является американским модульным автоматическим оружием, разработанным на базе широко известного карабина M16.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="max-w-[312px] bg-[#1A1A19] px-[16px] pt-[16px]">
+                                            <div class="max-w-[280px] h-[215px] bg-[#222220] flex justify-center items-center">
+                                                <img src="/762-template/img/gang.png" alt="">
+                                            </div>
+                                            <div class="px-[8px] pt-[24px] pb-[40px]">
+                                                <h5 class="text-white text-xl font-medium uppercase">m16</h5>
+                                                <p class="max-w-[286px] text-[14px] text-[rgba(255,_255,_255,_0.40)] ">Автомат M4 является американским модульным автоматическим оружием, разработанным на базе широко известного карабина M16.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">Slide 2</div>
+                                    <div class="swiper-slide">Slide 3</div>
+                                    <div class="swiper-slide">Slide 3</div>
+                                    <div class="swiper-slide">Slide 3</div>
+                                </div>
+                                <div class="swiper-pagination__custom md:hidden z-50"></div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="swiper w-full ml-0 InstructorSlider pb-[30px] mb-[137px]">
+                                <div class="flex justify-between items-center mb-16">
+                                    <h2 class="max-w-[704px] text-[32px] text-white font-medium leading-[72px] uppercase">Инструкторский состав</h2>
+                                    <div class="hidden md:inline-flex p-6 gap-9 bg-[#1A1A19]">
+                                        <button class="InstructorSlider-custom-prev disabled:opacity-10 transition-opacity">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
+                                                <path d="M15 26L1 13.5L15 0.999999" stroke="white"/>
+                                            </svg>
+                                        </button>
+                                        <div class="w-[1px] h-7 bg-[#383837]"></div>
+                                        <button class="InstructorSlider-custom-next disabled:opacity-10 transition-opacity">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
+                                                <path d="M1 26L15 13.5L1 0.999999" stroke="white"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="max-w-[312px] bg-[#1A1A19] px-[16px] pt-[16px]">
+                                            <div class="max-w-[280px] h-[215px]">
+                                                <img src="/762-template/img/instructor2.png" alt="">
+                                            </div>
+                                            <div class="px-[8px] pt-[24px] pb-[40px]">
+                                                <h5 class="max-w-[258px] text-white text-xl font-medium mb-[15px]">Данилов Тимур Викторович</h5>
+                                                <p class="max-w-[286px] text-[14px] text-[rgba(255,_255,_255,_0.40)] ">Автомат M4 является американским модульным автоматическим оружием, разработанным на базе широко известного карабина M16.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="max-w-[312px] bg-[#1A1A19] px-[16px] pt-[16px]">
+                                            <div class="max-w-[280px] h-[215px]">
+                                                <img src="/762-template/img/instructor1.png" alt="">
+                                            </div>
+                                            <div class="px-[8px] pt-[24px] pb-[40px]">
+                                                <h5 class="max-w-[258px] text-white text-xl font-medium mb-[15px]">Данилов Тимур Викторович</h5>
+                                                <p class="max-w-[286px] text-[14px] text-[rgba(255,_255,_255,_0.40)] ">Автомат M4 является американским модульным автоматическим оружием, разработанным на базе широко известного карабина M16.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="max-w-[312px] bg-[#1A1A19] px-[16px] pt-[16px]">
+                                            <div class="max-w-[280px] h-[215px]">
+                                                <img src="/762-template/img/instructor2.png" alt="">
+                                            </div>
+                                            <div class="px-[8px] pt-[24px] pb-[40px]">
+                                                <h5 class="max-w-[258px] text-white text-xl font-medium mb-[15px]">Данилов Тимур Викторович</h5>
+                                                <p class="max-w-[286px] text-[14px] text-[rgba(255,_255,_255,_0.40)] ">Автомат M4 является американским модульным автоматическим оружием, разработанным на базе широко известного карабина M16.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="max-w-[312px] bg-[#1A1A19] px-[16px] pt-[16px]">
+                                            <div class="max-w-[280px] h-[215px]">
+                                                <img src="/762-template/img/instructor1.png" alt="">
+                                            </div>
+                                            <div class="px-[8px] pt-[24px] pb-[40px]">
+                                                <h5 class="max-w-[258px] text-white text-xl font-medium mb-[15px]">Данилов Тимур Викторович</h5>
+                                                <p class="max-w-[286px] text-[14px] text-[rgba(255,_255,_255,_0.40)] ">Автомат M4 является американским модульным автоматическим оружием, разработанным на базе широко известного карабина M16.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">Slide 2</div>
+                                    <div class="swiper-slide">Slide 3</div>
+                                    <div class="swiper-slide">Slide 3</div>
+                                    <div class="swiper-slide">Slide 3</div>
+                                </div>
+                                <div class="swiper-pagination__custom md:hidden z-50"></div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+    </section>
+</main>
+<footer class="pb-[60px]">
+    <div class="container">
+        <div class="flex flex-col sm:flex-row justify-between items-start gap-y-11 sm:gap-0 sm:px-5 2xl:px-0">
+            <div class="flex flex-col gap-0 sm:gap-y-[181px]">
+                <img class="w-[151px] sm:w-full" src="/762-template/img/footerLogo.svg"/>
+                <div class="hidden sm:flex items-center gap-x-2">
+                    <a href="#"><img src="/762-template/img/whatsapp.svg" alt=""></a>
+                    <a href="#"><img src="/762-template/img/vk.svg" alt=""></a>
+                    <a href="#"><img src="/762-template/img/telegram.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-y-[80px]">
+                <div class="flex flex-col sm:flex-row justify-between items-baseline gap-y-11 sm:gap-x-[60px] md:gap-x-[60px] xl:gap-x-[161px]">
+                    <div class="">
+                        <h4 class="text-white text-xl font-normal leading-5 mb-8">Тир</h4>
+                        <div class="hidden md:flex flex-col gap-y-4">
+                            <a href="" class="text-lg font-normal leading-5 text-[#878787]">Стрельба</a>
+                            <a href="" class="text-lg font-normal leading-5 text-[#878787]">Подарочные карты</a>
+                            <a href="" class="text-lg font-normal leading-5 text-[#878787]">О клубе</a>
+                            <a href="" class="text-lg font-normal leading-5 text-[#878787]">Парковка</a>
+                            <a href="" class="text-lg font-normal leading-5 text-[#878787]">Арсенал</a>
+                            <a href="" class="text-lg font-normal leading-5 text-[#878787]">Галереи</a>
+                            <a href="" class="text-lg font-normal leading-5 text-[#878787]">Раздевалки</a>
+                        </div>
+                        <div class="flex gap-x-8 sm:hidden">
+                            <div class="flex flex-col gap-y-[18px]">
+                                <a href="" class="text-lg font-normal leading-5 text-[#878787]">Стрельба</a>
+                                <a href="" class="text-lg font-normal leading-5 text-[#878787]">Подарочные карты</a>
+                                <a href="" class="text-lg font-normal leading-5 text-[#878787]">О клубе</a>
+                                <a href="" class="text-lg font-normal leading-5 text-[#878787]">Парковка</a>
+                            </div>
+                            <div class="flex flex-col gap-y-[18px]">
+                                <a href="" class="text-lg font-normal leading-5 text-[#878787]">Арсенал</a>
+                                <a href="" class="text-lg font-normal leading-5 text-[#878787]">Галереи</a>
+                                <a href="" class="text-lg font-normal leading-5 text-[#878787]">Раздевалки</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-white text-xl font-normal leading-5 mb-8">Жизнь</h4>
+                        <div class="hidden sm:flex flex-col gap-y-4">
+                            <a href="" class="text-lg font-normal leading-5 text-[#878787]">Мероприятия</a>
+                            <a href="" class="text-lg font-normal leading-5 text-[#878787]">Новости</a>
+                            <a href="" class="text-lg font-normal leading-5 text-[#878787]">Соревнования</a>
+                            <a href="" class="text-lg font-normal leading-5 text-[#878787]">О нас</a>
+                        </div>
+                        <div class="flex gap-x-8 sm:hidden">
+                            <div class="flex flex-col gap-y-[18px]">
+                                <a href="" class="text-lg font-normal leading-5 text-[#878787]">Мероприятия</a>
+                                <a href="" class="text-lg font-normal leading-5 text-[#878787]">Новости</a>
+                            </div>
+                            <div class="flex flex-col gap-y-[18px]">
+                                <a href="" class="text-lg font-normal leading-5 text-[#878787]">Соревнования</a>
+                                <a href="" class="text-lg font-normal leading-5 text-[#878787]">О нас</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-white text-xl font-normal leading-5 mb-8">Меню</h4>
+                        <div class="hidden sm:flex flex-col gap-y-4">
+                            <a href="" class="text-lg font-normal leading-5 text-[#878787]">Мероприятия</a>
+                            <a href="" class="text-lg font-normal leading-5 text-[#878787]">Новости</a>
+                            <a href="" class="text-lg font-normal leading-5 text-[#878787]">Соревнования</a>
+                        </div>
+                        <div class="sm:hidden flex gap-x-8">
+                            <div class="flex flex-col gap-y-[18px]">
+                                <a href="" class="text-lg font-normal leading-5 text-[#878787]">Мероприятия</a>
+                                <a href="" class="text-lg font-normal leading-5 text-[#878787]">Новости</a>
+                            </div>
+                            <div class="flex flex-col gap-y-[18px]">
+                                <a href="" class="text-lg font-normal leading-5 text-[#878787]">Соревнования</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sm:hidden flex justify-between items-center">
+                    <a href="#"><img src="/762-template/img/telegram.svg" alt=""></a>
+                    <div class="w-[1px] h-[22px] bg-[#383837]"></div>
+                    <a href="#"><img src="/762-template/img/vk.svg" alt=""></a>
+                    <div class="w-[1px] h-[22px] bg-[#383837]"></div>
+                    <a href="#"><img src="/762-template/img/instagram.svg" alt=""></a>
+                    <div class="w-[1px] h-[22px] bg-[#383837]"></div>
+                    <a href="#"><img src="/762-template/img/whatsapp.svg" alt=""></a>
+                </div>
+                <a href="#" class="hidden sm:block text-lg font-normal text-white mb-6">Политика конфиденциальности</a>
+            </div>
+            <div class="w-full sm:hidden text-base text-center text-[#878787] font-normal leading-4">Тир 762 © 2023</div>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+</body>
+</html>
