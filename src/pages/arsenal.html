@@ -332,8 +332,8 @@
 
                 </div>
                 <div class="flex h-fit flex-col lg:basis-[450px] desk:basis-[500px] py-8 px-4 md:px-7 bg-transparent lg:bg-[#181818]">
-                    <h3 class="text-3xl lg:text-[20px] font-medium uppercase leading-6 text-white">БРОНИРОВАНИЕ</h3>
-                    <p>Выберите день посещения</p>
+                    <h3 class="text-3xl lg:text-[20px] font-medium uppercase leading-6 text-white mb-[13px]">БРОНИРОВАНИЕ</h3>
+                    <p class="text-white text-[16px] opacity-50 mb-[20px]">Выберите день посещения</p>
                     <form id="gungForm">
                         <div class="tabs__visits mb-[31px]">
                             <div class="flex tabs__head gap-x-[13px] mb-[31px]">
@@ -368,7 +368,11 @@
                             <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-minus="10" >-10</button>
                             <div data-contentShort="2550" class="max-w-[103px] text-center text-white text-[18px] btnContent">2550 выстрелов</div>
                             <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-plus="10">+10</button>
-                            <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-plus="200">+200</button>
+                            <div class="relative">
+                                <span class="absolute -top-5 bg-white left-1/4 p-1 z-50">-20%</span>
+                                <button class="transition-all relative px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-plus="200">+200
+                                </button>
+                            </div>
                         </div>
                         <div class="flex flex-col gap-y-[11px] mb-[31px]">
                             <button class="p-[12px_19px_12px_19px] btn-catalog group"><span class="opacity-20 group-hover:opacity-100 btn-link__text">Вы в группе из 4-х человек</span></button>
@@ -397,8 +401,8 @@
             </div>
     </section>
     <section class="mb-[60px] md:mb-[300px]">
-            <div class="container flex-col sm:flex-row flex ">
-                <div class="hidden sm:flex max-w-[450px] flex-col basis-[400px] pr-[20px] gap-y-[60px]">
+            <div class="container flex-col sm:flex-row flex sm:border-t sm:border-[#242424]">
+                <div class="hidden sm:flex max-w-[450px] flex-col basis-[400px] pr-[20px] gap-y-[60px] sm:pt-[40px]">
                         <div id="gun">
                             <h2 class="text-white text-2xl font-medium leading-[28px] uppercase mb-8">Пистолеты</h2>
                             <div class="flex flex-col mb-[32px]">
@@ -473,7 +477,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="flex flex-col max-w-full sm:max-w-[60%] lg:max-w-[80%] sm:pl-[20px] lg:pl-[32px] sm:border-l sm:border-l-[#242424]">
+                <div class="flex flex-col max-w-full sm:max-w-[60%] lg:max-w-[80%] sm:pl-[20px] lg:pl-[32px] sm:pt-[40px] sm:border-l sm:border-l-[#242424]">
                         <div class="w-[104px] py-[9.5px] px-8 bg-[rgba(255,_255,_255,_0.11)] text-white mb-[24px]">Легко</div>
                         <div class="flex flex-col gap-y-8 lg:gap-y-0 lg:flex-row items-start lg:items-center mb-[100px]">
                             <div class="flex flex-col lg:basis-[550px] xl:basis-[698px] gap-y-[42px]">
