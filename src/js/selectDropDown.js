@@ -1,4 +1,4 @@
-export const SelectDropDown = () => {
+export const SelectDropDown = (render) => {
     const dropdowns = document.querySelectorAll('.selectCustom');
 
     dropdowns.forEach(dropDown => {

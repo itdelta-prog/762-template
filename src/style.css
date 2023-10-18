@@ -130,6 +130,14 @@
     @apply bg-[#B8AA91] transition-all text-[#0F0F0F] border-none opacity-100 hover:text-[#0F0F0F] hover:border-none;
   }
 
+  .btnService.active {
+    @apply bg-[#B9AB91] after:opacity-0 before:opacity-0 hover:text-[#0F0F0F] hover:border-none
+  }
+
+  .btnService.active span {
+    @apply text-white
+  }
+
   .all-course {
     @apply h-0 translate-y-0 opacity-0 invisible flex flex-col gap-y-[20px];
   }
@@ -207,7 +215,7 @@
   }
 
   .menu {
-    @apply py-3  bg-[#0F0F0F] absolute border border-[#2F2F2F] transition-[0.2s]  z-[99999] shadow-[0px_43px_26px_0px_rgba(0,_0,_0,_0.37)] text-white top-[56px] left-[50%] w-full -translate-x-2/4 opacity-0 invisible
+    @apply py-3 bg-[#1A1A19] absolute border border-[#2F2F2F] transition-[0.2s]  z-[99999] shadow-[0px_43px_26px_0px_rgba(0,_0,_0,_0.37)] text-white top-[56px] left-[50%] w-full -translate-x-2/4 opacity-0 invisible
   }
 
   .menu li {

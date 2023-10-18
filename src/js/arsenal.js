@@ -3,6 +3,21 @@ import {Tabs} from "./tabs.js";
 import {SelectDropDown, DropDownMenu} from "./selectDropDown.js";
 
 const formGung = document.getElementById('gungForm');
+
+
+
+const state = {
+    weekDay: '',
+    quantityPerson: 1,
+    quantityPatron: 0,
+    instructor: false,
+    galleryRental: false,
+}
+
+function render() {
+    console.log(state);
+}
+
 const shortCurrent = () => {
     const shortWrapper = document.querySelector('.current-shot');
     const contentShort = document.querySelector('.btnContent');
@@ -10,11 +25,11 @@ const shortCurrent = () => {
     let shortActive = undefined;
     function shortPrice(short) {
 
-        if(short?.dataset.minus) {
-           return contentShort.innerHTML = `${shortValues - Number(short.dataset.minus)} выстрелов`;
+        if(short?.classList.contains('btnMinus')) {
+           return contentShort.innerHTML = `${shortValues + Number(short.dataset.pattron)} выстрелов`;
         }
-        if(short?.dataset.plus) {
-          return  contentShort.innerHTML = `${shortValues + Number(short.dataset.plus)} выстрелов`;
+        if(short?.classList.contains('btnPlus')) {
+          return  contentShort.innerHTML = `${shortValues + Number(short.dataset.pattron)} выстрелов`;
         }
         else {
           return contentShort.innerHTML = `${shortValues} выстрелов`;
@@ -34,7 +49,9 @@ const shortCurrent = () => {
                 shortActive.classList.add('shortActive')
             }
 
-            shortPrice(shortActive)
+            shortPrice(shortActive);
+            state.quantityPatron = Number(shortActive?.dataset.pattron);
+            render();
         }
     })
 }
@@ -48,9 +65,27 @@ const personShort = () => {
             }
             activeElement = eve.target;
             activeElement.classList.add('person-active');
+            state.quantityPerson = Number(activeElement.dataset.person);
+            render();
         }
     })
 }
+
+
+const addSerice = () => {
+    const ServiceWrapper = document.getElementById('addService');
+
+    ServiceWrapper.addEventListener('click', (eve) => {
+
+        if(eve.target.closest(".btnService")) {
+            eve.target.closest(".btnService").classList.toggle('active');
+           // eve.target.classList.toggle('active');
+        }
+    })
+}
+
+
+
 formGung.addEventListener('click', (eve) => {
     eve.preventDefault();
 });
@@ -150,6 +185,7 @@ Tabs('.tabs__visits', '.tabs__head', '.tabs__body', '.tabs__caption', 'tabs__cap
 SelectDropDown();
 personShort();
 shortCurrent();
+addSerice();
 
 DropDownMenu(document.getElementById('gun'));
 DropDownMenu(document.getElementById('rifle'));
