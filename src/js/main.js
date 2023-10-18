@@ -1,6 +1,7 @@
 import './script.js';
 import './filterCourse.js';
 import {Tabs} from "./tabs.js";
+import {modal} from "./selectDropDown.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -58,6 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
       prevEl: ".myGallerey-custom-prev",
     },
   });
+
+  document.getElementById('gungs').addEventListener('click', (eve) => {
+    if(eve.target.classList.contains('btn')) {
+      modal()
+    }
+  })
 
   Tabs('.galleries__tabs', '.tabs__head', '.tabs__body', '.tabs__caption', 'tabs__caption_active', 'tabs__content_active');
   Tabs('.route__tabs', '.tabs__head', '.tabs__body', '.tabs__caption', 'tabs__caption_active', 'tabs__content_active');

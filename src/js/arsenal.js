@@ -2,10 +2,6 @@ import './script.js';
 import {Tabs} from "./tabs.js";
 import {SelectDropDown, DropDownMenu} from "./selectDropDown.js";
 
-const formGung = document.getElementById('gungForm');
-
-
-
 const state = {
     weekDay: '',
     quantityPerson: 1,
@@ -13,10 +9,11 @@ const state = {
     instructor: false,
     galleryRental: false,
 }
+const formGung = document.getElementById('gungForm');
+let dataForm = await fetch('https://api.npoint.io/71069c0e944df9208ca9');
+let result = await dataForm.json();
 
-function render() {
-    console.log(state);
-}
+console.log(result);
 
 const shortCurrent = () => {
     const shortWrapper = document.querySelector('.current-shot');
@@ -26,13 +23,13 @@ const shortCurrent = () => {
     function shortPrice(short) {
 
         if(short?.classList.contains('btnMinus')) {
-           return contentShort.innerHTML = `${shortValues + Number(short.dataset.pattron)} выстрелов`;
+            return contentShort.innerHTML = `${shortValues + Number(short.dataset.pattron)} выстрелов`;
         }
         if(short?.classList.contains('btnPlus')) {
-          return  contentShort.innerHTML = `${shortValues + Number(short.dataset.pattron)} выстрелов`;
+            return  contentShort.innerHTML = `${shortValues + Number(short.dataset.pattron)} выстрелов`;
         }
         else {
-          return contentShort.innerHTML = `${shortValues} выстрелов`;
+            return contentShort.innerHTML = `${shortValues} выстрелов`;
         }
     }
 
@@ -70,8 +67,6 @@ const personShort = () => {
         }
     })
 }
-
-
 const addSerice = () => {
     const ServiceWrapper = document.getElementById('addService');
 
@@ -79,9 +74,13 @@ const addSerice = () => {
 
         if(eve.target.closest(".btnService")) {
             eve.target.closest(".btnService").classList.toggle('active');
-           // eve.target.classList.toggle('active');
+            // eve.target.classList.toggle('active');
         }
     })
+}
+
+function render() {
+    console.log(state);
 }
 
 

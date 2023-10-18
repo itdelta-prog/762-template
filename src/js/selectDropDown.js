@@ -49,5 +49,9 @@ export const DropDownMenu = (menuElement) => {
                             </svg>`;
         }
     })
+}
 
+export const modal = () => {
+   const modalWrapper = document.querySelector('.modalReserve');
+   modalWrapper.classList.add('active');
 }

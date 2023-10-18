@@ -157,6 +157,14 @@
   .all-btn.active svg {
     @apply rotate-[182deg] transition-all;
   }
+
+  .modalReserve {
+    @apply fixed top-0 -right-full z-[9999] w-[380px] h-full bg-[#131313] py-4 px-5 transition-all
+  }
+
+  .modalReserve.active {
+    @apply right-0
+  }
 }
 
 
