@@ -10,10 +10,8 @@ const state = {
     galleryRental: false,
 }
 const formGung = document.getElementById('gungForm');
-let dataForm = await fetch('https://api.npoint.io/71069c0e944df9208ca9');
-let result = await dataForm.json();
 
-console.log(result);
+
 
 const shortCurrent = () => {
     const shortWrapper = document.querySelector('.current-shot');
