@@ -13,7 +13,7 @@ export default {
     },
 
     screens: {
-      '3xl': '1700px',
+      '3xl': '1742px',
       'desk': '1650px',
       ...defaultTheme.screens
     },
