@@ -11,6 +11,12 @@
 }
 
 @font-face {
+  font-family: GrtskTera;
+  src: url(font/TRYGrtsk-MediumTera.ttf);
+  font-weight: 500;
+}
+
+@font-face {
   font-family: Grtsk;
   src: url(font/TRYGrtsk-SemiBoldTera.ttf);
   font-weight: 600;
