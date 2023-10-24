@@ -1,9 +1,9 @@
+const ddd = 111;
 import './script.js';
-import {Tabs} from "./tabs.js";
 import {SelectDropDown, DropDownMenu} from "./selectDropDown.js";
+import './react_jsx.js';
 
-const formGung = document.getElementById('gungForm');
-let dataForm = `{
+var dataForm = `{
     "weekend":{
         "basicCost":{
             "price":"95000",
@@ -12,7 +12,8 @@ let dataForm = `{
         "costOfShots":{
             "price":"35000",
             "salesPrice":"800000"
-        }
+        },
+        "personalGallery":"12000"
     },
     "weekdays":{
         "basicCost":{
@@ -22,13 +23,12 @@ let dataForm = `{
         "costOfShots":{
             "price":"55000",
             "salesPrice":"100000"
-        }
+        },
+        "personalGallery":"12000"
     },
-    "personalGallery":"12000",
     "personalInstructor":"15000"
 }`;
 let dataResult  = JSON.parse(dataForm)
-
 
 const state = {
     weekDay: 'weekdays',
@@ -39,10 +39,6 @@ const state = {
     instructorPrice: 0,
     galleryPrice: 0,
 }
-
-formGung.addEventListener('click', (eve) => {
-    eve.preventDefault();
-});
 
 function totalAmout() {
     const totalElement = document.querySelectorAll('.totalAmout');
@@ -146,9 +142,14 @@ const personShort = () => {
     })
 }
 const addSerice = () => {
-    const ServiceWrapper = document.getElementById('addService');
+    const serviceWrapper = document.getElementById('addService');
     const select = document.querySelector('.selectCustom');
-    ServiceWrapper.addEventListener('click', (eve) => {
+    const instructor = serviceWrapper.querySelector('[data-instructor="price"]');
+    const gallerey = serviceWrapper.querySelector('[data-gallery="price"]');
+
+    instructor.textContent = `+${dataResult.personalInstructor} р.`;
+    gallerey.textContent = `+${dataResult[state.weekDay].personalGallery} р.`
+    serviceWrapper.addEventListener('click', (eve) => {
         if(eve.target.closest(".btnService")) {
             eve.target.closest(".btnService").classList.toggle('tabs__caption_active');
             if(eve.target.closest(".btnService").dataset.personal === 'instructor') {
@@ -164,7 +165,7 @@ const addSerice = () => {
 
             if(eve.target.closest(".btnService").dataset.personal === 'gallery') {
                 if(!state.galleryPrice) {
-                    state.galleryPrice = Number(dataResult.personalGallery);
+                    state.galleryPrice = Number(dataResult[state.weekDay].personalGallery);
                 }
                 else {
                     state.galleryPrice = 0
@@ -210,6 +211,8 @@ const modalReserv = () => {
             modalWrapper.classList.remove('active');
         }
     });
+
+
 
     const calendar = new VanillaCalendar('#calendar', {
         settings: {
@@ -261,7 +264,6 @@ const modalReserv = () => {
 };
 
 totalAmout();
-Tabs('.tabs__visits', '.tabs__head', '.tabs__body', '.tabs__caption', 'tabs__caption_active', 'tabs__content_active')
 
 getInstrucotor();
 
@@ -270,103 +272,12 @@ personShort();
 modalReserv();
 addSerice();
 days();
-let myArsenal = new Swiper(".myArsenal", {
-    slidesPerView: "auto",
-    spaceBetween: 6,
-
-    breakpoints: {
-        500: {
-            spaceBetween: 20
-        }
-    },
-    //slidesPerView: 6,
-    navigation: {
-        nextEl: ".myArsenal-custom-next",
-        prevEl: ".myArsenal-custom-prev",
-        lockClass: false
-    },
-    pagination: {
-        el: ".swiper-pagination__custom",
-        type: "progressbar",
-    },
-});
-let imageGang = new Swiper(".imageGang", {
-    slidesPerView: 1,
-    spaceBetween: 15,
-    pagination: {
-        el: ".imageGang-pagination",
-        type: "custom",
-        renderCustom: function (swiper, current, total) {
-            return `<span class="text-white">0${current}</span> <span class="text-[rgba(255,_255,_255,_0.30)]">/ 0${total}</span>`;
-        }
-    },
-    navigation: {
-        nextEl: ".imageGang-button-next",
-        prevEl: ".imageGang-button-prev",
-    },
-});
-
-let GungSlider = new Swiper(".GungSlider", {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    breakpoints: {
-        1416: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-        },
-
-        970: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-        },
-
-        500: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-        }
-
-    },
-    pagination: {
-        el: ".swiper-pagination__custom",
-        type: "progressbar",
-    },
-    navigation: {
-        nextEl: ".myGung-custom-next",
-        prevEl: ".myGung-custom-prev",
-        lockClass: false
-    }
-})
-
-let InstructorSlider = new Swiper(".InstructorSlider", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-
-    breakpoints: {
-        1500: {
-            slidesPerView: 4,
-        },
-
-        970: {
-            slidesPerView: 3
-        },
-
-        500: {
-            slidesPerView: 2
-        }
-    },
-    pagination: {
-        el: ".swiper-pagination__custom",
-        type: "progressbar",
-    },
 
 
-    navigation: {
-        nextEl: ".InstructorSlider-custom-next",
-        prevEl: ".InstructorSlider-custom-prev",
-        lockClass: false
-    }
-});
-
+const getCourse = async(id) => {
+    const resp = await fetch(`https://651e822d44a3a8aa47687cb1.mockapi.io/program/${id}`).then(res => res.json());
+    console.log(resp);
+}
 
 const selectCourse = () => {
     const courseWrapper = document.querySelectorAll('.gunCourse');
@@ -389,3 +300,106 @@ selectCourse()
 DropDownMenu(document.getElementById('gun'));
 DropDownMenu(document.getElementById('rifle'));
 DropDownMenu(document.getElementById('carabin'));
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    let myArsenal = new Swiper(".myArsenal", {
+        slidesPerView: "auto",
+        spaceBetween: 6,
+
+        breakpoints: {
+            500: {
+                spaceBetween: 20
+            }
+        },
+        //slidesPerView: 6,
+        navigation: {
+            nextEl: ".myArsenal-custom-next",
+            prevEl: ".myArsenal-custom-prev",
+            lockClass: false
+        },
+        pagination: {
+            el: ".swiper-pagination__custom",
+            type: "progressbar",
+        },
+    });
+    let imageGang = new Swiper(".imageGang", {
+        slidesPerView: 1,
+        spaceBetween: 15,
+        pagination: {
+            el: ".imageGang-pagination",
+            type: "custom",
+            renderCustom: function (swiper, current, total) {
+                return `<span class="text-white">0${current}</span> <span class="text-[rgba(255,_255,_255,_0.30)]">/ 0${total}</span>`;
+            }
+        },
+        navigation: {
+            nextEl: ".imageGang-button-next",
+            prevEl: ".imageGang-button-prev",
+        },
+    });
+
+    let GungSlider = new Swiper(".GungSlider", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        breakpoints: {
+            1416: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            },
+
+            970: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+
+            500: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            }
+
+        },
+        pagination: {
+            el: ".swiper-pagination__custom",
+            type: "progressbar",
+        },
+        navigation: {
+            nextEl: ".myGung-custom-next",
+            prevEl: ".myGung-custom-prev",
+            lockClass: false
+        }
+    })
+
+    let InstructorSlider = new Swiper(".InstructorSlider", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+
+        breakpoints: {
+            1500: {
+                slidesPerView: 4,
+            },
+
+            970: {
+                slidesPerView: 3
+            },
+
+            500: {
+                slidesPerView: 2
+            }
+        },
+        pagination: {
+            el: ".swiper-pagination__custom",
+            type: "progressbar",
+        },
+
+
+        navigation: {
+            nextEl: ".InstructorSlider-custom-next",
+            prevEl: ".InstructorSlider-custom-prev",
+            lockClass: false
+        }
+    });
+
+    totalAmout();
+    days();
+})
