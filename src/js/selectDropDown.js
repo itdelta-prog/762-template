@@ -1,6 +1,7 @@
 export const SelectDropDown = (render) => {
     const dropdowns = document.querySelectorAll('.selectCustom');
 
+    console.log(dropdowns);
     dropdowns.forEach(dropDown => {
         const select = dropDown.querySelector('.select');
         const caret = dropDown.querySelector('.caret');

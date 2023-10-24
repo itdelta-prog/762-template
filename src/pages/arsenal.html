@@ -418,19 +418,19 @@
                         <div class="flex flex-col gap-y-[11px] mb-[31px]">
 <!--                            <button class="p-[12px_19px_12px_19px] btn-catalog group"><span class="opacity-20 group-hover:opacity-100 btn-link__text">Вы в группе из 4-х человек</span></button>-->
                             <div id="addService" class="flex flex-col gap-y-5">
-                                <button data-personal="instructor" class="p-[12px_19px_12px_19px] btn-catalog flex justify-between group btnService"><span class="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text">Персональный инструктор</span><span class="text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">+7 500 р.</span></button>
-                                <div class="selectCustom disabled">
+                                <button data-personal="instructor" class="p-[12px_19px_12px_19px] after:w-[calc(100%_-_10%)] btn-catalog group flex justify-between btnService"><span class="text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">Персональный инструктор</span><span class="text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">+7 500 р.</span></button>
+                                <div id="instructor" class="selectCustom disabled">
                                     <div class="select">
-                                        <span class="selected">gdfgf</span>
+                                        <span class="selected">Выбрать инструктора</span>
                                         <div class="caret"></div>
                                     </div>
                                     <ul class="menu h-[200px] scrollCustom overflow-y-scroll">
                                         <li>Framer</li>
-                                        <li class="active">Sketch</li>
+                                        <li>Sketch</li>
                                         <li>Figma</li>
                                     </ul>
                                 </div>
-                                <button data-personal="gallery" class="p-[12px_19px_12px_19px] btn-catalog flex justify-between group btnService"><span class="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text">Персональная галерея </span><span class="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text">+7500р.</span></button>
+                                <button data-personal="gallery" class="p-[12px_19px_12px_19px] after:w-[calc(100%_-_10%)] btn-catalog flex justify-between group btnService"><span class="text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">Персональная галерея </span><span class="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text">+7500р.</span></button>
                             </div>
                         </div>
                         <div class="flex justify-between items-center mb-[21px]">
@@ -450,7 +450,7 @@
                 <h6 class="text-white text-[18px]">Выберите дату посещения:</h6>
                 <div id="calendar" class="mb-[20px]"></div>
                 <h6 class="text-white text-[18px] mb-4">Выберите время:</h6>
-                <div id="time" class="grid grid-cols-5  gap-x-5">
+                <div id="time" class="grid grid-cols-5 gap-x-5">
                     <button class="btnTime">9:00</button>
                     <button class="btnTime">10:00</button>
                     <button class="btnTime">11:00</button>
@@ -464,21 +464,21 @@
                     <button class="btnTime">19:00</button>
                     <button class="btnTime">20:00</button>
                 </div>
-                <div>
+                <div class="mb-16">
                     <input type="text" placeholder="ФИО" class="w-full py-[20px] border-b border-[#3A3A3A] bg-transparent outline-none ring-offset-0 placeholder-[#878787] text-[#878787] text-[16px]">
                     <input type="text" placeholder="Номер телефона" class="w-full py-[20px] border-b border-[#3A3A3A] bg-transparent outline-none ring-offset-0 placeholder-[#878787] text-[#878787] text-[16px]">
                     <input type="text" placeholder="E-mail" class="w-full py-[20px] border-b border-[#3A3A3A] bg-transparent outline-none ring-offset-0 placeholder-[#878787] text-[#878787] text-[16px]">
                 </div>
-                <div class="bg-[#1C1C1A] px-[17px]">
-                    <div class="flex justify-between items-center">
-                        <p>Итого:</p>
-                        <p>25 000 ₽</p>
+                <div class="bg-[#1C1C1A] px-[17px] py-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <p class="text-white text-[18px] font-normal">Итого</p>
+                        <p class="text-white text-[18px] font-normal totalAmout">25 000 ₽</p>
                     </div>
-                    <div class="flex  gap-x-6 items-center">
+                    <div class="flex justify-between items-center">
                         <button class="btn-catalog basis-[140px] px-[15px]"><span
-                                class="btn-link__text text-[13px]">Забронировать</span></button>
+                                class="btn-link__text text-sm">Забронировать</span></button>
                         <button class="btn-catalog basis-[145px]"><span
-                                class="btn-link__text text-[13px]">Оплатить</span></button>
+                                class="btn-link__text text-sm">Оплатить</span></button>
                     </div>
                 </div>
             </div>
@@ -487,17 +487,19 @@
             <div class="container flex-col sm:flex-row flex sm:border-t sm:border-[#242424] lg:px-6 3xl:px-0">
                 <div class="hidden sm:flex max-w-[450px] flex-col basis-[400px] pr-[20px] gap-y-[60px] sm:pt-[40px]">
                         <div id="gun">
-                            <h2 class="text-white text-2xl font-['GrtskTera']  leading-[28px] uppercase mb-8">Пистолеты</h2>
+                            <h2 class="text-white text-2xl font-['GrtskTera'] leading-[28px] uppercase mb-8">Пистолеты</h2>
                             <div class="flex flex-col mb-[32px]">
-                                <div class="flex flex-col gap-y-[20px] mb-[20px]">
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</p>
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Обучение тренеров-инструкторов по пулевой стрельбе</p>
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</p>
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</p>
-                                </div>
-                                <div class="all-course" data-all="gun" style="transition: height .1s, opacity .2s, visibility .2s">
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</p>
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</p>
+                                <div class="gunCourse">
+                                    <div class="flex flex-col gap-y-[20px] mb-[20px]">
+                                        <p class="course-text active">Первый выстрел</p>
+                                        <p class="course-text">Обучение тренеров-инструкторов по пулевой стрельбе</p>
+                                        <p class="course-text">Первый выстрел</p>
+                                        <p class="course-text">КС Полицейский Пистолет</p>
+                                    </div>
+                                    <div class="all-course" data-all="gun" style="transition: height .1s, opacity .2s, visibility .2s">
+                                        <p class="course-text">Первый выстрел</p>
+                                        <p class="course-text">КС Полицейский Пистолет</p>
+                                    </div>
                                 </div>
                                 <button  class="all-btn">Все курсы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
                                     <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
@@ -507,15 +509,17 @@
                         <div id="rifle">
                             <h2 class="text-white text-2xl font-['GrtskTera'] leading-[28px] uppercase mb-8">РУЖЬЕ</h2>
                             <div class="flex flex-col mb-[32px]">
-                                <div class="flex flex-col gap-y-[20px] mb-[20px]">
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Безопасное обращение с оружием</p>
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Обучение тренеров-инструкторов по пулевой стрельбе</p>
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</p>
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</p>
-                                </div>
-                                <div class="all-course" data-all="gun" style="transition: height .1s, opacity .2s, visibility .2s">
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</p>
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</p>
+                                <div class="gunCourse">
+                                    <div class="flex flex-col gap-y-[20px] mb-[20px]">
+                                        <p class="course-text">Безопасное обращение с оружием</p>
+                                        <p class="course-text">Обучение тренеров-инструкторов по пулевой стрельбе</p>
+                                        <p class="course-text">Первый выстрел</p>
+                                        <p class="course-text">КС Полицейский Пистолет</p>
+                                    </div>
+                                    <div class="all-course" data-all="gun" style="transition: height .1s, opacity .2s, visibility .2s">
+                                        <p class="course-text">Первый выстрел</p>
+                                        <p class="course-text">КС Полицейский Пистолет</p>
+                                    </div>
                                 </div>
                                 <button  class="all-btn">Все курсы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
                                     <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
@@ -525,15 +529,17 @@
                         <div id="carabin">
                             <h2 class="text-white text-2xl font-['GrtskTera'] leading-[28px] uppercase mb-8">Карабин</h2>
                             <div class="flex flex-col mb-[32px]">
-                                <div class="flex flex-col gap-y-[20px] mb-[20px]">
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Безопасное обращение с оружием</p>
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Обучение тренеров-инструкторов по пулевой стрельбе</p>
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</p>
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</p>
-                                </div>
-                                <div class="all-course" data-all="gun" style="transition: height .1s, opacity .2s, visibility .2s">
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">Первый выстрел</p>
-                                    <p class="text-[18px] text-[rgba(255,_255,_255,_0.40)] leading-5">КС Полицейский Пистолет</p>
+                                <div class="gunCourse">
+                                    <div class="flex flex-col gap-y-[20px] mb-[20px]">
+                                        <p class="course-text">Безопасное обращение с оружием</p>
+                                        <p class="course-text">Обучение тренеров-инструкторов по пулевой стрельбе</p>
+                                        <p class="course-text">Первый выстрел</p>
+                                        <p class="course-text">КС Полицейский Пистолет</p>
+                                    </div>
+                                    <div class="all-course" data-all="gun" style="transition: height .1s, opacity .2s, visibility .2s">
+                                        <p class="course-text">Первый выстрел</p>
+                                        <p class="course-text">КС Полицейский Пистолет</p>
+                                    </div>
                                 </div>
                                 <button class="all-btn">Все курсы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
                                     <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
@@ -560,7 +566,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="flex flex-col max-w-full sm:max-w-[60%] lg:max-w-[80%] sm:pl-[20px] lg:pl-[32px] sm:pt-[40px] sm:border-l sm:border-l-[#242424]">
+                <div class="flex flex-col max-w-full sm:max-w-[60%] lg:max-w-[78%] sm:pl-[20px] lg:pl-[32px] sm:pt-[40px] sm:border-l sm:border-l-[#242424]">
                         <div class="w-[104px] py-[9.5px] px-8 bg-[rgba(255,_255,_255,_0.11)] text-white mb-[24px]">Легко</div>
                         <div class="flex flex-col gap-y-8 lg:gap-y-0 lg:flex-row items-start lg:items-center mb-[24px] sm:mb-[100px]">
                             <div class="flex flex-col lg:basis-[550px] xl:basis-[698px] gap-y-[42px]">

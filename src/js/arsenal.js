@@ -3,8 +3,32 @@ import {Tabs} from "./tabs.js";
 import {SelectDropDown, DropDownMenu} from "./selectDropDown.js";
 
 const formGung = document.getElementById('gungForm');
-let dataForm = await fetch('https://api.npoint.io/6b73b75f264d090dc7e4');
-let dataResult  = await dataForm.json();
+let dataForm = `{
+    "weekend":{
+        "basicCost":{
+            "price":"95000",
+            "salesPrice":"34000"
+        },
+        "costOfShots":{
+            "price":"35000",
+            "salesPrice":"800000"
+        }
+    },
+    "weekdays":{
+        "basicCost":{
+            "price":"85000",
+            "salesPrice":""
+        },
+        "costOfShots":{
+            "price":"55000",
+            "salesPrice":"100000"
+        }
+    },
+    "personalGallery":"12000",
+    "personalInstructor":"15000"
+}`;
+let dataResult  = JSON.parse(dataForm)
+
 
 const state = {
     weekDay: 'weekdays',
@@ -19,6 +43,14 @@ const state = {
 formGung.addEventListener('click', (eve) => {
     eve.preventDefault();
 });
+
+function totalAmout() {
+    const totalElement = document.querySelectorAll('.totalAmout');
+
+    let sum = state.basicCost * state.quantityPerson + state.instructorPrice + state.galleryPrice;
+    totalElement.forEach(el => el.textContent = `${sum} р.`)
+    console.log(state)
+}
 
 
 const days = () => {
@@ -59,7 +91,6 @@ const days = () => {
     })
 }
 
-days();
 
 const shortCurrent = () => {
     const shortWrapper = document.querySelector('.current-shot');
@@ -99,7 +130,6 @@ const shortCurrent = () => {
     })
 }
 
-console.log(dataResult);
 const personShort = () => {
     const personWrapper = document.querySelector('.person');
     let activeElement = document.querySelector('.person-active');
@@ -120,7 +150,7 @@ const addSerice = () => {
     const select = document.querySelector('.selectCustom');
     ServiceWrapper.addEventListener('click', (eve) => {
         if(eve.target.closest(".btnService")) {
-            eve.target.closest(".btnService").classList.toggle('active');
+            eve.target.closest(".btnService").classList.toggle('tabs__caption_active');
             if(eve.target.closest(".btnService").dataset.personal === 'instructor') {
                 select.classList.toggle('disabled');
 
@@ -145,14 +175,19 @@ const addSerice = () => {
     });
 }
 
-function totalAmout() {
-    const totalElement = document.querySelector('.totalAmout');
-
-    let sum = state.basicCost * state.quantityPerson + state.instructorPrice + state.galleryPrice;
-    totalElement.textContent = `${sum} р.`
-    console.log(state)
+const getInstrucotor = async() => {
+    const wrapperSelect = document.getElementById('instructor');
+    const bodyInstructor = wrapperSelect.querySelector('.menu');
+    let response = await fetch('https://651e822d44a3a8aa47687cb1.mockapi.io/instrucotr')
+    let data;
+    if(response.ok) {
+        data = await response.json();
+        data.forEach((item) => {
+            bodyInstructor.innerHTML += `<li>${item.first_name} ${item.last_name}</li>`
+        });
+    }
+    SelectDropDown();
 }
-totalAmout();
 
 const modalReserv = () => {
     const btn = document.querySelector('.btnReserve');
@@ -223,16 +258,18 @@ const modalReserv = () => {
             console.log(activeTime)
         }
     })
-}
+};
 
- modalReserv();
-
+totalAmout();
 Tabs('.tabs__visits', '.tabs__head', '.tabs__body', '.tabs__caption', 'tabs__caption_active', 'tabs__content_active')
-SelectDropDown();
+
+getInstrucotor();
+
 personShort();
 // shortCurrent();
+modalReserv();
 addSerice();
-
+days();
 let myArsenal = new Swiper(".myArsenal", {
     slidesPerView: "auto",
     spaceBetween: 6,
@@ -329,6 +366,25 @@ let InstructorSlider = new Swiper(".InstructorSlider", {
         lockClass: false
     }
 });
+
+
+const selectCourse = () => {
+    const courseWrapper = document.querySelectorAll('.gunCourse');
+    let activeCourse = document.querySelector('.course-text')
+    courseWrapper.forEach((bodyCourse) => {
+        bodyCourse.addEventListener('click', (eve) => {
+           if(eve.target.closest('.course-text')) {
+               if(activeCourse) {
+                   activeCourse.classList.remove('active');
+               }
+               activeCourse = eve.target;
+               activeCourse.classList.add('active');
+           }
+           console.log(activeCourse);
+        })
+    })
+}
+selectCourse()
 
 DropDownMenu(document.getElementById('gun'));
 DropDownMenu(document.getElementById('rifle'));
