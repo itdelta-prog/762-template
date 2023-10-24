@@ -31,7 +31,6 @@ export const SelectDropDown = (render) => {
 }
 
 export const DropDownMenu = (menuElement) => {
-    console.log(menuElement)
     const btnAll = menuElement.querySelector('.all-btn');
     const hiddenMenu = menuElement.querySelector('[data-all="gun"]');
 
@@ -51,7 +50,7 @@ export const DropDownMenu = (menuElement) => {
     })
 }
 
-export const modal = () => {
-   const modalWrapper = document.querySelector('.modalReserve');
-   modalWrapper.classList.add('active');
-}
+// export const modal = () => {
+//    const modalWrapper = document.querySelector('.modalReserve');
+//    modalWrapper.classList.add('active');
+// }

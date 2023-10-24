@@ -1,9 +1,24 @@
 import './script.js';
 import './filterCourse.js';
 import {Tabs} from "./tabs.js";
-import {modal} from "./selectDropDown.js";
 
 document.addEventListener('DOMContentLoaded', () => {
+
+
+  const customSwiper = (pagEl) => {
+    let activeElement = pagEl.querySelector('.swiper-pagination-bullet-active');
+    let element = [...pagEl.querySelectorAll('.swiper-pagination-bullet')];
+    let indexActive = element.indexOf(activeElement);
+
+    element.forEach((item, idx) => {
+      if (indexActive + 1 !== idx && indexActive - 1 !== idx && indexActive !== idx) {
+        item.classList.add('acti');
+      }
+      else {
+        item.classList.remove('acti');
+      }
+    });
+  }
 
   let swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
@@ -38,19 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  swiper.on('paginationRender', function (swiper, paginationEl) {
-    let activeElement = paginationEl.querySelector('.swiper-pagination-bullet-active');
-    let element = [...paginationEl.querySelectorAll('.swiper-pagination-bullet')];
-    let indexActive = element.indexOf(activeElement);
+  customSwiper(swiper.pagination.el);
 
-    element.forEach((item, idx) => {
-      if (indexActive + 1 !== idx && indexActive - 1 !== idx && indexActive !== idx) {
-        item.classList.add('acti');
-      }
-      else {
-        item.classList.remove('acti');
-      }
-    });
+  swiper.on('paginationRender', function (swiper, paginationEl) {
+    customSwiper(paginationEl);
   });
 
   let myGallerey = new Swiper(".myGallerey", {
@@ -60,11 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  document.getElementById('gungs').addEventListener('click', (eve) => {
-    if(eve.target.classList.contains('btn')) {
-      modal()
-    }
-  })
+  // document.getElementById('gungs').addEventListener('click', (eve) => {
+  //   if(eve.target.classList.contains('btn')) {
+  //     // modal()
+  //   }
+  // })
 
   Tabs('.galleries__tabs', '.tabs__head', '.tabs__body', '.tabs__caption', 'tabs__caption_active', 'tabs__content_active');
   Tabs('.route__tabs', '.tabs__head', '.tabs__body', '.tabs__caption', 'tabs__caption_active', 'tabs__content_active');

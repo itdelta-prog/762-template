@@ -19,7 +19,6 @@ btnBurger.addEventListener("click", (eve) => {
 dropDown.addEventListener('click', () => {
     dropDownMenu.classList.toggle('hidden');
 });
-
 document.addEventListener('click', (e) => {
     const withinBoundaries = e.composedPath().includes(dropDownMenu.parentElement);
     if (!withinBoundaries) {
