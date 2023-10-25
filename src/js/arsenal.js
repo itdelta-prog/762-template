@@ -1,7 +1,7 @@
-const ddd = 111;
+// import './FormReservation.jsx';
 import './script.js';
 import {SelectDropDown, DropDownMenu} from "./selectDropDown.js";
-import './react_jsx.js';
+
 
 var dataForm = `{
     "weekend":{
@@ -275,23 +275,44 @@ days();
 
 
 const getCourse = async(id) => {
-    const resp = await fetch(`https://651e822d44a3a8aa47687cb1.mockapi.io/program/${id}`).then(res => res.json());
-    console.log(resp);
+    const resp = await fetch(`https://651e822d44a3a8aa47687cb1.mockapi.io/program/${id}`).then((res) => {
+        if(res.ok) {
+            return res.json();
+        }
+    });
+    if(resp) fillingCouse(resp);
+
+}
+
+const fillingCouse = (resp) => {
+    const title = document.querySelector('[data-title]');
+   const description = document.querySelector('[data-desc]');
+   const properties = document.querySelector('[data-properties]');
+    const image = document.querySelector('[data-image]');
+    const progressBar = document.querySelector('[data-progress="bar"]');
+    const progressValue = document.querySelector('[data-progress="value"]');
+
+   title.textContent = resp.title;
+   description.innerHTML = resp.description;
+   properties.innerHTML = resp.characteristic;
+   image.src = resp.image;
+   progressValue.textContent = resp.progress + '%';
+   progressBar.style.width = `${resp.progress + '%'}`
 }
 
 const selectCourse = () => {
     const courseWrapper = document.querySelectorAll('.gunCourse');
     let activeCourse = document.querySelector('.course-text')
     courseWrapper.forEach((bodyCourse) => {
-        bodyCourse.addEventListener('click', (eve) => {
+        bodyCourse.addEventListener('click', async(eve) => {
            if(eve.target.closest('.course-text')) {
                if(activeCourse) {
                    activeCourse.classList.remove('active');
                }
                activeCourse = eve.target;
+               getCourse(Number(activeCourse.dataset?.courseId));
                activeCourse.classList.add('active');
            }
-           console.log(activeCourse);
         })
     })
 }

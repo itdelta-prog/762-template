@@ -498,10 +498,10 @@
                             <div class="flex flex-col mb-[32px]">
                                 <div class="gunCourse">
                                     <div class="flex flex-col gap-y-[20px] mb-[20px]">
-                                        <p class="course-text active">Первый выстрел</p>
-                                        <p class="course-text">Обучение тренеров-инструкторов по пулевой стрельбе</p>
-                                        <p class="course-text">Первый выстрел</p>
-                                        <p class="course-text">КС Полицейский Пистолет</p>
+                                        <p data-course-id="2" class="course-text active">Первый выстрел</p>
+                                        <p data-course-id="3" class="course-text">Обучение тренеров-инструкторов по пулевой стрельбе</p>
+                                        <p data-course-id="4" class="course-text">Первый выстрел</p>
+                                        <p data-course-id="5" class="course-text">КС Полицейский Пистолет</p>
                                     </div>
                                     <div class="all-course" data-all="gun" style="transition: height .1s, opacity .2s, visibility .2s">
                                         <p class="course-text">Первый выстрел</p>
@@ -555,7 +555,7 @@
                         </div>
                     </div>
                 <div class="sm:hidden mb-[80px]">
-                    <h2 class="text-3xl  leading-[36px] uppercase text-white mb-[20px] font-['GrtskTera']">каталог курсов</h2>
+                    <h2 class="text-3xl  leading-[36px] uppercase text-white mb-[20px] font-['GrtskTera'] -tracking-[2.4px]">каталог курсов</h2>
                     <div class="flex gap-x-5  overflow-scroll mb-3">
                         <button class="btn-primay" data-gun="pistol"><span class="btn-text">Пистолет</span></button>
                         <button class="btn-primay" data-gun="carbine"><span class="btn-text">Ружье</span></button>
@@ -577,38 +577,40 @@
                         <div class="w-[104px] py-[9.5px] px-8 bg-[rgba(255,_255,_255,_0.11)] text-white mb-[24px]">Легко</div>
                         <div class="flex flex-col gap-y-8 lg:gap-y-0 lg:flex-row items-start lg:items-center mb-[24px] sm:mb-[100px]">
                             <div class="flex flex-col lg:basis-[550px] xl:basis-[698px] gap-y-[42px]">
-                                <h2 class="text-3xl sm:text-[42px] leading-[36px] font-['GrtskTera'] sm:leading-[50px] uppercase text-white">Название курса <br> в две строчки</h2>
+                                <h2 class="text-3xl sm:text-[42px] leading-[36px] font-['GrtskTera'] sm:leading-[50px] uppercase text-white -tracking-[2.4px]" data-title>Название курса <br> в две строчки</h2>
                                 <div class="flex flex-col w-[320px] sm:w-[408px]">
                                     <div class="flex justify-between mb-2">
                                         <span class="text-[rgba(255,_255,_255,_0.40)] text-[12px] ">Пройдено</span>
-                                        <span class="text-[12px] text-white ">50%</span>
+                                        <span class="text-[12px] text-white font-medium" data-progress="value">50%</span>
                                     </div>
                                     <div class="w-full h-[5px] bg-[#222220]">
-                                        <span class="block w-[40%] h-[5px] bg-[#B9AB91]"></span>
+                                        <span class="block w-[40%] h-[5px] bg-[#B9AB91] transition-[.3s]" data-progress="bar"></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex flex-col lg:basis-[519px] sm:pr-4 lg:pr-0">
-                                <p class="text-base text-[rgba(255,_255,_255,_0.40)] font-normal leading-5 mb-[24px]">Описание Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+                            <div class="flex flex-col lg:basis-[519px] gap-y-[24px] sm:pr-4 lg:pr-0" data-desc>
+                                <p class="text-base text-[rgba(255,_255,_255,_0.40)] font-normal leading-5 ">Описание Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
                                 <p class="text-base text-[rgba(255,_255,_255,_0.40)] font-normal leading-5">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.</p>
                             </div>
                         </div>
                         <div class="flex flex-col max-w-[500px] lg:max-w-full lg:flex-row mb-[70px] sm:mb-[150px] gap-y-[20px] lg:gap-y-0 lg:gap-x-[28px]">
                             <div class="lg:basis-[635px]">
-                                <img src="/img/arsenalBg.png" alt="">
+                                <img src="/img/arsenalBg.png" data-image alt="">
                             </div>
                             <div class="flex  flex-col basis-[635px] px-[20px] pb-[20px] pt-[32px] sm:px-10 sm:pt-[81px] sm:pb-10 sm:bg-[url('/img/bgBlock.png')] sm:bg-no-repeat sm:bg-right-top bg-[#1A1A19]">
                                 <h2 class="max-w-[360px] font-medium text-white text-[30px] mb-[32px] uppercase leading-[36px]">В стоимость входит:</h2>
-                                <ul class="flex max-w-[338px] flex-col gap-y-[12px] list-square mb-[24px] ml-[20px] sm:ml-0">
-                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">100 выстрелов наодного стрелка</li>
-                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">инструктор</li>
-                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">аренда стрелковой галереи</li>
-                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">защитные очки и наушники</li>
-                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">разнообразные мишени</li>
-                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">сертификат о прохождении программы</li>
-                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">фотографии с занятия</li>
-                                    <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">парковка на территории клуба</li>
-                                </ul>
+                                <div data-properties>
+                                    <ul class="flex max-w-[338px] flex-col gap-y-[12px] list-square mb-[24px] ml-[20px] sm:ml-0">
+                                        <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">100 выстрелов наодного стрелка</li>
+                                        <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">инструктор</li>
+                                        <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">аренда стрелковой галереи</li>
+                                        <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">защитные очки и наушники</li>
+                                        <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">разнообразные мишени</li>
+                                        <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">сертификат о прохождении программы</li>
+                                        <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">фотографии с занятия</li>
+                                        <li class="text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)]">парковка на территории клуба</li>
+                                    </ul>
+                                </div>
                                 <div class=" flex flex-col mt-[23px] mb-[13px] sm:mb-[55px] justify-start  group items-start">
                                     <a href="#" class="text-white">Смотреть все</a>
                                     <div class="sm:w-0 transition-all w-[115px] sm:group-hover:w-[115px] h-[1px] bg-white"></div>
@@ -637,7 +639,7 @@
                         <div class="">
                             <div class="swiper w-full  ml-0 GungSlider pb-[30px] mb-[80px] sm:mb-[137px]">
                                 <div class="flex justify-between items-center mb-6 sm:mb-16">
-                                    <h2 class="max-w-[704px] text-[32px] text-white font-['GrtskTera'] leading-[72px] uppercase">Оружие</h2>
+                                    <h2 class="max-w-[704px] text-3xl text-white font-['GrtskTera'] leading-[72px] uppercase">Оружие</h2>
                                     <div class="hidden md:inline-flex p-6 gap-9 bg-[#1A1A19]">
                                         <button class="myGung-custom-prev disabled:opacity-10 transition-opacity">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
@@ -708,7 +710,7 @@
                         <div class="">
                             <div class="swiper w-full ml-0 InstructorSlider pb-[30px] mb-[137px]">
                                 <div class="flex justify-between items-center mb-16">
-                                    <h2 class="max-w-[350px] sm:max-w-[704px] text-[32px] text-white font-['GrtskTera'] leading-[36px] sm:leading-[72px] uppercase">Инструкторский состав</h2>
+                                    <h2 class="max-w-[350px] break-all sm:break-normal sm:max-w-[704px] text-3xl text-white font-['GrtskTera'] leading-[36px] sm:leading-[72px] uppercase">Инструкторский состав</h2>
                                     <div class="hidden md:inline-flex p-6 gap-9 bg-[#1A1A19]">
                                         <button class="InstructorSlider-custom-prev disabled:opacity-10 transition-opacity">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
@@ -727,10 +729,10 @@
                                     <div class="swiper-slide flex justify-center sm:justify-normal">
                                         <div class="w-full sm:max-w-[312px] bg-[#1A1A19] px-[16px] pt-[16px]">
                                             <div class="w-full sm:max-w-[280px] h-[215px]">
-                                                <img src="/img/instructor2.png" alt="">
+                                                <img class="w-full sm:w-auto h-full sm:h-auto"  src="/img/instructor2.png" alt="">
                                             </div>
                                             <div class="px-[8px] pt-[24px] pb-[40px]">
-                                                <h5 class="max-w-[258px] text-white text-xl font-medium mb-[15px]">Данилов Тимур Викторович</h5>
+                                                <h5 class="max-w-full sm:max-w-[258px] text-white text-[16px] sm:text-xl font-medium mb-[15px]">Данилов Тимур Викторович</h5>
                                                 <p class="max-w-[286px] text-[14px] text-[rgba(255,_255,_255,_0.40)] ">Автомат M4 является американским модульным автоматическим оружием, разработанным на базе широко известного карабина M16.</p>
                                             </div>
                                         </div>
@@ -738,10 +740,10 @@
                                     <div class="swiper-slide flex justify-center sm:justify-normal">
                                         <div class="w-full sm:max-w-[312px] bg-[#1A1A19] px-[16px] pt-[16px]">
                                             <div class="w-full sm:max-w-[280px] h-[215px]">
-                                                <img src="/img/instructor1.png" alt="">
+                                                <img class="w-full sm:w-auto h-full sm:h-auto" src="/img/instructor1.png" alt="">
                                             </div>
                                             <div class="px-[8px] pt-[24px] pb-[40px]">
-                                                <h5 class="max-w-[258px] text-white text-xl font-medium mb-[15px]">Данилов Тимур Викторович</h5>
+                                                <h5 class="max-w-full sm:max-w-[258px] text-white text-[16px] sm:text-xl font-medium mb-[15px]">Данилов Тимур Викторович</h5>
                                                 <p class="max-w-[286px] text-[14px] text-[rgba(255,_255,_255,_0.40)] ">Автомат M4 является американским модульным автоматическим оружием, разработанным на базе широко известного карабина M16.</p>
                                             </div>
                                         </div>
@@ -749,10 +751,10 @@
                                     <div class="swiper-slide flex justify-center sm:justify-normal">
                                         <div class="w-full sm:max-w-[312px] bg-[#1A1A19] px-[16px] pt-[16px]">
                                             <div class="w-full sm:max-w-[280px] h-[215px]">
-                                                <img src="/img/instructor2.png" alt="">
+                                                <img class="w-full sm:w-auto h-full sm:h-auto" src="/img/instructor2.png" alt="">
                                             </div>
                                             <div class="px-[8px] pt-[24px] pb-[40px]">
-                                                <h5 class="max-w-[258px] text-white text-xl font-medium mb-[15px]">Данилов Тимур Викторович</h5>
+                                                <h5 class="max-w-full sm:max-w-[258px] text-white text-[16px] sm:text-xl font-medium mb-[15px]">Данилов Тимур Викторович</h5>
                                                 <p class="max-w-[286px] text-[14px] text-[rgba(255,_255,_255,_0.40)] ">Автомат M4 является американским модульным автоматическим оружием, разработанным на базе широко известного карабина M16.</p>
                                             </div>
                                         </div>
@@ -760,10 +762,10 @@
                                     <div class="swiper-slide flex justify-center sm:justify-normal">
                                         <div class="w-full sm:max-w-[312px] bg-[#1A1A19] px-[16px] pt-[16px]">
                                             <div class="w-full sm:max-w-[280px] h-[215px]">
-                                                <img src="/img/instructor1.png" alt="">
+                                                <img class="w-full sm:w-auto h-full sm:h-auto" src="/img/instructor1.png" alt="">
                                             </div>
                                             <div class="px-[8px] pt-[24px] pb-[40px]">
-                                                <h5 class="max-w-[258px] text-white text-xl font-medium mb-[15px]">Данилов Тимур Викторович</h5>
+                                                <h5 class="max-w-full sm:max-w-[258px] text-white text-[16px] sm:text-xl font-medium mb-[15px]">Данилов Тимур Викторович</h5>
                                                 <p class="max-w-[286px] text-[14px] text-[rgba(255,_255,_255,_0.40)] ">Автомат M4 является американским модульным автоматическим оружием, разработанным на базе широко известного карабина M16.</p>
                                             </div>
                                         </div>
@@ -875,7 +877,7 @@
 <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.js"></script>
 <script type="module" src="/js/arsenal.js"></script>
 <script>
     var ddd = 'dsadsadsa';
