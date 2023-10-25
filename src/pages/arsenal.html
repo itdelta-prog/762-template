@@ -508,7 +508,7 @@
                                         <p class="course-text">КС Полицейский Пистолет</p>
                                     </div>
                                 </div>
-                                <button  class="all-btn">Все курсы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
+                                <button  class="all-btn">Все программы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
                                     <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
                                 </svg></button>
                             </div>
@@ -528,7 +528,7 @@
                                         <p class="course-text">КС Полицейский Пистолет</p>
                                     </div>
                                 </div>
-                                <button  class="all-btn">Все курсы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
+                                <button  class="all-btn">Все программы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
                                     <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
                                 </svg></button>
                             </div>
@@ -548,28 +548,31 @@
                                         <p class="course-text">КС Полицейский Пистолет</p>
                                     </div>
                                 </div>
-                                <button class="all-btn">Все курсы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
+                                <button class="all-btn">Все программы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
                                     <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
                                 </svg></button>
                             </div>
                         </div>
                     </div>
                 <div class="sm:hidden mb-[80px]">
-                    <h2 class="text-3xl  leading-[36px] uppercase text-white mb-[20px] font-['GrtskTera'] -tracking-[2.4px]">каталог курсов</h2>
+                    <h2 class="text-3xl  leading-[36px] uppercase text-white mb-[20px] font-['GrtskTera'] -tracking-[2.4px]">каталог программ</h2>
                     <div class="flex gap-x-5  overflow-scroll mb-3">
                         <button class="btn-primay" data-gun="pistol"><span class="btn-text">Пистолет</span></button>
                         <button class="btn-primay" data-gun="carbine"><span class="btn-text">Ружье</span></button>
                         <button class="btn-primay" data-gun="rifle"><span class="btn-text">Карабин</span></button>
                     </div>
-                    <div class="sm:hidden selectCustom">
+                    <div id="courseSelected" class="sm:hidden selectCustom">
                         <div class="select">
-                            <span class="selected">gdfgf</span>
-                            <div class="caret"></div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-[#878787]">Программы</span>
+                                <span class="selected text-[15px]">gdfgf</span>
+                            </div>
+                            <div class="caret top-1/3"></div>
                         </div>
-                        <ul class="menu scrollCustom ">
-                            <li>Framer</li>
-                            <li class="active">Sketch</li>
-                            <li>Figma</li>
+                        <ul class="menu h-[200px] scrollCustom overflow-y-scroll top-[68px]">
+                            <li data-course-id="1">Framer</li>
+                            <li data-course-id="2" class="active">Sketch</li>
+                            <li data-course-id="3">Figma</li>
                         </ul>
                     </div>
                 </div>
@@ -577,7 +580,7 @@
                         <div class="w-[104px] py-[9.5px] px-8 bg-[rgba(255,_255,_255,_0.11)] text-white mb-[24px]">Легко</div>
                         <div class="flex flex-col gap-y-8 lg:gap-y-0 lg:flex-row items-start lg:items-center mb-[24px] sm:mb-[100px]">
                             <div class="flex flex-col lg:basis-[550px] xl:basis-[698px] gap-y-[42px]">
-                                <h2 class="text-3xl sm:text-[42px] leading-[36px] font-['GrtskTera'] sm:leading-[50px] uppercase text-white -tracking-[2.4px]" data-title>Название курса <br> в две строчки</h2>
+                                <h2 class="text-3xl sm:text-[42px] leading-[36px] font-['GrtskTera'] sm:leading-[50px] uppercase text-white -tracking-[2.4px]" data-title>Название программы <br> в две строчки</h2>
                                 <div class="flex flex-col w-[320px] sm:w-[408px]">
                                     <div class="flex justify-between mb-2">
                                         <span class="text-[rgba(255,_255,_255,_0.40)] text-[12px] ">Пройдено</span>
@@ -597,7 +600,7 @@
                             <div class="lg:basis-[635px]">
                                 <img src="/img/arsenalBg.png" data-image alt="">
                             </div>
-                            <div class="flex  flex-col basis-[635px] px-[20px] pb-[20px] pt-[32px] sm:px-10 sm:pt-[81px] sm:pb-10 sm:bg-[url('/img/bgBlock.png')] sm:bg-no-repeat sm:bg-right-top bg-[#1A1A19]">
+                            <div class="flex  flex-col justify-between basis-[635px] px-[20px] pb-[20px] pt-[32px] sm:px-10 sm:pt-[81px] sm:pb-10 sm:bg-[url('/img/bgBlock.png')] sm:bg-no-repeat sm:bg-right-top bg-[#1A1A19]">
                                 <h2 class="max-w-[360px] font-medium text-white text-[30px] mb-[32px] uppercase leading-[36px]">В стоимость входит:</h2>
                                 <div data-properties>
                                     <ul class="flex max-w-[338px] flex-col gap-y-[12px] list-square mb-[24px] ml-[20px] sm:ml-0">

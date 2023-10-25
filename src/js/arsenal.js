@@ -28,8 +28,8 @@ var dataForm = `{
     },
     "personalInstructor":"15000"
 }`;
-let dataResult  = JSON.parse(dataForm)
-
+let dataResult  = JSON.parse(dataForm);
+const courseMobileWrapper = document.getElementById('courseSelected');
 const state = {
     weekDay: 'weekdays',
     basicCost: Number(dataResult.weekdays.basicCost.price),
@@ -187,7 +187,7 @@ const getInstrucotor = async() => {
             bodyInstructor.innerHTML += `<li>${item.first_name} ${item.last_name}</li>`
         });
     }
-    SelectDropDown();
+    SelectDropDown(wrapperSelect);
 }
 
 const modalReserv = () => {
@@ -292,17 +292,26 @@ const fillingCouse = (resp) => {
     const progressBar = document.querySelector('[data-progress="bar"]');
     const progressValue = document.querySelector('[data-progress="value"]');
 
-   title.textContent = resp.title;
+
+    console.log(resp);
+
+   title.innerHTML = resp.title;
    description.innerHTML = resp.description;
    properties.innerHTML = resp.characteristic;
-   image.src = resp.image;
-   progressValue.textContent = resp.progress + '%';
+   image.src = resp.image + Math.random();
+   progressValue.innerHTML = resp.progress + '%';
    progressBar.style.width = `${resp.progress + '%'}`
 }
 
-const selectCourse = () => {
+const selectCourse = ()=>  {
     const courseWrapper = document.querySelectorAll('.gunCourse');
-    let activeCourse = document.querySelector('.course-text')
+    let activeCourse = document.querySelector('.course-text');
+    const menuCourse = courseMobileWrapper.querySelector('.menu');
+
+        menuCourse.addEventListener('click', (eve) => {
+            getCourse(Number(eve.target.dataset?.courseId))
+        })
+
     courseWrapper.forEach((bodyCourse) => {
         bodyCourse.addEventListener('click', async(eve) => {
            if(eve.target.closest('.course-text')) {
@@ -314,9 +323,8 @@ const selectCourse = () => {
                activeCourse.classList.add('active');
            }
         })
-    })
+    });
 }
-selectCourse()
 
 DropDownMenu(document.getElementById('gun'));
 DropDownMenu(document.getElementById('rifle'));
@@ -420,7 +428,8 @@ document.addEventListener('DOMContentLoaded', () => {
             lockClass: false
         }
     });
-
+    SelectDropDown(courseMobileWrapper);
+    selectCourse()
     totalAmout();
     days();
 })

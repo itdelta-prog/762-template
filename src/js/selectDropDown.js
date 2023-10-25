@@ -1,13 +1,9 @@
-export const SelectDropDown = (render) => {
-    const dropdowns = document.querySelectorAll('.selectCustom');
-
-    console.log(dropdowns);
-    dropdowns.forEach(dropDown => {
-        const select = dropDown.querySelector('.select');
-        const caret = dropDown.querySelector('.caret');
-        const menu = dropDown.querySelector('.menu');
-        const options = dropDown.querySelectorAll('.menu li');
-        const selected = dropDown.querySelector('.selected');
+export const SelectDropDown = (dropElement) => {
+        const select = dropElement.querySelector('.select');
+        const caret = dropElement.querySelector('.caret');
+        const menu = dropElement.querySelector('.menu');
+        const options = dropElement.querySelectorAll('.menu li');
+        const selected = dropElement.querySelector('.selected');
 
         select.addEventListener('click', (eve) => {
 
@@ -28,7 +24,6 @@ export const SelectDropDown = (render) => {
                 option.classList.add('active');
             })
         });
-    });
 }
 
 export const DropDownMenu = (menuElement) => {
