@@ -2,8 +2,7 @@
 import './script.js';
 import {SelectDropDown, DropDownMenu} from "./selectDropDown.js";
 
-
-var dataForm = `{
+let dataForm = `{
     "weekend":{
         "basicCost":{
             "price":"95000",
@@ -44,8 +43,7 @@ function totalAmout() {
     const totalElement = document.querySelectorAll('.totalAmout');
 
     let sum = state.basicCost * state.quantityPerson + state.instructorPrice + state.galleryPrice;
-    totalElement.forEach(el => el.textContent = `${sum} р.`)
-    console.log(state)
+    totalElement.forEach(el => el.textContent = `${sum.toLocaleString()} р.`)
 }
 
 
@@ -55,11 +53,11 @@ const days = () => {
     let actvieElement = wrapper.querySelectorAll('button')[0];
     body.innerHTML = `<div class="flex justify-between mb-[12px]">
                              <p class="text-white text-[18px] font-normal leading-5">Базовая стоимость</p>
-                             <div data-cost="basic"><span class="${dataResult[state.weekDay].basicCost.salesPrice ? '' : 'hidden'} text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">${dataResult[state.weekDay].basicCost.salesPrice} р</span> <span class="text-[18px] text-white font-normal leading-5 opacity-50">${state.basicCost} р.</span></div>
+                             <div data-cost="basic"><span class="${dataResult[state.weekDay].basicCost.salesPrice.toLocaleString() ? '' : 'hidden'} text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">${Number(dataResult[state.weekDay].basicCost.salesPrice).toLocaleString()} р</span> <span class="text-[18px] text-white font-normal leading-5 opacity-50">${state.basicCost.toLocaleString()} р.</span></div>
                               </div>
                               <div class="flex justify-between">
                                  <p class="text-white text-[18px] font-normal leading-5">Стоимость выстрелов</p>
-                              <div data-cost="shots"><span class="${dataResult[state.weekDay].costOfShots.salesPrice ? '' : 'hidden'} text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">${dataResult[state.weekDay].costOfShots.salesPrice} р</span> <span class="text-[18px] text-[#B8AA91] font-normal leading-5">${state.costOfShoats} р.</span></div>
+                              <div data-cost="shots"><span class="${dataResult[state.weekDay].costOfShots.salesPrice.toLocaleString() ? '' : 'hidden'} text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">${Number(dataResult[state.weekDay].costOfShots.salesPrice).toLocaleString()} р</span> <span class="text-[18px] text-[#B8AA91] font-normal leading-5">${state.costOfShoats.toLocaleString()} р.</span></div>
                            </div>`
 
     wrapper.addEventListener('click', (eve) => {
@@ -69,17 +67,17 @@ const days = () => {
                 actvieElement = eve.target.closest(".btn-catalog");
                 actvieElement.classList.add('tabs__caption_active');
 
-                state.weekDay = actvieElement.dataset.day
+                state.weekDay = actvieElement.dataset.day.toLocaleString()
                 state.basicCost = Number(dataResult[actvieElement.dataset.day].basicCost.price);
                 state.costOfShoats = Number(dataResult[actvieElement.dataset.day].costOfShots.price);
 
                 body.innerHTML = `<div class="flex justify-between mb-[12px]">
                              <p class="text-white text-[18px] font-normal leading-5">Базовая стоимость</p>
-                             <div data-cost="basic"><span class="${dataResult[state.weekDay].basicCost.salesPrice ? '' : 'hidden'} text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">${dataResult[state.weekDay].basicCost.salesPrice} р</span> <span class="text-[18px] text-white font-normal leading-5 opacity-50">${state.basicCost} р.</span></div>
+                             <div data-cost="basic"><span class="${dataResult[state.weekDay].basicCost.salesPrice.toLocaleString() ? ' ' : 'hidden'} text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">${Number(dataResult[state.weekDay].basicCost.salesPrice).toLocaleString()} р</span> <span class="text-[18px] text-white font-normal leading-5 opacity-50">${state.basicCost.toLocaleString()} р.</span></div>
                               </div>
                               <div class="flex justify-between">
                                  <p class="text-white text-[18px] font-normal leading-5">Стоимость выстрелов</p>
-                              <div data-cost="shots"><span class="${dataResult[state.weekDay].costOfShots.salesPrice ? '' : 'hidden'} text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">${dataResult[state.weekDay].costOfShots.salesPrice} р</span> <span class="text-[18px] text-[#B8AA91] font-normal leading-5">${state.costOfShoats} р.</span></div>
+                              <div data-cost="shots"><span class="${dataResult[state.weekDay].costOfShots.salesPrice.toLocaleString() ? ' ' : 'hidden'} text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">${Number(dataResult[state.weekDay].costOfShots.salesPrice).toLocaleString()} р</span> <span class="text-[18px] text-[#B8AA91] font-normal leading-5">${state.costOfShoats.toLocaleString()} р.</span></div>
                            </div>`
             }
             totalAmout();
@@ -147,8 +145,8 @@ const addSerice = () => {
     const instructor = serviceWrapper.querySelector('[data-instructor="price"]');
     const gallerey = serviceWrapper.querySelector('[data-gallery="price"]');
 
-    instructor.textContent = `+${dataResult.personalInstructor} р.`;
-    gallerey.textContent = `+${dataResult[state.weekDay].personalGallery} р.`
+    instructor.textContent = `+${Number(dataResult.personalInstructor).toLocaleString()} р.`;
+    gallerey.textContent = `+${Number(dataResult[state.weekDay].personalGallery).toLocaleString()} р.`
     serviceWrapper.addEventListener('click', (eve) => {
         if(eve.target.closest(".btnService")) {
             eve.target.closest(".btnService").classList.toggle('tabs__caption_active');
