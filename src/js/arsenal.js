@@ -1,4 +1,4 @@
-// import './FormReservation.jsx';
+import './react/FormReservation.jsx';
 import './script.js';
 import {SelectDropDown, DropDownMenu} from "./selectDropDown.js";
 
@@ -27,17 +27,17 @@ let dataForm = `{
     },
     "personalInstructor":"15000"
 }`;
-let dataResult  = JSON.parse(dataForm);
+// let dataResult  = JSON.parse(dataForm);
 const courseMobileWrapper = document.getElementById('courseSelected');
-const state = {
-    weekDay: 'weekdays',
-    basicCost: Number(dataResult.weekdays.basicCost.price),
-    costOfShoats: Number(dataResult.weekdays.costOfShots.price),
-    quantityPerson: 1,
-    instructor: false,
-    instructorPrice: 0,
-    galleryPrice: 0,
-}
+// const state = {
+//     weekDay: 'weekdays',
+//     basicCost: Number(dataResult.weekdays.basicCost.price),
+//     costOfShoats: Number(dataResult.weekdays.costOfShots.price),
+//     quantityPerson: 1,
+//     instructor: false,
+//     instructorPrice: 0,
+//     galleryPrice: 0,
+// }
 
 function totalAmout() {
     const totalElement = document.querySelectorAll('.totalAmout');
@@ -261,15 +261,6 @@ const modalReserv = () => {
     })
 };
 
-totalAmout();
-
-getInstrucotor();
-
-personShort();
-// shortCurrent();
-modalReserv();
-addSerice();
-days();
 
 
 const getCourse = async(id) => {
@@ -324,9 +315,6 @@ const selectCourse = ()=>  {
     });
 }
 
-DropDownMenu(document.getElementById('gun'));
-DropDownMenu(document.getElementById('rifle'));
-DropDownMenu(document.getElementById('carabin'));
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -426,8 +414,18 @@ document.addEventListener('DOMContentLoaded', () => {
             lockClass: false
         }
     });
+    // totalAmout();
+    // getInstrucotor();
+    // personShort();
+// shortCurrent();
+//     modalReserv();
+//     addSerice();
+//     days();
     SelectDropDown(courseMobileWrapper);
-    selectCourse()
-    totalAmout();
-    days();
+    // selectCourse()
+    // totalAmout();
+    // days();
+    DropDownMenu(document.getElementById('gun'));
+    DropDownMenu(document.getElementById('rifle'));
+    DropDownMenu(document.getElementById('carabin'));
 })

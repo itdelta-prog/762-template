@@ -39,7 +39,7 @@ export const DropDownMenu = (menuElement) => {
                             </svg>`
         }
         else {
-            btnAll.innerHTML = `Все курсы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
+            btnAll.innerHTML = `Все программы <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
                                 <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
                             </svg>`;
         }

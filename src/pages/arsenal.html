@@ -13,6 +13,12 @@
     <title>Title</title>
 </head>
 <body class="w-full h-full bg-[#0F0F0F] font-Grtsk">
+<div class="w-full h-full fixed bg-[#0F0F0F] z-[9999999999] flex justify-center items-center transition-opacity">
+    <div role="status">
+        <svg width="300" height="300" fill="#B8AA91" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_ngNb{animation:spinner_ZRWK 1.2s cubic-bezier(0.52,.6,.25,.99) infinite}.spinner_6TBP{animation-delay:.6s}@keyframes spinner_ZRWK{0%{transform:translate(12px,12px) scale(0);opacity:1}100%{transform:translate(0,0) scale(1);opacity:0}}</style><path class="spinner_ngNb" d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z" transform="translate(12, 12) scale(0)"/><path class="spinner_ngNb spinner_6TBP" d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z" transform="translate(12, 12) scale(0)"/></svg>
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
 <header class="border-b border-[#363636] mb-[19px] sm:mb-20">
     <nav class="flex items-center justify-between relative p-6 lg:px-5 lg:py-5 z-20" aria-label="Global">
         <div class="flex items-center gap-x-12">
@@ -389,34 +395,34 @@
                 <div class="flex h-fit flex-col lg:basis-[450px] desk:basis-[500px] py-8 px-4 md:px-7 bg-transparent lg:bg-[#181818]">
                     <h3 class="text-3xl lg:text-[20px] font-medium uppercase leading-6 text-white mb-[13px]">БРОНИРОВАНИЕ</h3>
                     <p class="text-white text-[16px] opacity-50 mb-[20px]">Выберите день посещения</p>
-                    <div  id="gungForm">
-                        <div class="mb-[31px]">
-                            <div class="flex gap-x-[13px] mb-[31px] daysWrapper">
-                                <button class=" btn-catalog basis-[184px] tabs__caption_active" data-day="weekdays"><span
-                                        class="btn-link__text">Будни</span></button>
-                                <button class=" btn-catalog basis-[184px]" data-day="weekend"><span
-                                        class="btn-link__text">Выходные</span></button>
-                            </div> <!--  Кнопки посещения табы -->
-                            <div class="flex justify-between mb-[31px] person">
-                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent person-active" data-person="1">1</button>
-                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="2">2</button>
-                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="3">3</button>
-                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="4">4</button>
-                            </div>
-                            <div class="">
-                                <div class="daysContent">
-                                    <div class="flex justify-between mb-[12px]">
-                                        <p class="text-white text-[18px] font-normal leading-5">Базовая стоимость</p>
-                                        <div data-cost="basic"><span class="text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">20 р</span> <span class="text-[18px] text-white font-normal leading-5 opacity-50">500 р.</span></div>
-                                    </div>
-                                    <div class="flex justify-between">
-                                        <p class="text-white text-[18px] font-normal leading-5">Стоимость выстрелов</p>
-                                        <div data-cost="shots"><span class=" text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">10 р</span> <span class="text-[18px] text-[#B8AA91] font-normal leading-5">600 р.</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full h-[1px] bg-[#282828] mb-9"></div>
+                    <div  id="formReservation">
+<!--                        <div class="mb-[31px]">-->
+<!--                            <div class="flex gap-x-[13px] mb-[31px] daysWrapper">-->
+<!--                                <button class=" btn-catalog basis-[184px] tabs__caption_active" data-day="weekdays"><span-->
+<!--                                        class="btn-link__text">Будни</span></button>-->
+<!--                                <button class=" btn-catalog basis-[184px]" data-day="weekend"><span-->
+<!--                                        class="btn-link__text">Выходные</span></button>-->
+<!--                            </div> &lt;!&ndash;  Кнопки посещения табы &ndash;&gt;-->
+<!--                            <div class="flex justify-between mb-[31px] person">-->
+<!--                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent person-active" data-person="1">1</button>-->
+<!--                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="2">2</button>-->
+<!--                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="3">3</button>-->
+<!--                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="4">4</button>-->
+<!--                            </div>-->
+<!--                            <div class="">-->
+<!--                                <div class="daysContent">-->
+<!--                                    <div class="flex justify-between mb-[12px]">-->
+<!--                                        <p class="text-white text-[18px] font-normal leading-5">Базовая стоимость</p>-->
+<!--                                        <div data-cost="basic"><span class="text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">20 р</span> <span class="text-[18px] text-white font-normal leading-5 opacity-50">500 р.</span></div>-->
+<!--                                    </div>-->
+<!--                                    <div class="flex justify-between">-->
+<!--                                        <p class="text-white text-[18px] font-normal leading-5">Стоимость выстрелов</p>-->
+<!--                                        <div data-cost="shots"><span class=" text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">10 р</span> <span class="text-[18px] text-[#B8AA91] font-normal leading-5">600 р.</span></div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="w-full h-[1px] bg-[#282828] mb-9"></div>-->
 <!--                        <div class="current-shot flex justify-between mb-[31px]">-->
 <!--                            <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent btnMinus" data-pattron="-10" >-10</button>-->
 <!--                            <div data-contentShort="2550" class="max-w-[103px] text-center text-white text-[18px] btnContent">2550 выстрелов</div>-->
@@ -888,7 +894,32 @@
 <script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.js"></script>
 <script type="module" src="/js/arsenal.js"></script>
 <script>
-    var ddd = 'dsadsadsa';
+    var data = `{
+    "weekend":{
+        "basicPrice":{
+            "price":"95000",
+            "salesPrice":"34000"
+        },
+        "shoatsPrice":{
+            "price":"35000",
+            "salesPrice":"800000"
+        },
+        "personalGallery": "12000"
+    },
+    "weekdays":{
+        "basicPrice":{
+            "price":"85000",
+            "salesPrice":""
+        },
+        "shoatsPrice":{
+            "price":"55000",
+            "salesPrice":"100000"
+        },
+        "personalGallery":"12000"
+    },
+    "personalInstructor":"15000"
+}`;
+   data =  JSON.parse(data);
 </script>
 </body>
 </html>
