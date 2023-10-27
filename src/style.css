@@ -164,6 +164,27 @@
     @apply rotate-[182deg] transition-all;
   }
 
+  .btn__custom {
+    @apply relative whitespace-nowrap transition-colors py-[20px] px-[32px] md:py-[25px] md:px-[50px]
+  }
+
+  .btn__custom .btn__content{
+    @apply text-white text-lg leading-5
+  }
+
+  .btn__custom.active{
+    @apply bg-[#B9AB91]
+  }
+
+  .btn__custom.active .btn__content{
+    @apply text-[#0F0F0F]
+  }
+
+  .btn__custom.active span:not('.btn__content') {
+    @apply opacity-0
+  }
+
+
   .modalReserve {
     @apply fixed top-0 -right-[124%] z-[9999] w-[400px] h-full bg-[#131313] py-4 px-5 transition-all
   }
