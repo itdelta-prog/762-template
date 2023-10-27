@@ -2,6 +2,27 @@ import './script.js';
 import './filterCourse.js';
 import {Tabs} from "./tabs.js";
 
+
+// function mySli() {
+//   let el  = [1, 2, 3, 4, 5, 6];
+//   for(let i = 0; i < el.length; i++) {
+//     if(i === 0) {
+//       console.log(`${el[el.length-1]} ||||| ${el[i]} |||||${el[i+1]}`);
+//     }
+//     if(i === el.length-1) {
+//       console.log(`${el[i-1]} |||||| ${el[i]} |||||| ${el[0]}`)
+//     }
+//     if (i!== 0 && i !== el.length-1) {
+//       console.log(`${el[i-1]} |||||| ${el[i]} ||||| ${el[i+1]}`)
+//     }
+//   }
+// }
+//
+// mySli();
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
 
@@ -41,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
       dynamicBullets: true,
       clickable: true,
       renderBullet: function (index, className) {
-        console.log(index);
         return `<div class="${ className}">
             <span>0${index + 1}</span>
           </div>`;

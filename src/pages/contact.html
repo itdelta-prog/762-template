@@ -7,7 +7,7 @@
     <title>Contact</title>
   </head> 
   <body class="w-full h-full bg-[#0F0F0F] font-Grtsk">
-    <header class="border-b border-[#363636] mb-20">
+    <header class="border-b border-[#363636] mb-20 w-full fixed top-0 bg-[#0F0F0F] z-[99999999]">
         <nav class="flex items-center justify-between relative p-6 lg:px-5 lg:py-5 z-20" aria-label="Global">
           <div class="flex items-center gap-x-12">
             <a href="/src/public" class="">
@@ -123,7 +123,7 @@
           </div>
           <div class="w-full h-[1px] bg-[#363636]"></div>
           <div class="flex flex-col justify-center px-4 py-7">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center mb-[16px]">
               <a class="bg-[url('../img/phone.svg')] bg-no-repeat bg-[left_6px] pl-9 text-white text-lg">+7 832 546 31 43</a>
               <div class="flex items-center">
                 <img src="/img/whatsapp.svg"/>
@@ -151,7 +151,7 @@
           <!-- Background backdrop, show/hide based on slide-over state. -->
         </div>
       </header>
-      <main>
+      <main class="pt-[120px] lg:pt-[170px]">
         <section class="mb-[180px]">
           <div class="container lg:px-5 2xl:px-0">
             <div class="flex items-center flex-col lg:flex-row gap-y-[60px] lg:gap-y-0">
@@ -188,8 +188,12 @@
                       </div>
                     </div>
                     <div class="flex flex-col gap-y-4 sm:gap-y-0 sm:flex-row sm:gap-x-5 lg:gap-x-[50px] xl:gap-x-[101px]">
-                      <button class="btn-link">
-                        <span class="btn-link__text">Отправить</span>
+                      <button class="btn__custom  hover:active px-[50px] py-[26px] bg-transparent border border-[#2D2D2B]" data-gun="rifle">
+                        <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+                        <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+                        <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+                        <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] "></span>
+                        <span class="btn__content">Отправить</span>
                       </button>
                       <div class="inline-flex items-center gap-x-[18px]">
                         <label class="relative flex cursor-pointer items-center rounded-full p-0 sm:p-3" for="login" data-ripple-dark="true">
@@ -246,7 +250,13 @@
                   <p class="text-[18px] font-normal leading-6 text-[#878787] mb-[44px]">fsdfsdfsdfsd</p>
                 </div>
               </div>
-              <a class="btn-link"><span class="btn-link__text">Построить маршрут</span></a>
+              <a href="#" class="btn__custom hover:active px-[50px] py-[26px] bg-transparent border border-[#2D2D2B]" data-gun="rifle">
+                <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+                <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+                <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+                <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+                <span class="btn__content">Построить маршрут</span>
+              </a>
             </div>
           </div>
           <div class="absolute bottom-4 block sm:hidden">
@@ -269,7 +279,13 @@
                   <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Продвигайтесь на юг по улице Новокузнецкая. Продолжайте идти до тех пор, пока не достигнете Красного Октября проспекта. Это займет примерно 10-15 минут пешком.</p>
                 </div>
               </div>
-              <a class="py-6 px-[79px] btn-link"><span class="btn-text">Построить маршрут</span></a>
+             <a href="#" class="btn__custom flex w-full justify-center items-center hover:active px-[50px] py-[26px] bg-transparent border border-[#2D2D2B]" data-gun="rifle">
+               <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+               <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+               <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+               <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+               <span class="btn__content">Построить маршрут</span>
+             </a>
             </div>
         </div>
       </section>
