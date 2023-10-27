@@ -26,19 +26,33 @@ import {Tabs} from "./tabs.js";
 document.addEventListener('DOMContentLoaded', () => {
 
 
-  const customSwiper = (pagEl) => {
-    let activeElement = pagEl.querySelector('.swiper-pagination-bullet-active');
-    let element = [...pagEl.querySelectorAll('.swiper-pagination-bullet')];
-    let indexActive = element.indexOf(activeElement);
+  const customSwiper = (swiper) => {
+    const pagination = document.getElementById('pagintaionCustom');
+    const paginationPrev = pagination.querySelector('[data-prev]');
+    const paginationActive = pagination.querySelector('[data-active]');
+    const paginationNext = pagination.querySelector('[data-next]');
 
-    element.forEach((item, idx) => {
-      if (indexActive + 1 !== idx && indexActive - 1 !== idx && indexActive !== idx) {
-        item.classList.add('acti');
-      }
-      else {
-        item.classList.remove('acti');
-      }
-    });
+    if(swiper.activeIndex === 0) {
+      paginationPrev.textContent = `0${swiper.slides.length}`
+    }
+    console.log(swiper.activeIndex)
+    if(swiper.activeIndex === swiper.slides.length-2) {
+      paginationPrev.textContent = `0${swiper.slides.length-1}`
+    }
+
+
+    // let activeElement = pagEl.querySelector('.swiper-pagination-bullet-active');
+    // let element = [...pagEl.querySelectorAll('.swiper-pagination-bullet')];
+    // let indexActive = element.indexOf(activeElement);
+    //
+    // element.forEach((item, idx) => {
+    //   if (indexActive + 1 !== idx && indexActive - 1 !== idx && indexActive !== idx) {
+    //     item.classList.add('acti');
+    //   }
+    //   else {
+    //     item.classList.remove('acti');
+    //   }
+    // });
   }
 
   let swiper = new Swiper(".mySwiper", {
@@ -57,27 +71,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
 
-    pagination: {
-      el: ".pagination__custom",
-      dynamicBullets: true,
-      clickable: true,
-      renderBullet: function (index, className) {
-        return `<div class="${ className}">
-            <span>0${index + 1}</span>
-          </div>`;
-      },
-    },
     navigation: {
       nextEl: ".custom-next",
       prevEl: ".custom-prev",
     },
+    on: {
+      init: function (swiper) {
+        customSwiper(swiper)
+      },
+      activeIndexChange: function (swiper) {
+        customSwiper(swiper);
+      }
+    }
   });
 
-  customSwiper(swiper.pagination.el);
 
-  swiper.on('paginationRender', function (swiper, paginationEl) {
-    customSwiper(paginationEl);
-  });
+  // swiper.on('paginationRender', function (swiper, paginationEl) {
+  //   customSwiper(paginationEl);
+  // });
 
   let myGallerey = new Swiper(".myGallerey", {
     navigation: {

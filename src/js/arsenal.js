@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //     addSerice();
 //     days();
     SelectDropDown(courseMobileWrapper);
-    // selectCourse()
+    selectCourse()
     // totalAmout();
     // days();
     DropDownMenu(document.getElementById('gun'));
