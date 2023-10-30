@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 30,
-
+    loop: true,
 
     breakpoints: {
       320: {

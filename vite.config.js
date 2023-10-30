@@ -11,11 +11,7 @@ export default defineConfig({
     outDir: '../dist',
     rollupOptions: {
       input: {
-        main: resolve('src', 'index.html'),
-        contact: resolve('src', 'pages/contact.html'),
-        news: resolve('src', 'pages/newsDetail.html'),
-        arsenal: resolve('src', 'pages/arsenal.html'),
-        catalogDetail: resolve('src', 'pages/catalogDetail.html')
+        main: resolve('src', 'pages/*.html')
       },
       output: {
         manualChunks: false,
