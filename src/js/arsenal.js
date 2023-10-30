@@ -174,19 +174,19 @@ const addSerice = () => {
     });
 }
 
-const getInstrucotor = async() => {
-    const wrapperSelect = document.getElementById('instructor');
-    const bodyInstructor = wrapperSelect.querySelector('.menu');
-    let response = await fetch('https://651e822d44a3a8aa47687cb1.mockapi.io/instrucotr')
-    let data;
-    if(response.ok) {
-        data = await response.json();
-        data.forEach((item) => {
-            bodyInstructor.innerHTML += `<li>${item.first_name} ${item.last_name}</li>`
-        });
-    }
-    SelectDropDown(wrapperSelect);
-}
+// const getInstrucotor = async() => {
+//     const wrapperSelect = document.getElementById('instructor');
+//     const bodyInstructor = wrapperSelect.querySelector('.menu');
+//     let response = await fetch('https://651e822d44a3a8aa47687cb1.mockapi.io/instrucotr')
+//     let data;
+//     if(response.ok) {
+//         data = await response.json();
+//         data.forEach((item) => {
+//             bodyInstructor.innerHTML += `<li>${item.first_name} ${item.last_name}</li>`
+//         });
+//     }
+//     SelectDropDown(wrapperSelect);
+// }
 
 const modalReserv = () => {
     const btn = document.querySelector('.btnReserve');

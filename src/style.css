@@ -81,8 +81,6 @@
     @apply opacity-100 translate-x-[14px] translate-y-[18px] rotate-[142deg];
   }
 
-}
-
 
 @layer components {
   .btn-primay {
@@ -186,11 +184,16 @@
 
 
   .modalReserve {
-    @apply fixed top-0 -right-[124%] z-[9999] w-[400px] h-full bg-[#131313] py-4 px-5 transition-all
+    @apply fixed top-0 -right-[124%] z-[999999999] w-[400px] h-full bg-[#131313] py-4 px-5 transition-all
   }
 
   .modalReserve.active {
     @apply right-0
+  }
+
+  .calendar-custom {
+    @apply relative flex h-max min-w-[275px] max-w-full flex-col rounded-xl p-4 opacity-100 transition-opacity;
+  }
   }
 
   .calendar-header {
@@ -241,7 +244,7 @@
     @apply cursor-default pointer-events-none;
   }
 
-  [data-calendar-theme=light] .calendar-dayBtn-disabled {
+  [data-calendar-theme=light] .calendar-dayBtn-disabled, [data-calendar-theme=light] .calendar-dayBtnPrev {
     @apply text-[#3A3A3A]
   }
 

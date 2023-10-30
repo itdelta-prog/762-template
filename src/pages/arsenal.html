@@ -7,8 +7,8 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/themes/light.min.css" rel="stylesheet">
+<!--    <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.css" rel="stylesheet">-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/themes/light.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="/style.css">
     <title>Title</title>
 </head>
@@ -648,7 +648,13 @@
                                     <div class="sm:w-0 transition-all w-[115px] sm:group-hover:w-[115px] h-[1px] bg-white"></div>
                                 </div>
                                 <div class="flex gap-x-[16px] flex-col-reverse gap-y-4 lg:flex-row">
-                                    <button class="btn-link"><span class="btn-link__text">В подарок</span></button>
+                                    <a class="flex justify-center items-center sm:block group cursor-pointer btn__custom bg-transparent border border-[#2D2D2B]" >
+                                        <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                        <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                        <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                        <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                        <span class="btn__content">В падарок</span>
+                                    </a>
                                     <button class="flex  justify-center items-center px-[30px] py-5 bg-[#B9AB91] group transition-colors">
                                         <span class="text-lg font-normal mr-4 text-[#222220]">Забронировать</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" height="20" viewBox="0 0 20 20" fill="#222220">
@@ -909,7 +915,7 @@
 <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.js"></script>-->
 <script type="module" src="/js/arsenal.js"></script>
 <script>
     var data = `{

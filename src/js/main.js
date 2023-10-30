@@ -33,12 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const paginationNext = pagination.querySelector('[data-next]');
 
     if(swiper.activeIndex === 0) {
-      paginationPrev.textContent = `0${swiper.slides.length}`
+      paginationPrev.textContent = `0${swiper.slides.length - 1}`
+      paginationNext.textContent = `0${swiper.activeIndex + 2}`
     }
     console.log(swiper.activeIndex)
     if(swiper.activeIndex === swiper.slides.length-2) {
-      paginationPrev.textContent = `0${swiper.slides.length-1}`
+      paginationPrev.textContent = `0${swiper.slides.length-2}`
+      paginationNext.textContent = `0${1}`
     }
+    if(swiper.activeIndex !== swiper.slides.length-2 && swiper.activeIndex !== 0) {
+      paginationNext.textContent = `0${swiper.activeIndex + 2}`
+      paginationPrev.textContent = `0${(swiper.activeIndex+1) - 1}`
+    }
+
+    paginationActive.textContent = `0${swiper.activeIndex + 1}`
 
 
     // let activeElement = pagEl.querySelector('.swiper-pagination-bullet-active');
@@ -59,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 3,
     spaceBetween: 30,
 
+
     breakpoints: {
       320: {
         slidesPerView: 1,
@@ -67,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       750: {
         slidesPerView: "auto",
+        slidesPerGroup: 1,
         spaceBetween: 28
       }
     },
