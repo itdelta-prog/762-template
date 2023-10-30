@@ -13,8 +13,9 @@ export default defineConfig({
       input: {
         main: resolve('src', 'index.html'),
         contact: resolve('src', 'pages/contact.html'),
-        news: resolve('src', 'pages/news.html'),
+        news: resolve('src', 'pages/newsDetail.html'),
         arsenal: resolve('src', 'pages/arsenal.html'),
+        catalogDetail: resolve('src', 'pages/catalogDetail.html')
       },
       output: {
         manualChunks: false,
