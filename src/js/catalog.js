@@ -2,9 +2,10 @@ import './script.js';
 import {SelectDropDown, DropDownMenu} from "./selectDropDown.js";
 import {Tabs} from "./tabs.js";
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const courseMobileWrapper = document.querySelectorAll('.select-catalog__mobile')
-    const selectProgram = document.querySelectorAll('.select-program');
+    const selectProgram = document.querySelectorAll('.select-catalog');
 
     let GungSlider = new Swiper(".GungSlider", {
         slidesPerView: 1,
@@ -73,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     selectProgram.forEach((select) => {
+        console.log(select);
         DropDownMenu(select);
     });
 })
