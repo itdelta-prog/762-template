@@ -7,7 +7,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Vite App</title>
   </head>
   <body class="w-full h-full bg-[#0F0F0F] font-Grtsk">
@@ -353,11 +353,8 @@
             <img src="/img/slide1.png"/>
             <p class="absolute md:pl-[20px] md:pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[500px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
           </div>
-          <div class="swiper-slide relative max-w-[856px]">
-            <img src="/img/slide2.png"/>
-            <p class="absolute md:pl-[20px] md:pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[500px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
-          </div>
         </div>
+        <div class="pagination__custom absolute top-20 py-2"></div>
         <div class="inline-flex lg:hidden">
               <button class="absolute py-4 px-5 bottom-4 left-0 bg-[#242423] custom-prev z-40">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
@@ -370,35 +367,36 @@
                 </svg>
               </button>
         </div>
-        <div id="pagintaionCustom" class="my-pagination mt-[40px] flex justify-center items-baseline gap-x-[20px]">
-          <div class="pagination__prev flex flex-col justify-center items-center">
-            <span class="block h-[37px] w-[1px] bg-[rgba(255,_255,_255,_0.15)]"></span>
-            <span data-prev class="text-white font-['GrtskTera'] opacity-30 text-lg leading-5"></span>
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="165" height="37" viewBox="0 0 165 37" fill="none">
-            <rect y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>
-            <rect x="164" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>
-            <rect x="41" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>
-            <rect x="82" width="1" height="37" fill="white" fill-opacity="0.15"/>
-            <rect x="123" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>
-          </svg>
-          <div class="pagination__active curs flex flex-col justify-center items-center">
-            <span class="block h-[37px] w-[1px] bg-[#B9AB91]"></span>
-            <span data-active class="text-white font-['GrtskTera'] text-lg leading-5"></span>
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="165" height="37" viewBox="0 0 165 37" fill="none">
-            <rect y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>
-            <rect x="164" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>
-            <rect x="41" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>
-            <rect x="82" width="1" height="37" fill="white" fill-opacity="0.15"/>
-            <rect x="123" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>
-          </svg>
-          <div class="pagination__next flex flex-col justify-center items-center">
-            <span class="block h-[37px] w-[1px] bg-[rgba(255,_255,_255,_0.15)]"></span>
-            <span data-next class="text-white font-['GrtskTera'] opacity-30 text-lg leading-5"></span>
-          </div>
-        </div>
-      </div>
+
+<!--        <div id="pagintaionCustom" class="my-pagination mt-[40px] flex justify-center items-baseline gap-x-[20px]">-->
+<!--          <div class="pagination__prev flex flex-col justify-center items-center">-->
+<!--            <span class="block h-[37px] w-[1px] bg-[rgba(255,_255,_255,_0.15)]"></span>-->
+<!--            <span data-prev class="text-white font-['GrtskTera'] opacity-30 text-lg leading-5"></span>-->
+<!--          </div>-->
+<!--          <svg xmlns="http://www.w3.org/2000/svg" width="165" height="37" viewBox="0 0 165 37" fill="none">-->
+<!--            <rect y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="164" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="41" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="82" width="1" height="37" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="123" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--          </svg>-->
+<!--          <div class="pagination__active curs flex flex-col justify-center items-center">-->
+<!--            <span class="block h-[37px] w-[1px] bg-[#B9AB91]"></span>-->
+<!--            <span data-active class="text-white font-['GrtskTera'] text-lg leading-5"></span>-->
+<!--          </div>-->
+<!--          <svg xmlns="http://www.w3.org/2000/svg" width="165" height="37" viewBox="0 0 165 37" fill="none">-->
+<!--            <rect y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="164" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="41" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="82" width="1" height="37" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="123" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--          </svg>-->
+<!--          <div class="pagination__next flex flex-col justify-center items-center">-->
+<!--            <span class="block h-[37px] w-[1px] bg-[rgba(255,_255,_255,_0.15)]"></span>-->
+<!--            <span data-next class="text-white font-['GrtskTera'] opacity-30 text-lg leading-5"></span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
       </section>
       <section class="hidden md:block mb-[180px] sm:px-5 2xl:px-0">
         <div class="container">
@@ -741,7 +739,7 @@
                 <h4 class="text-white text-xl font-normal leading-5 mb-8">Меню</h4>
                 <div class="hidden sm:flex flex-col gap-y-4">
                   <a href="" class="text-lg font-normal leading-5 text-[#878787]">Мероприятия</a>
-                  <a href="contact.html" class="text-lg font-normal leading-5 text-[#878787]">Новости</a>
+                  <a href="pages/contact.html" class="text-lg font-normal leading-5 text-[#878787]">Новости</a>
                   <a href="" class="text-lg font-normal leading-5 text-[#878787]">Соревнования</a>
                 </div>
                 <div class="sm:hidden flex gap-x-8">

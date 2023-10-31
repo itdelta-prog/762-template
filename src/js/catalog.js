@@ -1,8 +1,11 @@
 import './script.js';
 import {SelectDropDown, DropDownMenu} from "./selectDropDown.js";
+import {Tabs} from "./tabs.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-    const courseMobileWrapper = document.getElementById('courseSelected');
+    const courseMobileWrapper = document.querySelectorAll('.select-catalog__mobile')
+    const selectProgram = document.querySelectorAll('.select-program');
+
     let GungSlider = new Swiper(".GungSlider", {
         slidesPerView: 1,
         spaceBetween: 10,
@@ -64,9 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    SelectDropDown(courseMobileWrapper);
+    Tabs('.catalog__tabs', '.tabs__head', '.tabs__body', '.tabs__caption', 'active', 'tabs__content_active')
+    courseMobileWrapper.forEach((item) => {
+        SelectDropDown(item);
+    })
 
-    DropDownMenu(document.getElementById('gun'));
-    DropDownMenu(document.getElementById('rifle'));
-    DropDownMenu(document.getElementById('carabin'));
+    selectProgram.forEach((select) => {
+        DropDownMenu(select);
+    });
 })

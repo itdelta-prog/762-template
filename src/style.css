@@ -344,7 +344,15 @@
     @apply py-3 bg-[#1A1A19] absolute border border-[#2F2F2F] transition-[0.2s]  z-[99999] shadow-[0px_43px_26px_0px_rgba(0,_0,_0,_0.37)] text-white top-[56px] left-[50%] w-full -translate-x-2/4 opacity-0 invisible
   }
 
-  .menu li {
+  .menu__link {
+    @apply py-0 px-0;
+  }
+
+  .menu__link a{
+    @apply block py-[18px] px-[15px];
+  }
+
+  .menu li:not('.menu__link') {
     @apply py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer
   }
 

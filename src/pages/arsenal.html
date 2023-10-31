@@ -522,7 +522,7 @@
     <section class="mb-[60px] md:mb-[200px]">
             <div class="container flex-col sm:flex-row flex sm:border-t sm:border-[#242424] lg:px-6 3xl:px-0">
                 <div class="hidden sm:flex max-w-[450px] flex-col basis-[400px] pr-[20px] gap-y-[60px] sm:pt-[40px]">
-                        <div id="gun">
+                        <div class="select-program">
                             <h2 class="text-white text-2xl font-['GrtskTera'] leading-[28px] uppercase mb-8">Пистолеты</h2>
                             <div class="flex flex-col mb-[32px]">
                                 <div class="gunCourse">
@@ -542,7 +542,7 @@
                                 </svg></button>
                             </div>
                         </div>
-                        <div id="rifle">
+                        <div class="select-program">
                             <h2 class="text-white text-2xl font-['GrtskTera'] leading-[28px] uppercase mb-8">РУЖЬЕ</h2>
                             <div class="flex flex-col mb-[32px]">
                                 <div class="gunCourse">
@@ -562,7 +562,7 @@
                                 </svg></button>
                             </div>
                         </div>
-                        <div id="carabin">
+                        <div class="select-program">
                             <h2 class="text-white text-2xl font-['GrtskTera'] leading-[28px] uppercase mb-8">Карабин</h2>
                             <div class="flex flex-col mb-[32px]">
                                 <div class="gunCourse">
@@ -583,26 +583,74 @@
                             </div>
                         </div>
                     </div>
-                <div class="sm:hidden mb-[80px]">
+                <div class="program__tabs sm:hidden mb-[80px]">
                     <h2 class="text-3xl  leading-[36px] uppercase text-white mb-[20px] font-['GrtskTera'] -tracking-[2.4px]">каталог программ</h2>
-                    <div class="flex gap-x-5  overflow-scroll mb-3">
-                        <button class="btn-primay" data-gun="pistol"><span class="btn-text">Пистолет</span></button>
-                        <button class="btn-primay" data-gun="carbine"><span class="btn-text">Ружье</span></button>
-                        <button class="btn-primay" data-gun="rifle"><span class="btn-text">Карабин</span></button>
+                    <div class="tabs__head flex gap-x-5  overflow-x-scroll mb-3">
+                        <button class="tabs__caption btn__custom group bg-transparent border border-[#2D2D2B]" data-tab="pistol">
+                            <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="btn__content">Пистолет</span>
+                        </button>
+                        <button class="tabs__caption btn__custom group bg-transparent border border-[#2D2D2B]" data-tab="carbine">
+                            <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="btn__content">Ружье</span>
+                        </button>
+                        <button class="tabs__caption btn__custom group bg-transparent border border-[#2D2D2B]" data-tab="rifle">
+                            <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="btn__content">Карабин</span>
+                        </button>
                     </div>
-                    <div id="courseSelected" class="sm:hidden selectCustom">
-                        <div class="select">
-                            <div class="flex flex-col">
-                                <span class="text-xs text-[#878787]">Программы</span>
-                                <span class="selected text-[15px]">gdfgf</span>
+                    <div class="tabs__body sm:hidden">
+                        <div data-tab="pistol" class="tabs__content select-program__mobile  selectCustom">
+                            <div class="select">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-[#878787]">Программы</span>
+                                    <span class="selected text-[15px]">gdfgf</span>
+                                </div>
+                                <div class="caret top-1/3"></div>
                             </div>
-                            <div class="caret top-1/3"></div>
+                            <ul class="menu h-[200px] scrollCustom overflow-y-scroll top-[68px]">
+                                <li data-course-id="1">Framer</li>
+                                <li data-course-id="2" class="active">Sketch</li>
+                                <li data-course-id="3">Figma</li>
+                            </ul>
                         </div>
-                        <ul class="menu h-[200px] scrollCustom overflow-y-scroll top-[68px]">
-                            <li data-course-id="1">Framer</li>
-                            <li data-course-id="2" class="active">Sketch</li>
-                            <li data-course-id="3">Figma</li>
-                        </ul>
+                        <div data-tab="carbine" class="tabs__content select-program__mobile  selectCustom">
+                            <div class="select">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-[#878787]">Программы</span>
+                                    <span class="selected text-[15px]">gdfgf</span>
+                                </div>
+                                <div class="caret top-1/3"></div>
+                            </div>
+                            <ul class="menu h-[200px] scrollCustom overflow-y-scroll top-[68px]">
+                                <li data-course-id="1">Framer</li>
+                                <li data-course-id="2" class="active">Sketch</li>
+                                <li data-course-id="3">Figma</li>
+                            </ul>
+                        </div>
+                        <div data-tab="rifle" class="tabs__content select-program__mobile  selectCustom">
+                            <div class="select">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-[#878787]">Программы</span>
+                                    <span class="selected text-[15px]">gdfgf</span>
+                                </div>
+                                <div class="caret top-1/3"></div>
+                            </div>
+                            <ul class="menu h-[200px] scrollCustom overflow-y-scroll top-[68px]">
+                                <li data-course-id="1">Framer</li>
+                                <li data-course-id="2" class="active">Sketch</li>
+                                <li data-course-id="3">Figma</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="flex flex-col max-w-full sm:max-w-[60%] lg:max-w-[78%] sm:pl-[20px] lg:pl-[32px] sm:pt-[40px] sm:border-l sm:border-l-[#242424]">

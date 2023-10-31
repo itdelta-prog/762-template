@@ -26,41 +26,43 @@ import {Tabs} from "./tabs.js";
 document.addEventListener('DOMContentLoaded', () => {
 
 
-  const customSwiper = (swiper) => {
-    const pagination = document.getElementById('pagintaionCustom');
-    const paginationPrev = pagination.querySelector('[data-prev]');
-    const paginationActive = pagination.querySelector('[data-active]');
-    const paginationNext = pagination.querySelector('[data-next]');
+  const customSwiper = (swiper, pagEl) => {
 
-    if(swiper.activeIndex === 0) {
-      paginationPrev.textContent = `0${swiper.slides.length - 1}`
-      paginationNext.textContent = `0${swiper.activeIndex + 2}`
-    }
-    console.log(swiper.activeIndex)
-    if(swiper.activeIndex === swiper.slides.length-2) {
-      paginationPrev.textContent = `0${swiper.slides.length-2}`
-      paginationNext.textContent = `0${1}`
-    }
-    if(swiper.activeIndex !== swiper.slides.length-2 && swiper.activeIndex !== 0) {
-      paginationNext.textContent = `0${swiper.activeIndex + 2}`
-      paginationPrev.textContent = `0${(swiper.activeIndex+1) - 1}`
-    }
+    // const pagination = document.getElementById('pagintaionCustom');
+    // const paginationPrev = pagination.querySelector('[data-prev]');
+    // const paginationActive = pagination.querySelector('[data-active]');
+    // const paginationNext = pagination.querySelector('[data-next]');
 
-    paginationActive.textContent = `0${swiper.activeIndex + 1}`
-
-
-    // let activeElement = pagEl.querySelector('.swiper-pagination-bullet-active');
-    // let element = [...pagEl.querySelectorAll('.swiper-pagination-bullet')];
-    // let indexActive = element.indexOf(activeElement);
+    // if(swiper.activeIndex === 0) {
+    //   paginationPrev.textContent = `0${swiper.slides.length - 1}`
+    //   paginationNext.textContent = `0${swiper.activeIndex + 2}`
+    // }
+    // console.log(swiper.activeIndex)
+    // if(swiper.activeIndex === swiper.slides.length-2) {
+    //   paginationPrev.textContent = `0${swiper.slides.length-2}`
+    //   paginationNext.textContent = `0${1}`
+    // }
+    // if(swiper.activeIndex !== swiper.slides.length-2 && swiper.activeIndex !== 0) {
+    //   paginationNext.textContent = `0${swiper.activeIndex + 2}`
+    //   paginationPrev.textContent = `0${(swiper.activeIndex+1) - 1}`
+    // }
     //
-    // element.forEach((item, idx) => {
-    //   if (indexActive + 1 !== idx && indexActive - 1 !== idx && indexActive !== idx) {
-    //     item.classList.add('acti');
-    //   }
-    //   else {
-    //     item.classList.remove('acti');
-    //   }
-    // });
+    // paginationActive.textContent = `0${swiper.activeIndex + 1}`
+
+
+    let activeElement = pagEl.querySelector('.swiper-pagination-bullet-active');
+    let element = [...pagEl.querySelectorAll('.swiper-pagination-bullet')];
+    let indexActive = element.indexOf(activeElement);
+
+
+    element.forEach((item, idx) => {
+      if (indexActive + 1 !== idx && indexActive - 1 !== idx && indexActive !== idx) {
+        item.classList.add('acti');
+      }
+      else {
+        item.classList.remove('acti');
+      }
+    });
   }
 
   let swiper = new Swiper(".mySwiper", {
@@ -76,9 +78,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       750: {
         slidesPerView: "auto",
-        slidesPerGroup: 1,
         spaceBetween: 28
       }
+    },
+
+    pagination: {
+      el: ".pagination__custom",
+      dynamicBullets: true,
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `<div class="${ className}">
+            <span>0${index + 1}</span>
+          </div>`;
+      },
     },
 
     navigation: {
@@ -86,16 +98,20 @@ document.addEventListener('DOMContentLoaded', () => {
       prevEl: ".custom-prev",
     },
     on: {
-      init: function (swiper) {
-        customSwiper(swiper)
+      paginationRender: function (swiper, paginationEl) {
+        customSwiper(swiper, paginationEl);
       },
-      activeIndexChange: function (swiper) {
-        customSwiper(swiper);
-      }
+      init: function (swiper) {
+        console.log(swiper.pagination.el);
+       // customSwiper(swiper)
+      },
+      // activeIndexChange: function (swiper) {
+      //   customSwiper(swiper);
+    //   // }
     }
   });
 
-
+  //
   // swiper.on('paginationRender', function (swiper, paginationEl) {
   //   customSwiper(paginationEl);
   // });

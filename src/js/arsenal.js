@@ -1,6 +1,7 @@
 import './react/FormReservation.jsx';
 import './script.js';
 import {SelectDropDown, DropDownMenu} from "./selectDropDown.js";
+import {Tabs} from "./tabs.js";
 
 let dataForm = `{
     "weekend":{
@@ -28,7 +29,7 @@ let dataForm = `{
     "personalInstructor":"15000"
 }`;
 // let dataResult  = JSON.parse(dataForm);
-const courseMobileWrapper = document.getElementById('courseSelected');
+const courseMobileWrapper = document.querySelectorAll('.select-program__mobile');
 // const state = {
 //     weekDay: 'weekdays',
 //     basicCost: Number(dataResult.weekdays.basicCost.price),
@@ -295,11 +296,14 @@ const fillingCouse = (resp) => {
 const selectCourse = ()=>  {
     const courseWrapper = document.querySelectorAll('.gunCourse');
     let activeCourse = document.querySelector('.course-text');
-    const menuCourse = courseMobileWrapper.querySelector('.menu');
+
+    courseMobileWrapper.forEach((select) => {
+        const menuCourse = select.querySelector('.menu');
 
         menuCourse.addEventListener('click', (eve) => {
             getCourse(Number(eve.target.dataset?.courseId))
         })
+    })
 
     courseWrapper.forEach((bodyCourse) => {
         bodyCourse.addEventListener('click', async(eve) => {
@@ -318,6 +322,7 @@ const selectCourse = ()=>  {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    const selectProgram = document.querySelectorAll('.select-program');
     let myArsenal = new Swiper(".myArsenal", {
         slidesPerView: "auto",
         spaceBetween: 6,
@@ -421,11 +426,14 @@ document.addEventListener('DOMContentLoaded', () => {
 //     modalReserv();
 //     addSerice();
 //     days();
-    SelectDropDown(courseMobileWrapper);
     selectCourse()
     // totalAmout();
     // days();
-    DropDownMenu(document.getElementById('gun'));
-    DropDownMenu(document.getElementById('rifle'));
-    DropDownMenu(document.getElementById('carabin'));
+    Tabs('.program__tabs', '.tabs__head', '.tabs__body', '.tabs__caption', 'active', 'tabs__content_active')
+    courseMobileWrapper.forEach((item) => {
+        SelectDropDown(item);
+    })
+    selectProgram.forEach((select) => {
+        DropDownMenu(select);
+    })
 })
