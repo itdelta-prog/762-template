@@ -30,7 +30,7 @@ export const DropDownMenu = (menuElement) => {
     const btnAll = menuElement.querySelector('.all-btn');
     const hiddenMenu = menuElement.querySelector('[data-all="gun"]');
 
-    btnAll.addEventListener('click', () => {
+    btnAll?.addEventListener('click', () => {
         hiddenMenu.classList.toggle('active');
         btnAll.classList.toggle('active');
         if(hiddenMenu.classList.contains('active')) {
