@@ -352,9 +352,13 @@
     @apply block py-[18px] px-[15px];
   }
 
+  .menuReserved li {
+    @apply py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer;
+  }
   .menu li:not('.menu__link') {
     @apply py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer
   }
+
 
   .selectCustom .active {
     @apply bg-[#B8AA91]

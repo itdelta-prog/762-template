@@ -83,7 +83,7 @@ function FormReservation({dataForm}) {
                                 <span className={`${selectedActive ? 'select-clicked' : ''} selected`}>{dataReserv.instructor.first_name ?? "Выбрать инструктора"}</span>
                                 <div className={`${selectedActive ? 'caret-rotate' : ''} caret`}></div>
                             </div>
-                            <ul className={`${selectedActive ? 'menu-open' : ''} menu h-[200px] scrollCustom overflow-y-scroll`}>
+                            <ul className={`${selectedActive ? 'menu-open' : ''} menu h-[200px] scrollCustom overflow-y-scroll menuReserved`}>
                                 {
                                     instructor.map((item) => {
                                         return <li key={item.id} onClick={() => setDataReserv({...dataReserv, instructor: item})} className={item.id === dataReserv.instructor.id ? 'active' : ''}>{item.first_name} {item.last_name}</li>
