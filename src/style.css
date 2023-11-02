@@ -167,7 +167,7 @@
   }
 
   .btn__custom .btn__content{
-    @apply text-white text-lg leading-5
+    @apply text-white text-[15px] sm:text-lg leading-5
   }
 
   .btn__custom.active{

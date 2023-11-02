@@ -16,6 +16,7 @@ export default {
     screens: {
       '3xl': '1742px',
       'desk': '1650px',
+      'book': '1370px',
       ...defaultTheme.screens
     },
 

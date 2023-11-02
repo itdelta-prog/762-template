@@ -19,6 +19,14 @@ btnBurger.addEventListener("click", (eve) => {
 dropDown.addEventListener('click', () => {
     dropDownMenu.classList.toggle('hidden');
 });
+
+if(routeBtn) {
+    console.log(routeBtn)
+    routeBtn.addEventListener('click', (eve) => {
+        eve.preventDefault();
+        routeModal.classList.toggle('route__modal-active');
+    })
+}
 document.addEventListener('click', (e) => {
     const withinBoundaries = e.composedPath().includes(dropDownMenu.parentElement);
     if (!withinBoundaries) {
@@ -29,10 +37,5 @@ document.addEventListener('click', (e) => {
         if (!e.composedPath().includes(routeModal) && !e.composedPath().includes(routeBtn)) {
             routeModal.classList.remove('route__modal-active');
         }
-
-        routeBtn.addEventListener('click', (eve) => {
-            eve.preventDefault();
-            routeModal.classList.toggle('route__modal-active');
-        })
     }
 })
