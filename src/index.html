@@ -7,7 +7,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Vite App</title>
   </head>
   <body class="w-full h-full bg-[#0F0F0F] font-Grtsk">
@@ -15,16 +15,16 @@
         <nav class="flex items-center justify-between relative p-6 lg:px-5 lg:py-5 z-20" aria-label="Global">
           <div class="flex items-center gap-x-12">
             <a href="#" class="">
-              <img class="h-8 w-auto" src="img/headerLogo.svg" alt="">
+              <img class="h-8 w-auto" src="/img/headerLogo.svg" alt="">
             </a>
             <div class="hidden lg:flex items-center lg:gap-x-9">
               <a href="#" class="lg:hidden xl:block text-lg leading-6 text-white font-normal">Стрельба</a>
-              <a href="#" class="lg:hidden xl:block text-lg leading-6 text-white font-normal">Подарочные карты</a>
+              <a href="#" class="lg:hidden book:block text-lg leading-6 text-white font-normal">Подарочные карты</a>
               <a href="#" class="lg:hidden 2xl:block text-lg leading-6 text-white font-normal">Мероприятия</a>
-              <a href="#" class="desk:hidden 2xl:block text-lg leading-6 text-white font-normal">О клубе</a>
+              <a href="#" class="lg:hidden 3xl:block text-lg leading-6 text-white font-normal">О клубе</a>
               <div class="relative cursor-pointer">
                 <div id="dropdownDefaultButton" class="p-2" data-dropdown-toggle="dropdown">
-                  <img src="img/dot.svg"/>
+                  <img src="/img/dot.svg"/>
                 </div>
                 <div id="dropdown" class="max-w-[275px] z-10 absolute top-6 hidden bg-[rgba(31,_31,_31,_0.50)] backdrop-blur-xl divide-y rounded-lg shadow w-44">
                   <ul class="py-2 text-sm " aria-labelledby="dropdownDefaultButton">
@@ -41,16 +41,16 @@
                       <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Раздевалки</a>
                     </li>
                      <li class="lg:block xl:hidden">
-                      <a href="#" class="px-4 py-2 text-white opacity-50 hover:opacity-100">Стрельба</a>
+                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Стрельба</a>
                     </li>
                     <li class="lg:block xl:hidden">
-                      <a href="#" class="px-4 py-2 text-white opacity-50 hover:opacity-100">Подарочные карты</a>
+                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Подарочные карты</a>
                     </li>
                     <li class="lg:block 2xl:hidden">
-                      <a href="#" class="px-4 py-2 text-white opacity-50 hover:opacity-100">Мероприятия</a>
+                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Мероприятия</a>
                     </li>
-                    <li class="xl:block 2xl:hidden">
-                      <a href="#" class="px-4 py-2 text-white opacity-50 hover:opacity-100">О клубе</a>
+                    <li class="lg:block 3xl:hidden">
+                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">О клубе</a>
                     </li>
                   </ul>
             </div>
@@ -72,9 +72,9 @@
             <a class="hidden lg:block text-lg font-normal text-white" href="tel:+78325463143">+7 832 546 31 43</a>
             <div class="w-[1px] h-9 bg-[rgba(255,_255,_255,_0.16)]"></div>
             <div class="flex items-center gap-x-2">
-              <a href="#"><img src="img/whatsapp.svg" alt=""></a>
-              <a href="#"><img src="img/vk.svg" alt=""></a>
-              <a href="#"><img src="img/telegram.svg" alt=""></a>
+              <a href="#"><img src="/img/whatsapp.svg" alt=""></a>
+              <a href="#"><img src="/img/vk.svg" alt=""></a>
+              <a href="#"><img src="/img/telegram.svg" alt=""></a>
             </div>
             <button class="flex justify-between items-center px-[30px] py-5 bg-[#1A1A19] group hover:bg-[#B9AB91] transition-colors">
               <span class="text-lg font-normal text-white mr-4 group-hover:text-[#222220]">Даниил</span>
@@ -128,11 +128,11 @@
           <div class="w-full h-[1px] bg-[#363636]"></div>
           <div class="flex flex-col justify-center px-4 py-7">
             <div class="flex justify-between items-center mb-[16px]">
-              <a class="bg-[url('./img/phone.svg')] bg-no-repeat bg-[left_6px] pl-9 text-white text-lg">+7 832 546 31 43</a>
+              <a class="bg-[url('../img/phone.svg')] bg-no-repeat bg-[left_6px] pl-9 text-white text-lg">+7 832 546 31 43</a>
               <div class="flex items-center">
-                <img src="img/whatsapp.svg"/>
-                <img src="img/vk.svg"/>
-                <img src="img/telegram.svg"/>
+                <img src="/img/whatsapp.svg"/>
+                <img src="/img/vk.svg"/>
+                <img src="/img/telegram.svg"/>
               </div>
             </div>
             <button class="flex justify-center items-center max-w-[350px] py-6 bg-[#222220] group hover:bg-[#E1DEB3]">
@@ -156,15 +156,15 @@
         </div>
       </header>
     <main class="w-full pt-[85px] lg:pt-[110px]">
-      <section class="w-full h-[931px] flex items-end md:block bg-center bg-no-repeat bg-cover mb-[180px]" style="background-image: url('./img/headerBack.webp');">
-        <div class="container">
+      <section class="w-full h-[931px] flex items-end md:block bg-center bg-no-repeat bg-cover mb-[180px]" style="background-image: url('../img/headerBack.webp');">
+        <div class="container px-4 sm:px-5 3xl:px-0">
           <div class="sm:pl-5 2xl:pl-0 pt-[60px]">
             <h1 class="max-w-[350px] text-[40px] leading-[44px] md:max-w-[720px] md:text-[82px] font-semibold uppercase text-white md:leading-[90px] mb-6 md:mb-11">
               стрельба из боевого оружия
               в тире 7.62
             </h1>
             <p class="max-w-[435px] text-sm md:text-xl font-normal leading-5 md:leading-6 text-white mb-11 md:mb-16">Тир 7.62 — место концентрации и энергии, где сосредоточенность и меткость воплощаются в идеальном выстреле.</p>
-            <button class="flex gap-x-3 items-center px-[90px] py-6 md:px-10 md:py-8 bg-[#B9AB91]
+            <button class="flex gap-x-3 items-center w-full sm:w-auto justify-center sm:px-[90px] py-6 md:px-10 md:py-8 bg-[#B9AB91]
             ">
               <span>Забронировать</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -182,11 +182,11 @@
               </svg>
             </button>
           </div>
-          <img src="img/arr.svg"/>
+          <img src="/img/arr.svg"/>
         </div>
       </section>
       <section class="px-4 md:px-0 mb-[180px]">
-          <div class="container">
+          <div class="container px-4 sm:px-5 3xl:px-0">
             <h2 class="text-3xl sm:text-6xl font-medium leading-[72px] text-white uppercase mb-8">программы</h2>
             <div class="relative">
               <div class=" flex gap-x-5 flex-nowrap mb-16 overflow-x-auto 2xl:overflow-hidden overflow-y-hidden">
@@ -313,9 +313,9 @@
       </section>
       <section class="w-full px-4 py-[90px] bg-[#1B1B1A] mb-[180px]">
       <div class="swiper mySwiper pb-20">
-        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-20 px-3 lg:gap-x-10 xl:gap-x-0 gap-x-0 sm:px-5 lg:px-[90px]">
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-20 lg:gap-x-10 xl:gap-x-0 gap-x-0 sm:px-5 lg:px-[90px]">
             <h2 class="max-w-[704px] text-3xl leading-9 md:text-6xl text-white font-medium md:leading-[72px] uppercase mb-5 lg:mb-0">о стрелковом клубе 7.62</h2>
-            <div class="max-w-[498px] text-[#878787] text-xl font-normal leading-7">
+            <div class="max-w-[498px] text-[#878787] text-[15px] sm:text-xl font-normal leading-5 sm:leading-7">
                 Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками
             </div>
             <div class="hidden lg:inline-flex p-6 gap-9 bg-[#1A1A19]">
@@ -335,7 +335,7 @@
         <div class="swiper-wrapper pl-0">
           <div class="swiper-slide relative max-w-[856px]">
             <img src="/img/slide1.png"/>
-            <p class="absolute pl-[20px] pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[500px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
+            <p class="absolute pl-[20px] pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white text-[13px] sm:text-[17px] max-w-[350px] sm:max-w-[500px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
           </div>
           <div class="swiper-slide relative max-w-[856px]">
             <img src="/img/slide2.png"/>
@@ -351,13 +351,10 @@
           </div>
           <div class="swiper-slide relative max-w-[856px]">
             <img src="/img/slide1.png"/>
-            <p class="absolute md:pl-[20px] md:pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[500px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
-          </div>
-          <div class="swiper-slide relative max-w-[856px]">
-            <img src="/img/slide2.png"/>
             <p class="absolute md:pl-[20px] md:pb-[20px] lg:pl-[50px] lg:pb-[50px] bottom-0 z-50 text-white max-w-[500px]">Мы гордимся тем, что предоставляем клиентам возможность ощутить себя настоящими стрелками</p>
           </div>
         </div>
+        <div class="pagination__custom absolute top-20 py-2"></div>
         <div class="inline-flex lg:hidden">
               <button class="absolute py-4 px-5 bottom-4 left-0 bg-[#242423] custom-prev z-40">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
@@ -370,11 +367,39 @@
                 </svg>
               </button>
         </div>
-        <div class="pagination__custom absolute top-20 py-2"></div>
-      </div>
+
+<!--        <div id="pagintaionCustom" class="my-pagination mt-[40px] flex justify-center items-baseline gap-x-[20px]">-->
+<!--          <div class="pagination__prev flex flex-col justify-center items-center">-->
+<!--            <span class="block h-[37px] w-[1px] bg-[rgba(255,_255,_255,_0.15)]"></span>-->
+<!--            <span data-prev class="text-white font-['GrtskTera'] opacity-30 text-lg leading-5"></span>-->
+<!--          </div>-->
+<!--          <svg xmlns="http://www.w3.org/2000/svg" width="165" height="37" viewBox="0 0 165 37" fill="none">-->
+<!--            <rect y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="164" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="41" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="82" width="1" height="37" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="123" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--          </svg>-->
+<!--          <div class="pagination__active curs flex flex-col justify-center items-center">-->
+<!--            <span class="block h-[37px] w-[1px] bg-[#B9AB91]"></span>-->
+<!--            <span data-active class="text-white font-['GrtskTera'] text-lg leading-5"></span>-->
+<!--          </div>-->
+<!--          <svg xmlns="http://www.w3.org/2000/svg" width="165" height="37" viewBox="0 0 165 37" fill="none">-->
+<!--            <rect y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="164" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="41" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="82" width="1" height="37" fill="white" fill-opacity="0.15"/>-->
+<!--            <rect x="123" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
+<!--          </svg>-->
+<!--          <div class="pagination__next flex flex-col justify-center items-center">-->
+<!--            <span class="block h-[37px] w-[1px] bg-[rgba(255,_255,_255,_0.15)]"></span>-->
+<!--            <span data-next class="text-white font-['GrtskTera'] opacity-30 text-lg leading-5"></span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
       </section>
       <section class="hidden md:block mb-[180px] sm:px-5 2xl:px-0">
-        <div class="container">
+        <div class="container px-6 3xl:px-0">
           <div class="swiper myGallerey">
             <div class="flex justify-between items-center mb-16">
             <h2 class="max-w-[704px] text-3xl sm:text-6xl text-white font-medium leading-[72px] uppercase">галереи</h2>
@@ -416,7 +441,7 @@
                         <span class="btn__content">Подробнее</span>
                       </button>
                     </div> 
-                    <div class="flex items-end  basis-[100%] bg-no-repeat h-[639px]" style="background-image: url(./img/gal.png)">
+                    <div class="flex items-end  basis-[100%] bg-no-repeat h-[639px]" style="background-image: url(../img/gal.png)">
                       <div class="tabs__head flex p-[34px]">
                         <div class="tabs__caption px-[120px] py-4 backdrop-blur-xl text-[#8C8C8C] text-base font-normal cursor-pointer" data-tab="oneMeter">50 метров</div>
                         <div class="tabs__caption px-[120px] py-4 backdrop-blur-xl text-[#8C8C8C] text-base font-normal cursor-pointer" data-tab="twoMeter">250 метров</div>
@@ -448,7 +473,7 @@
                         <span class="btn__content">Подробнее</span>
                       </button>
                     </div> 
-                    <div class="flex items-end  basis-[100%] bg-no-repeat h-[639px]" style="background-image: url(./img/gal.png)">
+                    <div class="flex items-end  basis-[100%] bg-no-repeat h-[639px]" style="background-image: url(../img/gal.png)">
                       <div class="tabs__head flex p-[34px]">
                         <div class="tabs__caption px-[120px] py-4 backdrop-blur-xl text-[#8C8C8C] text-base font-normal" data-tab="oneMeter">50 метров</div>
                         <div class="tabs__caption px-[120px] py-4 backdrop-blur-xl text-[#8C8C8C] text-base font-normal" data-tab="twoMeter">250 метров</div>
@@ -480,7 +505,7 @@
                         <span class="btn__content">Подробнее</span>
                       </button>
                     </div> 
-                    <div class="flex items-end  basis-[100%] bg-no-repeat h-[639px]" style="background-image: url(./img/gal.png)">
+                    <div class="flex items-end  basis-[100%] bg-no-repeat h-[639px]" style="background-image: url(../img/gal.png)">
                       <div class="tabs__head flex p-[34px]">
                         <div class="tabs__caption px-[120px] py-4 backdrop-blur-xl text-[#8C8C8C] text-base font-normal" data-tab="oneMeter">50 метров</div>
                         <div class="tabs__caption px-[120px] py-4 backdrop-blur-xl text-[#8C8C8C] text-base font-normal" data-tab="twoMeter">250 метров</div>
@@ -512,7 +537,7 @@
                         <span class="btn__content">Подробнее</span>
                       </button>
                     </div> 
-                    <div class="flex items-end  basis-[100%] bg-no-repeat h-[639px]" style="background-image: url(./img/gal.png)">
+                    <div class="flex items-end  basis-[100%] bg-no-repeat h-[639px]" style="background-image: url(../img/gal.png)">
                       <div class="tabs__head flex p-[34px]">
                         <div class="tabs__caption px-[120px] py-4 backdrop-blur-xl text-[#8C8C8C] text-base font-normal" data-tab="oneMeter">50 метров</div>
                         <div class="tabs__caption px-[120px] py-4 backdrop-blur-xl text-[#8C8C8C] text-base font-normal" data-tab="twoMeter">250 метров</div>
@@ -525,8 +550,8 @@
             </div>
         </div>
       </section>
-      <section class="w-full relative h-[981px] mb-[180px]" style="background: radial-gradient(59.14% 59.12% at 64.82% 49.95%, rgba(15, 15, 15, 0.00) 0%, #0F0F0F 100%), url('./img/map.png');">
-        <div class="container">
+      <section class="w-full flex flex-col justify-end sm:block relative h-[981px] mb-[180px]" style="background: radial-gradient(59.14% 59.12% at 64.82% 49.95%, rgba(15, 15, 15, 0.00) 0%, #0F0F0F 100%), url('../img/map.png');">
+        <div class="container px-6 3xl:px-0">
           <div class="hidden sm:flex route__tabs justify-center lg:justify-between items-center xl:pl-5 2xl:pl-0">
             <div class="flex basis-[556px] flex-col items-start py-[50px] px-[55px] bg-[#1B1B1A]">
               <h2 class="text-6xl font-medium leading-[72px] uppercase text-white mb-16">Маршрут</h2>
@@ -554,15 +579,15 @@
               </button>
             </div>
           </div>
-          <div class="absolute bottom-4 block sm:hidden">
-            <button class="route__modal-btn py-6 px-[80px] text-white btn bg-[#1B1B1A] transition">Построить маршрут</button>
+          <div class="flex justify-center items-center sm:hidden ">
+            <button class="route__modal-btn py-6 px-12 sm:px-[98px] text-white btn bg-[#1B1B1A] transition">Построить маршрут</button>
           </div>
            <div id="route-modal"  class="route__tabs translate-y-full bottom-2 fixed z-50 flex invisible basis-[347px] flex-col items-start pt-8 px-[18px] pb-[18px] bg-[#1B1B1A]" style="transition: transform .5s, visibility 1s;">
               <h2 class="text-3xl font-medium leading-9 uppercase text-white mb-6">Маршрут</h2>
               <p class="text-base font-medium leading-4 text-white mb-4">Как добраться</p>
               <div class="tabs__head flex mb-6">
-                <div class="tabs__caption py-4 px-10 text-white bg-[rgba(255,_255,_255,_0)]" data-tab="metro">От метро</div>
-                <div class="tabs__caption py-4 px-10 text-white bg-[rgba(255,_255,_255,_0)]" data-tab="car">На машине</div>
+                <div class="tabs__caption text-sm py-4 px-10 text-white bg-[rgba(255,_255,_255,_0)] " data-tab="metro">От метро</div>
+                <div class="tabs__caption py-4 px-8 text-[14px] text-white bg-[rgba(255,_255,_255,_0)]" data-tab="car">На машине</div>
               </div>
               <div class="tabs__body">
                 <div class="tabs__content mb-7" data-tab="metro">
@@ -574,16 +599,22 @@
                   <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Продвигайтесь на юг по улице Новокузнецкая. Продолжайте идти до тех пор, пока не достигнете Красного Октября проспекта. Это займет примерно 10-15 минут пешком.</p>
                 </div>
               </div>
-              <a class="sm:py-6 sm:px-[79px] px-0 py-0 btn-link"><span class="btn-text">Построить маршрут</span></a>
+             <button class="w-full btn__custom hover:active px-[50px] py-[25px] bg-transparent border border-[#2D2D2B]">
+               <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+               <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+               <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+               <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+               <span class="btn__content">Построить маршрут</span>
+             </button>
             </div>
         </div>
       </section>
-      <section class="mb-[180px] sm:px-5 2xl:px-0">
-        <div class="container flex flex-col  lg:flex-row items-end">
+      <section class="mb-[180px]">
+        <div class="container sm:px-5 flex flex-col 2xl:px-5 3xl:px-0 lg:flex-row items-end">
           <div class="flex flex-col w-full items-start mb-5">
             <h2 class="title max-w-[704px] mb-14">у нас не только стреляют</h2>
-            <p class="md:hidden text-white text-left text-xl font-normal leading-6 max-w-[454px] mb-20 opacity-50">Мы предлагаем гостям в перерывах между стрельбой посетить наши кафе и магазин с брендированными сувенирами</p>
-            <div class="w-full h-[570px] bg-no-repeat bg-center flex items-end justify-between py-5 px-4 md:px-8" style="background-image: url('./img/cafe.png');">
+            <p class="md:hidden text-white text-left text-[15px] sm:text-xl font-normal leading-6 max-w-[454px] mb-20 opacity-50">Мы предлагаем гостям в перерывах между стрельбой посетить наши кафе и магазин с брендированными сувенирами</p>
+            <div class="w-full h-[570px] bg-no-repeat bg-center flex items-end justify-between py-5 px-4 md:px-8" style="background-image: url('../img/cafe.png');">
               <div class="w-full flex items-center justify-between">
                 <h2 class="text-[22px] leading-7 sm:text-4xl font-medium sm:leading-[43px] uppercase text-white">кафе</h2>
                 <a href="#" class="sm:py-[25px] sm:px-10 py-5 px-[30px] bg-[rgba(15,_15,_15,_0.50)] backdrop-filter leading-5 text-white btn">Подробнее</a>
@@ -592,7 +623,7 @@
           </div>
           <div class="flex flex-col w-full items-start mb-5">
              <p class="text-white text-left text-xl font-normal leading-6 max-w-[454px] mb-20 opacity-50 hidden md:block">Мы предлагаем гостям в перерывах между стрельбой посетить наши кафе и магазин с брендированными сувенирами</p>
-             <div class="w-full h-[570px] flex items-end  justify-between py-5 px-4 md:px-8" style="background-image: url('./img/market.png');">
+             <div class="w-full h-[570px] flex items-end  justify-between py-5 px-4 md:px-8" style="background-image: url('../img/market.png');">
               <div class="w-full flex justify-between items-center">
                 <h2 class="text-[22px] leading-7 sm:text-4xl font-medium sm:leading-[43px] uppercase text-white">магазин</h2>
                 <a href="#" class="sm:py-[25px] sm:px-10 py-5 px-[30px] bg-[rgba(15,_15,_15,_0.50)] backdrop-filter text-[17px] font-normal leading-5 text-white btn">Подробнее</a>
@@ -601,10 +632,10 @@
           </div>
         </div>
       </section>
-      <section class="mb-9 md:mb-[180px] sm:px-5 2xl:px-0">
-        <div class="container">
+      <section class="mb-9 md:mb-[180px]">
+        <div class="container px-4 sm:px-10 3xl:px-0">
           <div class="max-w-[783px]">
-            <p class="mb-9 text-[#878787] text-xl font-normal leading-5">Подпишитесь, чтобы получать новости</p>
+            <p class="mb-9 text-[#878787] text-sm sm:text-xl font-normal leading-5">Подпишитесь, чтобы получать новости</p>
             <div class="border-b flex justify-between gap-x-6 border-[#3A3A3A] pb-7 mb-9">
               <input type="text" class="w-full border-none outline-none ring-offset-0 bg-transparent text-white text-6xl font-medium leading-[72px]"/>
               <button class="py-5 px-6 bg-[#1F1F1F] btn group">
@@ -654,21 +685,21 @@
       <div class="container h-[1px] bg-[#3A3A3A] mb-24"></div>
     </main>
     <footer class="pb-[60px]">
-      <div class="container">
-        <div class="flex flex-col sm:flex-row justify-between items-start gap-y-11 sm:gap-0 sm:px-5 2xl:px-0">
-          <div class="flex flex-col gap-0 sm:gap-y-[181px]">
-            <img class="w-[151px] sm:w-full" src="img/footerLogo.svg"/>
+      <div class="container px-5 lg:px-10 3xl:px-0">
+        <div class="flex flex-col sm:flex-row justify-between items-start gap-y-11 sm:gap-x-6 md:gap-x-10 lg:gap-x-0 sm:h-[420px]">
+          <div class="w-full sm:w-auto flex flex-col justify-between gap-0 h-full">
+            <img class="w-[60%] sm:w-full lg:w-[80%] xl:w-full" src="/img/footerLogo.svg"/>
             <div class="hidden sm:flex items-center gap-x-2">
-              <a href="#"><img src="img/whatsapp.svg" alt=""></a>
-              <a href="#"><img src="img/vk.svg" alt=""></a>
-              <a href="#"><img src="img/telegram.svg" alt=""></a>
+              <a href="#"><img src="/img/whatsapp.svg" alt=""></a>
+              <a href="#"><img src="/img/vk.svg" alt=""></a>
+              <a href="#"><img src="/img/telegram.svg" alt=""></a>
             </div>
           </div>
-          <div class="flex flex-col gap-y-[80px]">
-            <div class="flex flex-col sm:flex-row justify-between items-baseline gap-y-11 sm:gap-x-[161px]">
-              <div class="">
+          <div class="flex flex-col justify-between sm:h-full">
+            <div class="flex flex-col sm:flex-row justify-between items-baseline gap-y-11 sm:gap-x-[30px] md:gap-x-[80px] lg:gap-x-[120px] 2xl:gap-x-[160px]">
+              <div class="w-full">
                 <h4 class="text-white text-xl font-normal leading-5 mb-8">Тир</h4>
-                <div class="hidden md:flex flex-col gap-y-4">
+                <div class="hidden sm:flex flex-col gap-y-4">
                   <a href="" class="text-lg font-normal leading-5 text-[#878787]">Стрельба</a>
                   <a href="" class="text-lg font-normal leading-5 text-[#878787]">Подарочные карты</a>
                   <a href="" class="text-lg font-normal leading-5 text-[#878787]">О клубе</a>
@@ -677,67 +708,67 @@
                   <a href="" class="text-lg font-normal leading-5 text-[#878787]">Галереи</a>
                   <a href="" class="text-lg font-normal leading-5 text-[#878787]">Раздевалки</a>
                 </div>
-                <div class="flex gap-x-8 sm:hidden">
+                <div class="flex justify-between gap-x-8 sm:hidden">
                   <div class="flex flex-col gap-y-[18px]">
-                    <a href="" class="text-lg font-normal leading-5 text-[#878787]">Стрельба</a>
-                    <a href="" class="text-lg font-normal leading-5 text-[#878787]">Подарочные карты</a>
-                    <a href="" class="text-lg font-normal leading-5 text-[#878787]">О клубе</a>
-                    <a href="" class="text-lg font-normal leading-5 text-[#878787]">Парковка</a>
+                    <a href="" class="text-[15px] font-normal leading-5 text-[#878787]">Стрельба</a>
+                    <a href="" class="text-[15px] font-normal leading-5 text-[#878787]">Подарочные карты</a>
+                    <a href="" class="text-[15px] font-normal leading-5 text-[#878787]">О клубе</a>
+                    <a href="" class="text-[15px] font-normal leading-5 text-[#878787]">Парковка</a>
                   </div>
                   <div class="flex flex-col gap-y-[18px]">
-                    <a href="" class="text-lg font-normal leading-5 text-[#878787]">Арсенал</a>
-                    <a href="" class="text-lg font-normal leading-5 text-[#878787]">Галереи</a>
-                    <a href="" class="text-lg font-normal leading-5 text-[#878787]">Раздевалки</a>
+                    <a href="" class="text-[15px] font-normal leading-5 text-[#878787]">Арсенал</a>
+                    <a href="" class="text-[15px] font-normal leading-5 text-[#878787]">Галереи</a>
+                    <a href="" class="text-[15px] font-normal leading-5 text-[#878787]">Раздевалки</a>
                   </div>
                 </div>
               </div>
               <div>
                 <h4 class="text-white text-xl font-normal leading-5 mb-8">Жизнь</h4>
                 <div class="hidden sm:flex flex-col gap-y-4">
-                  <a href="" class="text-lg font-normal leading-5 text-[#878787]">Мероприятия</a>
-                  <a href="" class="text-lg font-normal leading-5 text-[#878787]">Новости</a>
-                  <a href="" class="text-lg font-normal leading-5 text-[#878787]">Соревнования</a>
-                  <a href="" class="text-lg font-normal leading-5 text-[#878787]">О нас</a>
+                  <a href="" class="text-[15px] sm:text-lg font-normal leading-5 text-[#878787]">Мероприятия</a>
+                  <a href="" class="text-[15px] sm:text-lg font-normal leading-5 text-[#878787]">Новости</a>
+                  <a href="" class="text-[15px] sm:text-lg font-normal leading-5 text-[#878787]">Соревнования</a>
+                  <a href="" class="text-[15px] sm:text-lg font-normal leading-5 text-[#878787]">О нас</a>
                 </div>
                 <div class="flex gap-x-8 sm:hidden">
                   <div class="flex flex-col gap-y-[18px]">
-                    <a href="" class="text-lg font-normal leading-5 text-[#878787]">Мероприятия</a>
-                    <a href="" class="text-lg font-normal leading-5 text-[#878787]">Новости</a>
+                    <a href="" class="text-[15px] font-normal leading-5 text-[#878787]">Мероприятия</a>
+                    <a href="" class="text-[15px] font-normal leading-5 text-[#878787]">Новости</a>
                   </div>
                   <div class="flex flex-col gap-y-[18px]">
-                    <a href="" class="text-lg font-normal leading-5 text-[#878787]">Соревнования</a>
-                    <a href="" class="text-lg font-normal leading-5 text-[#878787]">О нас</a>
+                    <a href="" class="text-[15px] font-normal leading-5 text-[#878787]">Соревнования</a>
+                    <a href="" class="text-[15px] font-normal leading-5 text-[#878787]">О нас</a>
                   </div>
                 </div>
               </div>
               <div>
                 <h4 class="text-white text-xl font-normal leading-5 mb-8">Меню</h4>
                 <div class="hidden sm:flex flex-col gap-y-4">
-                  <a href="" class="text-lg font-normal leading-5 text-[#878787]">Мероприятия</a>
-                  <a href="pages/contact.html" class="text-lg font-normal leading-5 text-[#878787]">Новости</a>
-                  <a href="" class="text-lg font-normal leading-5 text-[#878787]">Соревнования</a>
+                  <a href="" class="text-[15px] sm:text-lg font-normal leading-5 text-[#878787]">Мероприятия</a>
+                  <a href="pages/contact.html" class="text-[15px] sm:text-lg font-normal leading-5 text-[#878787]">Новости</a>
+                  <a href="" class="text-[15px] sm:text-lg font-normal leading-5 text-[#878787]">Соревнования</a>
                 </div>
                 <div class="sm:hidden flex gap-x-8">
                   <div class="flex flex-col gap-y-[18px]">
-                    <a href="" class="text-lg font-normal leading-5 text-[#878787]">Мероприятия</a>
-                    <a href="" class="text-lg font-normal leading-5 text-[#878787]">Новости</a>
+                    <a href="" class="text-[15px] font-normal leading-5 text-[#878787]">Мероприятия</a>
+                    <a href="" class="text-[15px] font-normal leading-5 text-[#878787]">Новости</a>
                   </div>
                   <div class="flex flex-col gap-y-[18px]">
-                    <a href="" class="text-lg font-normal leading-5 text-[#878787]">Соревнования</a>
+                    <a href="" class="text-[15px] font-normal leading-5 text-[#878787]">Соревнования</a>
                   </div>
                 </div>
               </div>
             </div>
             <div class="sm:hidden flex justify-between items-center">
-              <a href="#"><img src="img/telegram.svg" alt=""></a>
+              <a href="#"><img src="/img/telegram.svg" alt=""></a>
               <div class="w-[1px] h-[22px] bg-[#383837]"></div>
-              <a href="#"><img src="img/vk.svg" alt=""></a>
+              <a href="#"><img src="/img/vk.svg" alt=""></a>
               <div class="w-[1px] h-[22px] bg-[#383837]"></div>
-              <a href="#"><img src="img/instagram.svg" alt=""></a>
+              <a href="#"><img src="/img/instagram.svg" alt=""></a>
               <div class="w-[1px] h-[22px] bg-[#383837]"></div>
-              <a href="#"><img src="img/whatsapp.svg" alt=""></a>
+              <a href="#"><img src="/img/whatsapp.svg" alt=""></a>
             </div>
-            <a href="#" class="hidden sm:block text-lg font-normal text-white mb-6">Политика конфиденциальности</a>
+            <a href="#" class="hidden sm:block text-lg font-normal text-white">Политика конфиденциальности</a>
           </div>
           <div class="w-full sm:hidden text-base text-center text-[#878787] font-normal leading-4">Тир 762 © 2023</div>
         </div>

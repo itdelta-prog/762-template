@@ -7,7 +7,7 @@ async function submitFitler(param) {
 
   formData.append("firstVisit", param.firstVisit);
   formData.append("type", param.type);
-  let response = await fetch('https://651e822d44a3a8aa47687cb1.mockapi.io/pistolet', {
+  let response = await fetch('/local/ajax/main/weapons.php', {
     method: 'POST',
     body: formData
   });
