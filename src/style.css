@@ -367,6 +367,16 @@
   .menu-open {
     @apply block opacity-100 visible
   }
+
+
+  .contact__info-title {
+    @apply text-[24px] sm:text-4xl font-medium leading-[28px] sm:leading-[43px] text-white
+  }
+
+  .contact__info-supTitle {
+    @apply text-[15px] leading-[18px] sm:text-lg font-normal sm:leading-5 text-[#878787] mb-6
+  }
+
 }
 
 
