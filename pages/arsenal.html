@@ -7,16 +7,23 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/themes/light.min.css" rel="stylesheet">
+<!--    <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.css" rel="stylesheet">-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/themes/light.min.css" rel="stylesheet">-->
     
     <title>Title</title>
   <script type="module" crossorigin src="/762-template/arsenal.js"></script>
-  <link rel="modulepreload" crossorigin href="/762-template/assets/script-df64ac74.js">
-  <link rel="stylesheet" href="/762-template/script.css">
+  <link rel="modulepreload" crossorigin href="/762-template/assets/tabs-9f3d8d9a.js">
+  <link rel="stylesheet" href="/762-template/tabs.css">
+  <link rel="stylesheet" href="/762-template/arsenal.css">
 </head>
 <body class="w-full h-full bg-[#0F0F0F] font-Grtsk">
-<header class="border-b border-[#363636] mb-[19px] sm:mb-20">
+<div class="w-full h-full fixed bg-[#0F0F0F] z-[9999999999] flex justify-center hidden items-center transition-opacity">
+    <div role="status">
+        <svg width="300" height="300" fill="#B8AA91" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_ngNb{animation:spinner_ZRWK 1.2s cubic-bezier(0.52,.6,.25,.99) infinite}.spinner_6TBP{animation-delay:.6s}@keyframes spinner_ZRWK{0%{transform:translate(12px,12px) scale(0);opacity:1}100%{transform:translate(0,0) scale(1);opacity:0}}</style><path class="spinner_ngNb" d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z" transform="translate(12, 12) scale(0)"/><path class="spinner_ngNb spinner_6TBP" d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z" transform="translate(12, 12) scale(0)"/></svg>
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<header class="border-b border-[#363636] mb-[19px] sm:mb-20 w-full fixed top-0 bg-[#0F0F0F] z-[99999999]">
     <nav class="flex items-center justify-between relative p-6 lg:px-5 lg:py-5 z-20" aria-label="Global">
         <div class="flex items-center gap-x-12">
             <a href="/src/public" class="">
@@ -132,7 +139,7 @@
         </div>
         <div class="w-full h-[1px] bg-[#363636]"></div>
         <div class="flex flex-col justify-center px-4 py-7">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center mb-[16px]">
                 <a class="bg-[url('../img/phone.svg')] bg-no-repeat bg-[left_6px] pl-9 text-white text-lg">+7 832 546 31 43</a>
                 <div class="flex items-center">
                     <img src="/762-template/img/whatsapp.svg"/>
@@ -160,7 +167,7 @@
         <!-- Background backdrop, show/hide based on slide-over state. -->
     </div>
 </header>
-<main>
+<main class="pt-[100px] lg:pt-[150px]">
     <section class="mb-[40px] md:mb-[180px] ">
         <div>
             <div class="swiper myArsenal mb-8 sm:mb-[85px] pb-[30px] md:pb-0">
@@ -169,9 +176,27 @@
                     <p class="md:max-w-[350px] block lg:hidden lg:max-w-[479px] text-sm md:text-xl font-normal leading-5 md:leading-6 opacity-50 text-white mb-[24px]">Тир 7.62 — место концентрации и энергии, где сосредоточенность и меткость воплощаются в идеальном выстреле.</p>
                     <div class="mb-16 flex items-start md:items-center md:justify-between flex-col md:flex-row">
                         <div class="md:w-auto w-full flex gap-x-[11px] sm:gap-x-5 overflow-x-scroll sm:overflow-hidden mb-3">
-                            <button class="btn-primay" data-gun="pistol"><span class="btn-text">Пистолет</span></button>
-                            <button class="btn-primay" data-gun="carbine"><span class="btn-text">Ружье</span></button>
-                            <button class="btn-primay" data-gun="rifle"><span class="btn-text">Карабин</span></button>
+                            <a href="#" class="btn__custom active  group  bg-transparent border border-[#2D2D2B]" data-gun="pistol">
+                                <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                <span class="btn__content">Пистолет</span>
+                            </a>
+                            <a href="#" class="btn__custom  group  bg-transparent border border-[#2D2D2B]" data-gun="rifle">
+                                <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                <span class="btn__content">Ружье</span>
+                            </a>
+                            <a href="#" class="btn__custom group bg-transparent border border-[#2D2D2B]" data-gun="carbine">
+                                <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                <span class="btn__content">Карабин</span>
+                            </a>
                         </div>
                         <p class="hidden lg:block max-w-[479px] text-xl font-normal leading-6 opacity-50 text-white">Тир 7.62 — место концентрации и энергии, где сосредоточенность и меткость воплощаются в идеальном выстреле.</p>
                         <div class="hidden md:inline-flex  p-6 gap-9 bg-[#1A1A19]">
@@ -194,10 +219,10 @@
                 <div class="swiper-wrapper lg:pl-[80px]" style="">
                     <div class="w-fit swiper-slide" style="margin-right: 20px;">
                         <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19] group relative">
-<!--                             <div class="w-[50px] absolute left-0 top-0 h-[50px] border-t border-[#B8AA91] border-l z-50 opacity-0 transition-opacity opacity-100"></div>-->
-<!--                              <div class="w-[50px] absolute left-0 bottom-0 -rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute right-0 top-0 rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute right-0 bottom-0  h-[50px] border-b border-[#B8AA91] border-r z-50 transition-opacity opacity-0 opacity-100"></div>-->
+                             <div class="w-[50px] absolute left-0 top-0 h-[50px] border-t border-[#B8AA91] border-l z-50 opacity-0 transition-opacity opacity-100"></div>
+                              <div class="w-[50px] absolute left-0 bottom-0 -rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 opacity-100"></div>
+                            <div class="w-[50px] absolute right-0 top-0 rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 opacity-100"></div>
+                            <div class="w-[50px] absolute right-0 bottom-0  h-[50px] border-b border-[#B8AA91] border-r z-50 transition-opacity opacity-0 opacity-100"></div>
                             <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
                                 <img src="/762-template/img/arsenalSlide.png" alt="">
                             </div>
@@ -206,10 +231,10 @@
                     </div>
                     <div class="w-fit swiper-slide" style="margin-right: 20px;">
                         <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19] group relative">
-<!--                            <div class="w-[50px] absolute left-0 top-0 h-[50px] border-t border-[#B8AA91] border-l z-50 opacity-0 transition-opacity group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute left-0 bottom-0 -rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute right-0 top-0 rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute right-0 bottom-0  h-[50px] border-b border-[#B8AA91] border-r z-50 transition-opacity opacity-0 group-hover:opacity-100"></div>-->
+                            <div class="w-[50px] absolute left-0 top-0 h-[50px] border-t border-[#B8AA91] border-l z-50 opacity-0 transition-opacity group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute left-0 bottom-0 -rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute right-0 top-0 rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute right-0 bottom-0  h-[50px] border-b border-[#B8AA91] border-r z-50 transition-opacity opacity-0 group-hover:opacity-100"></div>
                             <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
                                 <img src="/762-template/img/arsenalSlide2.png" alt="">
                             </div>
@@ -218,10 +243,10 @@
                     </div>
                     <div class="w-fit swiper-slide" style="margin-right: 20px;">
                         <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19] group relative">
-<!--                            <div class="w-[50px] absolute left-0 top-0 h-[50px] border-t border-[#B8AA91] border-l z-50 opacity-0 transition-opacity group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute left-0 bottom-0 -rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute right-0 top-0 rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute right-0 bottom-0  h-[50px] border-b border-[#B8AA91] border-r z-50 transition-opacity opacity-0 group-hover:opacity-100"></div>-->
+                            <div class="w-[50px] absolute left-0 top-0 h-[50px] border-t border-[#B8AA91] border-l z-50 opacity-0 transition-opacity group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute left-0 bottom-0 -rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute right-0 top-0 rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute right-0 bottom-0  h-[50px] border-b border-[#B8AA91] border-r z-50 transition-opacity opacity-0 group-hover:opacity-100"></div>
                             <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
                                 <img src="/762-template/img/arsenalSlide.png" alt="">
                             </div>
@@ -230,10 +255,10 @@
                     </div>
                     <div class="w-fit swiper-slide" style="margin-right: 20px;">
                         <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19] group relative">
-<!--                            <div class="w-[50px] absolute left-0 top-0 h-[50px] border-t border-[#B8AA91] border-l z-50 opacity-0 transition-opacity group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute left-0 bottom-0 -rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute right-0 top-0 rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute right-0 bottom-0  h-[50px] border-b border-[#B8AA91] border-r z-50 transition-opacity opacity-0 group-hover:opacity-100"></div>-->
+                            <div class="w-[50px] absolute left-0 top-0 h-[50px] border-t border-[#B8AA91] border-l z-50 opacity-0 transition-opacity group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute left-0 bottom-0 -rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute right-0 top-0 rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute right-0 bottom-0  h-[50px] border-b border-[#B8AA91] border-r z-50 transition-opacity opacity-0 group-hover:opacity-100"></div>
                             <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
                                 <img src="/762-template/img/arsenalSlide.png" alt="">
                             </div>
@@ -242,10 +267,10 @@
                     </div>
                     <div class="w-fit swiper-slide" style="margin-right: 20px;">
                         <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19]">
-<!--                            <div class="w-[50px] absolute left-0 top-0 h-[50px] border-t border-[#B8AA91] border-l z-50 opacity-0 transition-opacity group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute left-0 bottom-0 -rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute right-0 top-0 rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute right-0 bottom-0  h-[50px] border-b border-[#B8AA91] border-r z-50 transition-opacity opacity-0 group-hover:opacity-100"></div>-->
+                            <div class="w-[50px] absolute left-0 top-0 h-[50px] border-t border-[#B8AA91] border-l z-50 opacity-0 transition-opacity group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute left-0 bottom-0 -rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute right-0 top-0 rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute right-0 bottom-0  h-[50px] border-b border-[#B8AA91] border-r z-50 transition-opacity opacity-0 group-hover:opacity-100"></div>
                             <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
                                 <img src="/762-template/img/arsenalSlide.png" alt="">
                             </div>
@@ -254,10 +279,10 @@
                     </div>
                     <div class="w-fit swiper-slide" style="margin-right: 20px;">
                         <div class="inline-flex flex-col md:flex-row items-center py-2 pl-2 bg-[#1A1A19] group relative">
-<!--                            <div class="w-[50px] absolute left-0 top-0 h-[50px] border-t border-[#B8AA91] border-l z-50 opacity-0 transition-opacity group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute left-0 bottom-0 -rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute right-0 top-0 rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>-->
-<!--                            <div class="w-[50px] absolute right-0 bottom-0  h-[50px] border-b border-[#B8AA91] border-r z-50 transition-opacity opacity-0 group-hover:opacity-100"></div>-->
+                            <div class="w-[50px] absolute left-0 top-0 h-[50px] border-t border-[#B8AA91] border-l z-50 opacity-0 transition-opacity group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute left-0 bottom-0 -rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute right-0 top-0 rotate-90 h-[50px] border-t border-[#B8AA91] opacity-0 transition-opacity border-l z-50 group-hover:opacity-100"></div>
+                            <div class="w-[50px] absolute right-0 bottom-0  h-[50px] border-b border-[#B8AA91] border-r z-50 transition-opacity opacity-0 group-hover:opacity-100"></div>
                             <div class="max-w-full flex justify-center items-center px-5 h-[105px] bg-[#222220]">
                                 <img src="/762-template/img/arsenalSlide.png" alt="">
                             </div>
@@ -392,116 +417,15 @@
                 <div class="flex h-fit flex-col lg:basis-[450px] desk:basis-[500px] py-8 px-4 md:px-7 bg-transparent lg:bg-[#181818]">
                     <h3 class="text-3xl lg:text-[20px] font-medium uppercase leading-6 text-white mb-[13px]">БРОНИРОВАНИЕ</h3>
                     <p class="text-white text-[16px] opacity-50 mb-[20px]">Выберите день посещения</p>
-                    <div  id="gungForm">
-                        <div class="mb-[31px]">
-                            <div class="flex gap-x-[13px] mb-[31px] daysWrapper">
-                                <button class=" btn-catalog basis-[184px] tabs__caption_active" data-day="weekdays"><span
-                                        class="btn-link__text">Будни</span></button>
-                                <button class=" btn-catalog basis-[184px]" data-day="weekend"><span
-                                        class="btn-link__text">Выходные</span></button>
-                            </div> <!--  Кнопки посещения табы -->
-                            <div class="flex justify-between mb-[31px] person">
-                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent person-active" data-person="1">1</button>
-                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="2">2</button>
-                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="3">3</button>
-                                <button class="transition-all px-6 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent" data-person="4">4</button>
-                            </div>
-                            <div class="">
-                                <div class="daysContent">
-                                    <div class="flex justify-between mb-[12px]">
-                                        <p class="text-white text-[18px] font-normal leading-5">Базовая стоимость</p>
-                                        <div data-cost="basic"><span class="text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">20 р</span> <span class="text-[18px] text-white font-normal leading-5 opacity-50">500 р.</span></div>
-                                    </div>
-                                    <div class="flex justify-between">
-                                        <p class="text-white text-[18px] font-normal leading-5">Стоимость выстрелов</p>
-                                        <div data-cost="shots"><span class=" text-[14px] text-[rgba(255,_255,_255,_0.50)] line-through">10 р</span> <span class="text-[18px] text-[#B8AA91] font-normal leading-5">600 р.</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full h-[1px] bg-[#282828] mb-9"></div>
-<!--                        <div class="current-shot flex justify-between mb-[31px]">-->
-<!--                            <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent btnMinus" data-pattron="-10" >-10</button>-->
-<!--                            <div data-contentShort="2550" class="max-w-[103px] text-center text-white text-[18px] btnContent">2550 выстрелов</div>-->
-<!--                            <button class="transition-all px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent btnPlus" data-pattron="10">+10</button>-->
-<!--                            <div class="relative">-->
-<!--                                <span class="absolute -top-5 bg-white left-1/4 p-1 z-50">-20%</span>-->
-<!--                                <button class="transition-all relative px-5 text-white py-4 border border-solid border-white opacity-[0.4] hover:border-[#B8AA91] hover:text-[#B8AA91] hover:opacity-100 btnCurrent btnPlus" data-pattron="200" >+200-->
-<!--                                </button>-->
-<!--                            </div>-->
-<!--                        </div>-->
-                        <div class="flex flex-col gap-y-[11px] mb-[31px]">
-<!--                            <button class="p-[12px_19px_12px_19px] btn-catalog group"><span class="opacity-20 group-hover:opacity-100 btn-link__text">Вы в группе из 4-х человек</span></button>-->
-                            <div id="addService" class="flex flex-col gap-y-5">
-                                <button data-personal="instructor" class="p-[12px_19px_12px_19px] after:w-[calc(100%_-_10%)] btn-catalog group flex justify-between btnService"><span class="text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">Персональный инструктор</span><span class="text-[17px] opacity-20 group-hover:opacity-100 btn-link__text" data-instructor="price">+7 500 р.</span></button>
-                                <div id="instructor" class="selectCustom disabled">
-                                    <div class="select">
-                                        <span class="selected">Выбрать инструктора</span>
-                                        <div class="caret"></div>
-                                    </div>
-                                    <ul class="menu h-[200px] scrollCustom overflow-y-scroll">
-                                        <li>Framer</li>
-                                        <li>Sketch</li>
-                                        <li>Figma</li>
-                                    </ul>
-                                </div>
-                                <button data-personal="gallery" class="p-[12px_19px_12px_19px] after:w-[calc(100%_-_10%)] btn-catalog flex justify-between group btnService"><span class="text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">Персональная галерея </span><span class="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text" data-gallery="price">+7500р.</span></button>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center mb-[21px]">
-                            <p class="text-[18px] text-white">Итого</p>
-                            <p class="text-[18px] text-white totalAmout">85 000 р.</p>
-                        </div>
-                        <div class="flex justify-between md:justify-normal md:gap-x-[13px]">
-                            <button class="btn-catalog"><span
-                                    class="btn-link__text">В подарок</span></button>
-                            <button class="btn-catalog btnReserve">
-                                <span class="btn-link__text">К бронированию</span></button>
-                        </div>
+                    <div  id="formReservation">
                     </div>
             </div>
-            </div>
-            <div class="modalReserve scrollCustom overflow-x-auto" style="transition: right .3s">
-                <h6 class="text-white text-[18px]">Выберите дату посещения:</h6>
-                <div id="calendar" class="mb-[20px]"></div>
-                <h6 class="text-white text-[18px] mb-4">Выберите время:</h6>
-                <div id="time" class="grid grid-cols-5 gap-x-5">
-                    <button class="btnTime">9:00</button>
-                    <button class="btnTime">10:00</button>
-                    <button class="btnTime">11:00</button>
-                    <button class="btnTime">12:00</button>
-                    <button class="btnTime">13:00</button>
-                    <button class="btnTime">14:00</button>
-                    <button class="btnTime">15:00</button>
-                    <button class="btnTime">16:00</button>
-                    <button class="btnTime">17:00</button>
-                    <button class="btnTime">18:00</button>
-                    <button class="btnTime">19:00</button>
-                    <button class="btnTime">20:00</button>
-                </div>
-                <div class="mb-16">
-                    <input type="text" placeholder="ФИО" class="w-full py-[20px] border-b border-[#3A3A3A] bg-transparent outline-none ring-offset-0 placeholder-[#878787] text-[#878787] text-[16px]">
-                    <input type="text" placeholder="Номер телефона" class="w-full py-[20px] border-b border-[#3A3A3A] bg-transparent outline-none ring-offset-0 placeholder-[#878787] text-[#878787] text-[16px]">
-                    <input type="text" placeholder="E-mail" class="w-full py-[20px] border-b border-[#3A3A3A] bg-transparent outline-none ring-offset-0 placeholder-[#878787] text-[#878787] text-[16px]">
-                </div>
-                <div class="bg-[#1C1C1A] px-[17px] py-4">
-                    <div class="flex justify-between items-center mb-4">
-                        <p class="text-white text-[18px] font-normal">Итого</p>
-                        <p class="text-white text-[18px] font-normal totalAmout">25 000 ₽</p>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <button class="btn-catalog basis-[140px] px-[15px]"><span
-                                class="btn-link__text text-sm">Забронировать</span></button>
-                        <button class="btn-catalog basis-[145px]"><span
-                                class="btn-link__text text-sm">Оплатить</span></button>
-                    </div>
-                </div>
             </div>
     </section>
     <section class="mb-[60px] md:mb-[200px]">
             <div class="container flex-col sm:flex-row flex sm:border-t sm:border-[#242424] lg:px-6 3xl:px-0">
                 <div class="hidden sm:flex max-w-[450px] flex-col basis-[400px] pr-[20px] gap-y-[60px] sm:pt-[40px]">
-                        <div id="gun">
+                        <div class="select-program">
                             <h2 class="text-white text-2xl font-['GrtskTera'] leading-[28px] uppercase mb-8">Пистолеты</h2>
                             <div class="flex flex-col mb-[32px]">
                                 <div class="gunCourse">
@@ -521,7 +445,7 @@
                                 </svg></button>
                             </div>
                         </div>
-                        <div id="rifle">
+                        <div class="select-program">
                             <h2 class="text-white text-2xl font-['GrtskTera'] leading-[28px] uppercase mb-8">РУЖЬЕ</h2>
                             <div class="flex flex-col mb-[32px]">
                                 <div class="gunCourse">
@@ -541,7 +465,7 @@
                                 </svg></button>
                             </div>
                         </div>
-                        <div id="carabin">
+                        <div class="select-program">
                             <h2 class="text-white text-2xl font-['GrtskTera'] leading-[28px] uppercase mb-8">Карабин</h2>
                             <div class="flex flex-col mb-[32px]">
                                 <div class="gunCourse">
@@ -562,31 +486,79 @@
                             </div>
                         </div>
                     </div>
-                <div class="sm:hidden mb-[80px]">
+                <div class="program__tabs sm:hidden mb-[80px]">
                     <h2 class="text-3xl  leading-[36px] uppercase text-white mb-[20px] font-['GrtskTera'] -tracking-[2.4px]">каталог программ</h2>
-                    <div class="flex gap-x-5  overflow-scroll mb-3">
-                        <button class="btn-primay" data-gun="pistol"><span class="btn-text">Пистолет</span></button>
-                        <button class="btn-primay" data-gun="carbine"><span class="btn-text">Ружье</span></button>
-                        <button class="btn-primay" data-gun="rifle"><span class="btn-text">Карабин</span></button>
+                    <div class="tabs__head flex gap-x-5  overflow-x-scroll mb-3">
+                        <button class="tabs__caption btn__custom group bg-transparent border border-[#2D2D2B]" data-tab="pistol">
+                            <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="btn__content">Пистолет</span>
+                        </button>
+                        <button class="tabs__caption btn__custom group bg-transparent border border-[#2D2D2B]" data-tab="carbine">
+                            <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="btn__content">Ружье</span>
+                        </button>
+                        <button class="tabs__caption btn__custom group bg-transparent border border-[#2D2D2B]" data-tab="rifle">
+                            <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                            <span class="btn__content">Карабин</span>
+                        </button>
                     </div>
-                    <div id="courseSelected" class="sm:hidden selectCustom">
-                        <div class="select">
-                            <div class="flex flex-col">
-                                <span class="text-xs text-[#878787]">Программы</span>
-                                <span class="selected text-[15px]">gdfgf</span>
+                    <div class="tabs__body sm:hidden">
+                        <div data-tab="pistol" class="tabs__content select-program__mobile  selectCustom">
+                            <div class="select">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-[#878787]">Программы</span>
+                                    <span class="selected text-[15px]">gdfgf</span>
+                                </div>
+                                <div class="caret top-1/3"></div>
                             </div>
-                            <div class="caret top-1/3"></div>
+                            <ul class="menu h-[200px] scrollCustom overflow-y-scroll top-[68px]">
+                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="1">Framer</li>
+                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer active" data-course-id="2">Sketch</li>
+                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="3">Figma</li>
+                            </ul>
                         </div>
-                        <ul class="menu h-[200px] scrollCustom overflow-y-scroll top-[68px]">
-                            <li data-course-id="1">Framer</li>
-                            <li data-course-id="2" class="active">Sketch</li>
-                            <li data-course-id="3">Figma</li>
-                        </ul>
+                        <div data-tab="carbine" class="tabs__content select-program__mobile  selectCustom">
+                            <div class="select">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-[#878787]">Программы</span>
+                                    <span class="selected text-[15px]">gdfgf</span>
+                                </div>
+                                <div class="caret top-1/3"></div>
+                            </div>
+                            <ul class="menu h-[200px] scrollCustom overflow-y-scroll top-[68px]">
+                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="1">Framer</li>
+                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer active" data-course-id="2">Sketch</li>
+                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="3">Figma</li>
+                            </ul>
+                        </div>
+                        <div data-tab="rifle" class="tabs__content select-program__mobile  selectCustom">
+                            <div class="select">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-[#878787]">Программы</span>
+                                    <span class="selected text-[15px]">gdfgf</span>
+                                </div>
+                                <div class="caret top-1/3"></div>
+                            </div>
+                            <ul class="menu h-[200px] scrollCustom overflow-y-scroll top-[68px]">
+                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="1">Framer</li>
+                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer active" data-course-id="2">Sketch</li>
+                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="3">Figma</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="flex flex-col max-w-full sm:max-w-[60%] lg:max-w-[78%] sm:pl-[20px] lg:pl-[32px] sm:pt-[40px] sm:border-l sm:border-l-[#242424]">
                         <div class="w-[104px] py-[9.5px] px-8 bg-[rgba(255,_255,_255,_0.11)] text-white mb-[24px]">Легко</div>
-                        <div class="flex flex-col gap-y-8 lg:gap-y-0 lg:flex-row items-start lg:items-center mb-[24px] sm:mb-[100px]">
+                        <div class="flex flex-col gap-y-8 lg:gap-y-0 lg:flex-row items-start  mb-[24px] sm:mb-[100px]">
                             <div class="flex flex-col lg:basis-[550px] xl:basis-[698px] gap-y-[42px]">
                                 <h2 class="text-3xl sm:text-[42px] leading-[36px] font-['GrtskTera'] sm:leading-[50px] uppercase text-white -tracking-[2.4px]" data-title>Название программы <br> в две строчки</h2>
                                 <div class="flex flex-col w-[320px] sm:w-[408px]">
@@ -627,7 +599,13 @@
                                     <div class="sm:w-0 transition-all w-[115px] sm:group-hover:w-[115px] h-[1px] bg-white"></div>
                                 </div>
                                 <div class="flex gap-x-[16px] flex-col-reverse gap-y-4 lg:flex-row">
-                                    <button class="btn-link"><span class="btn-link__text">В подарок</span></button>
+                                    <a class="flex justify-center items-center sm:block group cursor-pointer btn__custom bg-transparent border border-[#2D2D2B]" >
+                                        <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                        <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                        <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                        <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
+                                        <span class="btn__content">В падарок</span>
+                                    </a>
                                     <button class="flex  justify-center items-center px-[30px] py-5 bg-[#B9AB91] group transition-colors">
                                         <span class="text-lg font-normal mr-4 text-[#222220]">Забронировать</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" height="20" viewBox="0 0 20 20" fill="#222220">
@@ -719,7 +697,7 @@
                             </div>
                         </div>
                         <div class="">
-                            <div class="swiper w-full ml-0 InstructorSlider pb-[30px] mb-[137px]">
+                            <div class="swiper w-full ml-0 InstructorSlider pb-[30px] mb-[80px] sm:mb-[137px]">
                                 <div class="flex justify-between items-center mb-16">
                                     <h2 class="max-w-[350px] break-all sm:break-normal sm:max-w-[704px] text-3xl text-white font-['GrtskTera'] leading-[36px] sm:leading-[72px] uppercase">Инструкторский состав</h2>
                                     <div class="hidden md:inline-flex p-6 gap-9 bg-[#1A1A19]">
@@ -888,10 +866,35 @@
 <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.js"></script>-->
 
 <script>
-    var ddd = 'dsadsadsa';
+    var data = `{
+    "weekend":{
+        "basicPrice":{
+            "price":"95000",
+            "salesPrice":"34000"
+        },
+        "shoatsPrice":{
+            "price":"35000",
+            "salesPrice":"800000"
+        },
+        "personalGallery": "12000"
+    },
+    "weekdays":{
+        "basicPrice":{
+            "price":"85000",
+            "salesPrice":""
+        },
+        "shoatsPrice":{
+            "price":"55000",
+            "salesPrice":"100000"
+        },
+        "personalGallery":"12000"
+    },
+    "personalInstructor":"15000"
+}`;
+   data =  JSON.parse(data);
 </script>
 </body>
 </html>
