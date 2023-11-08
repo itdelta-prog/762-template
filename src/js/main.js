@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 30,
-    loop: true,
 
     breakpoints: {
       320: {
@@ -87,9 +86,20 @@ document.addEventListener('DOMContentLoaded', () => {
       dynamicBullets: true,
       clickable: true,
       renderBullet: function (index, className) {
-        return `<div class="${ className}">
+        // if(index === 0) {
+        //   return  `<div class="${className}">
+        //     <span>0${index + 1}</span>
+        //     <div class="absolute right-[200px] -top-[40px]">
+        //         <span class="w-[1px] h-[37px] bg-red-500"></span>
+        //         <span class="absolute top-[20px]">01</span>
+        //     </div>
+        //   </div>`
+        // }
+
+          return `<div class="${ className}">
             <span>0${index + 1}</span>
           </div>`;
+
       },
     },
 
@@ -111,25 +121,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  //
-  // swiper.on('paginationRender', function (swiper, paginationEl) {
-  //   customSwiper(paginationEl);
-  // });
 
+  let activeEl = document.querySelector('.slidePhoto-pagination__one');
   let myGallerey = new Swiper(".myGallerey", {
-    navigation: {
-      nextEl: ".myGallerey-custom-next",
-      prevEl: ".myGallerey-custom-prev",
+    pagination: {
+      el: ".swiper-pagination__gallerey",
+      bulletClass: "swiper-pagination-bullet__custom",
+      bulletActiveClass: "swiper-pagination-bullet-active__custom",
+      clickable: true,
+      renderBullet: function (index, className) {
+        let values = ['50 метров', '150 метров', '300 метров'];
+        return `<div data-slide="${index}" class="${className} cursor-pointer px-12 xl:px-20 2xl:px-[120px] py-4 backdrop-blur-xl text-base font-normal">${values[index]}</div>`;
+      },
     },
   });
 
-  // document.getElementById('gungs').addEventListener('click', (eve) => {
-  //   if(eve.target.classList.contains('btn')) {
-  //     // modal()
-  //   }
-  // })
+  myGallerey.on('paginationRender', (swiper, pag) => {
+    let active = swiper.pagination.el.querySelector('.swiper-pagination-bullet-active__custom');
+    let wrapperPagination = document.querySelector('#photoPagination');
+
+    if(activeEl) {
+      activeEl.classList.remove('active')
+    }
+
+    if(wrapperPagination.querySelector(`[data-slide="${active.dataset.slide}"]`)) {
+        activeEl = wrapperPagination.querySelector(`[data-slide="${active.dataset.slide}"]`);
+        activeEl.classList.add('active');
+    }
+
+  })
+
+  let photoSlideOne = new Swiper(".myPhotoOne", {
+    slidesPerView: 1,
+    allowTouchMove: false,
+    navigation: {
+      nextEl: ".myGallerey-customOne-next",
+      prevEl: ".myGallerey-customOne-prev"
+    }
+  })
+
+  let photoSlideTwo = new Swiper(".myPhotoTwo", {
+    slidesPerView: 1,
+    allowTouchMove: false,
+    navigation: {
+      nextEl: ".myGallerey-customTwo-next",
+      prevEl: ".myGallerey-customTwo-prev"
+    }
+  })
+
+  let photoSlideThree = new Swiper(".myPhotoThree", {
+    slidesPerView: 1,
+    allowTouchMove: false,
+    navigation: {
+      nextEl: ".myGallerey-customThree-next",
+      prevEl: ".myGallerey-customThree-prev"
+    }
+  })
+
 
   Tabs('.galleries__tabs', '.tabs__head', '.tabs__body', '.tabs__caption', 'tabs__caption_active', 'tabs__content_active');
   Tabs('.route__tabs', '.tabs__head', '.tabs__body', '.tabs__caption', 'tabs__caption_active', 'tabs__content_active');
-  // tabs('.tabs__visits', '.tabs__head', '.tabs__body', '.tabs__caption', 'tabs__caption_active', 'tabs__content_active');
 });

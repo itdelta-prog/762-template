@@ -163,11 +163,11 @@
   }
 
   .btn__custom {
-    @apply relative whitespace-nowrap transition-colors py-[20px] px-[32px] md:py-[25px] md:px-[50px]
+    @apply relative whitespace-nowrap transition-colors py-[20px] px-[32px] md:py-[25px] md:px-[50px] cursor-pointer
   }
 
   .btn__custom .btn__content{
-    @apply text-white text-[15px] sm:text-lg leading-5
+    @apply text-white text-[15px] sm:text-lg leading-5 cursor-pointer
   }
 
   .btn__custom.active{
@@ -274,6 +274,11 @@
   .container {
     @apply max-w-[1740px] my-0 mx-auto px-3 2xl:px-2 ;
   }
+
+  .slidePhoto-pagination.active {
+    @apply inline-flex
+  }
+
 }
 
 @layer components {
@@ -293,7 +298,15 @@
     @apply block;
 }
 
-@layer components {}
+@layer components {
+
+  .swiper-pagination-bullet__custom {
+    @apply text-[#8C8C8C]
+  }
+  .swiper-pagination-bullet-active__custom {
+    @apply bg-[#B9AB91] text-[#000000];
+  }
+}
 .tabs__caption_active {
     @apply bg-[#B9AB91] text-[#0F0F0F];
 }
@@ -444,10 +457,10 @@ body.active {
 	width: 900px !important;
 	margin: 0;
   top: 20px;
-  left: 44% !important;
+  left: 50% !important;
   padding-bottom: 26px;
 }
-.swiper-pagination-bullet {
+.mySwiper .swiper-pagination-bullet {
   position: relative;
 	border-radius: 0;
 	width: 1px;
@@ -462,23 +475,23 @@ body.active {
   transform: none;
 }
 
-.swiper-pagination-bullets-dynamic .swiper-pagination-bullet.acti {
+.mySwiper .swiper-pagination-bullets-dynamic .swiper-pagination-bullet.acti {
   visibility: hidden;
 }
 
 
-.swiper-pagination-bullet span {
+.mySwiper .swiper-pagination-bullet span {
   position: absolute;
   top: 40px;
   left: -10px;
 }
 
-.swiper-pagination-bullet-active {
+.mySwiper .swiper-pagination-bullet-active {
 	color:#fff;
 	background: #978159;
 }
 
-.swiper-pagination-bullet-active::before {
+.mySwiper .swiper-pagination-bullet-active::before {
   content: '';
   display: block;
   width: 165px;
@@ -486,7 +499,7 @@ body.active {
   background-image: url('./img/pagination.svg');
 }
 
-.swiper-pagination-bullet-active:after {
+.mySwiper .swiper-pagination-bullet-active:after {
   content: '';
   position: absolute;
   right: 20px;
@@ -499,14 +512,14 @@ body.active {
 
 
 @media (max-width: 1023px) {
-  .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  .mySwiper .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
     left: 42%;
   }
 }
 
 @media (max-width: 500px) {
 
-  .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  .mySwiper .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
     left: 30%;
   }
 
@@ -517,7 +530,7 @@ body.active {
   top: 20px;
   padding-bottom: 26px;
 }
-.swiper-pagination-bullet {
+.mySwiper .swiper-pagination-bullet {
   position: relative;
 	border-radius: 0;
 	width: 1px;
@@ -532,19 +545,19 @@ body.active {
   transform: none;
 }
 
-.swiper-pagination-bullet span {
+.mySwiper .swiper-pagination-bullet span {
   position: absolute;
   top: 20px;
   left: -10px;
 }
 
-.swiper-pagination-bullet-active {
+.mySwiper .swiper-pagination-bullet-active {
 	color:#fff;
 	background: #978159;
 }
 
 
-  .swiper-pagination-bullet-active::before {
+ .mySwiper  .swiper-pagination-bullet-active::before {
   content: '';
   display: block;
   width: 73px;
@@ -552,7 +565,7 @@ body.active {
   background-image: url('/img/pagMobile.svg');
 }
 
-.swiper-pagination-bullet-active:after {
+.mySwiper .swiper-pagination-bullet-active:after {
   content: '';
   position: absolute;
   right: 10px;
@@ -564,6 +577,6 @@ body.active {
 }
 }
 
-.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next, .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
+.mySwiper .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next, .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
   transform: scale(0.95);
 }
