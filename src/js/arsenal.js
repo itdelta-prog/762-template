@@ -265,7 +265,7 @@ const modalReserv = () => {
 
 
 const getCourse = async(id) => {
-    const resp = await fetch(`https://651e822d44a3a8aa47687cb1.mockapi.io/program/${id}`).then((res) => {
+    const resp = await fetch(`/local/ajax/arsenal/program.php?id=${id}`).then((res) => {
         if(res.ok) {
             return res.json();
         }
@@ -276,21 +276,23 @@ const getCourse = async(id) => {
 
 const fillingCouse = (resp) => {
     const title = document.querySelector('[data-title]');
-   const description = document.querySelector('[data-desc]');
-   const properties = document.querySelector('[data-properties]');
+    const description = document.querySelector('[data-desc]');
+    const properties = document.querySelector('[data-properties]');
     const image = document.querySelector('[data-image]');
     const progressBar = document.querySelector('[data-progress="bar"]');
     const progressValue = document.querySelector('[data-progress="value"]');
+    const difficulty = document.querySelector('[data-difficulty="difficulty"]')
 
 
     console.log(resp);
 
-   title.innerHTML = resp.title;
-   description.innerHTML = resp.description;
-   properties.innerHTML = resp.characteristic;
-   image.src = resp.image + Math.random();
-   progressValue.innerHTML = resp.progress + '%';
-   progressBar.style.width = `${resp.progress + '%'}`
+    title.innerHTML = resp.title;
+    description.innerHTML = resp.description;
+    properties.innerHTML = resp.characteristic;
+    image.src = resp.image;
+    progressValue.innerHTML = resp.progress + '%';
+    progressBar.style.width = `${resp.progress + '%'}`
+    difficulty.innerHTML = resp.difficulty
 }
 
 const selectCourse = ()=>  {
@@ -307,14 +309,14 @@ const selectCourse = ()=>  {
 
     courseWrapper.forEach((bodyCourse) => {
         bodyCourse.addEventListener('click', async(eve) => {
-           if(eve.target.closest('.course-text')) {
-               if(activeCourse) {
-                   activeCourse.classList.remove('active');
-               }
-               activeCourse = eve.target;
-               getCourse(Number(activeCourse.dataset?.courseId));
-               activeCourse.classList.add('active');
-           }
+            if(eve.target.closest('.course-text')) {
+                if(activeCourse) {
+                    activeCourse.classList.remove('active');
+                }
+                activeCourse = eve.target;
+                getCourse(Number(activeCourse.dataset?.courseId));
+                activeCourse.classList.add('active');
+            }
         })
     });
 }
