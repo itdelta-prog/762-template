@@ -370,7 +370,7 @@
 
 
   .contact__info-title {
-    @apply text-[24px] sm:text-4xl font-medium leading-[28px] sm:leading-[43px] text-white
+    @apply text-[19px] sm:text-4xl font-medium leading-[28px] sm:leading-[43px] text-white
   }
 
   .contact__info-supTitle {
@@ -517,6 +517,9 @@ body.active {
   top: 20px;
   padding-bottom: 26px;
 }
+.pl-35 {
+  left: 35% !important; 
+}
 .swiper-pagination-bullet {
   position: relative;
 	border-radius: 0;
@@ -566,4 +569,8 @@ body.active {
 
 .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next, .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
   transform: scale(0.95);
+}
+a:hover {
+  color: #fff;
+  text-shadow: 0px 0px 4px #fff;;
 }
