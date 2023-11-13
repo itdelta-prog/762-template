@@ -124,16 +124,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let activeEl = document.querySelector('.slidePhoto-pagination__one');
   let myGallerey = new Swiper(".myGallerey", {
+    allowTouchMove: false,
+
     pagination: {
-      el: ".swiper-pagination__gallerey",
+      el: ".swiper-pagination__mobile",
       bulletClass: "swiper-pagination-bullet__custom",
       bulletActiveClass: "swiper-pagination-bullet-active__custom",
       clickable: true,
       renderBullet: function (index, className) {
         let values = ['50 метров', '150 метров', '300 метров'];
-        return `<div data-slide="${index}" class="${className} cursor-pointer px-12 xl:px-20 2xl:px-[120px] py-4 backdrop-blur-xl text-base font-normal">${values[index]}</div>`;
+        return `<div data-slide="${index}" class="${className} whitespace-nowrap cursor-pointer px-[32px] py-[20px] border border-[#2D2D2B] lg:border-none lg:px-12 xl:px-20 2xl:px-[120px] md:py-4 lg:backdrop-blur-xl text-base font-normal">${values[index]}</div>`;
       },
     },
+    breakpoints: {
+      1030: {
+        allowTouchMove: true,
+        pagination: {
+          el: ".swiper-pagination__gallerey",
+        }
+      }
+    }
   });
 
   myGallerey.on('paginationRender', (swiper, pag) => {
@@ -154,6 +164,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let photoSlideOne = new Swiper(".myPhotoOne", {
     slidesPerView: 1,
     allowTouchMove: false,
+    allowTouchMove: true,
+    breakpoints: {
+      1030: {
+        allowTouchMove: false,
+      }
+    },
     navigation: {
       nextEl: ".myGallerey-customOne-next",
       prevEl: ".myGallerey-customOne-prev"
@@ -163,6 +179,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let photoSlideTwo = new Swiper(".myPhotoTwo", {
     slidesPerView: 1,
     allowTouchMove: false,
+    allowTouchMove: true,
+    breakpoints: {
+      1030: {
+        allowTouchMove: false,
+      }
+    },
     navigation: {
       nextEl: ".myGallerey-customTwo-next",
       prevEl: ".myGallerey-customTwo-prev"
@@ -172,6 +194,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let photoSlideThree = new Swiper(".myPhotoThree", {
     slidesPerView: 1,
     allowTouchMove: false,
+    allowTouchMove: true,
+    breakpoints: {
+      1030: {
+        allowTouchMove: false,
+      }
+    },
     navigation: {
       nextEl: ".myGallerey-customThree-next",
       prevEl: ".myGallerey-customThree-prev"
