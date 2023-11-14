@@ -1,5 +1,5 @@
 import ModalReserved from "./ModalReserved.jsx";
-export  default function FormReservation({dataForm}) {
+export  default function Reservation({dataForm}) {
     const [dataReserv, setDataReserv] = React.useState({
         day: 'weekdays',
         basicPrice: Number(dataForm.weekdays.basicPrice.price),
@@ -112,6 +112,3 @@ export  default function FormReservation({dataForm}) {
         </React.Fragment>
     )
 }
-
-let domContainer = document.querySelector('#formReservation');
-ReactDOM.render(<FormReservation dataForm={data}/>, domContainer);
