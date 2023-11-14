@@ -32,6 +32,20 @@ const contentAdd = (result) => {
     <button class="flex justify-center items-start py-[18px] px-9 bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
   </div>
 </div>
+    content.insertAdjacentHTML('afterBegin', `<div class="flex flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
+                  <div class="flex flex-col items-start mb-[24px]">
+                    <div class="w-full h-[189px] sm:h-[243px] bg-[#222220] mb-[32px]">
+                      <img class="w-full h-full object-cover" src="${item.avatar}" alt="">
+                    </div>
+                    <h3 class="text-[16px] sm:text-xl font-medium leading-[24px] text-white mb-3 sm:mb-[18px] break-all">${item.name}/h3>
+                    <p class="text-sm sm:text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)] mb-[18px] break-all">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
+                    <a class="text-white text-sm sm:text-[16px] font-normal underline" href="">Подробнее</a>
+                  </div>
+                  <div class="flex w-full items-center justify-between pt-[25px] border-t border-[#2D2D2B]">
+                    <span class="text-white text-base sm:Ltext-xl font-normal">20 500 ₽</span>
+                    <button class="flex justify-center items-start py-[18px] px-[30px] bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
+                  </div>
+                </div>
       `)
   });
 }
