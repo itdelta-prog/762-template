@@ -13,6 +13,8 @@
     <title>Title</title>
   <script type="module" crossorigin src="/762-template/arsenal.js"></script>
   <link rel="modulepreload" crossorigin href="/762-template/assets/script-176bfda7.js">
+  <link rel="modulepreload" crossorigin href="/762-template/assets/selectDropDown-316a6a3d.js">
+  <link rel="modulepreload" crossorigin href="/762-template/assets/tabs-0d1d1a23.js">
   <link rel="stylesheet" href="/762-template/script.css">
 </head>
 <body class="w-full h-full bg-[#0F0F0F] font-Grtsk">
@@ -172,7 +174,7 @@
             <div class="swiper myArsenal mb-8 sm:mb-[85px] pb-[30px] md:pb-0">
                 <div class="container lg:px-6 3xl:px-0">
                     <h2 class="text-3xl sm:text-6xl font-medium font-['GrtskTera'] uppercase text-white max-w-[704px] leading-[72px] mb-[16px] sm:mb-[50px]">Арсенал</h2>
-                    <p class="md:max-w-[350px] block lg:hidden lg:max-w-[479px] text-sm md:text-xl font-normal leading-5 md:leading-6 opacity-50 text-white mb-[24px]">Тир 7.62 — место концентрации и энергии, где сосредоточенность и меткость воплощаются в идеальном выстреле.</p>
+<!--                    <p class="md:max-w-[350px] block lg:hidden lg:max-w-[479px] text-sm md:text-xl font-normal leading-5 md:leading-6 opacity-50 text-white mb-[24px]">Тир 7.62 — место концентрации и энергии, где сосредоточенность и меткость воплощаются в идеальном выстреле.</p>-->
                     <div class="mb-16 flex items-start md:items-center md:justify-between flex-col md:flex-row">
                         <div class="md:w-auto w-full flex gap-x-[11px] sm:gap-x-5 overflow-x-scroll sm:overflow-hidden mb-3">
                             <a href="#" class="btn__custom active  group  bg-transparent border border-[#2D2D2B]" data-gun="pistol">
@@ -197,7 +199,7 @@
                                 <span class="btn__content">Карабин</span>
                             </a>
                         </div>
-                        <p class="hidden lg:block max-w-[479px] text-xl font-normal leading-6 opacity-50 text-white">Тир 7.62 — место концентрации и энергии, где сосредоточенность и меткость воплощаются в идеальном выстреле.</p>
+<!--                        <p class="hidden lg:block max-w-[479px] text-xl font-normal leading-6 opacity-50 text-white">Тир 7.62 — место концентрации и энергии, где сосредоточенность и меткость воплощаются в идеальном выстреле.</p>-->
                         <div class="hidden md:inline-flex  p-6 gap-9 bg-[#1A1A19]">
                             <button class="transition-opacity myArsenal-custom-prev disabled:opacity-10">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27"
@@ -419,6 +421,12 @@
                     <div  id="formReservation">
                     </div>
             </div>
+<!--                <div class="flex h-fit flex-col lg:basis-[450px] desk:basis-[500px] py-8 px-4 md:px-7 bg-transparent lg:bg-[#181818]">-->
+<!--                    <h3 class="text-3xl lg:text-[20px] font-medium uppercase leading-6 text-white mb-[13px]">БРОНИРОВАНИЕ</h3>-->
+<!--                    <p class="text-white text-[16px] opacity-50 mb-[20px]">Выберите день посещения</p>-->
+<!--                    <div  id="formReservation">-->
+<!--                    </div>-->
+<!--            </div>-->
             </div>
     </section>
     <section class="mb-[60px] md:mb-[200px]">
@@ -521,7 +529,7 @@
                             </div>
                             <ul class="menu h-[200px] scrollCustom overflow-y-scroll top-[68px]">
                                 <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="1">Framer</li>
-                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="2" class="active">Sketch</li>
+                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer active" data-course-id="2">Sketch</li>
                                 <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="3">Figma</li>
                             </ul>
                         </div>
@@ -535,7 +543,7 @@
                             </div>
                             <ul class="menu h-[200px] scrollCustom overflow-y-scroll top-[68px]">
                                 <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="1">Framer</li>
-                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="2" class="active">Sketch</li>
+                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer active" data-course-id="2">Sketch</li>
                                 <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="3">Figma</li>
                             </ul>
                         </div>
@@ -549,7 +557,7 @@
                             </div>
                             <ul class="menu h-[200px] scrollCustom overflow-y-scroll top-[68px]">
                                 <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="1">Framer</li>
-                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="2" class="active">Sketch</li>
+                                <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer active" data-course-id="2">Sketch</li>
                                 <li class="py-[18px] px-[15px] hover:bg-[#b8aa916b] cursor-pointer" data-course-id="3">Figma</li>
                             </ul>
                         </div>
@@ -557,7 +565,7 @@
                 </div>
                 <div class="flex flex-col max-w-full sm:max-w-[60%] lg:max-w-[78%] sm:pl-[20px] lg:pl-[32px] sm:pt-[40px] sm:border-l sm:border-l-[#242424]">
                         <div class="w-[104px] py-[9.5px] px-8 bg-[rgba(255,_255,_255,_0.11)] text-white mb-[24px]">Легко</div>
-                        <div class="flex flex-col gap-y-8 lg:gap-y-0 lg:flex-row items-start  mb-[24px] sm:mb-[100px]">
+                        <div class="flex flex-col gap-y-8 lg:gap-y-0 lg:flex-row items-start  mb-[24px] sm:mb-[80px]">
                             <div class="flex flex-col lg:basis-[550px] xl:basis-[698px] gap-y-[42px]">
                                 <h2 class="text-3xl sm:text-[42px] leading-[36px] font-['GrtskTera'] sm:leading-[50px] uppercase text-white -tracking-[2.4px]" data-title>Название программы <br> в две строчки</h2>
                                 <div class="flex flex-col w-[320px] sm:w-[408px]">
@@ -569,6 +577,15 @@
                                         <span class="block w-[40%] h-[5px] bg-[#B9AB91] transition-[.3s]" data-progress="bar"></span>
                                     </div>
                                 </div>
+<!--                                <div class="flex flex-col w-[320px] sm:w-[408px]">-->
+<!--                                    <div class="flex justify-between mb-2">-->
+<!--                                        <span class="text-[rgba(255,_255,_255,_0.40)] text-[12px] ">Пройдено</span>-->
+<!--                                        <span class="text-[12px] text-white font-medium" data-progress="value">50%</span>-->
+<!--                                    </div>-->
+<!--                                    <div class="w-full h-[5px] bg-[#222220]">-->
+<!--                                        <span class="block w-[40%] h-[5px] bg-[#B9AB91] transition-[.3s]" data-progress="bar"></span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
                             </div>
                             <div class="flex flex-col lg:basis-[519px] gap-y-[24px] sm:pr-4 lg:pr-0" data-desc>
                                 <p class="text-base text-[rgba(255,_255,_255,_0.40)] font-normal leading-5 ">Описание Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
@@ -864,6 +881,8 @@
 </footer>
 <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<!--<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>-->
+<!--<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>-->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <!--<script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.js"></script>-->
 
