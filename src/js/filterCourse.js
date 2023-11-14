@@ -24,7 +24,7 @@ const contentAdd = (result) => {
                     <div class="w-full h-[189px] sm:h-[243px] bg-[#222220] mb-[32px]">
                       <img class="w-full h-full object-cover" src="${item.avatar}" alt="">
                     </div>
-                    <h3 class="text-[16px] sm:text-xl font-medium leading-[24px] text-white mb-3 sm:mb-[18px] break-all">${item.name}/h3>
+                    <h3 class="text-[16px] sm:text-xl font-medium leading-[24px] text-white mb-3 sm:mb-[18px] break-all">${item.name}</h3>
                     <p class="text-sm sm:text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)] mb-[18px] break-all">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
                     <a class="text-white text-sm sm:text-[16px] font-normal underline" href="${item.link}">Подробнее</a>
                   </div>
