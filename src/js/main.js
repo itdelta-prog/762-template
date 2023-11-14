@@ -163,7 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let photoSlideOne = new Swiper(".myPhotoOne", {
     slidesPerView: 1,
-    allowTouchMove: false,
     allowTouchMove: true,
     breakpoints: {
       1030: {
@@ -178,7 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let photoSlideTwo = new Swiper(".myPhotoTwo", {
     slidesPerView: 1,
-    allowTouchMove: false,
     allowTouchMove: true,
     breakpoints: {
       1030: {
@@ -192,8 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   let photoSlideThree = new Swiper(".myPhotoThree", {
-    slidesPerView: 1,
-    allowTouchMove: false,
     allowTouchMove: true,
     breakpoints: {
       1030: {
