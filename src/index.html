@@ -22,8 +22,6 @@
                 <li><a href="#" class="lg:hidden xl:block text-lg leading-6 text-white font-normal">Стрельба</a></li>
                 <li><a href="#" class="lg:hidden book:block text-lg leading-6 text-white font-normal">Подарочные карты</a></li>
                 <li><a href="#" class="lg:hidden 2xl:block text-lg leading-6 text-white font-normal">Мероприятия</a></li>
-                <li class="dropdown-link">
-                  <a href="#" class="lg:hidden 3xl:block text-lg leading-6 text-white font-normal">О клубе</a>
                 <li class="dropdown-link link-ic">
                   <div class="flex gap-x-2 items-center">
                     <a href="#" class="lg:hidden 3xl:block text-lg leading-6 text-white font-normal">О клубе</a>
@@ -595,10 +593,21 @@
                 <div class="tabs__caption py-[17px] px-12 text-white bg-transparent cursor-pointer transition-colors" data-tab="metro">От метро</div>
                 <div class="tabs__caption py-[17px] px-12 text-white bg-transparent cursor-pointer transition-colors" data-tab="car">На машине</div>
               </div>
-              <div class="tabs__body min-h-[300px]">
+              <div class="tabs__body ">
                 <div class="tabs__content" data-tab="metro">
                 <p class="text-[18px] font-normal leading-6 text-[#878787] mb-6">Начните с метро Новокузнецкая,  которое находится на арбатско-покровской  и замоскворецкой линиях московского метрополитена.</p>
                 <p class="text-[18px] font-normal leading-6 text-[#878787] mb-[44px]">Продвигайтесь на юг по улице Новокузнецкая. Продолжайте идти до тех пор, пока не достигнете Красного Октября проспекта. Это займет примерно 10-15 минут пешком.</p>
+                <div class="min-h-[300px]">
+                  <p class="text-[18px] font-normal leading-6 text-[#878787] mb-6">Начните с метро Новокузнецкая,  которое находится на арбатско-покровской  и замоскворецкой линиях московского метрополитена.</p>
+                  <p class="text-[18px] font-normal leading-6 text-[#878787] mb-[44px]">Продвигайтесь на юг по улице Новокузнецкая. Продолжайте идти до тех пор, пока не достигнете Красного Октября проспекта. Это займет примерно 10-15 минут пешком.</p>
+                </div>
+                  <a href="https://yandex.ru/maps/213/moscow/?ll=37.503243%2C55.787245&mode=routes&rtext=~55.786587%2C37.498517&rtt=mt&ruri=~&z=15" target="_blank" class="btn__custom hover:active px-[50px] py-[25px] bg-transparent border border-[#2D2D2B]">
+                    <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+                    <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+                    <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+                    <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+                    <span class="btn__content">Построить маршрут</span>
+                  </a>
                 </div>
                 <div class="tabs__content" data-tab="car">
                   <p class="text-[18px] font-normal leading-6 text-[#878787] mb-6">fsdfsdfsdfsdfsdfsdf</p>
@@ -612,6 +621,19 @@
                 <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
                 <span class="btn__content">Построить маршрут</span>
               </button>
+                  <div class="min-h-[300px]">
+                    <p class="text-[18px] font-normal leading-6 text-[#878787] mb-6">fsdfsdfsdfsdfsdfsdf</p>
+                    <p class="text-[18px] font-normal leading-6 text-[#878787] mb-[44px]">fsdfsdfsdfsd</p>
+                  </div>
+                  <a href="https://yandex.ru/navi/?whatshere%5Bzoom%5D=19&whatshere%5Bpoint%5D=37.498362%2C55.786608" target="_blank" class="btn__custom hover:active px-[50px] py-[25px] bg-transparent border border-[#2D2D2B]">
+                    <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+                    <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+                    <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+                    <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+                    <span class="btn__content">Построить маршрут</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
           <div class="flex justify-center items-center sm:hidden ">
@@ -628,19 +650,36 @@
                 <div class="tabs__content mb-7" data-tab="metro">
                 <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Начните с метро Новокузнецкая,  которое находится на арбатско-покровской  и замоскворецкой линиях московского метрополитена.</p>
                 <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Продвигайтесь на юг по улице Новокузнецкая. Продолжайте идти до тех пор, пока не достигнете Красного Октября проспекта. Это займет примерно 10-15 минут пешком.</p>
+                <div class="tabs__content flex flex-col justify-between mb-7" data-tab="metro">
+                <div class="min-h-[300px]">
+                  <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Начните с метро Новокузнецкая,  которое находится на арбатско-покровской  и замоскворецкой линиях московского метрополитена.</p>
+                  <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Продвигайтесь на юг по улице Новокузнецкая. Продолжайте идти до тех пор, пока не достигнете Красного Октября проспекта. Это займет примерно 10-15 минут пешком.</p>
+                </div>
+                  <a href="https://yandex.ru/maps/213/moscow/?ll=37.503243%2C55.787245&mode=routes&rtext=~55.786587%2C37.498517&rtt=mt&ruri=~&z=15" target="_blank" class="w-full btn__custom hover:active px-[50px] py-[25px] bg-transparent border border-[#2D2D2B]">
+                    <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+                    <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+                    <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+                    <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+                    <span class="btn__content">Построить маршрут</span>
+                  </a>
                 </div>
                 <div class="tabs__content mb-7" data-tab="car">
                   <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Начните с метро Новокузнецкая,  которое находится на арбатско-покровской  и замоскворецкой линиях московского метрополитена.</p>
                   <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Продвигайтесь на юг по улице Новокузнецкая. Продолжайте идти до тех пор, пока не достигнете Красного Октября проспекта. Это займет примерно 10-15 минут пешком.</p>
+                <div class="tabs__content flex flex-col justify-between mb-7" data-tab="car">
+                  <div class="min-h-[300px]">
+                    <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Начните с метро Новокузнецкая,  которое находится на арбатско-покровской  и замоскворецкой линиях московского метрополитена.</p>
+                    <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Продвигайтесь на юг по улице Новокузнецкая. Продолжайте идти до тех пор, пока не достигнете Красного Октября проспекта. Это займет примерно 10-15 минут пешком.</p>
+                  </div>
+                  <a href="https://yandex.ru/maps/213/moscow/?ll=37.503243%2C55.787245&mode=routes&rtext=~55.786587%2C37.498517&rtt=mt&ruri=~&z=15" target="_blank" class="w-full btn__custom hover:active px-[50px] py-[25px] bg-transparent border border-[#2D2D2B]">
+                    <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+                    <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+                    <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+                    <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+                    <span class="btn__content">Построить маршрут</span>
+                  </a>
                 </div>
               </div>
-             <button class="w-full btn__custom hover:active px-[50px] py-[25px] bg-transparent border border-[#2D2D2B]">
-               <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
-               <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
-               <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
-               <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
-               <span class="btn__content">Построить маршрут</span>
-             </button>
             </div>
         </div>
       </section>
