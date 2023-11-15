@@ -9,10 +9,12 @@ const routeModal = document.getElementById('route-modal');
 const routeBtn = document.querySelector('.route__modal-btn');
 
 dropDownLink.forEach((link) =>{
-    link.addEventListener("click", (eve) => {
-       dropDownMenu = link.querySelector('.dropdown');
-        dropDownMenu.classList.toggle('hidden')
-    })
+    if(link) {
+        link.addEventListener("click", (eve) => {
+            dropDownMenu = link.querySelector('.dropdown');
+            dropDownMenu.classList.toggle('hidden')
+        })
+    }
 })
 btnBurger.addEventListener("click", (eve) => {
     eve.preventDefault();
