@@ -182,6 +182,10 @@
     @apply opacity-0
   }
 
+  .linkIcon.active {
+    @apply rotate-180
+  }
+
 
   .modalReserve {
     @apply fixed top-0 -right-[124%] z-[999999999] w-[400px] h-full bg-[#131313] py-4 px-5 transition-all

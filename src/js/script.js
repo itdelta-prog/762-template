@@ -2,7 +2,8 @@ const dialog = document.querySelector('[role="dialog"]');
 const btnBurger = document.querySelector('[data-burger="menu"]');
 
 const dropDownLink = document.querySelectorAll('.dropdown-link');
-let dropDownMenu
+let dropDownMenu;
+let linkIcon;
 const dropDown = document.querySelector('#dropdownDefaultButton');
 
 const routeModal = document.getElementById('route-modal');
@@ -12,7 +13,11 @@ dropDownLink.forEach((link) =>{
     if(link) {
         link.addEventListener("click", (eve) => {
             dropDownMenu = link.querySelector('.dropdown');
+            linkIcon = link.querySelector('.linkIcon');
             dropDownMenu.classList.toggle('hidden')
+            if(eve.target.closest('.link-ic')) {
+                linkIcon.classList.toggle('active')
+            }
         })
     }
 })
@@ -36,9 +41,11 @@ if(routeBtn) {
     })
 }
 document.addEventListener('click', (e) => {
-    const withinBoundaries = e.composedPath().includes(dropDownMenu.parentElement);
+    const withinBoundaries = e.composedPath().includes(dropDownMenu?.parentElement);
     if (!withinBoundaries) {
-        dropDownMenu.classList.add('hidden'); // скрываем элемент т к клик был за его пределами
+        dropDownMenu?.classList.add('hidden');
+        linkIcon?.classList.remove('active');
+        // скрываем элемент т к клик был за его пределами
     }
 
     if (routeBtn) {
