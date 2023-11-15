@@ -11,7 +11,7 @@
     <title>Vite App</title>
   </head>
   <body class="w-full h-full bg-[#0F0F0F] font-Grtsk">
-    <header class="w-full fixed top-0 bg-[#0F0F0F] z-[99999999]">
+    <header class="w-full fixed top-0 bg-[#0F0F0F] z-[30]">
         <nav class="flex items-center justify-between relative p-6 lg:px-5 lg:py-5 z-20" aria-label="Global">
           <div class="flex items-center gap-x-12">
             <a href="#" class="">
@@ -21,12 +21,42 @@
               <a href="#" class="lg:hidden xl:block text-lg leading-6 text-white font-normal">Стрельба</a>
               <a href="#" class="lg:hidden book:block text-lg leading-6 text-white font-normal">Подарочные карты</a>
               <a href="#" class="lg:hidden 2xl:block text-lg leading-6 text-white font-normal">Мероприятия</a>
-              <a href="#" class="lg:hidden 3xl:block text-lg leading-6 text-white font-normal">О клубе</a>
-              <div class="relative cursor-pointer">
+              <div class="dropdown-link">
+                <a href="#" class="lg:hidden 3xl:block text-lg leading-6 text-white font-normal">О клубе</a>
+                <div class="dropdown max-w-[275px] z-10 absolute top-6 hidden bg-[rgba(31,_31,_31,_0.50)] backdrop-blur-xl divide-y rounded-lg shadow w-44">
+                  <ul class="py-2 text-sm" aria-labelledby="dropdownDefaultButton">
+                    <li>
+                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Парковка</a>
+                    </li>
+                    <li>
+                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Арсенал</a>
+                    </li>
+                    <li>
+                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Галерея</a>
+                    </li>
+                    <li>
+                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Раздевалки</a>
+                    </li>
+                    <li class="lg:block xl:hidden">
+                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Стрельба</a>
+                    </li>
+                    <li class="lg:block xl:hidden">
+                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Подарочные карты</a>
+                    </li>
+                    <li class="lg:block 2xl:hidden">
+                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Мероприятия</a>
+                    </li>
+                    <li class="lg:block 3xl:hidden">
+                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">О клубе</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="dropdown-link relative cursor-pointer">
                 <div id="dropdownDefaultButton" class="p-2" data-dropdown-toggle="dropdown">
                   <img src="/img/dot.svg"/>
                 </div>
-                <div id="dropdown" class="max-w-[275px] z-10 absolute top-6 hidden bg-[rgba(31,_31,_31,_0.50)] backdrop-blur-xl divide-y rounded-lg shadow w-44">
+                <div class="dropdown max-w-[275px] z-10 absolute top-6 hidden bg-[rgba(31,_31,_31,_0.50)] backdrop-blur-xl divide-y rounded-lg shadow w-44">
                   <ul class="py-2 text-sm " aria-labelledby="dropdownDefaultButton">
                     <li>
                       <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Парковка</a>
@@ -238,7 +268,7 @@
                 </div>
               </div>
               <div id="gungs" class="flex flex-wrap sm:gap-x-5 justify-center gap-y-5 md:justify-start">
-                <div class="flex flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
+                <div data-id="1" class="flex blockGung flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
                   <div class="flex flex-col items-start mb-[24px]">
                     <div class="w-full h-[189px] sm:h-[243px] bg-[#222220] mb-[32px]">
                       <img class="w-full h-full object-cover" src="/img/slide1.png" alt="">
@@ -252,7 +282,7 @@
                     <button class="flex justify-center items-start py-[18px] px-[30px] bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
                   </div>
                 </div>
-                <div class="flex flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
+                <div data-id="2" class="flex blockGung flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
                   <div class="flex flex-col items-start mb-[24px]">
                     <div class="w-full h-[243px] bg-[#222220] mb-[32px]">
                       <img class="w-full h-full object-cover" src="/img/slide1.png" alt="">
@@ -266,7 +296,7 @@
                     <button class="flex justify-center items-start py-[18px] px-[30px] bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
                   </div>
                 </div>
-                <div class="flex flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
+                <div data-id="3" class="flex blockGung flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
                   <div class="flex flex-col items-start mb-[24px]">
                     <div class="w-full h-[243px] bg-[#222220] mb-[32px]">
                       <img class="w-full h-full object-cover" src="/img/slide1.png" alt="">
@@ -281,6 +311,7 @@
                   </div>
                 </div>
               </div>
+              <div id="modalRes"></div>
               </div>
       </section>
       <section class="w-full px-4 py-[60px] sm:py-[90px] bg-[#1B1B1A] mb-[180px]">
@@ -748,9 +779,76 @@
         </div>
       </div>
     </footer>
+    <script>
+      var stageModal = {
+        value: {},
+        callbacks: [],
+        addcallback: function (callback) { this.callbacks.push(callback); },
+        setvalue: function (value) {
+          this.value = value;
+          this.callbacks.forEach(
+                  callback => callback(this.value)
+          );
+        }
+      };
+      var data = `{
+    "weekend":{
+        "basicPrice":{
+            "price":"95000",
+            "salesPrice":"34000"
+        },
+        "shoatsPrice":{
+            "price":"35000",
+            "salesPrice":"800000"
+        },
+        "personalGallery": "12000"
+    },
+    "weekdays":{
+        "basicPrice":{
+            "price":"85000",
+            "salesPrice":""
+        },
+        "shoatsPrice":{
+            "price":"55000",
+            "salesPrice":"100000"
+        },
+        "personalGallery":"12000"
+    },
+    "personalInstructor":"15000"
+}`;
+      data =  JSON.parse(data);
+    </script>
+    <script>
+      var data = `{
+    "weekend":{
+        "basicPrice":{
+            "price":"95000",
+            "salesPrice":"34000"
+        },
+        "shoatsPrice":{
+            "price":"35000",
+            "salesPrice":"800000"
+        },
+        "personalGallery": "12000"
+    },
+    "weekdays":{
+        "basicPrice":{
+            "price":"85000",
+            "salesPrice":""
+        },
+        "shoatsPrice":{
+            "price":"55000",
+            "salesPrice":"100000"
+        },
+        "personalGallery":"12000"
+    },
+    "personalInstructor":"15000"
+}`;
+      data =  JSON.parse(data);
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<!--    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>-->
+<!--    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>-->
 <!--    <script type="module" src="js/slider.js"></script>-->
     <script type="module" src="/js/main.js"></script>
 <!--  <script type="module" src="js/filterCourse.js"></script>-->

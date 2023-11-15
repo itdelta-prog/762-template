@@ -1,18 +1,20 @@
+import React from "react";
+import {useEffect, useRef, useState} from "react";
 import VC  from "@uvarov.frontend/vanilla-calendar";
 import "@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.css";
 import "@uvarov.frontend/vanilla-calendar/build/themes/light.min.css";
 
 
 function VanillaCalendar({ config, ...attributes }) {
-    const ref = React.useRef(null);
-    const [calendar, setCalendar] = React.useState(null);
+    const ref = useRef(null);
+    const [calendar, setCalendar] = useState(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (!ref.current) return
         setCalendar(new VC(ref.current, config));
     }, [ref, config])
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (!calendar) return;
         calendar.init();
     }, [calendar]);

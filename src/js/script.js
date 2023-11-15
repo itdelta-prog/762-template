@@ -1,13 +1,19 @@
 const dialog = document.querySelector('[role="dialog"]');
 const btnBurger = document.querySelector('[data-burger="menu"]');
 
+const dropDownLink = document.querySelectorAll('.dropdown-link');
+let dropDownMenu
 const dropDown = document.querySelector('#dropdownDefaultButton');
-const dropDownMenu = document.querySelector('#dropdown');
 
 const routeModal = document.getElementById('route-modal');
 const routeBtn = document.querySelector('.route__modal-btn');
 
-
+dropDownLink.forEach((link) =>{
+    link.addEventListener("click", (eve) => {
+       dropDownMenu = link.querySelector('.dropdown');
+        dropDownMenu.classList.toggle('hidden')
+    })
+})
 btnBurger.addEventListener("click", (eve) => {
     eve.preventDefault();
     btnBurger.classList.toggle('active');
@@ -16,9 +22,9 @@ btnBurger.addEventListener("click", (eve) => {
     dialog.previousElementSibling.classList.toggle('active');
 });
 
-dropDown.addEventListener('click', () => {
-    dropDownMenu.classList.toggle('hidden');
-});
+// dropDown.addEventListener('click', () => {
+//     dropDownMenu.classList.toggle('hidden');
+// });
 
 if(routeBtn) {
     console.log(routeBtn)
