@@ -1,7 +1,7 @@
 import './script.js';
 import './filterCourse.js';
 import {Tabs} from "./tabs.js";
-// import './react/Modal.jsx';
+import './react/Modal.jsx';
 
 // function mySli() {
 //   let el  = [1, 2, 3, 4, 5, 6];
@@ -25,13 +25,13 @@ import {Tabs} from "./tabs.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // const gungs = document.querySelector('#gungs');
-  // gungs.addEventListener('click', (eve) => {
-  //   if(eve.target.closest('.btn')) {
-  //     console.log(stageModal)
-  //     stageModal.setvalue({id:eve.target.closest('.blockGung').dataset.id, show: true})
-  //   }
-  // })
+  const gungs = document.querySelector('#gungs');
+  gungs.addEventListener('click', (eve) => {
+    if(eve.target.closest('.btn')) {
+      console.log(stageModal)
+      stageModal.setvalue({id:eve.target.closest('.blockGung').dataset.id, show: true})
+    }
+  })
   const customSwiper = (swiper, pagEl) => {
 
     // const pagination = document.getElementById('pagintaionCustom');
@@ -129,6 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   let activeEl = document.querySelector('.slidePhoto-pagination__one');
+  let valuesSlide = document.querySelectorAll('[data-slide-value]');
+
   let myGallerey = new Swiper(".myGallerey", {
     allowTouchMove: false,
 
@@ -138,8 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
       bulletActiveClass: "swiper-pagination-bullet-active__custom",
       clickable: true,
       renderBullet: function (index, className) {
-        let values = ['50 метров', '150 метров', '300 метров'];
-        return `<div data-slide="${index}" class="${className} whitespace-nowrap cursor-pointer px-[32px] py-[20px] border border-[#2D2D2B] lg:border-none lg:px-12 xl:px-20 2xl:px-[120px] md:py-4 lg:backdrop-blur-xl text-base font-normal">${values[index]}</div>`;
+        return `<div data-slide="${index}" class="${className} whitespace-nowrap cursor-pointer px-[32px] py-[20px] border border-[#2D2D2B] lg:border-none lg:px-12 xl:px-20 2xl:px-[120px] md:py-4 lg:backdrop-blur-xl text-base font-normal">${valuesSlide[index].dataset.slideValue}</div>`;
       },
     },
     breakpoints: {

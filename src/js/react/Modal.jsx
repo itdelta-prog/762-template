@@ -37,7 +37,6 @@ function Modal({dataModal}) {
                         >
                             <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-[#1B1B1A] px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-[500px] sm:p-6">
                                 <h3 className="text-3xl lg:text-[20px] font-medium uppercase leading-6 text-white mb-[13px]">БРОНИРОВАНИЕ</h3>
-                                <p className="text-white text-[16px] opacity-50 mb-[20px]">Выберите день посещения</p>
                                 <Reservation dataForm={data}/>
                             </Dialog.Panel>
                         </Transition.Child>

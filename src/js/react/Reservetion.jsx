@@ -1,6 +1,9 @@
 import React from "react";
 import {useState, useEffect, Fragment} from "react";
 import ModalReserved from "./ModalReserved.jsx";
+import Button from "./Button.jsx";
+import Select from "./Select.jsx";
+import ProgramAndGung from "./ProgramAndGung.jsx";
 export  default function Reservation({dataForm}) {
     const [dataReserv, setDataReserv] = useState({
         day: 'weekdays',
@@ -14,26 +17,38 @@ export  default function Reservation({dataForm}) {
     });
     const [sum, setSum] = useState(Number(dataForm.weekdays.basicPrice.price))
     const [active, setActive] = useState(false);
-    const [selectedActive, setSelectedActive] = useState(false);
     const [modal, setModal] = useState(false);
     const [instructor, setInstructor] = useState([]);
+    const [gungs, setGungs] = useState([]);
 
     useEffect(() => {
-        const fetchData = async() => {
-            let response = await fetch('https://651e822d44a3a8aa47687cb1.mockapi.io/instrucotr');
-            if(response.ok) {
-                setInstructor(await response.json())
+        const fetchData = async () => {
+
+            try {
+                const [instructorResponse, gungProgramResponse] = await Promise.all([
+                    await fetch('https://651e822d44a3a8aa47687cb1.mockapi.io/instrucotr'),
+                    await fetch('https://65561f7284b36e3a431f1afb.mockapi.io/prog'),
+                ]);
+
+                setGungs(await gungProgramResponse.json());
+                setInstructor(await instructorResponse.json());
+            }
+            catch (error) {
+                alert("Ошибка при запросе данных")
             }
         }
         fetchData();
     }, [])
 
     useEffect(() => {
-        console.log(dataReserv)
         setSum(dataReserv.basicPrice * dataReserv.quantityPerson + dataReserv.instructorPrice + dataReserv.galleryPrice)
     }, [dataReserv]);
 
     const person = [1, 2, 3, 4];
+    const instructorOptions = instructor.map((obj) => {
+        return {value: obj, label: obj.first_name  + ' ' + obj.last_name}
+    });
+
 
     const onClose = () => {
         setModal(false);
@@ -41,7 +56,9 @@ export  default function Reservation({dataForm}) {
     }
     return (
         <Fragment>
+            <p className="text-white text-[16px] opacity-50 mb-[20px]">Выберите день посещения</p>
             <div>
+                <ProgramAndGung data={gungs}/>
                 <div className="mb-[31px]">
                     <div className="flex gap-x-[13px] mb-[31px]">
                         <button onClick={() => setDataReserv({...dataReserv, day:'weekdays', basicPrice: Number(dataForm.weekdays.basicPrice.price), shoatsPrice: Number(dataForm.weekdays.shoatsPrice.price)})} className={`btn-catalog basis-[184px] ${dataReserv.day === 'weekdays' ? "tabs__caption_active"  : ''}`}>
@@ -53,9 +70,9 @@ export  default function Reservation({dataForm}) {
                     </div>
                     <div className="flex justify-between mb-[31px] person">
                         {
-                            person.map((item) => {
+                            person.map((item, idx) => {
                                 return (
-                                    <button onClick={() => setDataReserv({...dataReserv, quantityPerson: item})} className={`${dataReserv.quantityPerson === item ? 'text-[#0F0F0F] bg-[#B8AA91] border-transparent opacity-100' : 'hover:border-[#B8AA91] border-white border-opacity-[0.4] hover:border-opacity-100 hover:text-[#B8AA91] hover:opacity-100  text-white  opacity-[0.4]'} transition-all px-6 py-4  border border-solid`}>{item}</button>
+                                    <button key={idx} onClick={() => setDataReserv({...dataReserv, quantityPerson: item})} className={`${dataReserv.quantityPerson === item ? 'text-[#0F0F0F] bg-[#B8AA91] border-transparent opacity-100' : 'hover:border-[#B8AA91] border-white border-opacity-[0.4] hover:border-opacity-100 hover:text-[#B8AA91] hover:opacity-100  text-white  opacity-[0.4]'} transition-all px-6 py-4  border border-solid`}>{item}</button>
                                 )
                             })
                         }
@@ -75,25 +92,16 @@ export  default function Reservation({dataForm}) {
                 </div>
                 <div className="w-full h-[1px] bg-[#282828] mb-9"></div>
                 <div className="flex flex-col gap-y-[11px] mb-[31px]">
-                    <div id="addService" className="flex flex-col gap-y-5">
+                    <div className="flex flex-col gap-y-5">
                         <button  onClick={() => {
                             setActive(!active);
                             dataReserv.instructorPrice === 0 ? setDataReserv({...dataReserv, instructorPrice: Number(dataForm.personalInstructor)}) : setDataReserv({...dataReserv, instructorPrice: 0})
                         }} className={`${active ? 'tabs__caption_active' : ''} p-[12px_19px_12px_19px] after:w-[calc(100%_-_10%)] btn-catalog group flex justify-between btnService`}><span className={"text-[17px] opacity-20 group-hover:opacity-100 btn-link__text"}>Персональный инструктор</span><span className={"text-[17px] opacity-20 group-hover:opacity-100 btn-link__text"} data-instructor="price">+{Number(dataForm.personalInstructor).toLocaleString()} р.</span></button>
-                        <div id="instructor" onClick={() => active ? setSelectedActive(!selectedActive) : ''} className={`${active ? '' : 'disabled'} + selectCustom`}>
-                            <div className="select">
-                                <span className={`${selectedActive ? 'select-clicked' : ''} selected`}>{dataReserv.instructor.first_name ?? "Выбрать инструктора"}</span>
-                                <div className={`${selectedActive ? 'caret-rotate' : ''} caret`}></div>
-                            </div>
-                            <ul className={`${selectedActive ? 'menu-open' : ''} menu h-[200px] scrollCustom overflow-y-scroll menuReserved`}>
-                                {
-                                    instructor.map((item) => {
-                                        return <li key={item.id} onClick={() => setDataReserv({...dataReserv, instructor: item})} className={item.id === dataReserv.instructor.id ? 'active' : ''}>{item.first_name} {item.last_name}</li>
-                                    })
-                                }
-                            </ul>
-                        </div>
-                        <button onClick={() => dataReserv.galleryPrice === 0 ? setDataReserv({...dataReserv, galleryPrice: Number(dataForm[dataReserv.day].personalGallery)}) : setDataReserv({...dataReserv, galleryPrice: 0})} className={`${dataReserv.galleryPrice !== 0 ? 'tabs__caption_active' : ''} p-[12px_19px_12px_19px] after:w-[calc(100%_-_10%)] btn-catalog flex justify-between group btnService`}><span className="text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">Персональная галерея </span><span className="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text" data-gallery="price">+{Number(dataForm[dataReserv.day].personalGallery).toLocaleString()} р.</span></button>
+                        <Select options={instructorOptions} onChange={(item) => setDataReserv({...dataReserv, instructor: item})} className={active ? '' : 'disabled'}/>
+                        <Button onClick={() => dataReserv.galleryPrice === 0 ? setDataReserv({...dataReserv, galleryPrice: Number(dataForm[dataReserv.day].personalGallery)}) : setDataReserv({...dataReserv, galleryPrice: 0})} className={dataReserv.galleryPrice !== 0 ? 'tabs__caption_active' : ''}>
+                            <span className="text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">Персональная галерея </span>
+                            <span className="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text" data-gallery="price">+{Number(dataForm[dataReserv.day].personalGallery).toLocaleString()} р.</span>
+                        </Button>
                     </div>
                 </div>
                 <div className="flex justify-between items-center mb-[21px]">
@@ -114,3 +122,5 @@ export  default function Reservation({dataForm}) {
         </Fragment>
     )
 }
+
+
