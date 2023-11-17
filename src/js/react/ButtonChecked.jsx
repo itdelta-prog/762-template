@@ -1,8 +1,12 @@
-import React from "react";
-export default function Button({children, onClick, className}) {
+import React, {useState} from "react";
+export default function ButtonChecked({children, onClick, className}) {
+    const [active, setActive] = useState(false)
     return (
-        <button onClick={onClick}
-                className={`${className} p-[12px_19px_12px_19px] after:w-[calc(100%_-_10%)] btn-catalog flex justify-between group btnService`}>
+        <button onClick={() => {
+            setActive(!active);
+            onClick(!active);
+        }}
+                className={`${className} ${active ? 'tabs__caption_active' : ''} p-[12px_19px_12px_19px] after:w-[calc(100%_-_10%)] btn-catalog flex justify-between group btnService`}>
             {children}
         </button>
     )
