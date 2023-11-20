@@ -92,7 +92,7 @@
   }
 
   .btn-catalog {
-    @apply py-[14px] px-[13px] sm:px-[40px] border border-solid border-[#B9AB91] bg-[#181818] cursor-pointer z-10 relative after:content-[''] after:absolute before:content-[''] before:absolute after:bg-[#181818] before:bg-[#181818] before:w-[calc(100%_+_4px)] before:h-[calc(100%_-_43px)] before:top-[22px] before:-left-[3px] after:w-[calc(100%_-_26%)] after:left-[23px] after:h-[calc(100%_+_6px)] after:-top-[3px] transition-opacity hover:bg-[#B9AB91] hover:before:opacity-0  hover:after:opacity-0;
+    @apply py-[14px] px-[13px] sm:px-[40px] border border-solid border-[#B9AB91] bg-[#181818] cursor-pointer z-10 relative after:content-[''] after:absolute before:content-[''] before:absolute after:bg-[#181818] before:bg-[#181818] before:w-[calc(100%_+_4px)] before:h-[calc(100%_-_43px)] before:top-[22px] before:-left-[3px] after:w-[calc(100%_-_26%)] after:left-[14px] sm:after:left-[23px] after:h-[calc(100%_+_6px)] after:-top-[3px] transition-opacity hover:bg-[#B9AB91] hover:before:opacity-0  hover:after:opacity-0;
   }
 
   .btn-primay.btn__active {
@@ -186,6 +186,14 @@
     @apply rotate-180
   }
 
+  .detail-block  p {
+    @apply md:text-[22px] font-normal leading-[31px] text-white mb-6 text-[15px];
+  }
+
+  .detail-block h3 {
+    @apply md:text-6xl font-medium md:leading-[72px] text-white mb-[42px] sm:mb-[64px] uppercase text-2xl leading-[28px];
+  }
+
 
   .modalReserve {
     @apply fixed top-0 -right-[124%] z-[999999999] w-[400px] h-full bg-[#131313] py-4 px-5 transition-all
@@ -196,12 +204,12 @@
   }
 
   .calendar-custom {
-    @apply relative flex h-max min-w-[275px] max-w-full flex-col rounded-xl p-4 opacity-100 transition-opacity;
+    @apply relative flex h-max min-w-[275px] max-w-full flex-col rounded-xl p-0 mb-4 sm:mb-0 sm:p-4 opacity-100 transition-opacity;
   }
   }
 
   .calendar-header {
-    @apply flex items-center gap-x-[30px] mb-[24px]
+    @apply flex items-center gap-x-2 sm:gap-x-[30px] mb-[24px]
   }
 
   .calendar-header__content {
@@ -253,11 +261,15 @@
   }
 
   [data-calendar-theme=light] .calendar-dayBtn-selected {
-    @apply bg-[#B9AB91] text-[#060606];
+    @apply bg-[#B9AB91] text-[#060606] pointer-events-none;
   }
 
   .calendar-dayBtn {
     @apply h-full w-full p-[10px] flex justify-center items-center text-[16px]
+  }
+
+  .calendar-datBtnNext {
+    @apply pointer-events-none;
   }
 
   .course-text {

@@ -27,7 +27,6 @@ function FormReservation({dataForm}) {
     }, [])
 
     React.useEffect(() => {
-        console.log(dataReserv)
         setSum(dataReserv.basicPrice * dataReserv.quantityPerson + dataReserv.instructorPrice + dataReserv.galleryPrice)
     }, [dataReserv]);
 

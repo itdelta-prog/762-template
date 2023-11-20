@@ -1,5 +1,5 @@
 import React, {useEffect, useMemo, useState} from "react";
-import Select from "./Select.jsx";
+import Select from "./components/Select.jsx";
 export default function ProgramAndGung({data, onChangeProgram}) {
     const [selectGun, setSelectGun] = useState(undefined);
     const [selectProgram, setSelectProgram] = useState({});
@@ -24,24 +24,12 @@ export default function ProgramAndGung({data, onChangeProgram}) {
     }, [selectGun]);
 
 
-    let res = [];
-    // const recur = (arr) => {
-    //     if(arr.length) {
-    //         arr.forEach((item) => {
-    //             if(item.program) {
-    //                 recur(item.program);
-    //                 res.push(item.program.flat());
-    //             }
-    //         })
-    //     }
-    //     return res;
-    // }
-
     const gungsOptions = data.map((obj) => {
         return {
             value: {...obj}, label: obj.name
         }
     });
+
 
 
     return (

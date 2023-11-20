@@ -131,7 +131,7 @@
                 <path d="M10 3.33329C8.15905 3.33329 6.66667 4.82568 6.66667 6.66663C6.66667 8.50758 8.15905 9.99996 10 9.99996C11.8409 9.99996 13.3333 8.50758 13.3333 6.66663C13.3333 4.82568 11.8409 3.33329 10 3.33329ZM5 6.66663C5 3.9052 7.23858 1.66663 10 1.66663C12.7614 1.66663 15 3.9052 15 6.66663C15 9.42805 12.7614 11.6666 10 11.6666C7.23858 11.6666 5 9.42805 5 6.66663ZM6.66667 15C5.28595 15 4.16667 16.1192 4.16667 17.5C4.16667 17.9602 3.79357 18.3333 3.33333 18.3333C2.8731 18.3333 2.5 17.9602 2.5 17.5C2.5 15.1988 4.36548 13.3333 6.66667 13.3333H13.3333C15.6345 13.3333 17.5 15.1988 17.5 17.5C17.5 17.9602 17.1269 18.3333 16.6667 18.3333C16.2064 18.3333 15.8333 17.9602 15.8333 17.5C15.8333 16.1192 14.714 15 13.3333 15H6.66667Z"/>
               </svg>
             </button>
-            <button class="flex justify-between items-center px-[30px] py-5 bg-[#222220] group hover:bg-[#B9AB91] transition-colors">
+            <button data-btn="reservation" class="flex justify-between items-center px-[30px] py-5 bg-[#222220] group hover:bg-[#B9AB91] transition-colors">
               <span class="text-lg font-normal text-[#E1DEB3] mr-4 group-hover:text-[#222220]">Забронировать</span> 
               <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="#E1DEB3">
                 <g clip-path="url(#clip0_85_26684)">
@@ -213,7 +213,7 @@
               в тире 7.62
             </h1>
             <p class="max-w-[435px] text-sm md:text-xl font-normal leading-5 md:leading-6 text-white mb-11 md:mb-16">Тир 7.62 — место концентрации и энергии, где сосредоточенность и меткость воплощаются в идеальном выстреле.</p>
-            <button class="flex gap-x-3 items-center w-full sm:w-auto justify-center sm:px-[90px] py-6 md:px-10 md:py-8 bg-[#B9AB91]
+            <button data-btn="reservation" class="flex gap-x-3 items-center w-full sm:w-auto justify-center sm:px-[90px] py-6 md:px-10 md:py-8 bg-[#B9AB91]
             ">
               <span>Забронировать</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -471,7 +471,7 @@
               </div>
             </div>
               <div class="swiper-wrapper">
-                <div class="swiper-slide flex w-full flex-col-reverse lg:flex-row">
+                <div data-slide-value="50 asdsad" class="swiper-slide flex w-full flex-col-reverse lg:flex-row">
                   <div class="flex md:min-w-[350px] xl:min-w-[420px] w-full lg:w-[642px] flex-col justify-between items-start bg-[#1B1B1A] py-[28px] px-[18px] md:p-[25px] xl:p-[50px]">
                     <div class="max-w-[300px] sm:max-w-full">
                       <h2 class="text-[22px] sm:text-[44px] font-medium leading-[52px] text-white mb-6">50 метров</h2>
@@ -507,7 +507,7 @@
                       </div>
                   </div>
                 </div>
-                <div class="swiper-slide flex w-full flex-col-reverse lg:flex-row">
+                <div data-slide-value="100 qedsad" class="swiper-slide flex w-full flex-col-reverse lg:flex-row">
                   <div class="flex md:min-w-[350px] xl:min-w-[420px] w-full lg:w-[642px] flex-col justify-between items-start bg-[#1B1B1A] py-[28px] px-[18px] md:p-[25px] xl:p-[50px]">
                     <div class="max-w-[300px] sm:max-w-[419px]">
                       <h2 class="text-[22px] sm:text-[44px] font-medium leading-[52px] text-white mb-6">50 метров</h2>
@@ -543,7 +543,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide flex w-full flex-col-reverse lg:flex-row">
+                <div data-slide-value="300 dasd" class="swiper-slide flex w-full flex-col-reverse lg:flex-row">
                   <div class="flex md:min-w-[350px] xl:min-w-[420px] w-full lg:w-[642px] flex-col justify-between items-start bg-[#1B1B1A] py-[28px] px-[18px] md:p-[25px] xl:p-[50px]">
                     <div class="max-w-[300px] sm:max-w-[419px]">
                       <h2 class="text-[22px] sm:text-[44px] font-medium leading-[52px] text-white mb-6">50 метров</h2>
@@ -838,7 +838,7 @@
       </div>
     </footer>
     <script>
-      var stageModal = {
+      var stateModal = {
         value: {},
         callbacks: [],
         addcallback: function (callback) { this.callbacks.push(callback); },
@@ -849,7 +849,7 @@
           );
         }
       };
-      var data = `{
+      var dataForm = `{
     "weekend":{
         "basicPrice":{
             "price":"95000",
@@ -874,35 +874,7 @@
     },
     "personalInstructor":"15000"
 }`;
-      data =  JSON.parse(data);
-    </script>
-    <script>
-      var data = `{
-    "weekend":{
-        "basicPrice":{
-            "price":"95000",
-            "salesPrice":"34000"
-        },
-        "shoatsPrice":{
-            "price":"35000",
-            "salesPrice":"800000"
-        },
-        "personalGallery": "12000"
-    },
-    "weekdays":{
-        "basicPrice":{
-            "price":"85000",
-            "salesPrice":""
-        },
-        "shoatsPrice":{
-            "price":"55000",
-            "salesPrice":"100000"
-        },
-        "personalGallery":"12000"
-    },
-    "personalInstructor":"15000"
-}`;
-      data =  JSON.parse(data);
+      dataForm =  JSON.parse(dataForm);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <!--    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>-->

@@ -1,7 +1,7 @@
 import './script.js';
 import './filterCourse.js';
 import {Tabs} from "./tabs.js";
-import './react/Modal.jsx';
+import './react/FormModalReservation.jsx'
 
 // function mySli() {
 //   let el  = [1, 2, 3, 4, 5, 6];
@@ -28,8 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const gungs = document.querySelector('#gungs');
   gungs.addEventListener('click', (eve) => {
     if(eve.target.closest('.btn')) {
-      console.log(stageModal)
-      stageModal.setvalue({id:eve.target.closest('.blockGung').dataset.id, show: true})
+      stateModal.setvalue({id:eve.target.closest('.blockGung').dataset.id, show: true})
     }
   })
   const customSwiper = (swiper, pagEl) => {

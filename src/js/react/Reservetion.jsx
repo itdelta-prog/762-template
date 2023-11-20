@@ -1,11 +1,12 @@
-import React from "react";
+import React, {useMemo} from "react";
 import {useState, useEffect, Fragment} from "react";
-import axios from "axios";
 import ModalReserved from "./ModalReserved.jsx";
-import ButtonChecked from "./ButtonChecked.jsx";
-import Select from "./Select.jsx";
+import ButtonChecked from "./components/ButtonChecked.jsx";
+import Select from "./components/Select.jsx";
 import ProgramAndGung from "./ProgramAndGung.jsx";
-export  default function Reservation({dataForm}) {
+import Modal from "./components/Modal.jsx";
+import axios from "axios";
+export  default function Reservation({gungs, instructor, broneDate, getBroneDate}) {
     const [dataReserv, setDataReserv] = useState({
         dayType: 'weekdays',
         basicPrice: Number(dataForm.weekdays.basicPrice.price),
@@ -26,55 +27,18 @@ export  default function Reservation({dataForm}) {
     const [sum, setSum] = useState(Number(dataForm.weekdays.basicPrice.price))
     const [personalInstructor, setPersonalInstructor] = useState(false);
     const [modal, setModal] = useState(false);
-    const [instructor, setInstructor] = useState([]);
-    const [gungs, setGungs] = useState([]);
-    const [loader, setLoader] = useState(false);
+
+
 
     useEffect(() => {
-        const fetchData = async () => {
-            setLoader(false);
-            try {
-                const [instructorResponse, gungProgramResponse] = await Promise.all([
-                    axios.post('http://localhost/api/v1/reservation/get-instructors', {
-                        body: JSON.stringify({})
-                    }),
-                    axios.post('http://localhost/api/v1/reservation/get-programs', {
-                    body: JSON.stringify({})
-                    })
-                ]);
-                if(instructorResponse.data.status === "success") {
-                    setInstructor(instructorResponse.data.data)
-                }
-                if(gungProgramResponse.data.status === "success") {
-                    setGungs(gungProgramResponse.data.data)
-                }
-
-
-
-            }
-            catch (error) {
-                console.log(error);
-                alert("Ошибка при запросе данных")
-            }
-            setLoader(true);
-        }
-        fetchData();
-    }, [])
-
-    useEffect(() => {
-        setSum(dataReserv.basicPrice * dataReserv.shooterCount + dataReserv.instructorPrice + dataReserv.galleryPrice)
+        setSum(dataReserv.basicPrice * dataReserv.shooterCount + dataReserv.instructorPrice + dataReserv.galleryPrice);
     }, [dataReserv]);
-
+    //
     const person = [1, 2, 3];
-    const instructorOptions = instructor.map((obj) => {
+    const instructorOptions = useMemo(() => instructor.map((obj) => {
         return {value: obj, label: obj.name}
-    });
+    }), [])
 
-
-    const onClose = () => {
-        setModal(false);
-        document.body.classList.remove('active')
-    }
 
     const onChangeGallerey = (active) => {
         setDataReserv({...dataReserv, personalGallery: active ? 'Y' : 'N', galleryPrice: active ? Number(dataForm[dataReserv.dayType].personalGallery) : 0})
@@ -84,13 +48,42 @@ export  default function Reservation({dataForm}) {
         setDataReserv({...dataReserv, weapon: weapon?.value?.name ,program: program?.value?.id});
     }
 
-
     const onChangeDate = (dateReserved) => {
      setDataReserv({...dataReserv, date: dateReserved.selectDate[0], hourse: dateReserved.selectTime?.time})
     }
 
+    const closeModal = (value) => {
+        setModal(value);
+    }
+
+    const sumbitReservation = (inputData) => {
+        axios.post('http://localhost/api/v1/reservation/create', {
+            "program": dataReserv?.program,
+            "dayType": dataReserv?.dayType,
+            "priceSum": sum,
+            "shooterCount": dataReserv?.shooterCount,
+            "instructor": dataReserv?.instructor?.value?.id,
+            "personalGallery": dataReserv?.personalGallery,
+            "date": dataReserv?.date,
+            "hours": dataReserv?.hourse,
+            "fullName": inputData?.fullName,
+            "email": inputData?.email,
+            "phone": inputData?.phone
+        }).then(res => {
+            if(res.data.status === "success" && !res.data.errors.length) {
+                alert("Успешно забронирована");
+                setModal(false);
+            }
+            if(res.data.errors) {
+                console.log(res.data)
+                alert(res.data.errors[0].message)
+            }
+        });
+    }
+
+
     return (
-            loader ? <Fragment>
+             <Fragment>
                 <p className="text-white text-[16px] opacity-50 mb-[20px]">Выберите день посещения</p>
                 <div>
                     <ProgramAndGung  onChangeProgram={onChangeProgram} data={gungs}/>
@@ -134,7 +127,9 @@ export  default function Reservation({dataForm}) {
                             }}>
                                 <span className={"text-[17px] opacity-20 group-hover:opacity-100 btn-link__text"}>Персональный инструктор</span><span className={"text-[17px] opacity-20 group-hover:opacity-100 btn-link__text"} data-instructor="price">+{Number(dataForm.personalInstructor).toLocaleString()} р.</span>
                             </ButtonChecked>
-                            <Select options={instructorOptions} onChange={(item) => setDataReserv({...dataReserv, instructor: item.value.id})} className={personalInstructor ? '' : 'disabled'} select={dataReserv.instructor} title={"Выбрать интсруктора"}/>
+                            <Select options={instructorOptions} onChange={(item) => {
+                                setDataReserv({...dataReserv, instructor: item})
+                            }} className={personalInstructor ? '' : 'disabled'} select={dataReserv.instructor} title={"Выбрать интсруктора"}/>
                             <ButtonChecked onClick={onChangeGallerey}>
                                 <span className="text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">Персональная галерея </span>
                                 <span className="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text" data-gallery="price">+{Number(dataForm[dataReserv.dayType].personalGallery).toLocaleString()} р.</span>
@@ -150,15 +145,30 @@ export  default function Reservation({dataForm}) {
                         {/*    className="btn-link__text">В подарок</span></button>*/}
                         <button className="btn-catalog btnReserve " onClick={() => {
                             setModal(true);
-                            document.body.classList.add('active')
+                           // document.body.classList.add('active')
                         }}>
                             <span className="btn-link__text" >К бронированию</span></button>
+                        <Modal showModal={modal} onChangeShow={closeModal}>
+                            <div onClick={() => closeModal(false)} className="flex justify-end items-center cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="24" viewBox="0 0 23 24" fill="none">
+                                    <g clipPath="url(#clip0_413_26368)">
+                                        <rect width="2.88763" height="10.8286" rx="1.44382" transform="matrix(0.707069 -0.707145 0.707069 0.707145 1.00391 3.55273)" fill="white"/>
+                                        <rect width="2.88763" height="10.8286" rx="1.44382" transform="matrix(0.707069 0.707145 -0.707069 0.707145 20.3887 1.51099)" fill="white"/>
+                                        <rect width="2.88763" height="10.8286" rx="1.44382" transform="matrix(-0.707069 0.707145 -0.707069 -0.707145 22.4316 20.9119)" fill="white"/>
+                                        <rect width="2.88763" height="10.8286" rx="1.44382" transform="matrix(-0.707069 -0.707145 0.707069 -0.707145 3.00977 22.9529)" fill="white"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_413_26368">
+                                            <rect width="22.12" height="22.12" fill="white" transform="translate(0.439453 0.959961)"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <ModalReserved getBroneDate={getBroneDate} sumForm={sum} broneDate={broneDate} onChangeDate={onChangeDate} sumbitReservation={sumbitReservation}/>
+                        </Modal>
                     </div>
                 </div>
-                <ModalReserved onChangeDate={onChangeDate} modalActive={modal} onClose={onClose}/>
-            </Fragment> :  <div role="status">
-                <img src="https://i.stack.imgur.com/kOnzy.gif" alt=""/>
-            </div>
+            </Fragment>
     )
 }
 

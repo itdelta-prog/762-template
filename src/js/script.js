@@ -2,12 +2,19 @@ const dialog = document.querySelector('[role="dialog"]');
 const btnBurger = document.querySelector('[data-burger="menu"]');
 
 const dropDownLink = document.querySelectorAll('.dropdown-link');
+const btnReservation = document.querySelectorAll('[data-btn="reservation"]');
 let dropDownMenu;
 let linkIcon;
 const dropDown = document.querySelector('#dropdownDefaultButton');
 
 const routeModal = document.getElementById('route-modal');
 const routeBtn = document.querySelector('.route__modal-btn');
+
+btnReservation.forEach((el) => {
+    el.addEventListener('click', () => {
+        stateModal.setvalue({id:'', show: true})
+    })
+})
 
 dropDownLink.forEach((link) =>{
     if(link) {
