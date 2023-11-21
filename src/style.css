@@ -66,19 +66,19 @@
   } 
 
   .burger__menu.active .burger__menu-line.one {
-    @apply translate-x-[14px] translate-y-[11px] rotate-[46deg];
+    @apply translate-x-[15px] translate-y-[12px] rotate-[46deg];
   }
 
   .burger__menu.active .burger__menu-line.two {
-    @apply translate-x-[28px] translate-y-[11px] rotate-[140deg];
+    @apply translate-x-[27px] translate-y-[10px] rotate-[140deg];
   }
 
   .burger__menu.active .burger__menu-line.three {
-    @apply opacity-100 translate-x-[28px] translate-y-[21px] rotate-[226deg];
+    @apply opacity-100 translate-x-[27px] translate-y-[19px] rotate-[224deg];
   }
 
   .burger__menu.active .burger__menu-line.four {
-    @apply opacity-100 translate-x-[14px] translate-y-[18px] rotate-[142deg];
+    @apply opacity-100 translate-x-[14px] translate-y-[17px] rotate-[142deg];
   }
 
 
@@ -187,11 +187,11 @@
   }
 
   .detail-block  p {
-    @apply md:text-[22px] font-normal leading-[31px] text-white mb-6 text-[15px];
+    @apply md:text-[22px] font-normal leading-[21px] sm:leading-[31px] text-white sm:mb-4 mb-6 text-[15px];
   }
 
   .detail-block h3 {
-    @apply md:text-6xl font-medium md:leading-[72px] text-white mb-[42px] sm:mb-[64px] uppercase text-2xl leading-[28px];
+    @apply md:text-6xl font-medium md:leading-[72px] text-white mb-[24px] sm:mb-[64px] uppercase text-2xl leading-[28px];
   }
 
 
@@ -416,7 +416,7 @@
   }
 
   .contact__info-supTitle {
-    @apply text-[15px] leading-[18px] sm:text-lg font-normal sm:leading-5 text-[#878787] mb-6
+    @apply text-[15px] leading-[18px] sm:text-lg font-normal sm:leading-5 text-[#878787] mb-4 sm:mb-6
   }
 
 }
@@ -541,12 +541,18 @@ body.active {
 
 
 @media (max-width: 1023px) {
+
+  .pagination__custom {
+    width: 1000px !important;
+  }
+
   .mySwiper .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
-    left: 42%;
+    left: 50%;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 530px) {
+
 
   .mySwiper .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
     left: 30%;
@@ -554,9 +560,9 @@ body.active {
 
 .pagination__custom {
 	position: absolute;
-	width: 350px !important;
+	width: 475px !important;
 	margin: 0;
-  top: 20px;
+    top: 20px;
   padding-bottom: 26px;
 }
 .mySwiper .swiper-pagination-bullet {

@@ -103,108 +103,110 @@
                 </li>
               </ul>
             </div>
-              </div>
-            </div>
           </div>
-        
-          <div class="lg:hidden flex items-center gap-x-5">
-            <a class="text-lg font-normal text-white" href="tel:+78325463143">+7 832 546 31 43</a>
-            <div data-burger="menu" type="button" class="burger__menu w-[50px] h-[38px] bg-[#222220]">
-              <div class="burger__menu-line one" style="transition: opacity .2s, transform .3s;"></div>
-              <div class="burger__menu-line two" style="transition: opacity .2s, transform .3s;"></div>
-              <div class="burger__menu-line three" style="transition: opacity .2s, transform .3s;"></div>
-              <div class="burger__menu-line four" style="transition: opacity .2s, transform .3s;"></div>
-            </div>
-          </div>
-        
-          <div class="hidden lg:flex items-center gap-x-3 xl:gap-x-8">
-            <a class="hidden lg:block text-lg font-normal text-white" href="tel:+78325463143">+7 832 546 31 43</a>
-            <div class="w-[1px] h-9 bg-[rgba(255,_255,_255,_0.16)]"></div>
-            <div class="flex items-center gap-x-2">
-              <a href="#"><img src="/img/whatsapp.svg" alt=""></a>
-              <a href="#"><img src="/img/vk.svg" alt=""></a>
-              <a href="#"><img src="/img/telegram.svg" alt=""></a>
-            </div>
-            <button class="flex justify-between items-center px-[30px] py-5 bg-[#1A1A19] group hover:bg-[#B9AB91] transition-colors">
-              <span class="text-lg font-normal text-white mr-4 group-hover:text-[#222220]">Даниил</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="white">
-                <path d="M10 3.33329C8.15905 3.33329 6.66667 4.82568 6.66667 6.66663C6.66667 8.50758 8.15905 9.99996 10 9.99996C11.8409 9.99996 13.3333 8.50758 13.3333 6.66663C13.3333 4.82568 11.8409 3.33329 10 3.33329ZM5 6.66663C5 3.9052 7.23858 1.66663 10 1.66663C12.7614 1.66663 15 3.9052 15 6.66663C15 9.42805 12.7614 11.6666 10 11.6666C7.23858 11.6666 5 9.42805 5 6.66663ZM6.66667 15C5.28595 15 4.16667 16.1192 4.16667 17.5C4.16667 17.9602 3.79357 18.3333 3.33333 18.3333C2.8731 18.3333 2.5 17.9602 2.5 17.5C2.5 15.1988 4.36548 13.3333 6.66667 13.3333H13.3333C15.6345 13.3333 17.5 15.1988 17.5 17.5C17.5 17.9602 17.1269 18.3333 16.6667 18.3333C16.2064 18.3333 15.8333 17.9602 15.8333 17.5C15.8333 16.1192 14.714 15 13.3333 15H6.66667Z"/>
-              </svg>
-            </button>
-            <button data-btn="reservation" class="flex justify-between items-center px-[30px] py-5 bg-[#222220] group hover:bg-[#B9AB91] transition-colors">
-              <span class="text-lg font-normal text-[#E1DEB3] mr-4 group-hover:text-[#222220]">Забронировать</span> 
-              <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="#E1DEB3">
-                <g clip-path="url(#clip0_85_26684)">
-                <rect x="2.1875" y="3.66797" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-45 2.1875 3.66797)"/>
-                <rect x="16.3203" y="2.18408" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(45 16.3203 2.18408)"/>
-                <rect x="17.8281" y="16.3276" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(135 17.8281 16.3276)"/>
-                <rect x="3.66406" y="17.8164" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-135 3.66406 17.8164)"/>
-                </g>
-                <defs>
-                  <clipPath id="clip0_85_26684">
-                    <rect width="20" height="20" fill="white"/>
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-            <!-- <a href="#" class="text-sm font-normal leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a> -->
-          </div>
-        </nav>
-
-        <div class="dialog__wrapper w-full h-full fixed left-0 top-0 bg-[rgba(15,_15,_15,_0.90)] z-10 opacity-0 invisible" style="transition: opacity .3s, visibility .1s;"></div>
-
-
-        <!-- Mobile menu, show/hide based on menu open state. -->
-        <div class="lg:hidden  w-full h-[0%] overflow-x-auto fixed bottom-0 bg-[#1B1B1A] z-30 dialog" role="dialog" aria-modal="true" style="transition: height .3s;">
-          <div class="flex items-center gap-x-4 px-4 py-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="white">
-                <path d="M10 3.33329C8.15905 3.33329 6.66667 4.82568 6.66667 6.66663C6.66667 8.50758 8.15905 9.99996 10 9.99996C11.8409 9.99996 13.3333 8.50758 13.3333 6.66663C13.3333 4.82568 11.8409 3.33329 10 3.33329ZM5 6.66663C5 3.9052 7.23858 1.66663 10 1.66663C12.7614 1.66663 15 3.9052 15 6.66663C15 9.42805 12.7614 11.6666 10 11.6666C7.23858 11.6666 5 9.42805 5 6.66663ZM6.66667 15C5.28595 15 4.16667 16.1192 4.16667 17.5C4.16667 17.9602 3.79357 18.3333 3.33333 18.3333C2.8731 18.3333 2.5 17.9602 2.5 17.5C2.5 15.1988 4.36548 13.3333 6.66667 13.3333H13.3333C15.6345 13.3333 17.5 15.1988 17.5 17.5C17.5 17.9602 17.1269 18.3333 16.6667 18.3333C16.2064 18.3333 15.8333 17.9602 15.8333 17.5C15.8333 16.1192 14.714 15 13.3333 15H6.66667Z"/>
-              </svg>
-            <span class="text-lg font-normal text-white">Даниил</span>
-          </div>
-          <div class="w-full h-[1px] bg-[#363636]"></div>
-          <div class="flex flex-col gap-y-[18px] px-4 py-7">
-            <a href="" class="text-[28px] font-normal text-white">Стрельба</a>
-            <a href="" class="text-[28px] font-normal text-white">Подарочные карты</a>
-            <a href="" class="text-[28px] font-normal text-white">Мероприятия</a>
-            <a href="" class="text-[28px] font-normal text-white">О клубе</a>
-            <a href="" class="text-base text-[#878787] font-normal">Парковка</a>
-            <a href="" class="text-base text-[#878787] font-normal">Арсенал</a>
-            <a href="" class="text-base text-[#878787] font-normal">Галереи</a>
-            <a href="" class="text-base text-[#878787] font-normal">Раздевалки</a>
-            <a href="" class="text-base text-[#878787] font-normal">Соревнования</a>
-          </div>
-          <div class="w-full h-[1px] bg-[#363636]"></div>
-          <div class="flex flex-col justify-center px-4 py-7">
-            <div class="flex justify-between items-center mb-[16px]">
-              <a class="bg-[url('/img/phone.svg')] bg-no-repeat bg-[left_6px] pl-9 text-white text-lg">+7 832 546 31 43</a>
-              <div class="flex items-center">
-                <img src="/img/whatsapp.svg"/>
-                <img src="/img/vk.svg"/>
-                <img src="/img/telegram.svg"/>
-              </div>
-            </div>
-            <button class="flex justify-center items-center max-w-[350px] py-6 bg-[#222220] group hover:bg-[#E1DEB3]">
-              <span class="text-lg font-normal text-[#E1DEB3] mr-4 group-hover:text-[#222220]">Забронировать</span> 
-              <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="#E1DEB3">
-                <g clip-path="url(#clip0_85_26684)">
-                <rect x="2.1875" y="3.66797" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-45 2.1875 3.66797)"/>
-                <rect x="16.3203" y="2.18408" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(45 16.3203 2.18408)"/>
-                <rect x="17.8281" y="16.3276" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(135 17.8281 16.3276)"/>
-                <rect x="3.66406" y="17.8164" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-135 3.66406 17.8164)"/>
-                </g>
-                <defs>
-                  <clipPath id="clip0_85_26684">
-                    <rect width="20" height="20" fill="white"/>
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
-          <!-- Background backdrop, show/hide based on slide-over state. -->
         </div>
-      </header>
-    <main class="w-full pt-[85px] lg:pt-[110px]">
+      </div>
+
+      <div class="lg:hidden flex items-center gap-x-5">
+        <a class="text-lg font-normal text-white" href="tel:+78325463143">+7 832 546 31 43</a>
+        <div data-burger="menu" type="button" class="burger__menu w-[50px] h-[38px] bg-[#222220]">
+          <div class="burger__menu-line one" style="transition: opacity .2s, transform .3s;"></div>
+          <div class="burger__menu-line two" style="transition: opacity .2s, transform .3s;"></div>
+          <div class="burger__menu-line three" style="transition: opacity .2s, transform .3s;"></div>
+          <div class="burger__menu-line four" style="transition: opacity .2s, transform .3s;"></div>
+        </div>
+      </div>
+
+      <div class="hidden lg:flex items-center gap-x-3 xl:gap-x-8">
+        <a class="hidden lg:block text-lg font-normal text-white" href="tel:+78325463143">+7 832 546 31 43</a>
+        <div class="w-[1px] h-9 bg-[rgba(255,_255,_255,_0.16)]"></div>
+        <div class="flex items-center gap-x-2">
+          <a href="#"><img src="/img/whatsapp.svg" alt=""></a>
+          <a href="#"><img src="/img/vk.svg" alt=""></a>
+          <a href="#"><img src="/img/telegram.svg" alt=""></a>
+        </div>
+        <button class="flex justify-between items-center px-[30px] py-5 bg-[#1A1A19] group hover:bg-[#B9AB91] transition-colors">
+          <span class="text-lg font-normal text-white mr-4 group-hover:text-[#222220]">Даниил</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="white">
+            <path d="M10 3.33329C8.15905 3.33329 6.66667 4.82568 6.66667 6.66663C6.66667 8.50758 8.15905 9.99996 10 9.99996C11.8409 9.99996 13.3333 8.50758 13.3333 6.66663C13.3333 4.82568 11.8409 3.33329 10 3.33329ZM5 6.66663C5 3.9052 7.23858 1.66663 10 1.66663C12.7614 1.66663 15 3.9052 15 6.66663C15 9.42805 12.7614 11.6666 10 11.6666C7.23858 11.6666 5 9.42805 5 6.66663ZM6.66667 15C5.28595 15 4.16667 16.1192 4.16667 17.5C4.16667 17.9602 3.79357 18.3333 3.33333 18.3333C2.8731 18.3333 2.5 17.9602 2.5 17.5C2.5 15.1988 4.36548 13.3333 6.66667 13.3333H13.3333C15.6345 13.3333 17.5 15.1988 17.5 17.5C17.5 17.9602 17.1269 18.3333 16.6667 18.3333C16.2064 18.3333 15.8333 17.9602 15.8333 17.5C15.8333 16.1192 14.714 15 13.3333 15H6.66667Z"/>
+          </svg>
+        </button>
+        <button data-btn="reservation" class="flex justify-between items-center px-[30px] py-5 bg-[#222220] group hover:bg-[#B9AB91] transition-colors">
+          <span class="text-lg font-normal text-[#E1DEB3] mr-4 group-hover:text-[#222220]">Забронировать</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="#E1DEB3">
+            <g clip-path="url(#clip0_85_26684)">
+              <rect x="2.1875" y="3.66797" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-45 2.1875 3.66797)"/>
+              <rect x="16.3203" y="2.18408" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(45 16.3203 2.18408)"/>
+              <rect x="17.8281" y="16.3276" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(135 17.8281 16.3276)"/>
+              <rect x="3.66406" y="17.8164" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-135 3.66406 17.8164)"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_85_26684">
+                <rect width="20" height="20" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+        <!-- <a href="#" class="text-sm font-normal leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a> -->
+      </div>
+    </nav>
+
+    <div class="dialog__wrapper w-full h-full fixed left-0 top-0 bg-[rgba(15,_15,_15,_0.90)] z-10 opacity-0 invisible" style="transition: opacity .3s, visibility .1s;"></div>
+
+
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div class="lg:hidden  w-full h-[0%] overflow-x-auto fixed bottom-0 bg-[#1B1B1A] z-30 dialog" role="dialog" aria-modal="true" style="transition: height .3s;">
+
+<!--      КНОПКА ЛИЧНЕГО КАБИНЕТА ПОКА ЧТО СКРЫТ-->
+<!--      <div class="flex items-center gap-x-4 px-4 py-7">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="white">-->
+<!--          <path d="M10 3.33329C8.15905 3.33329 6.66667 4.82568 6.66667 6.66663C6.66667 8.50758 8.15905 9.99996 10 9.99996C11.8409 9.99996 13.3333 8.50758 13.3333 6.66663C13.3333 4.82568 11.8409 3.33329 10 3.33329ZM5 6.66663C5 3.9052 7.23858 1.66663 10 1.66663C12.7614 1.66663 15 3.9052 15 6.66663C15 9.42805 12.7614 11.6666 10 11.6666C7.23858 11.6666 5 9.42805 5 6.66663ZM6.66667 15C5.28595 15 4.16667 16.1192 4.16667 17.5C4.16667 17.9602 3.79357 18.3333 3.33333 18.3333C2.8731 18.3333 2.5 17.9602 2.5 17.5C2.5 15.1988 4.36548 13.3333 6.66667 13.3333H13.3333C15.6345 13.3333 17.5 15.1988 17.5 17.5C17.5 17.9602 17.1269 18.3333 16.6667 18.3333C16.2064 18.3333 15.8333 17.9602 15.8333 17.5C15.8333 16.1192 14.714 15 13.3333 15H6.66667Z"/>-->
+<!--        </svg>-->
+<!--        <span class="text-lg font-normal text-white">Даниил</span>-->
+<!--      </div>-->
+      <div class="w-full h-[1px] bg-[#363636]"></div>
+      <div class="flex flex-col gap-y-[18px] px-4 py-7">
+        <a href="" class="text-[28px] font-normal text-white">Стрельба</a>
+        <a href="" class="text-[28px] font-normal text-white">Подарочные карты</a>
+        <a href="" class="text-[28px] font-normal text-white">Мероприятия</a>
+        <a href="" class="text-[28px] font-normal text-white">О клубе</a>
+        <a href="" class="text-base text-[#878787] font-normal">Парковка</a>
+        <a href="" class="text-base text-[#878787] font-normal">Арсенал</a>
+        <a href="" class="text-base text-[#878787] font-normal">Галереи</a>
+        <a href="" class="text-base text-[#878787] font-normal">Раздевалки</a>
+        <a href="" class="text-base text-[#878787] font-normal">Соревнования</a>
+      </div>
+      <div class="w-full h-[1px] bg-[#363636]"></div>
+      <div class="flex flex-col justify-center px-4 py-7">
+        <div class="flex justify-between items-center mb-[16px]">
+          <a class="bg-[url('/img/phone.svg')] bg-no-repeat bg-[left_6px] pl-9 text-white text-lg">+7 832 546 31 43</a>
+          <div class="flex items-center">
+            <img src="/img/whatsapp.svg"/>
+            <img src="/img/vk.svg"/>
+            <img src="/img/telegram.svg"/>
+          </div>
+        </div>
+        <button class="flex justify-center items-center w-full py-6 bg-[#222220] group hover:bg-[#E1DEB3]">
+          <span class="text-lg font-normal text-[#E1DEB3] mr-4 group-hover:text-[#222220]">Забронировать</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#222220]" width="20" height="20" viewBox="0 0 20 20" fill="#E1DEB3">
+            <g clip-path="url(#clip0_85_26684)">
+              <rect x="2.1875" y="3.66797" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-45 2.1875 3.66797)"/>
+              <rect x="16.3203" y="2.18408" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(45 16.3203 2.18408)"/>
+              <rect x="17.8281" y="16.3276" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(135 17.8281 16.3276)"/>
+              <rect x="3.66406" y="17.8164" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-135 3.66406 17.8164)"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_85_26684">
+                <rect width="20" height="20" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+      <!-- Background backdrop, show/hide based on slide-over state. -->
+    </div>
+  </header>
+    <main class="w-full ">
       <section class="w-full h-[800px] md:h-[931px] flex items-end md:block bg-center bg-no-repeat bg-cover mb-[80px] sm:mb-[180px]" style="background-image: url('/img/headerBack.webp');">
         <div class="container px-4 sm:px-5 md:px-10 3xl:px-0">
           <div class="sm:pl-5 2xl:pl-0 md:pt-[60px]">
@@ -238,7 +240,7 @@
           <div class="container px-4 sm:px-5 md:px-10 3xl:px-0">
             <h2 class="text-3xl sm:text-6xl font-medium leading-[36px] sm:leading-[72px] text-white uppercase mb-8">программы</h2>
             <div id="program" class="relative">
-              <div class=" flex gap-x-5 flex-nowrap mb-16 overflow-x-auto 2xl:overflow-hidden overflow-y-hidden">
+              <div class=" flex gap-x-5 flex-nowrap mb-8 sm:mb-16 overflow-x-auto 2xl:overflow-hidden overflow-y-hidden">
                 <button class="group  btn__custom bg-transparent border border-[#2D2D2B]" data-filter="false">
                   <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
                   <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity group-hover:opacity-100"></span>
@@ -333,7 +335,7 @@
               <div id="modalRes"></div>
               </div>
       </section>
-      <section class="w-full px-4 py-[60px] sm:py-[90px] bg-[#1B1B1A] mb-[180px]">
+      <section class="w-full px-4 py-[60px] sm:py-[90px] bg-[#1B1B1A] mb-20 sm:mb-44">
       <div class="swiper mySwiper pb-20">
         <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-[20px] sm:mb-20 lg:gap-x-10 xl:gap-x-0 gap-x-0 sm:px-5 lg:px-[90px]">
             <h2 class="max-w-[704px] text-3xl leading-9 md:text-6xl text-white font-medium md:leading-[72px] uppercase mb-5 lg:mb-0">о стрелковом клубе 7.62</h2>
@@ -419,10 +421,10 @@
 <!--        </div>-->
       </div>
       </section>
-      <section class="block mb-[180px]">
+      <section class="block mb-20 sm:mb-[180px]">
         <div class="container px-[15px] 3xl:px-0">
           <div class="swiper myGallerey">
-            <div class="flex justify-between items-start flex-col lg:items-center lg:flex-row mb-16">
+            <div class="flex justify-between items-start flex-col lg:items-center lg:flex-row mb-8 sm:mb-16">
             <h2 class="max-w-[704px] text-3xl sm:text-6xl text-white font-medium leading-[36px] md:leading-[72px] uppercase mb-6">галереи</h2>
               <div class="hidden lg:block justify-end" id="photoPagination">
                 <div data-slide="0" class="slidePhoto-pagination__one slidePhoto-pagination hidden active p-6 gap-9 bg-[#1A1A19]">
@@ -583,7 +585,7 @@
             </div>
         </div>
       </section>
-      <section class="w-full flex flex-col justify-end sm:justify-center  relative h-[981px] mb-[80px] sm:mb-[180px]" style="background: radial-gradient(59.14% 59.12% at 64.82% 49.95%, rgba(15, 15, 15, 0.00) 0%, #0F0F0F 100%), url('/img/map.png');">
+      <section class="w-full flex flex-col justify-end sm:justify-center  relative h-[648px] sm:h-[981px] mb-[80px] sm:mb-[180px]" style="background: radial-gradient(59.14% 59.12% at 64.82% 49.95%, rgba(15, 15, 15, 0.00) 0%, #0F0F0F 100%), url('/img/map.png');">
         <div class="container sm:px-5 md:px-10  3xl:px-0">
           <div class="hidden sm:flex route__tabs justify-center lg:justify-between items-center xl:pl-5 2xl:pl-0">
             <div class="flex basis-[556px] flex-col items-start justify-between py-[50px] px-[55px] bg-[#1B1B1A]">
