@@ -12,7 +12,7 @@ function FormModalReservation() {
     const [loader, setLoader] = useState(false);
 
     const getBroneDate = async (year, month) => {
-        axios.post("http://localhost/api/v1/reservation/get-reserved-dates", {
+        axios.post(`${baseUrl}api/v1/reservation/get-reserved-dates`, {
             "year": year,
             "month": month,
         }).then((res) => {
@@ -33,14 +33,15 @@ function FormModalReservation() {
         getBroneDate(new Date().getFullYear(), new Date().getMonth()+1);
     }, []);
 
+
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const [instructorResponse, gungProgramResponse, broneDateResponse] = await Promise.all([
-                    axios.post('http://localhost/api/v1/reservation/get-instructors', {
+                    axios.post(`${baseUrl}api/v1/reservation/get-instructors`, {
                         body: JSON.stringify({})
                     }),
-                    axios.post('http://localhost/api/v1/reservation/get-programs', {
+                    axios.post(`${baseUrl}api/v1/reservation/get-programs`, {
                         body: JSON.stringify({})
                     }),
                 ]);

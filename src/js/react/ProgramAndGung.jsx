@@ -37,7 +37,7 @@ export default function ProgramAndGung({data, onChangeProgram}) {
             <Select options={gungsOptions} select={selectGun} onChange={(item) => {
                 setSelectGun(item);
                 onChangeProgram(selectProgram, item)
-            }} className={"mb-5"} title={"Выбрать оружия"}/>
+            }} className={"mb-5"} title={"Выбрать оружие"}/>
             <Select options={programOptions} onChange={(item) => {
                 setSelectProgram(item);
                 onChangeProgram(item, selectGun)

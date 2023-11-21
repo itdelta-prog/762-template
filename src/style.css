@@ -264,9 +264,22 @@
     @apply bg-[#B9AB91] text-[#060606] pointer-events-none;
   }
 
-  .calendar-dayBtn {
-    @apply h-full w-full p-[10px] flex justify-center items-center text-[16px]
+  .calendar-wrapper {
+    @apply flex flex-grow;
   }
+
+  .calendar-dayBtn {
+    @apply h-full w-full p-[10px] flex justify-center items-center text-[16px];
+  }
+
+  .calendar-content {
+    @apply flex flex-grow flex-col;
+  }
+
+  .calendar-week {
+    @apply mb-2 grid grid-cols-7 justify-items-center;
+  }
+
 
   .calendar-datBtnNext {
     @apply pointer-events-none;

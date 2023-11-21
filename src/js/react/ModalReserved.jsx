@@ -69,6 +69,9 @@ export default function ModalReserved({onChangeDate, broneDate, sumForm, sumbitR
                         dayBtnNext: 'calendar-datBtnNext',
                         dayBtnDisabled: 'calendar-dayBtn-disabled',
                         dayBtnSelected: 'calendar-dayBtn-selected',
+                        content: 'calendar-content',
+                        wrapper: 'calendar-wrapper',
+                        week: 'calendar-week',
                         weekDay: 'calendar-week__day' }
                 }} className="calendar" />
                 <h6 className="text-white text-[18px] mb-4">Выберите время:</h6>

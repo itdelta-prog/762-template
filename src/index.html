@@ -10,98 +10,98 @@
     <link rel="stylesheet" href="style.css">
     <title>Vite App</title>
   </head>
-  <body class="w-full h-full bg-[#0F0F0F] font-Grtsk">
-    <header class="w-full fixed top-0 bg-[#0F0F0F] z-[30]">
-        <nav class="flex items-center justify-between relative p-6 lg:px-5 lg:py-5 z-20" aria-label="Global">
-          <div class="flex items-center gap-x-12">
-            <a href="#" class="">
-              <img class="h-8 w-auto" src="/img/headerLogo.svg" alt="">
-            </a>
-            <div class="hidden lg:block">
-              <ul class="flex items-center lg:gap-x-9">
-                <li><a href="#" class="lg:hidden xl:block text-lg leading-6 text-white font-normal">Стрельба</a></li>
-                <li><a href="#" class="lg:hidden book:block text-lg leading-6 text-white font-normal">Подарочные карты</a></li>
-                <li><a href="#" class="lg:hidden 2xl:block text-lg leading-6 text-white font-normal">Мероприятия</a></li>
-                <li class="dropdown-link link-ic">
-                  <div class="flex gap-x-2 items-center">
-                    <a href="#" class="lg:hidden 3xl:block text-lg leading-6 text-white font-normal">О клубе</a>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 13 9" class="linkIcon transition-transform" fill="none">
-                      <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
-                    </svg>
-                  </div>
-                  <div class="dropdown max-w-[275px] z-10 absolute top-[4.5rem] hidden bg-[rgba(31,_31,_31,_0.50)] backdrop-blur-xl divide-y rounded-lg shadow w-44">
-                    <ul class="py-2 text-sm">
-                      <li>
-                        <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Парковка</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Арсенал</a>
-                      </li>
-                    </ul>
-                  </div>
+  <body class="w-full relative h-full bg-[#0F0F0F] font-Grtsk">
+  <header id="header-navigation" class="sticky top-0 bg-[#0F0F0F] z-[30]">
+    <nav  class="flex items-center justify-between relative p-6 sm:px-[30px] lg:py-5 z-20 transition duration-500" aria-label="Global">
+      <div class="flex items-center gap-x-12">
+        <a href="#" class="">
+          <img class="h-8 w-auto" src="/img/headerLogo.svg" alt="">
+        </a>
+        <div class="hidden lg:block">
+          <ul class="flex items-center lg:gap-x-9">
+            <li><a href="#" class="lg:hidden xl:block text-lg leading-6 text-white font-normal">Стрельба</a></li>
+            <li><a href="#" class="lg:hidden book:block text-lg leading-6 text-white font-normal">Подарочные карты</a></li>
+            <li><a href="#" class="lg:hidden 2xl:block text-lg leading-6 text-white font-normal">Мероприятия</a></li>
+            <li class="dropdown-link link-ic">
+              <div class="flex gap-x-2 items-center">
+                <a href="#" class="lg:hidden 3xl:block text-lg leading-6 text-white font-normal">О клубе</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 13 9" class="linkIcon transition-transform" fill="none">
+                  <path d="M12.3604 1.14004L6.36035 7.86005L0.360351 1.14004" stroke="white" stroke-width="0.923077"/>
+                </svg>
+              </div>
+              <div class="dropdown max-w-[275px] z-10 absolute top-[4.5rem] hidden bg-[rgba(31,_31,_31,_0.50)] backdrop-blur-xl divide-y rounded-lg shadow w-44">
+                <ul class="py-2 text-sm">
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Парковка</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Арсенал</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="dropdown-link">
+              <div id="dropdownDefaultButton" class="p-2">
+                <img src="/img/dot.svg"/>
+              </div>
+              <div class="dropdown max-w-[275px] z-10 absolute top-[4rem] hidden bg-[rgba(31,_31,_31,_0.50)] backdrop-blur-xl divide-y rounded-lg shadow w-44">
+                <ul class="py-2 text-sm " aria-labelledby="dropdownDefaultButton">
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Парковка</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Арсенал</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Галерея</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Раздевалки</a>
+                  </li>
+                  <li class="lg:block xl:hidden">
+                    <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Стрельба</a>
+                  </li>
+                  <li class="lg:block xl:hidden">
+                    <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Подарочные карты</a>
+                  </li>
+                  <li class="lg:block 2xl:hidden">
+                    <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Мероприятия</a>
+                  </li>
+                  <li class="lg:block 3xl:hidden">
+                    <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">О клубе</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <div class="dropdown-link relative cursor-pointer">
+            <div class="dropdown max-w-[275px] z-10 absolute top-6 hidden bg-[rgba(31,_31,_31,_0.50)] backdrop-blur-xl divide-y rounded-lg shadow w-44">
+              <ul class="py-2 text-sm " aria-labelledby="dropdownDefaultButton">
+                <li>
+                  <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Парковка</a>
                 </li>
-                <li class="dropdown-link">
-                  <div id="dropdownDefaultButton" class="p-2">
-                    <img src="/img/dot.svg"/>
-                  </div>
-                  <div class="dropdown max-w-[275px] z-10 absolute top-[4rem] hidden bg-[rgba(31,_31,_31,_0.50)] backdrop-blur-xl divide-y rounded-lg shadow w-44">
-                    <ul class="py-2 text-sm " aria-labelledby="dropdownDefaultButton">
-                      <li>
-                        <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Парковка</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Арсенал</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Галерея</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Раздевалки</a>
-                      </li>
-                      <li class="lg:block xl:hidden">
-                        <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Стрельба</a>
-                      </li>
-                      <li class="lg:block xl:hidden">
-                        <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Подарочные карты</a>
-                      </li>
-                      <li class="lg:block 2xl:hidden">
-                        <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Мероприятия</a>
-                      </li>
-                      <li class="lg:block 3xl:hidden">
-                        <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">О клубе</a>
-                      </li>
-                    </ul>
-                  </div>
+                <li>
+                  <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Арсенал</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Галерея</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Раздевалки</a>
+                </li>
+                <li class="lg:block xl:hidden">
+                  <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Стрельба</a>
+                </li>
+                <li class="lg:block xl:hidden">
+                  <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Подарочные карты</a>
+                </li>
+                <li class="lg:block 2xl:hidden">
+                  <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Мероприятия</a>
+                </li>
+                <li class="lg:block 3xl:hidden">
+                  <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">О клубе</a>
                 </li>
               </ul>
-              <div class="dropdown-link relative cursor-pointer">
-                <div class="dropdown max-w-[275px] z-10 absolute top-6 hidden bg-[rgba(31,_31,_31,_0.50)] backdrop-blur-xl divide-y rounded-lg shadow w-44">
-                  <ul class="py-2 text-sm " aria-labelledby="dropdownDefaultButton">
-                    <li>
-                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Парковка</a>
-                    </li>
-                    <li>
-                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Арсенал</a>
-                    </li>
-                    <li>
-                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Галерея</a>
-                    </li>
-                    <li>
-                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Раздевалки</a>
-                    </li>
-                     <li class="lg:block xl:hidden">
-                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Стрельба</a>
-                    </li>
-                    <li class="lg:block xl:hidden">
-                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Подарочные карты</a>
-                    </li>
-                    <li class="lg:block 2xl:hidden">
-                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">Мероприятия</a>
-                    </li>
-                    <li class="lg:block 3xl:hidden">
-                      <a href="#" class="block px-4 py-2 text-white opacity-50 hover:opacity-100">О клубе</a>
-                    </li>
-                  </ul>
             </div>
               </div>
             </div>
@@ -838,6 +838,7 @@
       </div>
     </footer>
     <script>
+      var baseUrl = 'http://localhost/';
       var stateModal = {
         value: {},
         callbacks: [],

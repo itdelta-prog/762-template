@@ -6,7 +6,7 @@ export default function ButtonChecked({children, onClick, className}) {
             setActive(!active);
             onClick(!active);
         }}
-                className={`${className} ${active ? 'tabs__caption_active' : ''} p-[12px_19px_12px_19px] after:w-[calc(100%_-_10%)] btn-catalog flex justify-between group btnService`}>
+                className={`${className} ${active ? 'tabs__caption_active' : ''} p-[10px] sm:p-[12px_19px_12px_19px] after:w-[calc(100%_-_10%)] btn-catalog flex justify-between group btnService`}>
             {children}
         </button>
     )

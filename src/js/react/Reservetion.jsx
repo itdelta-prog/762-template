@@ -125,14 +125,14 @@ export  default function Reservation({gungs, instructor, broneDate, getBroneDate
                                 setPersonalInstructor(active)
                                 active ? setDataReserv({...dataReserv, instructorPrice: Number(dataForm.personalInstructor)}) : setDataReserv({...dataReserv, instructorPrice: 0});
                             }}>
-                                <span className={"text-[17px] opacity-20 group-hover:opacity-100 btn-link__text"}>Персональный инструктор</span><span className={"text-[17px] opacity-20 group-hover:opacity-100 btn-link__text"} data-instructor="price">+{Number(dataForm.personalInstructor).toLocaleString()} р.</span>
+                                <span className={"text-[14px] sm:text-[17px] opacity-20 group-hover:opacity-100 btn-link__text"}>Персональный инструктор</span><span className={"text-[14px] sm:text-[17px] opacity-20 group-hover:opacity-100 btn-link__text"} data-instructor="price">+{Number(dataForm.personalInstructor).toLocaleString()} р.</span>
                             </ButtonChecked>
                             <Select options={instructorOptions} onChange={(item) => {
                                 setDataReserv({...dataReserv, instructor: item})
                             }} className={personalInstructor ? '' : 'disabled'} select={dataReserv.instructor} title={"Выбрать интсруктора"}/>
                             <ButtonChecked onClick={onChangeGallerey}>
-                                <span className="text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">Персональная галерея </span>
-                                <span className="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text" data-gallery="price">+{Number(dataForm[dataReserv.dayType].personalGallery).toLocaleString()} р.</span>
+                                <span className="text-[14px] sm:text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">Персональная галерея </span>
+                                <span className="text-[14px] sm:text-[17px] opacity-20  group-hover:opacity-100 btn-link__text" data-gallery="price">+{Number(dataForm[dataReserv.dayType].personalGallery).toLocaleString()} р.</span>
                             </ButtonChecked>
                         </div>
                     </div>
@@ -140,7 +140,7 @@ export  default function Reservation({gungs, instructor, broneDate, getBroneDate
                         <p className="text-[18px] text-white">Итого</p>
                         <p className="text-[18px] text-white totalAmout">{sum.toLocaleString()} р.</p>
                     </div>
-                    <div className="flex justify-between md:justify-normal md:gap-x-[13px]">
+                    <div className="flex justify-end md:justify-end md:gap-x-[13px]">
                         {/*<button className="btn-catalog"><span*/}
                         {/*    className="btn-link__text">В подарок</span></button>*/}
                         <button className="btn-catalog btnReserve " onClick={() => {
