@@ -120,7 +120,7 @@
   }
 
   .btn {
-    @apply text-[17px] font-normal hover:bg-[#B9AB91] hover:text-black transition-colors cursor-pointer;
+    @apply text-[15px] sm:text-[17px] font-normal hover:bg-[#B9AB91] hover:text-black transition-colors cursor-pointer;
   },
 
   .conent__img {
