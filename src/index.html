@@ -615,17 +615,6 @@
                   </a>
                 </div>
                 <div class="tabs__content" data-tab="car">
-                  <p class="text-[18px] font-normal leading-6 text-[#878787] mb-6">fsdfsdfsdfsdfsdfsdf</p>
-                  <p class="text-[18px] font-normal leading-6 text-[#878787] mb-[44px]">fsdfsdfsdfsd</p>
-                </div>
-              </div>
-              <button class="btn__custom hover:active px-[50px] py-[25px] bg-transparent border border-[#2D2D2B]">
-                <span class="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
-                <span class="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
-                <span class="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
-                <span class="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
-                <span class="btn__content">Построить маршрут</span>
-              </button>
                   <div class="min-h-[300px]">
                     <p class="text-[18px] font-normal leading-6 text-[#878787] mb-6">fsdfsdfsdfsdfsdfsdf</p>
                     <p class="text-[18px] font-normal leading-6 text-[#878787] mb-[44px]">fsdfsdfsdfsd</p>
@@ -639,12 +628,15 @@
                   </a>
                 </div>
               </div>
+
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="flex justify-center items-center sm:hidden ">
-            <button class="route__modal-btn py-6 px-12 sm:px-[98px] text-white btn bg-[#1B1B1A] transition">Построить маршрут</button>
-          </div>
-           <div id="route-modal"  class="route__tabs translate-y-full left-0 mx-[14px] bottom-2 fixed z-50 flex invisible basis-[347px] flex-col items-start pt-8 px-[18px] pb-[18px] bg-[#1B1B1A]" style="transition: transform .5s, visibility 1s;">
+        <div class="flex justify-center items-center sm:hidden ">
+          <button class="route__modal-btn py-6 px-12 sm:px-[98px] text-white btn bg-[#1B1B1A] transition">Построить маршрут</button>
+        </div>
+        <div class="w-full h-full fixed left-0 top-0 bg-[rgba(15,_15,_15,_0.90)] z-[9999999999999] opacity-0 invisible"></div>
+        <div id="route-modal" class="route__tabs translate-y-full left-0 mx-[14px] bottom-2 fixed z-50 flex invisible basis-[347px] flex-col items-start pt-8 px-[18px] pb-[18px] bg-[#1B1B1A]" style="transition: transform .5s, visibility 1s;">
               <h2 class="text-3xl font-medium leading-9 uppercase text-white mb-6">Маршрут</h2>
               <p class="text-base font-medium leading-4 text-white mb-4">Как добраться</p>
               <div class="tabs__head flex mb-6 py-[5px] bg-[#242423]">
@@ -652,9 +644,6 @@
                 <div class="tabs__caption py-4 px-8 text-[14px] text-white bg-transparent transition-colors" data-tab="car">На машине</div>
               </div>
               <div class="tabs__body">
-                <div class="tabs__content mb-7" data-tab="metro">
-                <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Начните с метро Новокузнецкая,  которое находится на арбатско-покровской  и замоскворецкой линиях московского метрополитена.</p>
-                <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Продвигайтесь на юг по улице Новокузнецкая. Продолжайте идти до тех пор, пока не достигнете Красного Октября проспекта. Это займет примерно 10-15 минут пешком.</p>
                 <div class="tabs__content flex flex-col justify-between mb-7" data-tab="metro">
                 <div class="min-h-[300px]">
                   <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Начните с метро Новокузнецкая,  которое находится на арбатско-покровской  и замоскворецкой линиях московского метрополитена.</p>
@@ -668,9 +657,6 @@
                     <span class="btn__content">Построить маршрут</span>
                   </a>
                 </div>
-                <div class="tabs__content mb-7" data-tab="car">
-                  <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Начните с метро Новокузнецкая,  которое находится на арбатско-покровской  и замоскворецкой линиях московского метрополитена.</p>
-                  <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Продвигайтесь на юг по улице Новокузнецкая. Продолжайте идти до тех пор, пока не достигнете Красного Октября проспекта. Это займет примерно 10-15 минут пешком.</p>
                 <div class="tabs__content flex flex-col justify-between mb-7" data-tab="car">
                   <div class="min-h-[300px]">
                     <p class="text-[15px] font-normal leading-5 text-[#878787] mb-4">Начните с метро Новокузнецкая,  которое находится на арбатско-покровской  и замоскворецкой линиях московского метрополитена.</p>
@@ -684,8 +670,7 @@
                     <span class="btn__content">Построить маршрут</span>
                   </a>
                 </div>
-              </div>
-            </div>
+        </div>
         </div>
       </section>
       <section class="mb-[80px] sm:mb-[180px]">
