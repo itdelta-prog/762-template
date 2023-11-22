@@ -155,7 +155,7 @@
 
 
     <!-- Mobile menu, show/hide based on menu open state. -->
-    <div class="lg:hidden  w-full h-[0%] overflow-x-auto fixed bottom-0 bg-[#1B1B1A] z-30 dialog" role="dialog" aria-modal="true" style="transition: height .3s;">
+    <div class="lg:hidden  w-full h-[0%] fixed bottom-0 bg-[#1B1B1A] z-30 dialog" role="dialog" aria-modal="true" style="transition: height .3s;">
 
 <!--      КНОПКА ЛИЧНЕГО КАБИНЕТА ПОКА ЧТО СКРЫТ-->
 <!--      <div class="flex items-center gap-x-4 px-4 py-7">-->
@@ -165,7 +165,7 @@
 <!--        <span class="text-lg font-normal text-white">Даниил</span>-->
 <!--      </div>-->
       <div class="w-full h-[1px] bg-[#363636]"></div>
-      <div class="flex flex-col gap-y-[18px] px-4 py-7">
+      <div class="flex h-[320px] overflow-x-auto flex-col gap-y-[18px] px-4 py-7">
         <a href="" class="text-[28px] font-normal text-white">Стрельба</a>
         <a href="" class="text-[28px] font-normal text-white">Подарочные карты</a>
         <a href="" class="text-[28px] font-normal text-white">Мероприятия</a>
@@ -207,15 +207,20 @@
     </div>
   </header>
     <main class="w-full ">
-      <section class="w-full h-[800px] md:h-[931px] flex items-end md:block bg-center bg-no-repeat bg-cover mb-[80px] sm:mb-[180px]" style="background-image: url('/img/headerBack.webp');">
-        <div class="container px-4 sm:px-5 md:px-10 3xl:px-0">
+      <section class="w-full h-[734px] sm:h-[800px] md:h-[931px] flex items-end md:block bg-center bg-no-repeat bg-cover mb-[80px] sm:mb-[180px]"
+               style="background-image: url('/img/headerBack.webp');">
+        <div class="container px-4 sm:px-5 md:px-10 3xl:px-0 bg-[linear-gradient(180deg,_rgba(15,_15,_15,_0.00)_0%,_#0F0F0F_100%)] sm:bg-none">
           <div class="sm:pl-5 2xl:pl-0 md:pt-[60px]">
-            <h1 class="max-w-[350px] text-[40px] leading-[44px] md:max-w-[720px] md:text-[82px] font-semibold uppercase text-white md:leading-[90px] mb-6 md:mb-11">
+            <h1 class="max-w-[350px] text-[40px] leading-[44px] md:max-w-[720px] md:text-[82px] font-semibold uppercase
+            text-white md:leading-[90px] mb-6 md:mb-11">
               стрельба из боевого оружия
               в тире 7.62
             </h1>
-            <p class="max-w-[435px] text-sm md:text-xl font-normal leading-5 md:leading-6 text-white mb-11 md:mb-16">Тир 7.62 — место концентрации и энергии, где сосредоточенность и меткость воплощаются в идеальном выстреле.</p>
-            <button data-btn="reservation" class="flex gap-x-3 items-center w-full sm:w-auto justify-center sm:px-[90px] py-6 md:px-10 md:py-8 bg-[#B9AB91]
+            <p class="max-w-[435px] text-sm md:text-xl font-normal leading-5 md:leading-6 text-white mb-11 md:mb-16">
+              Тир 7.62 — место концентрации и энергии, где сосредоточенность и меткость воплощаются в идеальном выстреле.
+            </p>
+            <button data-btn="reservation" class="flex gap-x-3 items-center w-full sm:w-auto justify-center sm:px-[90px]
+            py-6 md:px-10 md:py-8 bg-[#B9AB91]
             ">
               <span>Забронировать</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -233,7 +238,7 @@
               </svg>
             </button>
           </div>
-          <img src="/img/arr.svg"/>
+          <img class="hidden sm:block" src="/img/arr.svg"/>
         </div>
       </section>
       <section class="mb-[80px] sm:mb-[180px]">
@@ -692,7 +697,7 @@
             <div class="w-full h-[315px] sm:h-[570px] bg-no-repeat bg-cover bg-center flex items-end justify-between py-5 px-4 md:px-8" style="background-image: url('/img/cafe.png');">
               <div class="w-full flex items-center justify-between">
                 <h2 class="text-[22px] leading-7 sm:text-4xl font-medium sm:leading-[43px] uppercase text-white">кафе</h2>
-                <a href="#" class="sm:py-[25px] sm:px-10 py-5 px-[30px] bg-[rgba(15,_15,_15,_0.50)] backdrop-filter leading-5 text-white btn">Подробнее</a>
+                <a href="#" class="sm:py-[25px] sm:px-10 py-5 px-[30px] bg-[rgba(15,_15,_15,_0.50)] backdrop-filter leading-5 text-white btn">Скоро открытие</a>
               </div>
             </div>
           </div>
@@ -700,7 +705,7 @@
              <div class="w-full h-[315px] sm:h-[570px] flex items-end  bg-cover justify-between py-5 px-4 md:px-8" style="background-image: url('/img/market.png');">
               <div class="w-full flex justify-between items-center">
                 <h2 class="text-[22px] leading-7 sm:text-4xl font-medium sm:leading-[43px] uppercase text-white">магазин</h2>
-                <a href="#" class="sm:py-[25px] sm:px-10 py-5 px-[30px] bg-[rgba(15,_15,_15,_0.50)] backdrop-filter text-[17px] font-normal leading-5 text-white btn">Подробнее</a>
+                <a href="#" class="sm:py-[25px] sm:px-10 py-5 px-[30px] bg-[rgba(15,_15,_15,_0.50)] backdrop-filter font-normal leading-5 text-white btn">Скоро открытие</a>
               </div>
             </div>
           </div>
@@ -759,7 +764,7 @@
 <!--      <div class="container h-[1px] bg-[#3A3A3A] mb-[100px]"></div>-->
     </main>
     <footer class="pb-[60px]">
-      <div class="container px-5 lg:px-10 3xl:px-0">
+      <div class="container px-4 lg:px-10 3xl:px-0">
         <div class="w-full h-[1px] bg-[#3A3A3A] mb-[100px]"></div>
         <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-y-11 sm:gap-x-6 md:gap-x-10 lg:gap-x-0 sm:h-[420px]">
           <div class="w-full sm:w-auto flex flex-col justify-between  gap-0 h-full">

@@ -74,7 +74,7 @@
   }
 
   .burger__menu.active .burger__menu-line.three {
-    @apply opacity-100 translate-x-[27px] translate-y-[19px] rotate-[224deg];
+    @apply opacity-100 translate-x-[27px] translate-y-[20px] rotate-[224deg];
   }
 
   .burger__menu.active .burger__menu-line.four {
@@ -120,7 +120,7 @@
   }
 
   .btn {
-    @apply text-[17px] font-normal hover:bg-[#B9AB91] hover:text-black transition-colors cursor-pointer;
+    @apply text-[15px] sm:text-[17px] font-normal hover:bg-[#B9AB91] hover:text-black transition-colors cursor-pointer;
   },
 
   .conent__img {
