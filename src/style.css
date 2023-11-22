@@ -74,7 +74,7 @@
   }
 
   .burger__menu.active .burger__menu-line.three {
-    @apply opacity-100 translate-x-[27px] translate-y-[19px] rotate-[224deg];
+    @apply opacity-100 translate-x-[27px] translate-y-[20px] rotate-[224deg];
   }
 
   .burger__menu.active .burger__menu-line.four {
@@ -120,7 +120,7 @@
   }
 
   .btn {
-    @apply text-[15px] sm:text-[17px] font-normal hover:bg-[#B9AB91] hover:text-black transition-colors cursor-pointer;
+    @apply text-[14px] sm:text-[17px] font-normal hover:bg-[#B9AB91] hover:text-black transition-colors cursor-pointer;
   },
 
   .conent__img {
@@ -324,7 +324,7 @@
 
 @layer components {}
 .tabs__content_active {
-    @apply block;
+    @apply flex;
 }
 
 @layer components {
@@ -412,7 +412,7 @@
 
 
   .contact__info-title {
-    @apply text-[24px] sm:text-4xl font-medium leading-[28px] sm:leading-[43px] text-white
+    @apply text-[24px] font-['GrtskTera'] sm:text-4xl font-medium leading-[28px] sm:leading-[43px] text-white
   }
 
   .contact__info-supTitle {
@@ -452,7 +452,7 @@
 
 .dialog.active {
   transition: all .2s;
-  height: 75%;
+  height: 81%;
 }
 .conent__img {
   width: 200px;
