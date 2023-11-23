@@ -1,5 +1,5 @@
-import React, {useMemo} from "react";
-import {useState, useEffect, Fragment} from "react";
+import React, {useEffect, useMemo} from "react";
+import {useState, Fragment} from "react";
 import ModalReserved from "./ModalReserved.jsx";
 import ButtonChecked from "./components/ButtonChecked.jsx";
 import Select from "./components/Select.jsx";
@@ -8,30 +8,25 @@ import Modal from "./components/Modal.jsx";
 import axios from "axios";
 export  default function Reservation({gungs, instructor, broneDate, getBroneDate}) {
     const [dataReserv, setDataReserv] = useState({
-        dayType: 'weekdays',
-        basicPrice: Number(dataForm.weekdays.basicPrice.price),
-        // shoatsPrice: Number(dataForm.weekdays.shoatsPrice.price),
+        dayType: 'weekday',
+        basicPrice: Number(dataForm.weekday.basicPrice.price),
+        // shoatsPrice: Number(dataForm.weekday.shoatsPrice.price),
         shooterCount: 1,
         instructor: '',
         program: '',
         weapon: '',
-        personalGallery: 'N',
+        personalGallery: false,
+        personalInstructor: false,
         instructorPrice: 0,
         galleryPrice: 0,
         date: '',
         hourse: '',
-        fullName: "",
-        email: "",
-        phone: ""
     });
-    const [sum, setSum] = useState(Number(dataForm.weekdays.basicPrice.price))
-    const [personalInstructor, setPersonalInstructor] = useState(false);
+    // const [personalInstructor, setPersonalInstructor] = useState(false);
     const [modal, setModal] = useState(false);
 
-
-
-    useEffect(() => {
-        setSum(dataReserv.basicPrice * dataReserv.shooterCount + dataReserv.instructorPrice + dataReserv.galleryPrice);
+    const priceSum = useMemo(() => {
+        return dataReserv.basicPrice * dataReserv.shooterCount + Number(`${dataReserv.personalGallery ? dataReserv.galleryPrice : 0}`) + Number(`${dataReserv.personalInstructor ? dataReserv.instructorPrice : 0}`);
     }, [dataReserv]);
     //
     const person = [1, 2, 3];
@@ -41,11 +36,26 @@ export  default function Reservation({gungs, instructor, broneDate, getBroneDate
 
 
     const onChangeGallerey = (active) => {
-        setDataReserv({...dataReserv, personalGallery: active ? 'Y' : 'N', galleryPrice: active ? Number(dataForm[dataReserv.dayType].personalGallery) : 0})
+        setDataReserv({...dataReserv, personalGallery: active})
     }
 
     const onChangeProgram = (program, weapon) => {
-        setDataReserv({...dataReserv, weapon: weapon?.value?.name ,program: program?.value?.id});
+        setDataReserv({
+            ...dataReserv,
+            program: program?.value,
+            instructorPrice: dataReserv.dayType === 'weekday' ? Number(program?.value["gallery-weekday-price"]) : Number(program?.value["gallery-weekend-price"]),
+            galleryPrice: dataReserv.dayType === 'weekday' ? Number(program?.value["gallery-weekday-price"]) : Number(program?.value["gallery-weekend-price"])
+        });
+    }
+
+    const onChangeDayType = (day) => {
+        setDataReserv({
+            ...dataReserv,
+            dayType: day,
+            basicPrice: Number(dataForm[day].basicPrice.price),
+            instructorPrice: Number(dataReserv.program ? dataReserv.program[`instructor-${day}-price`] : 0),
+            galleryPrice: Number(dataReserv.program ? dataReserv.program[`gallery-${day}-price`] : 0)
+        })
     }
 
     const onChangeDate = (dateReserved) => {
@@ -57,30 +67,46 @@ export  default function Reservation({gungs, instructor, broneDate, getBroneDate
     }
 
     const sumbitReservation = (inputData) => {
-        axios.post('http://localhost/api/v1/reservation/create', {
-            "program": dataReserv?.program,
+        console.log({
+            "program": dataReserv?.program?.id,
             "dayType": dataReserv?.dayType,
-            "priceSum": sum,
+            "priceSum": priceSum,
             "shooterCount": dataReserv?.shooterCount,
             "instructor": dataReserv?.instructor?.value?.id,
-            "personalGallery": dataReserv?.personalGallery,
+            "personalGallery": dataReserv.personalGallery ? 'Y' : 'N',
+            "date": dataReserv?.date,
+            "hours": dataReserv?.hourse,
+            "fullName": inputData?.fullName,
+            "email": inputData?.email,
+            "phone": inputData?.phone
+        });
+        axios.post('http://localhost/api/v1/reservation/create', {
+            "program": dataReserv?.program?.id,
+            "dayType": dataReserv?.dayType,
+            "priceSum": '',
+            "shooterCount": dataReserv?.shooterCount,
+            "instructor": dataReserv?.instructor?.value?.id,
+            "personalGallery": '',
             "date": dataReserv?.date,
             "hours": dataReserv?.hourse,
             "fullName": inputData?.fullName,
             "email": inputData?.email,
             "phone": inputData?.phone
         }).then(res => {
-            if(res.data.status === "success" && !res.data.errors.length) {
+            if(res.data.status === "success") {
                 alert("Успешно забронирована");
                 setModal(false);
             }
-            if(res.data.errors) {
+            if(res.data.status === "error") {
                 console.log(res.data)
                 alert(res.data.errors[0].message)
             }
         });
     }
 
+
+    console.log("RENDER FORM");
+    console.log(dataReserv)
 
     return (
              <Fragment>
@@ -89,10 +115,10 @@ export  default function Reservation({gungs, instructor, broneDate, getBroneDate
                     <ProgramAndGung  onChangeProgram={onChangeProgram} data={gungs}/>
                     <div className="mb-[31px]">
                         <div className="flex gap-x-[13px] mb-[31px]">
-                            <button onClick={() => setDataReserv({...dataReserv, dayType:'weekdays', basicPrice: Number(dataForm.weekdays.basicPrice.price), shoatsPrice: Number(dataForm.weekdays.shoatsPrice.price)})} className={`btn-catalog basis-[184px] ${dataReserv.dayType === 'weekdays' ? "tabs__caption_active"  : ''}`}>
+                            <button onClick={() => onChangeDayType('weekday')} className={`btn-catalog basis-[184px] ${dataReserv.dayType === 'weekday' ? "tabs__caption_active"  : ''}`}>
                                 <span className="btn-link__text">Будни</span>
                             </button>
-                            <button onClick={() => setDataReserv({...dataReserv, dayType:'weekend', basicPrice: Number(dataForm.weekend.basicPrice.price), shoatsPrice: Number(dataForm.weekend.shoatsPrice.price)})} className={`btn-catalog basis-[184px] ${dataReserv.dayType === 'weekend' ? "tabs__caption_active"  : ''}`}>
+                            <button onClick={() => onChangeDayType('weekend')} className={`btn-catalog basis-[184px] ${dataReserv.dayType === 'weekend' ? "tabs__caption_active"  : ''}`}>
                                 <span className="btn-link__text ">Выходные</span>
                             </button>
                         </div>
@@ -100,7 +126,12 @@ export  default function Reservation({gungs, instructor, broneDate, getBroneDate
                             {
                                 person.map((item, idx) => {
                                     return (
-                                        <button key={idx} onClick={() => setDataReserv({...dataReserv, shooterCount: item})} className={`${dataReserv.shooterCount === item ? 'text-[#0F0F0F] bg-[#B8AA91] border-transparent opacity-100' : 'hover:border-[#B8AA91] border-white border-opacity-[0.4] hover:border-opacity-100 hover:text-[#B8AA91] hover:opacity-100  text-white  opacity-[0.4]'} transition-all px-6 py-4  border border-solid`}>{item}</button>
+                                        <button key={idx} onClick={() => setDataReserv({...dataReserv, shooterCount: item})}
+                                        className={`${dataReserv.shooterCount === item ? 'text-[#0F0F0F] bg-[#B8AA91] border-transparent opacity-100' : 
+                                            'hover:border-[#B8AA91] border-white border-opacity-[0.4] hover:border-opacity-100 hover:text-[#B8AA91] ' +
+                                            'hover:opacity-100  text-white  opacity-[0.4]'} transition-all px-6 py-4  border border-solid`
+                                        }>
+                                            {item}</button>
                                     )
                                 })
                             }
@@ -109,7 +140,11 @@ export  default function Reservation({gungs, instructor, broneDate, getBroneDate
                             <div className="daysContent">
                                 <div className="flex justify-between mb-[12px]">
                                     <p className="text-white text-[18px] font-normal leading-5">Базовая стоимость</p>
-                                    <div data-cost="basic"><span className="text-[18px] text-white font-normal leading-5 opacity-50">{Number(dataReserv.basicPrice).toLocaleString()} р.</span></div>
+                                    <div data-cost="basic">
+                                        <span className="text-[18px] text-white font-normal leading-5 opacity-50">
+                                            {Number(dataReserv.basicPrice).toLocaleString()} р.
+                                        </span>
+                                    </div>
                                 </div>
                                 {/*<div className="flex justify-between">*/}
                                 {/*    <p className="text-white text-[18px] font-normal leading-5">Стоимость выстрелов</p>*/}
@@ -122,23 +157,32 @@ export  default function Reservation({gungs, instructor, broneDate, getBroneDate
                     <div className="flex flex-col gap-y-[11px] mb-[31px]">
                         <div className="flex flex-col gap-y-5">
                             <ButtonChecked onClick={(active) => {
-                                setPersonalInstructor(active)
-                                active ? setDataReserv({...dataReserv, instructorPrice: Number(dataForm.personalInstructor)}) : setDataReserv({...dataReserv, instructorPrice: 0});
+                                setDataReserv({...dataReserv, personalInstructor: active})
                             }}>
-                                <span className={"text-[14px] sm:text-[17px] opacity-20 group-hover:opacity-100 btn-link__text"}>Персональный инструктор</span><span className={"text-[14px] sm:text-[17px] opacity-20 group-hover:opacity-100 btn-link__text"} data-instructor="price">+{Number(dataForm.personalInstructor).toLocaleString()} р.</span>
+                                <span className={"text-[14px] sm:text-[17px] opacity-20 group-hover:opacity-100 btn-link__text"}>
+                                    Персональный инструктор
+                                </span>
+                                <span className={"text-[14px] sm:text-[17px] opacity-20 group-hover:opacity-100 btn-link__text"}>
+                                    {dataReserv.instructorPrice ? `${dataReserv.instructorPrice.toLocaleString()} р.` : ''}
+                                </span>
                             </ButtonChecked>
-                            <Select options={instructorOptions} onChange={(item) => {
-                                setDataReserv({...dataReserv, instructor: item})
-                            }} className={personalInstructor ? '' : 'disabled'} select={dataReserv.instructor} title={"Выбрать интсруктора"}/>
+                            {
+                                dataReserv.personalInstructor ? <Select options={instructorOptions} onChange={(item) => {
+                                    setDataReserv({...dataReserv, instructor: item})
+                                }} select={dataReserv.instructor} title={"Выбрать интсруктора"}/> : ''
+                            }
                             <ButtonChecked onClick={onChangeGallerey}>
-                                <span className="text-[14px] sm:text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">Персональная галерея </span>
-                                <span className="text-[14px] sm:text-[17px] opacity-20  group-hover:opacity-100 btn-link__text" data-gallery="price">+{Number(dataForm[dataReserv.dayType].personalGallery).toLocaleString()} р.</span>
+                                <span className="text-[14px] sm:text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">
+                                    Персональная галерея
+                                </span>
+                                <span className="text-[14px] sm:text-[17px] opacity-20  group-hover:opacity-100 btn-link__text">
+                                    {dataReserv.galleryPrice ? `${dataReserv.galleryPrice.toLocaleString()} р.` : ''}</span>
                             </ButtonChecked>
                         </div>
                     </div>
                     <div className="flex justify-between items-center mb-[21px]">
                         <p className="text-[18px] text-white">Итого</p>
-                        <p className="text-[18px] text-white totalAmout">{sum.toLocaleString()} р.</p>
+                        <p className="text-[18px] text-white totalAmout">{priceSum.toLocaleString()} р.</p>
                     </div>
                     <div className="flex justify-end md:justify-end md:gap-x-[13px]">
                         {/*<button className="btn-catalog"><span*/}
@@ -164,7 +208,7 @@ export  default function Reservation({gungs, instructor, broneDate, getBroneDate
                                     </defs>
                                 </svg>
                             </div>
-                            <ModalReserved getBroneDate={getBroneDate} sumForm={sum} broneDate={broneDate} onChangeDate={onChangeDate} sumbitReservation={sumbitReservation}/>
+                            <ModalReserved dayType={dataReserv.dayType} getBroneDate={getBroneDate} sumForm={priceSum} broneDate={broneDate} onChangeDate={onChangeDate} sumbitReservation={sumbitReservation}/>
                         </Modal>
                     </div>
                 </div>

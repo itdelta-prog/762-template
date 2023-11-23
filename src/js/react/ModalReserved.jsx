@@ -3,15 +3,18 @@ import VanillaCalendar from "./components/VanillaCalendar.jsx";
 import TimeReserved from "./TimeReserved.jsx";
 import InputForm from "./InputForm.jsx";
 
-export default function ModalReserved({onChangeDate, broneDate, sumForm, sumbitReservation, getBroneDate}) {
+export default function ModalReserved({dayType, onChangeDate, broneDate, sumForm, sumbitReservation, getBroneDate}) {
     const [currentDay, setCurrentDay] = useState([`${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`, new Date().getMonth()]);
     const [activeTime, setActiveTime] = useState(undefined);
     const myData = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`
-
+    const weekDays = [1,2,3,4,5];
+    const weekEnd = [0, 6];
     const onChangeTime = (data) => {
         setActiveTime(data);
         onChangeDate({selectDate: currentDay, selectTime: data});
     }
+
+    const currentWeekDay = dayType === "weekday" ? weekDays.includes(new Date(currentDay[0]).getDay()) : weekEnd.includes(new Date(currentDay[0]).getDay());
 
     return (
         <div>
@@ -42,11 +45,12 @@ export default function ModalReserved({onChangeDate, broneDate, sumForm, sumbitR
                             year: false,
                         },
                         selected: {
-                            dates: [currentDay[0]],
+                            dates: currentWeekDay && [currentDay[0]],
                             month: currentDay[1]
                         },
                         range: {
                             disablePast: true,
+                            disableWeekday: dayType === 'weekend' ? weekDays : weekEnd
                         },
                         visibility: {
                             weekend: false,
@@ -75,7 +79,9 @@ export default function ModalReserved({onChangeDate, broneDate, sumForm, sumbitR
                         weekDay: 'calendar-week__day' }
                 }} className="calendar" />
                 <h6 className="text-white text-[18px] mb-4">Выберите время:</h6>
-                <TimeReserved activeTime={activeTime} onChangeTime={onChangeTime} broneTime={broneDate[currentDay[0]] ?? ''} />
+            {
+                currentWeekDay ? <TimeReserved activeTime={activeTime} onChangeTime={onChangeTime} broneTime={broneDate[currentDay[0]] ?? ''} /> : ''
+            }
                 <InputForm sumbitReservation={sumbitReservation} sumForm={sumForm}/>
         </div>
     )

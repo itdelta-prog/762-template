@@ -19,19 +19,12 @@ function FormModalReservation() {
             if(res.data.status === "success") {
                 setBronDate(res.data.data)
             }
-            else {
-                alert("Не получилось получить Забронированные даты")
-            }
         })
     }
 
      useEffect(() => {
          stateModal.addcallback((value) => setShowModal(value));
      }, []);
-
-    useEffect(() => {
-        getBroneDate(new Date().getFullYear(), new Date().getMonth()+1);
-    }, []);
 
 
     useEffect(() => {
@@ -44,9 +37,14 @@ function FormModalReservation() {
                     axios.post(`${baseUrl}api/v1/reservation/get-programs`, {
                         body: JSON.stringify({})
                     }),
+                    axios.post(`${baseUrl}api/v1/reservation/get-reserved-dates`, {
+                        "year": new Date().getFullYear(),
+                        "month": new Date().getMonth()+1
+                    })
                 ]);
                 setInstructor(instructorResponse.data.data)
                 setGungs(gungProgramResponse.data.data);
+                setBronDate(broneDateResponse.data.data)
                 // if(instructorResponse.data.status === "success") {
                 //     setInstructor(instructorResponse.data.data)
                 // }
@@ -69,6 +67,9 @@ function FormModalReservation() {
         setShowModal({...showModal, show:value});
     }
 
+
+    console.log("RENDER MAIN");
+    console.log(gungs)
 
     return (
         <Modal showModal={showModal.show} onChangeShow={onChangeShow}>

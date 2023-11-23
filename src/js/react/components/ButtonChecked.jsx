@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 export default function ButtonChecked({children, onClick, className}) {
-    const [active, setActive] = useState(false)
+    const [active, setActive] = useState(false);
+
+    console.log("RENDER BUTTON")
     return (
         <button onClick={() => {
             setActive(!active);

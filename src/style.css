@@ -452,7 +452,7 @@
 
 .dialog.active {
   transition: all .2s;
-  height: 81%;
+  height: calc(100% - 86px);
 }
 .conent__img {
   width: 200px;
