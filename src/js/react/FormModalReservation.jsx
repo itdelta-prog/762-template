@@ -63,13 +63,16 @@ function FormModalReservation() {
         }
         fetchData();
     }, [])
+
+    const allProgram = gungs.flatMap(obj => obj.program).filter((obj) => obj);
+
+    const selectProgram = allProgram.find((item) => item.id === showModal.id)
+
+
+
     const onChangeShow = (value) => {
         setShowModal({...showModal, show:value});
     }
-
-
-    console.log("RENDER MAIN");
-    console.log(gungs)
 
     return (
         <Modal showModal={showModal.show} onChangeShow={onChangeShow}>
@@ -89,7 +92,7 @@ function FormModalReservation() {
                 </svg>
             </div>
             <h3 className="text-3xl lg:text-[20px] font-medium uppercase leading-6 text-white mb-[13px]">БРОНИРОВАНИЕ</h3>
-            {loader ? <Reservation getBroneDate={getBroneDate} gungs={gungs} instructor={instructor} broneDate={bronDate}/> : <div className="w-full flex justify-center items-center">
+            {loader ? <Reservation selectProgram={selectProgram}  allProgram={allProgram} getBroneDate={getBroneDate} gungs={gungs} instructor={instructor} broneDate={bronDate}/> : <div className="w-full flex justify-center items-center">
                 <img className="" src="/img/loader.svg" alt=""/>
             </div>}
         </Modal>

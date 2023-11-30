@@ -16,15 +16,15 @@ export default function InputForm({sumForm, sumbitReservation}) {
             <div className="bg-[#1C1C1A] px-[17px] py-4">
                 <div className="flex justify-between items-center mb-4">
                     <p className="text-white text-[18px] font-normal">Итого</p>
-                    <p className="text-white text-[18px] font-normal totalAmout">{sumForm} ₽</p>
+                    <p className="text-white text-[18px] font-normal totalAmout">{sumForm.toLocaleString()} ₽</p>
                 </div>
                 <div className="flex justify-center gap-x-5 items-center">
-                    <button onClick={() => sumbitReservation(dataForm)} className="btn__custom w-full bg-transparent border border-[#2D2D2B]" data-filter="false">
-                        <span className="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity opacity-100"></span>
-                        <span className="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91] opacity-0 transition-opacity opacity-100"></span>
-                        <span className="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity opacity-100"></span>
-                        <span className="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91] opacity-0 transition-opacity opacity-100"></span>
-                        <span className="btn__content">Забронировать</span>
+                    <button onClick={() => sumbitReservation(dataForm)} className="btn__custom w-full group hover:bg-[#B9AB91] bg-transparent border border-[#2D2D2B]" data-filter="false">
+                        <span className="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] group-hover:opacity-0 border-l transition-opacity opacity-100"></span>
+                        <span className="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l group-hover:opacity-0 transition-opacity opacity-100"></span>
+                        <span className="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r transition-opacity group-hover:opacity-0 opacity-100"></span>
+                        <span className="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r transition-opacity group-hover:opacity-0 opacity-100"></span>
+                        <span className="btn__content group-hover:text-[#0F0F0F]">Забронировать</span>
                     </button>
                     {/*<button className="btn-catalog basis-[145px]"><span*/}
                     {/*    className="btn-link__text text-sm">Оплатить</span></button>*/}

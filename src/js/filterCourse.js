@@ -3,7 +3,6 @@ async function submitFitler(param) {
 
   let formData = new FormData();
 
-  console.log(param);
 
   formData.append("firstVisit", param.firstVisit);
   formData.append("type", param.type);
@@ -20,12 +19,12 @@ const contentAdd = (result) => {
   content.innerHTML = '';
   result.forEach((item) => {
     content.insertAdjacentHTML('afterBegin', `<div class="flex flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
-                  <div class="flex flex-col items-start mb-[24px]">
-                    <div class="w-full h-[189px] sm:h-[243px] bg-[#222220] mb-[32px]">
+                  <div class="w-full flex flex-col items-start mb-[24px]">
+                    <div class="w-full h-full bg-[#222220] mb-[32px]">
                       <img class="w-full h-full object-cover" src="${item.avatar}" alt="">
                     </div>
-                    <h3 class="text-[16px] sm:text-xl font-medium leading-[24px] text-white mb-3 sm:mb-[18px] break-all">${item.name}</h3>
-                    <p class="text-sm sm:text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)] mb-[18px] break-all">${item.description}</p>
+                    <h3 class="text-[16px] sm:text-xl font-medium leading-[24px] text-white mb-3 sm:mb-[18px] break-words">${item.name}</h3>
+                    <p class="text-sm sm:text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)] mb-[18px] break-words">${item.description}</p>
                     <a class="text-white text-sm sm:text-[16px] font-normal underline" href="${item.link}">Подробнее</a>
                   </div>
                   <div class="flex w-full items-center justify-between pt-[25px] border-t border-[#2D2D2B]">

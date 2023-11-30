@@ -2,21 +2,17 @@ import React, {useState} from "react";
 export default function ButtonChecked({children, onClick, className}) {
     const [active, setActive] = useState(false);
 
-    console.log("RENDER BUTTON")
     return (
         <button onClick={() => {
             setActive(!active);
             onClick(!active);
         }}
-                className={`${className} ${active ? 'tabs__caption_active' : ''} p-[10px] sm:p-[12px_19px_12px_19px] after:w-[calc(100%_-_10%)] btn-catalog flex justify-between group btnService`}>
+                className={`${className} ${active ? 'active' : ''} btn__custom sm:hover:active w-full md:w-auto py-[15px] px-[13px] sm:px-[18px] bg-transparent border border-[#2D2D2B]`}>
+            <span className="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+            <span className="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l border-[#B8AA91]"></span>
+            <span className="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
+            <span className="absolute w-[24px] h-[24px] bottom-0 rotate-90 right-0 border-t border-[#B8AA91] border-r border-[#B8AA91]"></span>
             {children}
         </button>
     )
 }
-
-
-// <button onClick={() => dataReserv.galleryPrice === 0 ? setDataReserv({...dataReserv, galleryPrice: Number(dataForm[dataReserv.day].personalGallery)}) : setDataReserv({...dataReserv, galleryPrice: 0})}
-//         className={`${dataReserv.galleryPrice !== 0 ? 'tabs__caption_active' : ''} p-[12px_19px_12px_19px] after:w-[calc(100%_-_10%)] btn-catalog flex justify-between group btnService`}>
-//     <span className="text-[17px] opacity-20 group-hover:opacity-100 btn-link__text">Персональная галерея </span>
-//     <span className="text-[17px] opacity-20  group-hover:opacity-100 btn-link__text" data-gallery="price">+{Number(dataForm[dataReserv.day].personalGallery).toLocaleString()} р.</span>
-// </button>

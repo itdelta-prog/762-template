@@ -165,6 +165,7 @@
 </header>
 <main class="pt-[100px] lg:pt-[150px]">
     <section class="mb-[40px] -mt-[60px] -mt-[69px] md:mb-[180px] ">
+        <div id="modalRes"></div>
         <div>
             <div class="swiper myArsenal p-[0_15px] lg:p-[0_80px] mb-8 sm:mb-[85px] pb-[34px] md:pb-0">
                 <div class="">
@@ -360,15 +361,15 @@
                                     <p class="text-lg font-normal leading-5 text-white">Калибр</p>
                                     <p class="text-lg font-normal leading-5 text-white opacity-50">5,56x45</p>
                                 </div>
-                                <div class="lg:hidden flex flex-col mt-[23px] mb-[13px] justify-center group items-center">
-                                    <a href="#" class="text-white">Подробнее</a>
-                                    <div class="sm:w-0 transition-all w-[99px] sm:group-hover:w-[99px] h-[1px] bg-white"></div>
+                                <div class="mt-[23px] sm:mt-[50px] mb-[13px] about-decr">
+                                    <p>Описание Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet
+                                        lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
                                 </div>
                             </div>
-                            <div class=" group hidden lg:block lg:-bottom-16 xl:bottom-5">
-                                <a href="#" class="text-white">Подробнее</a>
-                                <div class="w-0 transition-all group-hover:w-[96px] h-[1px] bg-white"></div>
-                            </div>
+<!--                            <div class="hidden absolute lg:block lg:-bottom-16 xl:bottom-5 max-w-[500px] about-decr">-->
+<!--                                <p>Описание Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet-->
+<!--                                    lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>-->
+<!--                            </div>-->
                         </div>
                         <div class="w-full lg:w-[550px] 2xl:w-[640px] desk:w-[700px] mb-[44px] lg:mb-0">
                             <div class="swiper w-full h-[311px] sm:h-[550px] md:h-[650px] sm:pt-[100px] imageGang">
@@ -882,6 +883,18 @@
 <!--<script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.js"></script>-->
 <script type="module" src="/js/arsenal.js"></script>
 <script>
+    var baseUrl = 'http://localhost/';
+    var stateModal = {
+        value: {},
+        callbacks: [],
+        addcallback: function (callback) { this.callbacks.push(callback); },
+        setvalue: function (value) {
+            this.value = value;
+            this.callbacks.forEach(
+                callback => callback(this.value)
+            );
+        }
+    };
     var data = `{
     "weekend":{
         "basicPrice":{

@@ -1,7 +1,6 @@
 import './script.js';
 import './filterCourse.js';
 import {Tabs} from "./tabs.js";
-import './react/FormModalReservation.jsx'
 
 // function mySli() {
 //   let el  = [1, 2, 3, 4, 5, 6];
@@ -25,7 +24,7 @@ import './react/FormModalReservation.jsx'
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const gungs = document.querySelector('#gungs');
+  const gungs = document.querySelector('#program-reserved');
   gungs.addEventListener('click', (eve) => {
     if(eve.target.closest('.btn')) {
       stateModal.setvalue({id:eve.target.closest('.blockGung').dataset.id, show: true})

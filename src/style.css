@@ -167,11 +167,16 @@
   }
 
   .btn__custom .btn__content{
-    @apply text-white text-[15px] sm:text-lg leading-5 cursor-pointer
+    @apply text-white text-[14px] sm:text-lg leading-5 cursor-pointer
   }
 
   .btn__custom.active{
     @apply bg-[#B9AB91]
+  }
+
+
+  .fdf {
+    @adfsf
   }
 
   .btn__custom.active .btn__content{
@@ -293,6 +298,10 @@
     @apply text-[#B9AB91] before:opacity-100 before:block
   }
 
+  .about-decr p {
+    @apply text-[15px] sm:text-base leading-5 text-[#878787] break-words;
+  }
+
   /*.calendar-arrow-prev {*/
   /*  @apply w-[25px] h-[25px] bg-red-500*/
   /*}*/
@@ -364,11 +373,11 @@
   }
 
   .select {
-    @apply flex justify-between  py-[14px] px-[25px]  border border-white border-opacity-20 cursor-pointer transition-[0.3s] bg-[#181818];
+    @apply flex justify-between  py-[14px] px-[15px] sm:px-[25px]  border border-white border-opacity-20 cursor-pointer transition-[0.3s] bg-[#181818];
   }
 
   .selected {
-    @apply text-[17px] text-white relative
+    @apply text-[17px] text-white relative max-w-[250px] sm:max-w-full
   }
 
   .select-clicked {

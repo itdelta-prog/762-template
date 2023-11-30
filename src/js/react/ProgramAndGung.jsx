@@ -1,14 +1,12 @@
 import React, {useEffect, useMemo, useState} from "react";
 import Select from "./components/Select.jsx";
-export default function ProgramAndGung({data, onChangeProgram}) {
-    const [selectGun, setSelectGun] = useState(undefined);
-    const [selectProgram, setSelectProgram] = useState({});
-    const allResult = data.flatMap(obj => obj?.program).filter((obj) => (obj));
-
+export default function ProgramAndGung({data, selectProgram, selectGung, allProgram, onChangeProgram}) {
+    const [selectGun, setSelectGun] = useState(selectGung ? {value: selectGung, label:selectGung.name} : undefined);
+    const [changeProgram, setChangeProgram] = useState(selectProgram ? {value: selectProgram, label: selectProgram.name} : undefined);
 
     const programOptions = useMemo(() => {
         if(!selectGun) {
-            return allResult.map(obj => ({value: obj, label: obj.name}))
+            return allProgram.map(obj => ({value: obj, label: obj.name}))
         }
         else if (selectGun.value.program) {
             return selectGun.value.program.map(obj => ({value: obj, label: obj.name}))
@@ -19,9 +17,6 @@ export default function ProgramAndGung({data, onChangeProgram}) {
     }, [selectGun]);
 
 
-    useEffect(() => {
-        setSelectProgram({})
-    }, [selectGun]);
 
 
     const gungsOptions = data.map((obj) => {
@@ -34,14 +29,16 @@ export default function ProgramAndGung({data, onChangeProgram}) {
 
     return (
         <div className="mb-[20px]">
-            <Select options={gungsOptions} select={selectGun} onChange={(item) => {
+            <Select options={gungsOptions} select={selectGun}  onChange={(item) => {
                 setSelectGun(item);
-                onChangeProgram(selectProgram, item)
+                setChangeProgram(undefined);
+                onChangeProgram(undefined)
             }} className={"mb-5"} title={"Выбрать оружие"}/>
             <Select options={programOptions} onChange={(item) => {
-                setSelectProgram(item);
+                setChangeProgram(item);
+                setSelectGun(gungsOptions.find((obj) => obj.value.id === item.value['section-id']))
                 onChangeProgram(item, selectGun)
-            }} select={selectProgram} title={"Выбрать программу"}/>
+            }} select={changeProgram}  title={"Выбрать программу"}/>
         </div>
     )
 }

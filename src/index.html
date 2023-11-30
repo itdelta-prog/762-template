@@ -207,38 +207,35 @@
     </div>
   </header>
     <main class="w-full ">
-      <section class="w-full h-[600px] sm:h-[800px] md:h-[931px] flex items-end md:block bg-center bg-no-repeat bg-cover mb-[80px] sm:mb-[180px]"
-               style="background-image: url('/img/headerBack.webp');">
-        <div class="container px-4 sm:px-5 md:px-10 3xl:px-0 bg-[linear-gradient(180deg,_rgba(15,_15,_15,_0.00)_0%,_#0F0F0F_100%)] sm:bg-none">
-          <div class="sm:pl-5 2xl:pl-0 md:pt-[60px]">
-            <h1 class="max-w-[350px] text-[40px] leading-[44px] md:max-w-[720px] md:text-[82px] font-semibold uppercase
-            text-white md:leading-[90px] mb-6 md:mb-11">
-              стрельба из боевого оружия
-              в тире 7.62
-            </h1>
-            <p class="max-w-[435px] text-sm md:text-xl font-normal leading-5 md:leading-6 text-white mb-11 md:mb-16">
-              Тир 7.62 — место концентрации и энергии, где сосредоточенность и меткость воплощаются в идеальном выстреле.
-            </p>
-            <button data-btn="reservation" class="flex gap-x-3 items-center w-full sm:w-auto justify-center sm:px-[90px]
+      <section  class="relative w-full h-[600px] md:h-[800px] flex items-end md:block mb-[80px] sm:mb-[180px]">
+        <div>
+          <video width="100%" height="" loop="" autoplay="" playsinline="" muted="" class="" src="/video/backVideo.mp4"></video>
+          <div class="absolute bottom-4 container left-[60px] bg-[linear-gradient(180deg,_rgba(15,_15,_15,_0.00)_0%,_#0F0F0F_100%)] sm:bg-none">
+            <div class="sm:pl-5 2xl:pl-0 md:pt-[60px]">
+              <p class="max-w-[435px] text-sm md:text-xl font-normal leading-5 md:leading-6 text-white mb-11 md:mb-16">
+                Стрелковый клуб 7.62 – место концентрации и энергии, где состредоточенность и меткость воплощаются в идеальном выстреле.
+              </p>
+              <button data-btn="reservation" class="flex gap-x-3 items-center w-full sm:w-auto justify-center sm:px-[90px]
             py-6 md:px-10 md:py-8 bg-[#B9AB91]
             ">
-              <span>Забронировать</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <g clip-path="url(#clip0_85_26403)">
-                <rect x="2.1875" y="4.66797" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-45 2.1875 4.66797)" fill="black"/>
-                <rect x="16.3203" y="3.18408" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(45 16.3203 3.18408)" fill="black"/>
-                <rect x="17.8281" y="17.3276" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(135 17.8281 17.3276)" fill="black"/>
-                <rect x="3.66406" y="18.8164" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-135 3.66406 18.8164)" fill="black"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_85_26403">
-                <rect width="20" height="20" fill="white"/>
-                </clipPath>
-                </defs>
-              </svg>
-            </button>
+                <span>Забронировать</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <g clip-path="url(#clip0_85_26403)">
+                    <rect x="2.1875" y="4.66797" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-45 2.1875 4.66797)" fill="black"/>
+                    <rect x="16.3203" y="3.18408" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(45 16.3203 3.18408)" fill="black"/>
+                    <rect x="17.8281" y="17.3276" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(135 17.8281 17.3276)" fill="black"/>
+                    <rect x="3.66406" y="18.8164" width="2.1055" height="7.89564" rx="1.05275" transform="rotate(-135 3.66406 18.8164)" fill="black"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_85_26403">
+                      <rect width="20" height="20" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+            </div>
+            <img class="hidden sm:block" src="/img/arr.svg"/>
           </div>
-          <img class="hidden sm:block" src="/img/arr.svg"/>
         </div>
       </section>
       <section class="mb-[80px] sm:mb-[180px]">
@@ -293,14 +290,14 @@
                   </button>
                 </div>
               </div>
-              <div id="gungs" class="flex flex-wrap sm:gap-x-5 justify-center gap-y-5 md:justify-start">
-                <div data-id="1" class="flex blockGung flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
+              <div id="program-reserved" class="flex flex-wrap sm:gap-x-5 justify-center gap-y-5 md:justify-start">
+                <div data-id="71" class="flex blockGung flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
                   <div class="flex flex-col items-start mb-[24px]">
                     <div class="w-full h-[189px] sm:h-[243px] bg-[#222220] mb-[32px]">
                       <img class="w-full h-full object-cover" src="/img/slide1.png" alt="">
                     </div>
-                    <h3 class="text-[16px] sm:text-xl font-medium leading-[24px] text-white mb-3 sm:mb-[18px] break-all">Курс молодогоd sdfsd s</h3>
-                    <p class="text-sm sm:text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)] mb-[18px] break-all">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
+                    <h3 class="text-[16px] sm:text-xl font-medium leading-[24px] text-white mb-3 sm:mb-[18px] break-words">Курс молодогоd sdfsd s</h3>
+                    <p class="text-sm sm:text-[16px] font-normal leading-5 text-[rgba(255,_255,_255,_0.40)] mb-[18px] break-words">Программы, включающие обучение навыкам безопасного обращения с оружием, меткой и быстрой стрельбы...</p>
                     <a class="text-white text-sm sm:text-[16px] font-normal underline" href="">Подробнее</a>
                   </div>
                   <div class="flex w-full items-center justify-between pt-[25px] border-t border-[#2D2D2B]">
@@ -308,7 +305,7 @@
                     <button class="flex justify-center items-start py-[18px] px-[30px] bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
                   </div>
                 </div>
-                <div data-id="2" class="flex blockGung flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
+                <div data-id="74" class="flex blockGung flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
                   <div class="flex flex-col items-start mb-[24px]">
                     <div class="w-full h-[243px] bg-[#222220] mb-[32px]">
                       <img class="w-full h-full object-cover" src="/img/slide1.png" alt="">
@@ -322,7 +319,7 @@
                     <button class="flex justify-center items-start py-[18px] px-[30px] bg-[#272723] text-white text-base btn font-normal">Забронировать</button>
                   </div>
                 </div>
-                <div data-id="3" class="flex blockGung flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
+                <div data-id="73" class="flex blockGung flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
                   <div class="flex flex-col items-start mb-[24px]">
                     <div class="w-full h-[243px] bg-[#222220] mb-[32px]">
                       <img class="w-full h-full object-cover" src="/img/slide1.png" alt="">
@@ -831,7 +828,7 @@
       </div>
     </footer>
     <script>
-      var baseUrl = 'https://762club.ru/';
+      var baseUrl = 'http://localhost/';
       var stateModal = {
         value: {},
         callbacks: [],
@@ -843,32 +840,6 @@
           );
         }
       };
-      var dataForm = `{
-    "weekend":{
-        "basicPrice":{
-            "price":"95000",
-            "salesPrice":"34000"
-        },
-        "shoatsPrice":{
-            "price":"35000",
-            "salesPrice":"800000"
-        },
-        "personalGallery": "12000"
-    },
-    "weekdays":{
-        "basicPrice":{
-            "price":"85000",
-            "salesPrice":""
-        },
-        "shoatsPrice":{
-            "price":"55000",
-            "salesPrice":"100000"
-        },
-        "personalGallery":"12000"
-    },
-    "personalInstructor":"15000"
-}`;
-      dataForm =  JSON.parse(dataForm);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <!--    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>-->
