@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import InputMask from 'react-input-mask';
 export default function InputForm({sumForm, sumbitReservation}) {
     const [dataForm, setDataForm] = useState({
         fullName: '',
@@ -9,9 +9,23 @@ export default function InputForm({sumForm, sumbitReservation}) {
     return (
         <>
             <div className="mb-6">
-                <input type="text" value={dataForm.fullName} onChange={(eve) => setDataForm({...dataForm, fullName: eve.target.value})} placeholder="ФИО" className="w-full py-[20px] border-b border-[#3A3A3A] bg-transparent outline-none ring-offset-0 placeholder-[#878787] text-[#878787] text-[16px]" />
-                <input type="text" value={dataForm.phone} onChange={(eve) => setDataForm({...dataForm, phone: eve.target.value})} placeholder="Номер телефона" className="w-full py-[20px] border-b border-[#3A3A3A] bg-transparent outline-none ring-offset-0 placeholder-[#878787] text-[#878787] text-[16px]" />
-                <input type="text" value={dataForm.email} onChange={(eve) => setDataForm({...dataForm, email: eve.target.value})} placeholder="E-mail" className="w-full py-[20px] border-b border-[#3A3A3A] bg-transparent outline-none ring-offset-0 placeholder-[#878787] text-[#878787] text-[16px]" />
+                <input
+                    type="text"
+                    value={dataForm.fullName}
+                    onChange={(eve) => setDataForm({...dataForm, fullName: eve.target.value})}
+                    placeholder="ФИО"
+                    className="w-full py-[20px] border-b border-[#3A3A3A] bg-transparent outline-none ring-offset-0 placeholder-[#878787] text-[#878787] text-[16px]" />
+                <InputMask value={dataForm.phone}
+                           onChange={(eve) => setDataForm({...dataForm, phone: eve.target.value})}
+                           placeholder="Номер телефона"
+                           className={"w-full py-[20px] border-b border-[#3A3A3A] bg-transparent outline-none ring-offset-0 placeholder-[#878787] text-[#878787] text-[16px]"}
+                           mask="+7 (999) 999-99-99" maskChar=""/>
+                <input
+                    type="email"
+                    value={dataForm.email}
+                    onChange={(eve) => setDataForm({...dataForm, email: eve.target.value})}
+                    placeholder="E-mail"
+                    className="w-full py-[20px] border-b border-[#3A3A3A] bg-transparent outline-none ring-offset-0 placeholder-[#878787] text-[#878787] text-[16px]" />
             </div>
             <div className="bg-[#1C1C1A] px-[17px] py-4">
                 <div className="flex justify-between items-center mb-4">

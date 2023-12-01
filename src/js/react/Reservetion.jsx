@@ -74,12 +74,12 @@ export  default function Reservation({selectProgram, allProgram, gungs, instruct
 
     const sumbitReservation = (inputData) => {
 
-        axios.post('http://localhost/api/v1/reservation/create', {
+        axios.post(`${baseUrl}api/v1/reservation/create`, {
             "program": dataReserv?.program?.id,
             "dayType": dataReserv?.dayType,
             "priceSum": priceSum,
             "shooterCount": dataReserv?.shooterCount,
-            "instructor": dataReserv?.instructor?.value?.id,
+            "instructor": dataReserv?.instructor ? dataReserv?.instructor?.value?.id : '',
             "personalGallery": dataReserv.personalGallery ? 'Y' : 'N',
             "date": dataReserv?.date,
             "hours": dataReserv?.hourse,
@@ -119,9 +119,9 @@ export  default function Reservation({selectProgram, allProgram, gungs, instruct
                                 person.map((item, idx) => {
                                     return (
                                         <button key={idx} onClick={() => setDataReserv({...dataReserv, shooterCount: item})}
-                                        className={`${dataReserv.shooterCount === item ? 'text-[#0F0F0F] text-[14px] sm:text-[17px] bg-[#B8AA91] border-transparent opacity-100' : 
+                                        className={`${dataReserv.shooterCount === item ? 'text-[#0F0F0F] bg-[#B8AA91] border-transparent opacity-100' : 
                                             'hover:border-[#B8AA91] border-white border-opacity-[0.4] hover:border-opacity-100 hover:text-[#B8AA91] ' +
-                                            'hover:opacity-100  text-white  opacity-[0.4]'} transition-all px-6 py-4  border border-solid`
+                                            'hover:opacity-100  text-white  opacity-[0.4]'} transition-all px-6 py-4 text-[14px] sm:text-[17px] border border-solid`
                                         }>
                                             {item}</button>
                                     )

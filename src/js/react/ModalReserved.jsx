@@ -4,9 +4,9 @@ import TimeReserved from "./TimeReserved.jsx";
 import InputForm from "./InputForm.jsx";
 
 export default function ModalReserved({dayType, onChangeDate, broneDate, sumForm, sumbitReservation, getBroneDate}) {
-    const [currentDay, setCurrentDay] = useState([`${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`, new Date().getMonth()]);
+    const [currentDay, setCurrentDay] = useState([`${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate() < 10 ? '0' : ''}${new Date().getDate()}`, new Date().getMonth()]);
     const [activeTime, setActiveTime] = useState(undefined);
-    const myData = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`
+    const myData = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate() < 10 ? '0' : ''}${new Date().getDate()}`
     const weekDays = [1,2,3,4,5];
     const weekEnd = [0, 6];
     const onChangeTime = (data) => {
@@ -15,6 +15,7 @@ export default function ModalReserved({dayType, onChangeDate, broneDate, sumForm
     }
 
     const currentWeekDay = dayType === "weekday" ? weekDays.includes(new Date(currentDay[0]).getDay()) : weekEnd.includes(new Date(currentDay[0]).getDay());
+
 
     return (
         <div>

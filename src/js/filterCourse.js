@@ -1,4 +1,4 @@
-let content = document.getElementById('gungs');
+let content = document.getElementById('program-reserved');
 async function submitFitler(param) {
 
   let formData = new FormData();
@@ -15,10 +15,12 @@ async function submitFitler(param) {
 }
 
 
+
 const contentAdd = (result) => {
   content.innerHTML = '';
+  console.log(result);
   result.forEach((item) => {
-    content.insertAdjacentHTML('afterBegin', `<div class="flex flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
+    content.insertAdjacentHTML('afterBegin', `<div data-id="${item.id}" class="flex blockGung flex-col justify-between items-start basis-[414px] p-[18px_18px_32px_18px] bg-[#1A1A19]">
                   <div class="w-full flex flex-col items-start mb-[24px]">
                     <div class="w-full h-full bg-[#222220] mb-[32px]">
                       <img class="w-full h-full object-cover" src="${item.avatar}" alt="">
