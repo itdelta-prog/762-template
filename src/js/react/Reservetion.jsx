@@ -8,7 +8,7 @@ import Modal from "./components/Modal.jsx";
 import axios from "axios";
 
 
-export  default function Reservation({selectProgram, allProgram, gungs, instructor, broneDate, getBroneDate}) {
+export  default function Reservation({onChangeAlert, onChangeShow, selectProgram, allProgram, gungs, instructor, broneDate, getBroneDate}) {
     const [dataReserv, setDataReserv] = useState({
         dayType: 'weekday',
         basicPrice: selectProgram ? selectProgram["base-price"] : 0,
@@ -24,15 +24,12 @@ export  default function Reservation({selectProgram, allProgram, gungs, instruct
         date: '',
         hourse: '',
     });
-    // const [personalInstructor, setPersonalInstructor] = useState(false);
     const [modal, setModal] = useState(false);
-
-
 
     const priceSum = useMemo(() => {
         return dataReserv.basicPrice * dataReserv.shooterCount + Number(`${dataReserv.personalGallery ? dataReserv.galleryPrice : 0}`) + Number(`${dataReserv.personalInstructor ? dataReserv.instructorPrice : 0}`);
     }, [dataReserv]);
-    //
+
     const person = [1, 2, 3];
 
     const selectGung = selectProgram ? gungs.find((item) => item.id === selectProgram['section-id']) : undefined;
@@ -88,11 +85,23 @@ export  default function Reservation({selectProgram, allProgram, gungs, instruct
             "phone": inputData?.phone
         }).then(res => {
             if(res.data.status === "success") {
-                alert("Успешно забронирована");
+                onChangeAlert({
+                    show: true,
+                    error: '',
+                    title: 'бронирование успешно',
+                    status: true
+                })
                 setModal(false);
+                onChangeShow(false);
             }
             if(res.data.status === "error") {
-                alert(res.data.errors[0].message)
+                onChangeAlert({
+                    show: true,
+                    error: '',
+                    title: 'Не удалось забронировать',
+                    status: false
+                })
+                onChangeShow(false)
             }
         });
     }

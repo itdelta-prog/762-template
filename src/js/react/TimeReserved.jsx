@@ -1,16 +1,19 @@
 import React from "react";
 
-export default function TimeReserved({activeTime, broneTime, onChangeTime}) {
+export default function TimeReserved({activeTime, currentTime, broneTime, onChangeTime}) {
     const dataTime = [
-        {id: 1, time: '9:00'}, {id: 2, time: '10:00'}, {id: 3, time: '11:00'},
-        {id: 4, time: '12:00'}, {id: 5, time: '13:00'}, {id: 6, time: '14:00'},
-        {id: 7, time: '15:00'}, {id: 8, time: '16:00'}, {id: 9, time: '17:00'},
-        {id: 10, time: '18:00'}, {id: 11, time: '19:00'}, {id: 12, time: '20:00'},
-        {id: 13, time: '21:00'}, {id: 14, time: '22:00'}, {id: 15, time: '23:00'},
+        {id: 1, hourse: 9, time: '9:00'}, {id: 2, hourse: 10, time: '10:00'}, {id: 3, hourse: 11, time: '11:00'},
+        {id: 4, hourse: 12, time: '12:00'}, {id: 5, hourse: 13, time: '13:00'}, {id: 6, hourse: 14, time: '14:00'},
+        {id: 7, hourse: 15, time: '15:00'}, {id: 8, hourse: 16, time: '16:00'}, {id: 9, hourse: 17, time: '17:00'},
+        {id: 10, hourse: 18, time: '18:00'}, {id: 11, hourse: 19, time: '19:00'}, {id: 12, hourse: 20, time: '20:00'},
+        {id: 13, hourse: 21, time: '21:00'}, {id: 14, hourse: 22, time: '22:00'}, {id: 15, hourse: 23, time: '23:00'},
     ];
+
+    const resultTime = currentTime ? dataTime.filter((obj) => obj.hourse > currentTime) : dataTime
+
     return (
         <div className="grid grid-cols-5 gap-x-0 sm:gap-x-5">
-            {dataTime.map((data, idx) => {
+            {resultTime.map((data, idx) => {
                 return <button key={data.id}
                                onClick={() => activeTime?.id === data.id ? onChangeTime(undefined) : onChangeTime(data)}
                                className={`${activeTime?.id === data.id ? 'active' : ''} ${broneTime?.includes(data.time) ? "pointer-events-none text-[#3A3A3A]" : ""} btnTime`}>{data.time}</button>

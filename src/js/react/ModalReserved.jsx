@@ -81,7 +81,7 @@ export default function ModalReserved({dayType, onChangeDate, broneDate, sumForm
                 }} className="calendar" />
                 <h6 className="text-white text-[18px] mb-4">Выберите время:</h6>
             {
-                currentWeekDay ? <TimeReserved activeTime={activeTime} onChangeTime={onChangeTime} broneTime={broneDate[currentDay[0]] ?? ''} /> : ''
+                currentWeekDay ? <TimeReserved activeTime={activeTime} currentTime={currentDay[0] === myData ? new Date().getHours() : ''} onChangeTime={onChangeTime} broneTime={broneDate[currentDay[0]] ?? ''} /> : ''
             }
                 <InputForm sumbitReservation={sumbitReservation} sumForm={sumForm}/>
         </div>
