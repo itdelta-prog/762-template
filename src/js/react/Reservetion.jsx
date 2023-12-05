@@ -98,7 +98,7 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
                 onChangeAlert({
                     show: true,
                     error: '',
-                    title: 'Не удалось забронировать',
+                    title: 'К сожалению, вас опередили, попробуйте выбрать другое время.',
                     status: false
                 })
                 onChangeShow(false)
@@ -164,7 +164,7 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
                                     Персональный инструктор
                                 </span>
                                 <span className={" btn__content"}>
-                                    {dataReserv.instructorPrice ? `${dataReserv.instructorPrice.toLocaleString()} р.` : ''}
+                                    {dataReserv.instructorPrice ? `+ ${dataReserv.instructorPrice.toLocaleString()} р.` : ''}
                                 </span>
                             </ButtonChecked>
                             {
@@ -177,7 +177,7 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
                                     Персональная галерея
                                 </span>
                                 <span className="btn__content">
-                                    {dataReserv.galleryPrice ? `${dataReserv.galleryPrice.toLocaleString()} р.` : ''}</span>
+                                    {dataReserv.galleryPrice ? `+ ${dataReserv.galleryPrice.toLocaleString()} р.` : ''}</span>
                             </ButtonChecked>
                         </div>
                     </div>

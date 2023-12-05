@@ -13,12 +13,13 @@ const getCourse = async(id) => {
             return res.json();
         }
     });
-    if(resp) fillingCouse(resp);
+    if(resp) fillingCouse(resp, id);
 
 }
 
-const fillingCouse = (resp) => {
+const fillingCouse = (resp, id) => {
     const title = document.querySelector('[data-title]');
+    const body = document.querySelector('[data-id]');
     const description = document.querySelector('[data-desc]');
     const properties = document.querySelector('[data-properties]');
     const image = document.querySelector('[data-image]');
@@ -27,7 +28,7 @@ const fillingCouse = (resp) => {
     const difficulty = document.querySelector('[data-difficulty]');
     const price = document.querySelector('[data-price]');
 
-
+    body.setAttribute("data-id", id);
     title.innerHTML = resp.title;
     description.innerHTML = resp.description;
     properties.innerHTML = resp.characteristic;

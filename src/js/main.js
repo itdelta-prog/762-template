@@ -24,35 +24,13 @@ import {Tabs} from "./tabs.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const gungs = document.querySelector('#program-reserved');
-  gungs.addEventListener('click', (eve) => {
-    if(eve.target.closest('.btn')) {
-      stateModal.setvalue({id:eve.target.closest('.blockGung').dataset.id, show: true})
-    }
-  })
+  // const gungs = document.querySelector('#program-reserved');
+  // gungs.addEventListener('click', (eve) => {
+  //   if(eve.target.closest('.btn')) {
+  //     stateModal.setvalue({id:eve.target.closest('.blockGung').dataset.id, show: true})
+  //   }
+  // })
   const customSwiper = (swiper, pagEl) => {
-
-    // const pagination = document.getElementById('pagintaionCustom');
-    // const paginationPrev = pagination.querySelector('[data-prev]');
-    // const paginationActive = pagination.querySelector('[data-active]');
-    // const paginationNext = pagination.querySelector('[data-next]');
-
-    // if(swiper.activeIndex === 0) {
-    //   paginationPrev.textContent = `0${swiper.slides.length - 1}`
-    //   paginationNext.textContent = `0${swiper.activeIndex + 2}`
-    // }
-    // console.log(swiper.activeIndex)
-    // if(swiper.activeIndex === swiper.slides.length-2) {
-    //   paginationPrev.textContent = `0${swiper.slides.length-2}`
-    //   paginationNext.textContent = `0${1}`
-    // }
-    // if(swiper.activeIndex !== swiper.slides.length-2 && swiper.activeIndex !== 0) {
-    //   paginationNext.textContent = `0${swiper.activeIndex + 2}`
-    //   paginationPrev.textContent = `0${(swiper.activeIndex+1) - 1}`
-    // }
-    //
-    // paginationActive.textContent = `0${swiper.activeIndex + 1}`
-
 
     let activeElement = pagEl.querySelector('.swiper-pagination-bullet-active');
     let element = [...pagEl.querySelectorAll('.swiper-pagination-bullet')];
@@ -90,20 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
       dynamicBullets: true,
       clickable: true,
       renderBullet: function (index, className) {
-        // if(index === 0) {
-        //   return  `<div class="${className}">
-        //     <span>0${index + 1}</span>
-        //     <div class="absolute right-[200px] -top-[40px]">
-        //         <span class="w-[1px] h-[37px] bg-red-500"></span>
-        //         <span class="absolute top-[20px]">01</span>
-        //     </div>
-        //   </div>`
-        // }
-
           return `<div class="${ className}">
-            <span>0${index + 1}</span>
+            <span>${index + 1 < 10 ? 0 : ''}${index + 1}</span>
           </div>`;
-
       },
     },
 

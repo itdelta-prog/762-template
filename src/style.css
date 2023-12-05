@@ -175,9 +175,6 @@
   }
 
 
-  .fdf {
-    @adfsf
-  }
 
   .btn__custom.active .btn__content{
     @apply text-[#0F0F0F]
@@ -428,6 +425,10 @@
     @apply text-[15px] leading-[18px] sm:text-lg font-normal sm:leading-5 text-[#878787] mb-4 sm:mb-6
   }
 
+  .program__desc>* {
+    @apply text-base text-[rgba(255,_255,_255,_0.40)] font-normal leading-5 break-words;
+  }
+
 }
 
 
@@ -569,7 +570,7 @@ body.active {
 
 .pagination__custom {
 	position: absolute;
-	width: 475px !important;
+	width: 439px !important;
 	margin: 0;
     top: 20px;
   padding-bottom: 26px;

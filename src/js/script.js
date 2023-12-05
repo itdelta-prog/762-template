@@ -62,3 +62,20 @@ document.addEventListener('click', (e) => {
         }
     }
 })
+
+const gungs = document.querySelector('#program-reserved');
+const program = document.querySelectorAll('.program__reserved');
+
+gungs?.addEventListener('click', (eve) => {
+    if(eve.target.closest('.btn')) {
+        stateModal.setvalue({id:eve.target.closest('.blockGung').dataset.id, show: true})
+    }
+})
+
+program?.forEach((el) => {
+    el.addEventListener('click', (eve) => {
+        if(eve.target.closest('.btn')) {
+            stateModal.setvalue({id:eve.target.closest('.program__reserved').dataset.id, show: true})
+        }
+    })
+})

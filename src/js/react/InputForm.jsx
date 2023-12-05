@@ -15,10 +15,10 @@ export default function InputForm({sumForm, sumbitReservation}) {
                 <div>
                     <input
                         type="text"
-                        {...register("firstName", {required: true, maxLength: 20})}
+                        {...register("fullName", {required: true, maxLength: 20})}
                         placeholder="ФИО"
                         className="w-full py-[20px] border-b border-[#3A3A3A] bg-transparent outline-none ring-offset-0 placeholder-[#878787] text-[#878787] text-[16px]" />
-                    {errors.firstName?.type === 'required' && <p className="text-red-500 pt-2">Введите имя</p>}
+                    {errors.fullName?.type === 'required' && <p className="text-red-500 pt-2">Введите имя</p>}
                 </div>
                 <div>
 
