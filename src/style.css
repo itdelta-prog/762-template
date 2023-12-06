@@ -425,7 +425,7 @@
     @apply text-[15px] leading-[18px] sm:text-lg font-normal sm:leading-5 text-[#878787] mb-4 sm:mb-6
   }
 
-  .program__desc>* {
+  .program__desc, .program__desc>* {
     @apply text-base text-[rgba(255,_255,_255,_0.40)] font-normal leading-5 break-words;
   }
 

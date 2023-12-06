@@ -1,6 +1,6 @@
 import React, {useEffect, useMemo, useState} from "react";
 import Select from "./components/Select.jsx";
-export default function ProgramAndGung({data, selectProgram, selectGung, allProgram, onChangeProgram}) {
+export default function ProgramAndGung({data, selectProgram, errors, selectGung, allProgram, onChangeProgram}) {
     const [selectGun, setSelectGun] = useState(selectGung ? {value: selectGung, label:selectGung.name} : undefined);
     const [changeProgram, setChangeProgram] = useState(selectProgram ? {value: selectProgram, label: selectProgram.name} : undefined);
 
@@ -25,8 +25,6 @@ export default function ProgramAndGung({data, selectProgram, selectGung, allProg
         }
     });
 
-
-
     return (
         <div className="mb-[20px]">
             <Select options={gungsOptions} select={selectGun}  onChange={(item) => {
@@ -39,6 +37,7 @@ export default function ProgramAndGung({data, selectProgram, selectGung, allProg
                 setSelectGun(gungsOptions.find((obj) => obj.value.id === item.value['section-id']))
                 onChangeProgram(item, selectGun)
             }} select={changeProgram}  title={"Выбрать программу"}/>
+            {errors?.program ? <span className="block pl-1 pt-2 text-red-500">{errors.program}</span> : ''}
         </div>
     )
 }

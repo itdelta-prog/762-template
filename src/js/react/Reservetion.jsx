@@ -8,7 +8,7 @@ import Modal from "./components/Modal.jsx";
 import axios from "axios";
 
 
-export  default function Reservation({onChangeAlert, onChangeShow, selectProgram, allProgram, gungs, instructor, broneDate, getBroneDate}) {
+export  default function Reservation({onChangeAlert, onChangeShow, selectProgram, allProgram, gungs, instructor, disabledDate, dataTime, broneDate, getBroneDate}) {
     const [dataReserv, setDataReserv] = useState({
         dayType: 'weekday',
         basicPrice: selectProgram ? selectProgram["base-price"] : 0,
@@ -25,7 +25,7 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
         hourse: '',
     });
     const [modal, setModal] = useState(false);
-
+    const [errors, setErrors] = useState(undefined);
     const priceSum = useMemo(() => {
         return dataReserv.basicPrice * dataReserv.shooterCount + Number(`${dataReserv.personalGallery ? dataReserv.galleryPrice : 0}`) + Number(`${dataReserv.personalInstructor ? dataReserv.instructorPrice : 0}`);
     }, [dataReserv]);
@@ -49,7 +49,8 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
             basicPrice: program?.value ? program?.value["base-price"] : 0,
             instructorPrice: program?.value ? dataReserv.dayType === 'weekday' ? Number(program?.value.instructor["weekday-price"]) : Number(program?.value.instructor["weekend-price"]) : 0,
             galleryPrice: program?.value ? dataReserv.dayType === 'weekday' ? Number(program?.value.gallery["weekday-price"]) : Number(program?.value.gallery["weekend-price"]) : 0
-        })
+        });
+        setErrors({...errors, program: ''})
     }
 
     const onChangeDayType = (day) => {
@@ -63,6 +64,18 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
 
     const onChangeDate = (dateReserved) => {
      setDataReserv({...dataReserv, date: dateReserved.selectDate[0], hourse: dateReserved.selectTime?.time})
+    }
+
+    const toReserved = () => {
+        if(dataReserv.program) {
+            setErrors({...errors, program: ''})
+            setModal(true)
+        }
+        else {
+            setErrors({
+                program: 'Выберите программу'
+            });
+        }
     }
 
     const closeModal = (value) => {
@@ -113,7 +126,7 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
              <Fragment>
                 <p className="text-white text-[16px] opacity-50 mb-[20px]">Выберите день посещения</p>
                 <div>
-                    <ProgramAndGung allProgram={allProgram} selectProgram={selectProgram} selectGung={selectGung}  onChangeProgram={onChangeProgram}  data={gungs}/>
+                    <ProgramAndGung allProgram={allProgram} errors={errors} selectProgram={selectProgram} selectGung={selectGung}  onChangeProgram={onChangeProgram}  data={gungs}/>
                     <div className="mb-[31px]">
                         <div className="flex gap-x-[13px] mb-[31px]">
                             <button onClick={() => onChangeDayType('weekday')} className={`btn-catalog basis-[184px] ${dataReserv.dayType === 'weekday' ? "tabs__caption_active"  : ''}`}>
@@ -188,7 +201,7 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
                     <div className="flex justify-end md:justify-end md:gap-x-[13px]">
                         {/*<button className="btn-catalog"><span*/}
                         {/*    className="btn-link__text">В подарок</span></button>*/}
-                        <button onClick={() => setModal(true)} className="btn__custom group sm:hover:bg-[#B9AB91] px-[25x] py-[14px] bg-transparent border border-[#2D2D2B]" data-filter="false">
+                        <button onClick={toReserved} className="btn__custom group sm:hover:bg-[#B9AB91] px-[25x] py-[14px] bg-transparent border border-[#2D2D2B]">
                             <span className="absolute w-[24px] h-[24px] top-0 left-0 border-t border-[#B8AA91] group-hover:opacity-0 border-l transition-opacity opacity-100"></span>
                             <span className="absolute w-[24px] h-[24px] bottom-0 left-0 -rotate-90 border-t border-[#B8AA91] border-l group-hover:opacity-0 transition-opacity opacity-100"></span>
                             <span className="absolute w-[24px] h-[24px] top-0 right-0 border-t border-[#B8AA91] border-r transition-opacity group-hover:opacity-0 opacity-100"></span>
@@ -211,7 +224,7 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
                                     </defs>
                                 </svg>
                             </div>
-                            <ModalReserved dayType={dataReserv.dayType} getBroneDate={getBroneDate} sumForm={priceSum} broneDate={broneDate} onChangeDate={onChangeDate} sumbitReservation={sumbitReservation}/>
+                            <ModalReserved dayType={dataReserv.dayType} getBroneDate={getBroneDate} sumForm={priceSum} dataTime={dataTime} disabledData={disabledDate} broneDate={broneDate} onChangeDate={onChangeDate} sumbitReservation={sumbitReservation}/>
                         </Modal>
                     </div>
                 </div>
