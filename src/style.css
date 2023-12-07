@@ -188,6 +188,10 @@
     @apply rotate-180
   }
 
+  .detail-block {
+    @apply md:text-[22px] font-normal leading-[21px] sm:leading-[31px] text-white sm:mb-4 mb-6 text-[15px];
+  }
+
   .detail-block  p {
     @apply md:text-[22px] font-normal leading-[21px] sm:leading-[31px] text-white sm:mb-4 mb-6 text-[15px];
   }

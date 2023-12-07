@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useState, useMemo, Fragment} from "react";
 import ModalReserved from "./ModalReserved.jsx";
 import ButtonChecked from "./components/ButtonChecked.jsx";
@@ -8,7 +8,7 @@ import Modal from "./components/Modal.jsx";
 import axios from "axios";
 
 
-export  default function Reservation({onChangeAlert, onChangeShow, selectProgram, allProgram, gungs, instructor, disabledDate, dataTime, broneDate, getBroneDate}) {
+export  default function Reservation({onChangeAlert, onChangeShow, selectProgram, allProgram, gungs, instructor}) {
     const [dataReserv, setDataReserv] = useState({
         dayType: 'weekday',
         basicPrice: selectProgram ? selectProgram["base-price"] : 0,
@@ -26,6 +26,11 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
     });
     const [modal, setModal] = useState(false);
     const [errors, setErrors] = useState(undefined);
+
+    useEffect(() => {
+
+    }, []);
+
     const priceSum = useMemo(() => {
         return dataReserv.basicPrice * dataReserv.shooterCount + Number(`${dataReserv.personalGallery ? dataReserv.galleryPrice : 0}`) + Number(`${dataReserv.personalInstructor ? dataReserv.instructorPrice : 0}`);
     }, [dataReserv]);
@@ -41,6 +46,7 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
     const onChangeGallerey = (active) => {
         setDataReserv({...dataReserv, personalGallery: active})
     }
+
 
     const onChangeProgram = (program, weapon) => {
         setDataReserv({
@@ -118,7 +124,6 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
             }
         });
     }
-
 
 
 
@@ -224,7 +229,7 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
                                     </defs>
                                 </svg>
                             </div>
-                            <ModalReserved dayType={dataReserv.dayType} getBroneDate={getBroneDate} sumForm={priceSum} dataTime={dataTime} disabledData={disabledDate} broneDate={broneDate} onChangeDate={onChangeDate} sumbitReservation={sumbitReservation}/>
+                            <ModalReserved dayType={dataReserv.dayType} sumForm={priceSum} onChangeDate={onChangeDate} sumbitReservation={sumbitReservation}/>
                         </Modal>
                     </div>
                 </div>

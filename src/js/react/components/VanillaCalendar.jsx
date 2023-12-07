@@ -19,6 +19,9 @@ function VanillaCalendar({ config, ...attributes }) {
         calendar.init();
     }, [calendar]);
 
+
+
+
     return (
         <div {...attributes} ref={ref}></div>
     )
