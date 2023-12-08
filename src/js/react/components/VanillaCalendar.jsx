@@ -11,19 +11,29 @@ function VanillaCalendar({ config, ...attributes }) {
 
     useEffect(() => {
         if (!ref.current) return
+        console.log(calendar)
         setCalendar(new VC(ref.current, config));
-    }, [ref])
+    }, [ref, config])
+
+    // useEffect(() => {
+    //     if(!calendar) return
+    //     calendar.settings.range.disabled = config.settings.range.disabled;
+    //     calendar.update();
+    //     console.log(calendar)
+    // }, [config.settings.range.disabled]);
 
     useEffect(() => {
         if (!calendar) return;
+        console.log('calendar', calendar)
         calendar.init();
     }, [calendar]);
 
 
 
-
+    console.log("RENDER")
     return (
-        <div {...attributes} ref={ref}></div>
+        <div {...attributes} ref={ref}>
+        </div>
     )
 }
 

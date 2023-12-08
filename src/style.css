@@ -82,6 +82,8 @@
   }
 
 
+
+
 @layer components {
   .btn-primay {
     @apply  border border-solid hover:border-[#B9AB91] cursor-pointer border-[#2D2D2B] bg-[#0F0F0F] z-20 relative hover:after:content-[''] hover:after:absolute hover:before:content-[''] hover:before:absolute hover:after:bg-[#0F0F0F] hover:before:bg-[#0F0F0F] hover:before:w-[calc(100%_+_6%)] hover:before:h-[calc(100%_-_43px)] hover:before:top-[22px] hover:before:-left-[3px] hover:after:w-[calc(100%_-_26%)] hover:after:left-[23px] hover:after:h-[calc(100%_+_6px)] hover:after:-top-[3px]  text-white whitespace-nowrap;
@@ -308,6 +310,33 @@
   /*}*/
 }
 
+@layer components {
+
+  .react-calendar {
+    @apply w-full max-w-full text-white;
+  }
+
+  .react-calendar .react-calendar__navigation {
+    @apply flex h-[44px] mb-8
+  }
+  .react-calendar .react-calendar__month-view__weekdays {
+    @apply text-center uppercase text-[14px] no-underline
+  }
+  .react-calendar abbr:where([title]) {
+    @apply no-underline
+  }
+  .react-calendar .react-calendar__tile {
+    @apply border-t-0 border-l-0 border-r border-b border-[#2D2D2B] [&:nth-child(-n+7)]:border-t [&:nth-child(7n+1)]:border-l py-[15px] text-[#C0AD91];
+  }
+  .react-calendar .react-calendar__tile:disabled {
+   @apply text-[#3A3A3A]
+  }
+
+  .react-calendar .react-calendar__tile--active {
+    @apply bg-[#B9AB91] text-[#060606]
+  }
+
+}
 
 @layer components {
   .container {
