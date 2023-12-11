@@ -1,4 +1,4 @@
-//import './react/FormReservation.jsx';
+import './react/FormReservation.jsx';
 import './script.js';
 import {SelectDropDown, DropDownMenu} from "./selectDropDown.js";
 import {Tabs} from "./tabs.js";

@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from "react";
+import React, {useCallback, useEffect, useMemo, useState} from "react";
 // import VanillaCalendar from "./components/VanillaCalendar.jsx";
 import TimeReserved from "./TimeReserved.jsx";
 import InputForm from "./InputForm.jsx";
@@ -38,12 +38,13 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
 
         }
         fetchData()
+        // console.log(currentDay)
     }, []);
 
     const getBroneDate = async (year, month) => {
         let data = await fetchGetBroneDate(year, month);
         sessionStorage.setItem('broneDate', JSON.stringify(data));
-       // setBroneDate(data);
+       setBroneDate(data);
     }
 
 
@@ -56,9 +57,9 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
     ];
 
 
-    const currentWeekDay = dayType === "weekday" ? weekDays.includes(new Date(currentDay[0]).getDay()) : weekEnd.includes(new Date(currentDay[0]).getDay());
+   const currentWeekDay = dayType === "weekday" ? weekDays.includes(new Date(currentDay[0]).getDay()) : weekEnd.includes(new Date(currentDay[0]).getDay());
 
-    const disabledDate = useMemo(() => {
+    const disabledBroneDate = useMemo(() => {
         const activeReservetTime= dataTime.reduce((agg, curr) => {
             return [...agg, curr.time]
         }, []);
@@ -70,7 +71,8 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
                 return acc
             }
         }, [])
-        return disabled;
+        console.log(disabled)
+        return disabled
     }, [broneDate]);
 
     // const disabledDate = useMemo(() => {
@@ -94,76 +96,42 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
 
     const onChangeTime = (data) => {
         setActiveTime(data);
-        onChangeDate({selectDate: currentDay, selectTime: data});
+        onChangeDate({selectDate: currentDay[0], selectTime: data});
+    }
+
+
+    const disabledDate = ({date}) => {
+      return dayType === 'weekend' ? weekDays.some(el => el === date.getDay()) : weekEnd.some(el => el === date.getDay()) || disabledBroneDate?.some(el => el === `${date.getFullYear()}-${date.getMonth()+1 < 10 ? '0' : ''}${date.getMonth()+1}-${date.getDate() < 10 ? '0' : ''}${date.getDate()}`)
     }
 
     return (
         <div>
             <h6 className="text-white text-[18px]">Выберите дату посещения:</h6>
-            {/*<VanillaCalendar config={*/}
-            {/*    {*/}
-            {/*        type: 'default',*/}
-
-            {/*        date: {*/}
-            {/*            min: myData,*/}
-            {/*            max: '2024-12-31',*/}
-            {/*        },*/}
-
-            {/*        actions: {*/}
-            {/*            clickDay(e, dates) {*/}
-            {/*              //  setCurrentDay([...dates, new Date(dates).getMonth()]);*/}
-            {/*               // setActiveTime(undefined);*/}
-            {/*                //onChangeDate({selectDate: dates, selectTime:activeTime})*/}
-            {/*            },*/}
-            {/*            clickArrow(e, year, month) {*/}
-            {/*              //  setCurrentDay(['', month]);*/}
-            {/*              //  getBroneDate(year, month+1)*/}
-            {/*            }*/}
-            {/*        },*/}
-            {/*        settings: {*/}
-            {/*            lang: 'ru',*/}
-            {/*            selection: {*/}
-            {/*                year: false,*/}
-            {/*            },*/}
-            {/*            //  selected: {*/}
-            {/*            // //     dates:  currentWeekDay && [currentDay[0]],*/}
-            {/*            // //      month: new Date().getMonth()+1*/}
-            {/*            //  },*/}
-            {/*            range: {*/}
-            {/*                disablePast: false,*/}
-            {/*                //disableWeekday: dayType === 'weekend' ? weekDays : weekEnd,*/}
-            {/*                //disabled: disabledDate*/}
-            {/*            },*/}
-            {/*            visibility: {*/}
-            {/*                weekend: false,*/}
-            {/*                today: false,*/}
-            {/*            },*/}
-            {/*        },*/}
-            {/*        CSSClasses: {*/}
-            {/*            calendar: 'calendar-custom',*/}
-            {/*            header: 'calendar-header',*/}
-            {/*            headerContent: 'calendar-header__content',*/}
-            {/*            arrow: 'calendar-arrow',*/}
-            {/*            arrowPrev: 'calendar-arrow-prev',*/}
-            {/*            arrowNext: 'calendar-arrow-next',*/}
-            {/*            month: 'calendar-month',*/}
-            {/*            year: 'calendar-year',*/}
-            {/*            days: 'calendar-days',*/}
-            {/*            day: 'calendar-day',*/}
-            {/*            dayBtn: 'calendar-dayBtn',*/}
-            {/*            dayBtnPrev: 'calendar-dayBtnPrev',*/}
-            {/*            dayBtnNext: 'calendar-datBtnNext',*/}
-            {/*            dayBtnDisabled: 'calendar-dayBtn-disabled',*/}
-            {/*            dayBtnSelected: 'calendar-dayBtn-selected',*/}
-            {/*            content: 'calendar-content',*/}
-            {/*            wrapper: 'calendar-wrapper',*/}
-            {/*            week: 'calendar-week',*/}
-            {/*            weekDay: 'calendar-week__day' }*/}
-            {/*    }} className="calendar" />*/}
-            <Calendar minDate={new Date()} next2Label={null} prev2Label={null}  />
+            <Calendar
+                defaultValue={currentWeekDay ? new Date : ''}
+                minDate={new Date()}
+                nextLabel={<img src="./img/arrLeft.svg" alt=""/>}
+                prevLabel={<img src="./img/arrLeft.svg" alt=""/>}
+                next2Label={null}
+                prev2Label={null}
+                navigationLabel={({date, label, locale, view}) => {
+                    return <>
+                        <span className='react-calendar__navigation__label__labelText-month'>{label.split(' ')[0].toLowerCase()} </span>
+                        <span className='react-calendar__navigation__label__labelText-year'> {label.split(' ')[1]} </span>
+                    </>
+                }}
+                tileDisabled={disabledDate}
+                onActiveStartDateChange={({ action, activeStartDate, value, view }) => {
+                    getBroneDate(activeStartDate.getFullYear(), activeStartDate.getMonth()+1)
+                }}
+                onClickDay={(val, eve) => {
+                    setCurrentDay([`${val.getFullYear()}-${val.getMonth()+1}-${val.getDate() < 10 ? '0' : ''}${val.getDate()}`, val.getMonth()]);
+                    onChangeDate({selectDate: `${val.getFullYear()}-${val.getMonth()+1}-${val.getDate() < 10 ? '0' : ''}${val.getDate()}`, selectTime: activeTime})
+                }}
+            />
             <h6 className="text-white text-[18px] mb-4">Выберите время:</h6>
             {
-                currentWeekDay ? <TimeReserved dataTime={dataTime} currentTime={currentTime} activeTime={activeTime} onChangeTime={onChangeTime} bronDate={broneDate} broneTime={broneDate[currentDay[0]]} /> : ''
+               <TimeReserved dataTime={dataTime} currentTime={currentTime} activeTime={activeTime} onChangeTime={onChangeTime} bronDate={broneDate} broneTime={broneDate[currentDay[0]]} />
             }
             <InputForm sumbitReservation={sumbitReservation} sumForm={sumForm}/>
         </div>

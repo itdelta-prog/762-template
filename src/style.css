@@ -325,6 +325,11 @@
   .react-calendar abbr:where([title]) {
     @apply no-underline
   }
+  .react-calendar .react-calendar__navigation__label__labelText {
+    @apply text-2xl
+  }
+
+
   .react-calendar .react-calendar__tile {
     @apply border-t-0 border-l-0 border-r border-b border-[#2D2D2B] [&:nth-child(-n+7)]:border-t [&:nth-child(7n+1)]:border-l py-[15px] text-[#C0AD91];
   }
@@ -332,8 +337,28 @@
    @apply text-[#3A3A3A]
   }
 
+  .react-calendar  .react-calendar__navigation button:disabled {
+    @apply hidden
+  }
+
+  .react-calendar .react-calendar__navigation__label {
+    @apply max-w-[300px] pointer-events-none
+  }
+
   .react-calendar .react-calendar__tile--active {
     @apply bg-[#B9AB91] text-[#060606]
+  }
+
+  .react-calendar .react-calendar__navigation__prev-button {
+    @apply rotate-180
+  }
+
+  .react-calendar .react-calendar__navigation__label__labelText-month {
+    @apply inline-block first-letter:uppercase
+  }
+
+  .react-calendar .react-calendar__navigation__label__labelText-year {
+    @apply text-[#B9AB91]
   }
 
 }
