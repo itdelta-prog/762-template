@@ -1,5 +1,5 @@
 import ModalReserved from "./ModalReserved.jsx";
-import React from "react";
+import React, {useMemo} from "react";
 import {useState, Fragment} from "react";
 import { createRoot } from 'react-dom/client';
 import Select from "./components/Select.jsx";
@@ -8,6 +8,7 @@ import WeaponsChoose from "./components/Reserved/WeaponsChoose.jsx";
 function FormReservation() {
     const [modal, setModal] = useState(false);
     const [section, setSection] = useState('');
+    const [dayType,setDayType] = useState('weekday');
 
     const weaponsSectionOptions = [
         {value: {id: 1, name: 'Винтовка'}, label: "Винтовка"},
@@ -22,17 +23,26 @@ function FormReservation() {
     }
 
     const onChangeSection = (value) => {
-        console.log(value);
         setSection(value)
     }
+
+    const onChangeDayType  = (value) => {
+        setDayType(value);
+    }
+
+    const myCom = useMemo(() => {
+        return <>
+            <Select onChange={onChangeSection} options={weaponsSectionOptions} title="Выбирите раздел"/>
+            <DayType onChange={onChangeDayType} />
+            <WeaponsChoose />
+        </>
+    }, []);
 
     console.log("RENDER")
 
     return (
         <Fragment>
-            <Select onChange={onChangeSection} options={weaponsSectionOptions} title="Выбирите раздел"/>
-            <DayType />
-            <WeaponsChoose/>
+            {myCom}
             {/*<ModalReserved modalActive={modal} onClose={onClose}/>*/}
         </Fragment>
     )
