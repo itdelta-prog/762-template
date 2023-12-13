@@ -24,6 +24,7 @@ export const DayType = ({onChange}) => {
 }
 
 export const CountParams = ({count, onChange, value}) => {
+    console.log("RENDER COUNT")
     return (
         <div className="flex gap-x-[13px] mb-[31px] person">
             {

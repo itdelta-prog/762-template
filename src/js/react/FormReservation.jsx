@@ -1,29 +1,33 @@
 import ModalReserved from "./ModalReserved.jsx";
-import React, {useMemo} from "react";
-import {useState, Fragment} from "react";
+import React from "react";
+import {useState, useEffect, useMemo, Fragment} from "react";
 import { createRoot } from 'react-dom/client';
 import Select from "./components/Select.jsx";
 import {DayType} from "./components/Reserved/ReservedComponent.jsx";
 import WeaponsChoose from "./components/Reserved/WeaponsChoose.jsx";
+import axios from "axios";
 function FormReservation() {
     const [modal, setModal] = useState(false);
-    const [section, setSection] = useState('');
+    const [loader, setLoader] = useState(false);
+    const [section, setSection] = useState([]);
+    const [selectSection, setSelectSection] = useState({});
     const [dayType,setDayType] = useState('weekday');
 
-    const weaponsSectionOptions = [
-        {value: {id: 1, name: 'Винтовка'}, label: "Винтовка"},
-        {value: {id: 2, name: 'Карабин'}, label: "Карабин"},
-        {value: {id: 1, name: 'Ружье'}, label: "Ружье"},
-        {value: {id: 1, name: 'Пистолет'}, label: "Пистолет"}
-    ]
 
-    const onClose = () => {
-        setModal(false);
-        document.body.classList.remove('active')
-    }
+    useEffect(() => {
+        const fetchData = async() => {
+            const {data} = await axios.get('https://651e822d44a3a8aa47687cb1.mockapi.io/weapons');
+            console.log(data);
+            setSection(data)
+            setLoader(true);
+        }
+        fetchData()
+    }, []);
+
+    const weaponsSectionOptions = section.map(item => ({value: item, label: item.name}))
 
     const onChangeSection = (value) => {
-        setSection(value)
+        setSelectSection({...value})
     }
 
     const onChangeDayType  = (value) => {
@@ -34,15 +38,23 @@ function FormReservation() {
         return <>
             <Select onChange={onChangeSection} options={weaponsSectionOptions} title="Выбирите раздел"/>
             <DayType onChange={onChangeDayType} />
-            <WeaponsChoose />
         </>
-    }, []);
+    }, [section]);
 
-    console.log("RENDER")
+    const weaponChoose = useMemo(() => {
+        return <WeaponsChoose section={selectSection?.value} />
+    }, [selectSection])
+
+    // const onClose = () => {
+    //     setModal(false);
+    // }
 
     return (
         <Fragment>
-            {myCom}
+            {loader ? <div>
+                {myCom}
+                {weaponChoose}
+            </div> : ''}
             {/*<ModalReserved modalActive={modal} onClose={onClose}/>*/}
         </Fragment>
     )

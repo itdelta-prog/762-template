@@ -5,8 +5,6 @@ export default function Select({options, onChange, className, select, title}) {
     const [open, setOpen] = useState(false);
     const [selectOption, setSelectOption] = useState(select);
 
-    console.log('RENDER SELECT')
-
     return (
         <div className={`${className} selectCustom`}>
             <div onClick={() => setOpen(!open)} className="select">

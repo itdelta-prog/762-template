@@ -1,20 +1,22 @@
 import React from "react";
 import {useState} from "react";
-import {AddCartidges, CountParams} from "./ReservedComponent.jsx";
-import Select from "../Select.jsx";
+import {CountParams} from "./ReservedComponent.jsx";
+import WeaponsAndCartridges from "./WeaponsAndCartridges.jsx";
 
-export default function WeaponsChoose() {
+export default function WeaponsChoose({section}) {
     const [weaponCountSelect, setWeaponCountSelect] = useState(1);
     const weaponsCount = [1, 2, 3];
+
+
+    console.log('RENDER WEAPONS CHOOSE')
     return (
-        <>
-            <CountParams value={weaponCountSelect} onChange={(item) => setWeaponCountSelect(item)} count={weaponsCount} />
-            {
-                weaponCountSelect === 1 ? <div>
-                    <Select title="Выберите оружия"/>
-                    <AddCartidges defaultShot={2500} valueCount={100} />
-                </div> : ''
-            }
-        </>
+        <div>
+            <CountParams
+                value={weaponCountSelect}
+                onChange={(item) => setWeaponCountSelect(item)}
+                count={weaponsCount} />
+            <WeaponsAndCartridges weaponsCount={weaponCountSelect} section={section} />
+        </div>
     )
+
 }
