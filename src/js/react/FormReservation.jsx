@@ -17,7 +17,6 @@ function FormReservation() {
     useEffect(() => {
         const fetchData = async() => {
             const {data} = await axios.get('https://651e822d44a3a8aa47687cb1.mockapi.io/weapons');
-            console.log(data);
             setSection(data)
             setLoader(true);
         }
@@ -48,6 +47,7 @@ function FormReservation() {
     // const onClose = () => {
     //     setModal(false);
     // }
+
 
     return (
         <Fragment>

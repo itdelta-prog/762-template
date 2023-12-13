@@ -8,13 +8,23 @@ export default function WeaponsAndCartridges({section, weaponsCount}) {
     const [selectWeapon, setSelectWeapon] = useState({});
 
     useEffect(() => {
-        if (section?.weapons) setWeapons([...section.weapons])
+        if (!section?.weapons) return
+        setWeapons([...section.weapons])
     }, [section]);
+
+    //
+    // useEffect(() => {
+    //     if(!Object.keys(selectWeapon).length) return
+    //     setSelectWeapon({})
+    // }, [weaponsCount])
+
+
 
     useEffect(() => {
         if(!Object.keys(selectWeapon).length) return
-        let selectWeaponValues = Object.values(selectWeapon);
-       // console.log(weapons.filter((obj) => selectWeaponValues.some(el) => obj.id === el)
+        let selectWeaponValues = Object.values(selectWeapon).flatMap(obj => obj.value);
+        setWeapons((weapon) => section.weapons.filter((obj) => !selectWeaponValues.includes(obj)))
+
     }, [selectWeapon])
 
     const weaponsOptions = weapons?.map((item) => ({value: item, label: item.name}));
@@ -25,12 +35,13 @@ export default function WeaponsAndCartridges({section, weaponsCount}) {
        //     console.log(selectWeapon)
        // })
     }
-    console.log('RENDER WEAPONS AND CARTIFGES', weapons)
+     console.log('RENDER WEAPONS AND CARTIFGES')
 
     return (
         <div>
+            {console.log(selectWeapon)}
             <div>
-                <Select options={weaponsOptions} onChange={(item) => changeWeapon('firstWeapon', item)} select={selectWeapon} title="Выберите оружия"/>
+                <Select options={weaponsOptions} onChange={(item) => changeWeapon('firstWeapon', item)}  title="Выберите оружия"/>
                 <AddCartidges defaultShot={2500} valueCount={100} />
             </div>
             {weaponsCount !== 1 ? <div>
