@@ -140,6 +140,10 @@
     @apply bg-[#B9AB91] after:opacity-0 before:opacity-0 hover:text-[#0F0F0F] hover:border-none
   }
 
+  .addCartidges__btn {
+    @apply px-3 py-3 leading-5 text-lg flex justify-center items-center transition-all
+  }
+
   .btnService.active span {
     @apply text-white
   }

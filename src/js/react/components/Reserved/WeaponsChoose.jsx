@@ -8,14 +8,15 @@ export default function WeaponsChoose({section}) {
     const weaponsCount = [1, 2, 3];
 
 
-    console.log('RENDER WEAPONS CHOOSE')
+    // console.log('RENDER WEAPONS CHOOSE', section)
+
     return (
         <div>
             <CountParams
                 value={weaponCountSelect}
                 onChange={(item) => setWeaponCountSelect(item)}
                 count={weaponsCount} />
-            <WeaponsAndCartridges weaponsCount={weaponCountSelect} section={section} />
+            <WeaponsAndCartridges weaponsCount={weaponCountSelect} weapons={section?.weapons ?? []}/>
         </div>
     )
 

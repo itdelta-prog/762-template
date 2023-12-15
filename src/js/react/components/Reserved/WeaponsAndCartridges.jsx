@@ -3,31 +3,42 @@ import {useState, useEffect} from "react";
 import {AddCartidges} from "./ReservedComponent.jsx";
 import Select from "../Select.jsx";
 
-export default function WeaponsAndCartridges({section, weaponsCount}) {
-    const [weapons, setWeapons] = useState([]);
-    const [selectWeapon, setSelectWeapon] = useState({});
+export default function WeaponsAndCartridges({weapons, weaponsCount}) {
+  //  const [weapons, setWeapons] = useState(section?.weapons ?? []);
+    const [selectWeapon, setSelectWeapon] = useState({
+        firstWeapon: {},
+        secondWeapon: {},
+        thirdWeapon: {}
+    });
 
-    useEffect(() => {
-        if (!section?.weapons) return
-        setWeapons([...section.weapons])
-    }, [section]);
+    const weaponsOptions = useMemo(() => {
+        if(!Object.keys(selectWeapon).length) {
+            return weapons?.map((item) => ({value: item, label: item.name}))
+        }
+        let selectWeaponValues = Object.values(selectWeapon).flatMap(obj => obj.value);
+        console.log(weapons.filter((obj) => !selectWeaponValues.includes(obj)))
+        return  weapons.filter((obj) => !selectWeaponValues.includes(obj)).map((item) => ({value: item, label: item.name}))
+        // return weapons.filter((obj) => !selectWeaponValues.includes(obj))
+    }, [weapons, selectWeapon])
 
-    //
+
     // useEffect(() => {
     //     if(!Object.keys(selectWeapon).length) return
-    //     setSelectWeapon({})
-    // }, [weaponsCount])
-
+    //     let selectWeaponValues = Object.values(selectWeapon).flatMap(obj => obj.value);
+    //     // setWeapons((weapon) => section.weapons.filter((obj) => !selectWeaponValues.includes(obj)))
+    //
+    // }, [selectWeapon])
 
 
     useEffect(() => {
         if(!Object.keys(selectWeapon).length) return
-        let selectWeaponValues = Object.values(selectWeapon).flatMap(obj => obj.value);
-        setWeapons((weapon) => section.weapons.filter((obj) => !selectWeaponValues.includes(obj)))
+        setSelectWeapon({
+            firstWeapon: {},
+            secondWeapon: {},
+            thirdWeapon: {}
+        })
+    }, [weaponsCount, weapons])
 
-    }, [selectWeapon])
-
-    const weaponsOptions = weapons?.map((item) => ({value: item, label: item.name}));
 
     const changeWeapon = (name, item) => {
         setSelectWeapon(selectWeapon => ({...selectWeapon, [name]: item}));
@@ -35,24 +46,23 @@ export default function WeaponsAndCartridges({section, weaponsCount}) {
        //     console.log(selectWeapon)
        // })
     }
-     console.log('RENDER WEAPONS AND CARTIFGES')
+    console.log('RENDER WEAPONS AND CARTIFGES',selectWeapon)
 
     return (
-        <div>
-            {console.log(selectWeapon)}
+        <div className="flex flex-col gap-y-5">
             <div>
-                <Select options={weaponsOptions} onChange={(item) => changeWeapon('firstWeapon', item)}  title="Выберите оружия"/>
-                <AddCartidges defaultShot={2500} valueCount={100} />
+                <Select className="mb-5" options={weaponsOptions} onChange={(item) => changeWeapon('firstWeapon', item)} select={selectWeapon.firstWeapon} title="Выберите оружия"/>
+                {Object.keys(selectWeapon.firstWeapon).length ? <AddCartidges cartidges={selectWeapon?.firstWeapon.value?.cartridges} /> : ''}
             </div>
             {weaponsCount !== 1 ? <div>
                 <Select options={weaponsOptions} onChange={(item) => changeWeapon('secondWeapon', item)}
-                        select={selectWeapon.secondWeapon} title="Выберите оружия"/>
-                <AddCartidges defaultShot={2500} valueCount={100}/>
+                        select={selectWeapon.secondWeapon} title="Выберите оружия" className="mb-5"/>
+                {Object.keys(selectWeapon.secondWeapon).length ? <AddCartidges cartidges={selectWeapon?.secondWeapon.value?.cartridges} /> : ''}
             </div> : ''}
             {weaponsCount === 3 ? <div>
                 <Select options={weaponsOptions} onChange={(item) => changeWeapon('thirdWeapon', item)}
-                        select={selectWeapon.thirdWeapon} title="Выберите оружия"/>
-                <AddCartidges defaultShot={2500} valueCount={100}/>
+                        select={selectWeapon.thirdWeapon} title="Выберите оружия" className="mb-5"/>
+                {Object.keys(selectWeapon.thirdWeapon).length ? <AddCartidges  cartidges={selectWeapon?.thirdWeapon.value?.cartridges}/> : ''}
             </div> : ''}
         </div>
     )

@@ -3,6 +3,7 @@ import React from "react";
 import {useState, useEffect, useMemo, Fragment} from "react";
 import { createRoot } from 'react-dom/client';
 import Select from "./components/Select.jsx";
+//import Select from "./components/Ui/Select.jsx"
 import {DayType} from "./components/Reserved/ReservedComponent.jsx";
 import WeaponsChoose from "./components/Reserved/WeaponsChoose.jsx";
 import axios from "axios";
@@ -12,7 +13,6 @@ function FormReservation() {
     const [section, setSection] = useState([]);
     const [selectSection, setSelectSection] = useState({});
     const [dayType,setDayType] = useState('weekday');
-
 
     useEffect(() => {
         const fetchData = async() => {
@@ -34,6 +34,7 @@ function FormReservation() {
     }
 
     const myCom = useMemo(() => {
+        if(!loader) return  ''
         return <>
             <Select onChange={onChangeSection} options={weaponsSectionOptions} title="Выбирите раздел"/>
             <DayType onChange={onChangeDayType} />
@@ -44,17 +45,15 @@ function FormReservation() {
         return <WeaponsChoose section={selectSection?.value} />
     }, [selectSection])
 
-    // const onClose = () => {
-    //     setModal(false);
-    // }
-
-
     return (
         <Fragment>
-            {loader ? <div>
-                {myCom}
-                {weaponChoose}
-            </div> : ''}
+            {myCom}
+            {loader ? weaponChoose : ''}
+            {/*<Select onChange={onChangeSection} options={weaponsSectionOptions} select={'dsadsa'} title="Выбирите раздел"/>*/}
+            {/*{loader ? <div>*/}
+            {/*    {myCom}*/}
+            {/*    {weaponChoose}*/}
+            {/*</div> : ''}*/}
             {/*<ModalReserved modalActive={modal} onClose={onClose}/>*/}
         </Fragment>
     )
