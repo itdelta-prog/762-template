@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useState} from "react";
 
 export const DayType = ({onChange}) => {
@@ -9,13 +9,13 @@ export const DayType = ({onChange}) => {
         <div className="flex gap-x-[13px] mb-[31px] mt-8">
             <button onClick={() => {
                 setDayType('weekday');
-                onChange('weekday')
+                onChange('dayType', 'weekday')
             }} className={`btn-catalog basis-[184px] ${dayType === 'weekday' ? "tabs__caption_active"  : ''}`}>
                 <span className="btn-link__text text-[14px] sm:text-[17px]">Будни</span>
             </button>
             <button onClick={() => {
                 setDayType('weekend')
-                onChange('weekend')
+                onChange('dayType', 'weekend')
             }} className={`btn-catalog basis-[184px] ${dayType === 'weekend' ? "tabs__caption_active"  : ''}`}>
                 <span className="btn-link__text text-[14px] sm:text-[17px] ">Выходные</span>
             </button>
@@ -24,7 +24,6 @@ export const DayType = ({onChange}) => {
 }
 
 export const CountParams = ({count, onChange, value}) => {
-   // console.log("RENDER COUNT")
     return (
         <div className="flex gap-x-[13px] mb-[31px] person">
             {
@@ -76,6 +75,16 @@ export const AddCartidges = ({cartidges}) => {
                 +{cartidgesStep}
             </button>
             <div className="text-white" >1500 руб.</div>
+        </div>
+    )
+}
+
+export const TotalAmount = ({amount}) => {
+
+    return (
+        <div className="flex justify-between items-center">
+            <span className="text-white text-lg">Итого</span>
+            <span className="text-white text-lg">{amount} р.</span>
         </div>
     )
 }

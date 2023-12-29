@@ -27,9 +27,6 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
     const [modal, setModal] = useState(false);
     const [errors, setErrors] = useState(undefined);
 
-    useEffect(() => {
-
-    }, []);
 
     const priceSum = useMemo(() => {
         return dataReserv.basicPrice * dataReserv.shooterCount + Number(`${dataReserv.personalGallery ? dataReserv.galleryPrice : 0}`) + Number(`${dataReserv.personalInstructor ? dataReserv.instructorPrice : 0}`);
