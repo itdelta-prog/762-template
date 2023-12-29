@@ -206,6 +206,15 @@
       <!-- Background backdrop, show/hide based on slide-over state. -->
     </div>
   </header>
+  <div id="modal-banner" class="hidden flex justify-center">
+    <div class="dialog__wrapper active w-full h-full fixed left-0 top-0 bg-[rgba(15,_15,_15,_0.90)] z-[60] opacity-0 invisible" style="transition: opacity .3s, visibility .1s;"></div>
+    <div class="modal__banner active">
+      <img class="w-full h-full object-cover" src="/img/happy.jpg" alt="">
+      <div class="close-banner">
+        <img class="" src="/img/close.svg" alt="">
+      </div>
+    </div>
+  </div>
     <main class="w-full">
       <section class="w-full h-[733px] md:h-[800px] flex items-end md:block mb-[80px] sm:mb-[180px]">
         <div class="relative">
@@ -425,34 +434,6 @@
                 </svg>
               </button>
         </div>
-<!--        <div id="pagintaionCustom" class="my-pagination mt-[40px] flex justify-center items-baseline gap-x-[20px]">-->
-<!--          <div class="pagination__prev flex flex-col justify-center items-center">-->
-<!--            <span class="block h-[37px] w-[1px] bg-[rgba(255,_255,_255,_0.15)]"></span>-->
-<!--            <span data-prev class="text-white font-['GrtskTera'] opacity-30 text-lg leading-5"></span>-->
-<!--          </div>-->
-<!--          <svg xmlns="http://www.w3.org/2000/svg" width="165" height="37" viewBox="0 0 165 37" fill="none">-->
-<!--            <rect y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
-<!--            <rect x="164" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
-<!--            <rect x="41" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
-<!--            <rect x="82" width="1" height="37" fill="white" fill-opacity="0.15"/>-->
-<!--            <rect x="123" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
-<!--          </svg>-->
-<!--          <div class="pagination__active curs flex flex-col justify-center items-center">-->
-<!--            <span class="block h-[37px] w-[1px] bg-[#B9AB91]"></span>-->
-<!--            <span data-active class="text-white font-['GrtskTera'] text-lg leading-5"></span>-->
-<!--          </div>-->
-<!--          <svg xmlns="http://www.w3.org/2000/svg" width="165" height="37" viewBox="0 0 165 37" fill="none">-->
-<!--            <rect y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
-<!--            <rect x="164" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
-<!--            <rect x="41" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
-<!--            <rect x="82" width="1" height="37" fill="white" fill-opacity="0.15"/>-->
-<!--            <rect x="123" y="18" width="1" height="19" fill="white" fill-opacity="0.15"/>-->
-<!--          </svg>-->
-<!--          <div class="pagination__next flex flex-col justify-center items-center">-->
-<!--            <span class="block h-[37px] w-[1px] bg-[rgba(255,_255,_255,_0.15)]"></span>-->
-<!--            <span data-next class="text-white font-['GrtskTera'] opacity-30 text-lg leading-5"></span>-->
-<!--          </div>-->
-<!--        </div>-->
       </div>
       </section>
       <section class="block mb-20 sm:mb-[180px]">
@@ -873,6 +854,23 @@
         }
       };
     </script>
+  <script>
+    let banner = document.getElementById('modal-banner');
+    let bannerBody = banner.querySelector('.modal__banner');
+    let closeBanner = banner.querySelector('.close-banner');
+    let dialogModal =banner.querySelector('.dialog__wrapper');
+
+    if(!document.cookie.includes('bannerShow=false')) {
+      document.body.classList.add('active')
+      banner.classList.remove('hidden');
+    }
+    closeBanner.addEventListener('click', () => {
+      document.cookie = "bannerShow=false; expires=0;";
+      bannerBody.classList.remove('active');
+      dialogModal.classList.remove('active');
+      document.body.classList.remove('active')
+    })
+  </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <!--    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>-->
 <!--    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>-->

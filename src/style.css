@@ -148,6 +148,18 @@
     @apply text-white
   }
 
+  .modal__banner {
+    @apply absolute w-[80%] text-white h-[600px] z-[90] top-[100px] bg-[#0F0F0F] opacity-0;
+  }
+
+  .close-banner {
+    @apply absolute z-[90] w-[35px] h-[35px] top-5 bg-[#222220] flex justify-center items-center right-4 cursor-pointer
+  }
+
+  .modal__banner.active {
+    @apply opacity-100;
+  }
+
   .all-course {
     @apply h-0 translate-y-0 opacity-0 invisible flex flex-col gap-y-[20px];
   }
