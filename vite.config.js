@@ -16,7 +16,8 @@ export default defineConfig({
         contact: resolve('src', 'pages/contact.html'),
         newsDetail: resolve('src', 'pages/newsDetail.html'),
         catalogDetail: resolve('src', 'pages/catalogDetail.html'),
-        policy: resolve('src', 'pages/policy.html')
+        policy: resolve('src', 'pages/policy.html'),
+        error: resolve('src', 'pages/error.html')
       },
       output: {
         manualChunks: false,

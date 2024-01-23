@@ -24,7 +24,8 @@ export default {
     extend: {},
 
     fontFamily: {
-      'Grtsk': ['Grtsk']
+      'Grtsk': ['Grtsk'],
+      'Armata': ['Armata']
     }
   },
   plugins: [],

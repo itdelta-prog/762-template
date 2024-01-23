@@ -2,7 +2,7 @@ import React from "react";
 
 export default function TimeReserved({dataTime, activeTime, currentTime, broneTime, onChangeTime}) {
 
-    const resultTime = currentTime ? dataTime.filter((obj) => obj.hourse > currentTime) : dataTime
+    const resultTime = currentTime() ? dataTime.filter((obj) => obj.hourse > currentTime()) : dataTime
     return (
         <div className="grid grid-cols-5 gap-x-0 sm:gap-x-5">
             {resultTime.map((data, idx) => {

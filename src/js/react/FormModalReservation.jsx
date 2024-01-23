@@ -25,31 +25,24 @@ function FormModalReservation() {
 
     useEffect(() => {
         const fetchData = async () => {
-            if(!JSON.parse(sessionStorage.getItem('instructorData'))) {
-                try {
-                    const [instructorResponse, gungProgramResponse] = await Promise.all([
-                        axios.post(`${baseUrl}api/v1/reservation/get-instructors`, {
-                            body: JSON.stringify({})
-                        }),
-                        axios.post(`${baseUrl}api/v1/reservation/get-programs`, {
-                            body: JSON.stringify({})
-                        })
-                    ]);
-                    // setInstructor(instructorResponse.data.data)
-                    // setGungs(gungProgramResponse.data.data);
-                    // setBronDate(broneDateResponse.data.data);
-
-                    sessionStorage.setItem('instructorData', JSON.stringify(instructorResponse.data.data))
-                    sessionStorage.setItem('gungProgramData', JSON.stringify(gungProgramResponse.data.data))
-                }
-                catch (error) {
-                    console.log(error);
-                    alert("Ошибка при запросе данных")
-                }
+            try {
+                const [instructorResponse, gungProgramResponse] = await Promise.all([
+                    axios.post(`${baseUrl}api/v1/reservation/get-instructors`, {
+                        body: JSON.stringify({})
+                    }),
+                    axios.post(`${baseUrl}api/v1/reservation/get-programs`, {
+                        body: JSON.stringify({})
+                    })
+                ]);
+                setInstructor(instructorResponse.data.data)
+                setGungs(gungProgramResponse.data.data);
+                // setBronDate(broneDateResponse.data.data);
+            }
+            catch (error) {
+                console.log(error);
+                alert("Ошибка при запросе данных")
             }
             setLoader(true);
-            setInstructor(JSON.parse(sessionStorage.getItem('instructorData')));
-            setGungs(JSON.parse(sessionStorage.getItem('gungProgramData')));
         }
         fetchData()
     }, []);

@@ -29,7 +29,7 @@ export default function ProgramAndGung({data, selectProgram, errors, selectGung,
         <div className="mb-[20px]">
             <Select options={gungsOptions} select={selectGun}  onChange={(item) => {
                 setSelectGun(item);
-                setChangeProgram(undefined);
+                setChangeProgram({});
                 onChangeProgram(undefined)
             }} className={"mb-5"} title={"Выбрать оружие"}/>
             <Select options={programOptions} onChange={(item) => {

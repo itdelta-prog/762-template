@@ -12,7 +12,6 @@ export default function Select({options, onChange, className, select, title}) {
     }, [select]);
 
    // console.log("RENDER SELECT", selectOption)
-
     return (
         <div className={`${className} selectCustom`}>
             <div onClick={() => setOpen(!open)} className="select">
