@@ -1,0 +1,8 @@
+import React from "react"
+export const ArrLet = () => {
+    return (
+        <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 8.5H26M26 8.5L18.525 1M26 8.5L18.525 16" stroke="#B9AB91" strokeWidth="1.5"/>
+        </svg>
+    )
+}

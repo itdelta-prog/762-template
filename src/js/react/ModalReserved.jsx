@@ -1,15 +1,17 @@
 import React, {useEffect, useMemo, useState} from "react";
 import TimeReserved from "./TimeReserved.jsx";
 import InputForm from "./InputForm.jsx";
+import {ArrLet} from "./components/Icon.jsx";
 import axios from "axios";
 import Calendar from 'react-calendar';
 
 export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitReservation}) {
     const [broneDate, setBroneDate] = useState({});
     //const [loader, setLoader] = useState(false);
-    const [currentDay, setCurrentDay] = useState([`${new Date().getFullYear()}-${new Date().getMonth()+1 < 10 ? '0' : ''}${new Date().getMonth()+1}-${new Date().getDate() < 10 ? '0' : ''}${new Date().getDate()}`, new Date().getMonth()]);
+    const [currentDay, setCurrentDay] = useState([]);
     const [activeTime, setActiveTime] = useState(undefined);
-    const myData = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate() < 10 ? '0' : ''}${new Date().getDate()}`
+    const nextData = new Date(new Date().setDate(new Date().getDate()+1));
+    const myData = `${nextData.getFullYear()}-${nextData.getMonth()+1 < 10 ? '0' : ''}${nextData.getMonth()+1}-${nextData.getDate() < 10 ? '0' : ''}${nextData.getDate()}`
     const weekDays = [1,2,3,4,5];
     const weekEnd = [0, 6];
 
@@ -35,7 +37,7 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
         // console.log(currentDay)
     }, []);
 
-    const currentTime = () => currentDay[0] === myData ? new Date().getHours() : ''
+   // const currentTime = () => currentDay[0] === myData ? new Date().getHours() : ''
 
     const getBroneDate = async (year, month) => {
         let data = await fetchGetBroneDate(year, month);
@@ -51,7 +53,7 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
         {id: 13, hourse: 21, time: '21:00'},
     ];
 
-    const currentWeekDay = dayType === "weekday" ? weekDays.includes(new Date(currentDay[0]).getDay()) : weekEnd.includes(new Date(currentDay[0]).getDay());
+   // const currentWeekDay = dayType === "weekday" ? weekDays.includes(new Date(currentDay[0]).getDay()) : weekEnd.includes(new Date(currentDay[0]).getDay());
 
     const disabledBroneDate = useMemo(() => {
         const activeReservetTime= dataTime.reduce((agg, curr) => {
@@ -102,10 +104,10 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
         <div>
             <h6 className="text-white text-[18px]">Выберите дату посещения:</h6>
             <Calendar
-                defaultValue={currentWeekDay ? new Date : ''}
-                minDate={new Date()}
-                nextLabel={<img src="./img/arrLeft.svg" alt=""/>}
-                prevLabel={<img src="./img/arrLeft.svg" alt=""/>}
+                defaultValue={''}
+                minDate={nextData}
+                nextLabel={<ArrLet />}
+                prevLabel={<ArrLet />}
                 next2Label={null}
                 prev2Label={null}
                 navigationLabel={({date, label, locale, view}) => {
@@ -120,12 +122,13 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
                 }}
                 onClickDay={(val, eve) => {
                     setCurrentDay([`${val.getFullYear()}-${val.getMonth()+1 < 10 ? '0' : ''}${val.getMonth()+1}-${val.getDate() < 10 ? '0' : ''}${val.getDate()}`, val.getMonth()]);
-                    onChangeDate({selectDate: `${val.getFullYear()}-${val.getMonth()+1}-${val.getDate() < 10 ? '0' : ''}${val.getDate()}`, selectTime: activeTime})
+                    setActiveTime(undefined);
+                    onChangeDate({selectDate: `${val.getFullYear()}-${val.getMonth()+1 < 10 ? '0' : ''}${val.getMonth()+1}-${val.getDate() < 10 ? '0' : ''}${val.getDate()}`, selectTime: undefined})
                 }}
             />
             <h6 className="text-white text-[18px] mb-4">Выберите время:</h6>
             {
-               <TimeReserved dataTime={dataTime} currentTime={currentTime} activeTime={activeTime} onChangeTime={onChangeTime} broneTime={broneDate[currentDay[0]]} />
+             currentDay.length ?  <TimeReserved dataTime={dataTime} activeTime={activeTime} onChangeTime={onChangeTime} broneTime={broneDate[currentDay[0]]} />  : ''
             }
             <InputForm sumbitReservation={sumbitReservation} sumForm={sumForm}/>
         </div>
