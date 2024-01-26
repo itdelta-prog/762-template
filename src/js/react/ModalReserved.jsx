@@ -50,7 +50,7 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
         {id: 4, hourse: 12, time: '12:00'}, {id: 5, hourse: 13, time: '13:00'}, {id: 6, hourse: 14, time: '14:00'},
         {id: 7, hourse: 15, time: '15:00'}, {id: 8, hourse: 16, time: '16:00'}, {id: 9, hourse: 17, time: '17:00'},
         {id: 10, hourse: 18, time: '18:00'}, {id: 11, hourse: 19, time: '19:00'}, {id: 12, hourse: 20, time: '20:00'},
-        {id: 13, hourse: 21, time: '21:00'},
+        {id: 13, hourse: 21, time: '21:00'}
     ];
 
    // const currentWeekDay = dayType === "weekday" ? weekDays.includes(new Date(currentDay[0]).getDay()) : weekEnd.includes(new Date(currentDay[0]).getDay());
@@ -59,6 +59,7 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
         const activeReservetTime= dataTime.reduce((agg, curr) => {
             return [...agg, curr.time]
         }, []);
+        console.log(broneDate)
         const disabled = Object.entries(broneDate).reduce((acc, curr) => {
             if(curr[1]?.toString() === activeReservetTime.toString()) {
                 return [...acc, curr[0]]
@@ -67,7 +68,7 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
                 return acc
             }
         }, [])
-        //console.log(disabled)
+       // console.log(disabled)
         return disabled
     }, [broneDate]);
 

@@ -17,7 +17,7 @@ function reducer(state, action) {
             return {...state, weaponsCount: action.value}
         }
         case 'weapons': {
-            return {...state, weapons: {...action.value}}
+            return {...state, weapons: [...action.value]}
         }
     }
 }
@@ -25,8 +25,17 @@ function reducer(state, action) {
 function FormReservation() {
     const [state, dispatch] = useReducer(reducer, {
         dayType: '',
-        weaponsCount: 1,
-        weapons: {},
+        currentWeaponsNumber: 1,
+        weapons: [
+            {
+                weaponCount: 1,
+                weapons: {}
+            },
+            {
+                weaponCount: 1,
+                weapons: {}
+            }
+        ]
     })
     const [loader, setLoader] = useState(false);
     const [section, setSection] = useState([]);
@@ -76,8 +85,8 @@ function FormReservation() {
     }, [section]);
 
     const weaponChoose = useMemo(() => {
-        return <WeaponsChoose onChange={onChangeData} section={selectSection?.value} />
-    }, [selectSection]);
+        return <WeaponsChoose weapons={state.weapons} onChange={onChangeData} section={selectSection?.value} />
+    }, [selectSection, state.weapons]);
     // const onChangeDayType  = (value) => {
     //     setFormData({...formData, dayType: value})
     // }

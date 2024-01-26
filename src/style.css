@@ -500,7 +500,7 @@
   }
 
   .program__desc, .program__desc>* {
-    @apply text-base text-[rgba(255,_255,_255,_0.40)] font-normal leading-5 break-words;
+    @apply text-base text-white font-normal leading-8 break-words;
   }
 
 }
