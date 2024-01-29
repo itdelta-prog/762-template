@@ -2,7 +2,8 @@ import React from "react";
 import {useState} from "react";
 import Modal from "../Modal.jsx";
 import ModalReserved from "../../ModalReserved.jsx";
-export default function ReservedSubmit({stateForm, amount}) {
+import InputForm from "../../InputForm.jsx";
+export default function ReservedSubmit({stateForm, amount, onChageData, handleSubmit}) {
     const [show, setShow] = useState(false);
 
     const onChangeShow = (showStatus) => {
@@ -10,12 +11,11 @@ export default function ReservedSubmit({stateForm, amount}) {
     }
 
     const onChangeDate = (value) => {
-        console.log(value)
+      onChageData("currentDate", value)
     }
 
-    const sumbitReservetion = () => {
-        console.log('AAA')
-    }
+
+    console.log("RENDER SUBMIT")
 
     return (
             <div className="flex justify-end">
@@ -32,7 +32,8 @@ export default function ReservedSubmit({stateForm, amount}) {
                     <span className="btn__content group-hover:text-[#0F0F0F]">К бронированию</span>
                 </button>
                 <Modal showModal={show} onChangeShow={onChangeShow}>
-                    <ModalReserved dayType={stateForm.dayType} sumForm={amount} onChangeDate={onChangeDate} sumbitReservetion={sumbitReservetion}/>
+                    <ModalReserved dayType={stateForm.dayType} onChangeDate={onChangeDate}/>
+                    <InputForm sumbitReservation={handleSubmit} sumForm={amount}/>
                 </Modal>
             </div>
 )

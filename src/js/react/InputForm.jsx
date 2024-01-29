@@ -6,8 +6,10 @@ export default function InputForm({sumForm, sumbitReservation}) {
     const { register, handleSubmit, formState:{errors} } = useForm();
 
     const onSubmit = (data) => {
-        sumbitReservation(data)
+        sumbitReservation(data);
     }
+
+    console.log("INPUT FORM")
 
     return (
         <>

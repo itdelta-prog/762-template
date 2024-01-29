@@ -42,23 +42,31 @@ export const CountParams = ({count, onChange, value}) => {
     )
 }
 
-export const AddCartidges = ({cartidges}) => {
-    const [shotCount, setShotCount] = useState(  cartidges["min-amout"] ?? 0);
+export const AddCartidges = ({onChange, cartidges}) => {
+    const [shotCount, setShotCount] = useState(  cartidges["min-amount"] ?? 0);
 
-    const cartidgesAmount = cartidges["min-amout"] ?? 0;
+    const cartidgesAmount = cartidges["min-amount"] ?? 0;
     const cartidgesPrice = cartidges["min-price"] ?? 0;
     const cartidgesStep = cartidges["min-step"] ?? 0;
     const cartidgesStepPrice = cartidges["step-price"] ?? 0;
+
+    useEffect(() => {
+        setShotCount(cartidges["min-amount"])
+    }, [cartidges]);
 
     const isDisabled = () => shotCount <= cartidgesAmount
 
     const onIncrement = () => {
         setShotCount(shotCount + cartidgesStep);
+        onChange(shotCount + cartidgesStep)
      //   onChange(shotCount);
     }
 
     const onDecrement = () => {
-        !isDisabled() ? setShotCount(shotCount - cartidgesStep) : ''
+        if(!isDisabled()) {
+            setShotCount(shotCount - cartidgesStep)
+            onChange(shotCount - cartidgesStep)
+        }
       //  onChange(shotCount);
     }
 
@@ -82,7 +90,7 @@ export const AddCartidges = ({cartidges}) => {
 export const TotalAmount = ({amount}) => {
 
     return (
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mb-5">
             <span className="text-white text-lg">Итого</span>
             <span className="text-white text-lg">{amount} р.</span>
         </div>

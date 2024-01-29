@@ -6,6 +6,7 @@ import Select from "./components/Select.jsx";
 import ProgramAndGung from "./ProgramAndGung.jsx";
 import Modal from "./components/Modal.jsx";
 import axios from "axios";
+import InputForm from "./InputForm.jsx";
 
 
 export  default function Reservation({onChangeAlert, onChangeShow, selectProgram, allProgram, gungs, instructor}) {
@@ -89,6 +90,7 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
     const sumbitReservation = (inputData) => {
 
         axios.post(`${baseUrl}api/v1/reservation/create`, {
+            "reservationType": "program",
             "program": dataReserv?.program?.id,
             "dayType": dataReserv?.dayType,
             "priceSum": priceSum,
@@ -228,6 +230,7 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
                                 </svg>
                             </div>
                             <ModalReserved dayType={dataReserv.dayType} sumForm={priceSum} onChangeDate={onChangeDate} sumbitReservation={sumbitReservation}/>
+                            <InputForm sumbitReservation={sumbitReservation} sumForm={priceSum}/>
                         </Modal>
                     </div>
                 </div>

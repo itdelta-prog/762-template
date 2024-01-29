@@ -1,13 +1,11 @@
 import React, {useEffect, useMemo, useState} from "react";
 import TimeReserved from "./TimeReserved.jsx";
-import InputForm from "./InputForm.jsx";
 import {ArrLet} from "./components/Icon.jsx";
 import axios from "axios";
 import Calendar from 'react-calendar';
 
-export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitReservation}) {
+export default function ModalReserved({dayType, onChangeDate}) {
     const [broneDate, setBroneDate] = useState({});
-    //const [loader, setLoader] = useState(false);
     const [currentDay, setCurrentDay] = useState([]);
     const [activeTime, setActiveTime] = useState(undefined);
     const nextData = new Date(new Date().setDate(new Date().getDate()+1));
@@ -34,7 +32,6 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
             setBroneDate(data)
         }
         fetchData()
-        // console.log(currentDay)
     }, []);
 
    // const currentTime = () => currentDay[0] === myData ? new Date().getHours() : ''
@@ -59,7 +56,6 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
         const activeReservetTime= dataTime.reduce((agg, curr) => {
             return [...agg, curr.time]
         }, []);
-        console.log(broneDate)
         const disabled = Object.entries(broneDate).reduce((acc, curr) => {
             if(curr[1]?.toString() === activeReservetTime.toString()) {
                 return [...acc, curr[0]]
@@ -68,27 +64,8 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
                 return acc
             }
         }, [])
-       // console.log(disabled)
         return disabled
     }, [broneDate]);
-
-    // const disabledDate = useMemo(() => {
-    //
-    //     console.log(broneDate)
-    //
-    //     const activeReservetTime= dataTime.reduce((agg, curr) => {
-    //         return [...agg, curr.time]
-    //     }, []);
-    //     const disabled = Object.entries(broneDate).reduce((acc, curr) => {
-    //         if(curr[1]?.toString() === activeReservetTime.toString()) {
-    //             return [...acc, curr[0]]
-    //         }
-    //         else {
-    //             return acc
-    //         }
-    //     }, [])
-    //     return disabled;
-    // }, [broneDate]);
 
 
     const onChangeTime = (data) => {
@@ -100,6 +77,9 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
     const disabledDate = ({date}) => {
       return dayType === 'weekend' ? weekDays.some(el => el === date.getDay()) : weekEnd.some(el => el === date.getDay()) || disabledBroneDate?.some(el => el === `${date.getFullYear()}-${date.getMonth()+1 < 10 ? '0' : ''}${date.getMonth()+1}-${date.getDate() < 10 ? '0' : ''}${date.getDate()}`)
     }
+
+
+    console.log("MODAL RESERVED")
 
     return (
         <div>
@@ -131,7 +111,6 @@ export default function ModalReserved({dayType, onChangeDate, sumForm, sumbitRes
             {
              currentDay.length ?  <TimeReserved dataTime={dataTime} activeTime={activeTime} onChangeTime={onChangeTime} broneTime={broneDate[currentDay[0]]} />  : ''
             }
-            <InputForm sumbitReservation={sumbitReservation} sumForm={sumForm}/>
         </div>
     )
 }
