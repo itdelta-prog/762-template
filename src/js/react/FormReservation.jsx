@@ -7,7 +7,7 @@ import {DayType, TotalAmount} from "./components/Reserved/ReservedComponent.jsx"
 import WeaponsChoose from "./components/Reserved/WeaponsChoose.jsx";
 import ButtonChecked from "./components/ButtonChecked.jsx";
 import ReservedSubmit from "./components/Reserved/ReservedSubmit.jsx";
-import { ToastContainer, toast, Bounce } from 'react-toastify';
+import {ToastContainer, toast, Bounce} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function reducer(state, action) {
@@ -47,6 +47,7 @@ function FormReservation() {
     const [section, setSection] = useState([]);
     const [instructors, setInstructors] = useState([]);
     const [selectSection, setSelectSection] = useState({});
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -72,6 +73,7 @@ function FormReservation() {
 
 
     const totalAmount = useMemo(() => {
+        console.log(state);
         return 10 + 10 + 10;
     }, [state])
 
@@ -104,7 +106,8 @@ function FormReservation() {
             "weapon": currentWeaponsData,
             "weaponCartridges": currentWeaponsAmmo
         }).then(res => {
-            if(res.data.status === "success") {
+            if (res.data.status === "success") {
+                setShow(false)
                 toast.success('Успешно забронирована', {
                     position: "top-right",
                     autoClose: 5000,
@@ -117,8 +120,7 @@ function FormReservation() {
                     transition: Bounce,
                 });
             }
-            if(res.data.status === "error") {
-                console.log(res.data.errors)
+            if (res.data.status === "error") {
                 res.data.errors.forEach((error) => {
                     toast.error(error.message, {
                         position: "top-right",
@@ -180,12 +182,12 @@ function FormReservation() {
                         </span>
             </ButtonChecked>
             <TotalAmount amount={totalAmount}/>
-            <ReservedSubmit onChageData={onChangeData} handleSubmit={handleSubmit} stateForm={state}
+            <ReservedSubmit onChageData={onChangeData} show={show} setShow={setShow} handleSubmit={handleSubmit} stateForm={state}
                             amount={totalAmount}/>
         </> : <div className="w-full flex justify-center items-center">
             <img className="" src="/img/loader.svg" alt=""/>
         </div>}
-        <ToastContainer />
+        <ToastContainer/>
     </Fragment>)
 }
 

@@ -24,7 +24,6 @@ export default function WeaponsAndCartridges({onChange, weapons, currentWeaponsN
 
     useEffect(() => {
         if (!isSelectedWeapons(currentSelectWeapons)) return
-
         onChange("currentSelectWeapons", currentSelectWeapons.map(obj => ({weaponSelect: {}})))
     }, [weapons])
 
@@ -37,9 +36,9 @@ export default function WeaponsAndCartridges({onChange, weapons, currentWeaponsN
         }, []))
     }
 
-    const onChangeAmmo = (currentAmmo, currentWeaponIdx) => {
+    const onChangeCartridges = (currentCartridges, currentWeaponIdx) => {
         const updatedWeapons = [...currentSelectWeapons]
-        updatedWeapons[currentWeaponIdx].currentAmmo = currentAmmo
+        updatedWeapons[currentWeaponIdx].cartridges = currentCartridges
         onChange("currentSelectWeapons", updatedWeapons)
     }
 
@@ -57,7 +56,7 @@ export default function WeaponsAndCartridges({onChange, weapons, currentWeaponsN
                                 className="mb-5"/>
                         {currentSelectWeapons[idx]?.weaponSelect?.value ?
                             <AddCartidges
-                                onChange={(ammo) => onChangeAmmo(ammo, idx)}
+                                onChange={(cartridges) => onChangeCartridges(cartridges, idx)}
                                 cartidges={currentSelectWeapons[idx]?.weaponSelect?.value?.cartridges}/> : ''}
                     </div>
                 )

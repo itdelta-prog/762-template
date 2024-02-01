@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {useState} from "react";
 
 export const DayType = ({onChange}) => {
-    const [dayType,setDayType] = useState('weekday');
+    const [dayType, setDayType] = useState('weekday');
 
     //console.log('RENDER DAYTYPE')
     return (
@@ -10,13 +10,13 @@ export const DayType = ({onChange}) => {
             <button onClick={() => {
                 setDayType('weekday');
                 onChange('dayType', 'weekday')
-            }} className={`btn-catalog basis-[184px] ${dayType === 'weekday' ? "tabs__caption_active"  : ''}`}>
+            }} className={`btn-catalog basis-[184px] ${dayType === 'weekday' ? "tabs__caption_active" : ''}`}>
                 <span className="btn-link__text text-[14px] sm:text-[17px]">Будни</span>
             </button>
             <button onClick={() => {
                 setDayType('weekend')
                 onChange('dayType', 'weekend')
-            }} className={`btn-catalog basis-[184px] ${dayType === 'weekend' ? "tabs__caption_active"  : ''}`}>
+            }} className={`btn-catalog basis-[184px] ${dayType === 'weekend' ? "tabs__caption_active" : ''}`}>
                 <span className="btn-link__text text-[14px] sm:text-[17px] ">Выходные</span>
             </button>
         </div>
@@ -43,46 +43,55 @@ export const CountParams = ({count, onChange, value}) => {
 }
 
 export const AddCartidges = ({onChange, cartidges}) => {
-    const [shotCount, setShotCount] = useState(  cartidges["min-amount"] ?? 0);
+    const [cartidgesData, setCartidgesData] = useState({
+        shotCount: cartidges["min-amount"] ?? 0,
+        initalCartidgesStepPrice: cartidges["min-step"] ?? 0
+    });
 
     const cartidgesAmount = cartidges["min-amount"] ?? 0;
     const cartidgesPrice = cartidges["min-price"] ?? 0;
     const cartidgesStep = cartidges["min-step"] ?? 0;
     const cartidgesStepPrice = cartidges["step-price"] ?? 0;
 
-    useEffect(() => {
-        setShotCount(cartidges["min-amount"])
-    }, [cartidges]);
+    // useEffect(() => {
+    //     setShotCount(cartidges["min-amount"])
+    // }, [cartidges]);
 
-    const isDisabled = () => shotCount <= cartidgesAmount
+    const isDisabled = () => cartidgesData.shotCount <= cartidgesAmount
 
     const onIncrement = () => {
-        setShotCount(shotCount + cartidgesStep);
-        onChange(shotCount + cartidgesStep)
-     //   onChange(shotCount);
+
+        const newCartidges = {shotCount: cartidgesData.shotCount + cartidgesStep,
+            initalCartidgesStepPrice: cartidgesData.initalCartidgesStepPrice + cartidgesStepPrice}
+        setCartidgesData(newCartidges);
+
+        onChange(newCartidges)
     }
 
     const onDecrement = () => {
-        if(!isDisabled()) {
-            setShotCount(shotCount - cartidgesStep)
-            onChange(shotCount - cartidgesStep)
+        if (!isDisabled()) {
+            // setShotCount(shotCount - cartidgesStep)
+            const newCartidges = {shotCount: cartidgesData.shotCount - cartidgesStep,
+                initalCartidgesStepPrice: cartidgesData.initalCartidgesStepPrice - cartidgesStepPrice}
+            setCartidgesData(newCartidges);
+            onChange(newCartidges)
         }
-      //  onChange(shotCount);
     }
 
     return (
         <div className="flex justify-between gap-x-2 items-center">
-            <button className={`addCartidges__btn ${isDisabled() ? 'text-white border border-white opacity-40 cursor-auto' : 'border border-[#B8AA91] text-[#B8AA91] hover:bg-[#B8AA91] hover:text-[#0F0F0F]'}`}
+            <button
+                className={`addCartidges__btn ${isDisabled() ? 'text-white border border-white opacity-40 cursor-auto' : 'border border-[#B8AA91] text-[#B8AA91] hover:bg-[#B8AA91] hover:text-[#0F0F0F]'}`}
                 onClick={onDecrement}>
                 -{cartidgesStep}
             </button>
-            <div className="text-white text-lg leading-5 text-center">{shotCount} <br /> выстрелов</div>
+            <div className="text-white text-lg leading-5 text-center">{cartidgesData.shotCount} <br/> выстрелов</div>
             <button
                 className={`addCartidges__btn border border-[#B8AA91] text-[#B8AA91] hover:bg-[#B8AA91] hover:text-[#0F0F0F]`}
-                    onClick={onIncrement}>
+                onClick={onIncrement}>
                 +{cartidgesStep}
             </button>
-            <div className="text-white" >1500 руб.</div>
+            <div className="text-white">{cartidgesData.initalCartidgesStepPrice} руб.</div>
         </div>
     )
 }

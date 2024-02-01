@@ -3,8 +3,7 @@ import {useState} from "react";
 import Modal from "../Modal.jsx";
 import ModalReserved from "../../ModalReserved.jsx";
 import InputForm from "../../InputForm.jsx";
-export default function ReservedSubmit({stateForm, amount, onChageData, handleSubmit}) {
-    const [show, setShow] = useState(false);
+export default function ReservedSubmit({stateForm, amount, show, onChageData, handleSubmit, setShow}) {
 
     const onChangeShow = (showStatus) => {
         setShow(showStatus);
