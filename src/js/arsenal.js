@@ -1,4 +1,5 @@
 import './react/FormReservation.jsx';
+import { Fancybox } from "@fancyapps/ui";
 import './script.js';
 import {SelectDropDown, DropDownMenu} from "./selectDropDown.js";
 import {Tabs} from "./tabs.js";
@@ -69,6 +70,8 @@ const selectCourse = ()=>  {
 
 document.addEventListener('DOMContentLoaded', () => {
     const selectProgram = document.querySelectorAll('.select-program');
+
+
     let myArsenal = new Swiper(".myArsenal", {
         slidesPerView: "auto",
         spaceBetween: 6,
@@ -166,7 +169,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    selectCourse()
+    selectCourse();
+
+    Fancybox.bind('[data-fancybox="weapons"]', {
+        // Your custom options for a specific gallery
+    });
 
 
     Tabs('.program__tabs', '.tabs__head', '.tabs__body', '.tabs__caption', 'active', 'tabs__content_active')

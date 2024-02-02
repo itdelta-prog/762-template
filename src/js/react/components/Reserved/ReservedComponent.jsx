@@ -45,7 +45,7 @@ export const CountParams = ({count, onChange, value}) => {
 export const AddCartidges = ({onChange, cartidges}) => {
     const [cartidgesData, setCartidgesData] = useState({
         shotCount: cartidges["min-amount"] ?? 0,
-        initalCartidgesStepPrice: cartidges["min-step"] ?? 0
+        initalCartidgesStepPrice: cartidges["min-price"] ?? 0
     });
 
     const cartidgesAmount = cartidges["min-amount"] ?? 0;
@@ -53,9 +53,10 @@ export const AddCartidges = ({onChange, cartidges}) => {
     const cartidgesStep = cartidges["min-step"] ?? 0;
     const cartidgesStepPrice = cartidges["step-price"] ?? 0;
 
-    // useEffect(() => {
-    //     setShotCount(cartidges["min-amount"])
-    // }, [cartidges]);
+    useEffect(() => {
+        setCartidgesData( {shotCount: cartidgesAmount,
+            initalCartidgesStepPrice: cartidgesPrice})
+    }, [cartidges]);
 
     const isDisabled = () => cartidgesData.shotCount <= cartidgesAmount
 
@@ -85,13 +86,13 @@ export const AddCartidges = ({onChange, cartidges}) => {
                 onClick={onDecrement}>
                 -{cartidgesStep}
             </button>
-            <div className="text-white text-lg leading-5 text-center">{cartidgesData.shotCount} <br/> выстрелов</div>
+            <div className="text-white text-sm sm:text-lg sm:leading-5 text-center">{cartidgesData.shotCount.toLocaleString()} <br/> выстрелов</div>
             <button
                 className={`addCartidges__btn border border-[#B8AA91] text-[#B8AA91] hover:bg-[#B8AA91] hover:text-[#0F0F0F]`}
                 onClick={onIncrement}>
                 +{cartidgesStep}
             </button>
-            <div className="text-white">{cartidgesData.initalCartidgesStepPrice} руб.</div>
+            <div className="text-white">{cartidgesData.initalCartidgesStepPrice.toLocaleString()} руб.</div>
         </div>
     )
 }

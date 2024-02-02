@@ -8,7 +8,6 @@ import WeaponsChoose from "./components/Reserved/WeaponsChoose.jsx";
 import ButtonChecked from "./components/ButtonChecked.jsx";
 import ReservedSubmit from "./components/Reserved/ReservedSubmit.jsx";
 import {ToastContainer, toast, Bounce} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 function reducer(state, action) {
     switch (action.type) {
@@ -29,6 +28,9 @@ function reducer(state, action) {
         }
         case 'personalGallerey': {
             return {...state, personalGallerey: action.value}
+        }
+        case 'reloadData': {
+            return {...action}
         }
     }
 }
@@ -71,14 +73,24 @@ function FormReservation() {
     const weaponsSectionOptions = section.map(item => ({value: item, label: item.name}));
     const instructorOptions = instructors.map(item => ({value: item, label: item.name}));
 
+    const currentWeaponsAmmo = state.currentSelectWeapons.filter((weapon) => weapon?.weaponSelect?.value?.id).map((weapon) => `${weapon?.weaponSelect?.label}:${weapon?.cartridges.shotCount}`)
+    const currentWeaponsData = state.currentSelectWeapons.map((weapon) => weapon?.weaponSelect?.value?.id).filter((weapon) => weapon);
 
     const totalAmount = useMemo(() => {
-        console.log(state);
-        return 10 + 10 + 10;
-    }, [state])
+        const sumAllWeapons = state.currentSelectWeapons.reduce((agg, weapon) => {
+            if (Object.keys(weapon.weaponSelect).length) {
+                return agg += weapon.weaponSelect.value['base-price'] + weapon.cartridges.initalCartidgesStepPrice
+            }
+            return agg
+        }, 0);
 
-    const currentWeaponsData = state.currentSelectWeapons.map((weapon) => weapon?.weaponSelect?.value?.id).filter((weapon) => weapon);
-    const currentWeaponsAmmo = state.currentSelectWeapons.filter((weapon) => weapon?.weaponSelect?.value?.id).map((weapon) => `${weapon?.weaponSelect?.label}:${weapon?.currentAmmo}`)
+        if (Object.keys(selectSection).length) {
+            const sumPersonalGallery = state.personalGallerey === 'Y' ? selectSection.value.gallery[`${state.dayType}-price`] : 0
+
+            return selectSection.value.direction[`${state.dayType}-price`] + sumPersonalGallery + sumAllWeapons
+        }
+        return 0;
+    }, [selectSection, state.currentSelectWeapons, state.dayType, state.personalGallerey])
 
 
     const onChangeSection = (value) => {
@@ -90,11 +102,10 @@ function FormReservation() {
     }
 
     const handleSubmit = (data) => {
-        console.log(state)
         axios.post(`${baseUrl}api/v1/reservation/create`, {
             "reservationType": "arsenal",
             "dayType": state.dayType,
-            "priceSum": 30,
+            "priceSum": totalAmount,
             "instructor": state?.selectInstructor ? state?.selectInstructor?.value?.id : '',
             "personalGallery": state.personalGallerey,
             "date": state?.currentDate?.selectDate,
@@ -138,6 +149,8 @@ function FormReservation() {
         });
     }
 
+    const toStringNumber = (num) => Number(num).toLocaleString()
+
     const myCom = useMemo(() => {
         if (!loader) return ''
         return <>
@@ -153,16 +166,13 @@ function FormReservation() {
     }, [selectSection, state.currentSelectWeapons, state.currentWeaponsNumber]);
 
 
-    console.log("RENDER")
-    console.log(currentWeaponsAmmo)
-
 
     return (<Fragment>
         {myCom}
         <div className="mb-[31px] flex justify-between items-center">
             <span className="text-white text-lg leading-5">Базовая стоимость</span>
             <span
-                className="text-white text-lg leading-5 opacity-50">{selectSection?.value?.direction[`${state.dayType}-price`]} р.</span>
+                className="text-white text-lg leading-5 opacity-50">{selectSection?.value?.direction[`${state.dayType}-price`] ? toStringNumber(selectSection?.value?.direction[`${state.dayType}-price`]) : '0'} р.</span>
         </div>
         {loader ? <>
             {weaponChoose}
@@ -178,11 +188,12 @@ function FormReservation() {
                             Персональная галерея
                         </span>
                 <span className="btn__content">
-                            +{selectSection?.value?.gallery[`${state.dayType}-price`]}
+                            +{selectSection?.value?.gallery[`${state.dayType}-price`] ? toStringNumber(selectSection?.value?.gallery[`${state.dayType}-price`]) : ' 0'} р.
                         </span>
             </ButtonChecked>
-            <TotalAmount amount={totalAmount}/>
-            <ReservedSubmit onChageData={onChangeData} show={show} setShow={setShow} handleSubmit={handleSubmit} stateForm={state}
+            <TotalAmount amount={toStringNumber(totalAmount)}/>
+            <ReservedSubmit onChageData={onChangeData} show={show} setShow={setShow} handleSubmit={handleSubmit}
+                            stateForm={state}
                             amount={totalAmount}/>
         </> : <div className="w-full flex justify-center items-center">
             <img className="" src="/img/loader.svg" alt=""/>

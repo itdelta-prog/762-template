@@ -4,7 +4,6 @@ import WeaponsAndCartridges from "./WeaponsAndCartridges.jsx";
 
 export default function WeaponsChoose({onChange, section, currentSelectWeapons, currentWeaponsNumber}) {
     const weaponsCount = [1, 2, 3]; // Исправить
-    console.log('RENDER WEAPONS CHOOSE')
 
     return (
         <div className="mb-5">

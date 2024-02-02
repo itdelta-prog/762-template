@@ -9,7 +9,7 @@ export default function InputForm({sumForm, sumbitReservation}) {
         sumbitReservation(data);
     }
 
-    console.log("INPUT FORM")
+
 
     return (
         <>

@@ -1,6 +1,6 @@
 import React, {useEffect, useMemo, useState} from "react";
 import TimeReserved from "./TimeReserved.jsx";
-import {ArrLet} from "./components/Icon.jsx";
+import {ArrLet} from "./components/ReservedIcon.jsx";
 import axios from "axios";
 import Calendar from 'react-calendar';
 
@@ -79,7 +79,6 @@ export default function ModalReserved({dayType, onChangeDate}) {
     }
 
 
-    console.log("MODAL RESERVED")
 
     return (
         <div>

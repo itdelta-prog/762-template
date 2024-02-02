@@ -67,7 +67,6 @@ export  default function Reservation({onChangeAlert, onChangeShow, selectProgram
     }
 
     const onChangeDate = (dateReserved) => {
-        console.log(dateReserved)
      setDataReserv({...dataReserv, date: dateReserved.selectDate, hourse: dateReserved.selectTime?.time})
     }
 

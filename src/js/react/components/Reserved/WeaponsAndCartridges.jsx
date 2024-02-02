@@ -31,7 +31,7 @@ export default function WeaponsAndCartridges({onChange, weapons, currentWeaponsN
     const changeWeapon = (select, idx) => {
 
         onChange("currentSelectWeapons", currentSelectWeapons.reduce((acc, el, elIdx) => {
-            if (elIdx === idx) return [...acc, {["weaponSelect"]: select, ["currentAmmo"]: select?.value?.cartridges["min-amount"]}]
+            if (elIdx === idx) return [...acc, {["weaponSelect"]: select, ["cartridges"]: {shotCount: select?.value?.cartridges["min-amount"], initalCartidgesStepPrice: select?.value?.cartridges["min-price"]}}]
             return [...acc, el]
         }, []))
     }
@@ -42,9 +42,7 @@ export default function WeaponsAndCartridges({onChange, weapons, currentWeaponsN
         onChange("currentSelectWeapons", updatedWeapons)
     }
 
-    console.log('RENDER WEAPONS AND CARTIFGES')
 
-    console.log(currentSelectWeapons)
 
     return (
         <div className="flex flex-col gap-y-5">

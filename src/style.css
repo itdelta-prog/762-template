@@ -141,7 +141,7 @@
   }
 
   .addCartidges__btn {
-    @apply px-3 py-3 leading-5 text-lg flex justify-center items-center transition-all
+    @apply px-2 sm:px-3 py-3 leading-5 text-lg flex justify-center items-center transition-all
   }
 
   .btnService.active span {
