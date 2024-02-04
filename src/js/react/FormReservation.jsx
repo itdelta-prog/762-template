@@ -39,10 +39,6 @@ function FormReservation() {
     const [state, dispatch] = useReducer(reducer, {
         dayType: 'weekday', currentWeaponsNumber: 1, currentSelectWeapons: [{
             weaponSelect: {}
-        }, {
-            weaponSelect: {}
-        }, {
-            weaponSelect: {}
         }], currentDate: {}, selectInstructor: {}, personalGallerey: 'N'
     })
     const [loader, setLoader] = useState(false);
@@ -53,15 +49,14 @@ function FormReservation() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const dataWeapons = await axios.post(`${baseUrl}api/v1/reservation/get-weapons`, {
-                body: {}
-            });
+            const dataWeapons = await axios.get(`https://63eb2da0fb6b6b7cf7d92144.mockapi.io/weapons`);
             const dataInstructor = await axios.post(`${baseUrl}api/v1/reservation/get-instructors`, {
                 body: JSON.stringify({'sdad': 'dsds'})
             });
-            if (dataWeapons.data.status === "success") {
-                setSection(dataWeapons.data.data);
-            }
+            // if (dataWeapons.data.status === "success") {
+            //     setSection(dataWeapons.data.data);
+            // }
+            if(dataWeapons.data.length) setSection(dataWeapons.data);
             if (dataInstructor.data.status === "success") {
                 setInstructors(dataInstructor.data.data);
             }

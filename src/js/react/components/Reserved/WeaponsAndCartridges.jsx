@@ -30,10 +30,16 @@ export default function WeaponsAndCartridges({onChange, weapons, currentWeaponsN
 
     const changeWeapon = (select, idx) => {
 
-        onChange("currentSelectWeapons", currentSelectWeapons.reduce((acc, el, elIdx) => {
-            if (elIdx === idx) return [...acc, {["weaponSelect"]: select, ["cartridges"]: {shotCount: select?.value?.cartridges["min-amount"], initalCartidgesStepPrice: select?.value?.cartridges["min-price"]}}]
-            return [...acc, el]
-        }, []))
+        const updateSelect= [...currentSelectWeapons];
+        updateSelect[idx].weaponSelect = select
+        updateSelect[idx].cartridges = {shotCount: select?.value?.cartridges["min-amount"], initalCartidgesStepPrice: select?.value?.cartridges["min-price"]}
+
+
+       onChange("currentSelectWeapons", updateSelect)
+        // onChange("currentSelectWeapons", currentSelectWeapons.reduce((acc, el, elIdx) => {
+        //     if (elIdx === idx) return [...acc, {["weaponSelect"]: select, ["cartridges"]: {shotCount: select?.value?.cartridges["min-amount"], initalCartidgesStepPrice: select?.value?.cartridges["min-price"]}}]
+        //     return [...acc, el]
+        // }, []))
     }
 
     const onChangeCartridges = (currentCartridges, currentWeaponIdx) => {
@@ -42,7 +48,7 @@ export default function WeaponsAndCartridges({onChange, weapons, currentWeaponsN
         onChange("currentSelectWeapons", updatedWeapons)
     }
 
-
+    console.log(currentSelectWeapons)
 
     return (
         <div className="flex flex-col gap-y-5">

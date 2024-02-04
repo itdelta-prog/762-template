@@ -11,10 +11,25 @@ export default function WeaponsChoose({onChange, section, currentSelectWeapons, 
                 value={currentWeaponsNumber}
                 onChange={(item) => {
                     onChange('currentWeaponsNumber', item)
-                    onChange("currentSelectWeapons", currentSelectWeapons.reduce((acc, el, idx) => {
-                        if (idx + 1 <= item) return [...acc, el]
-                        return [...acc, {["weaponSelect"]: {}}]
-                    }, []))
+                    // onChange("currentSelectWeapons", currentSelectWeapons.reduce((acc, el, idx) => {
+                    //     if (idx + 1 <= item) return [...acc, el]
+                    //     return [...acc, {["weaponSelect"]: {}}]
+                    // }, []))
+
+                    if(currentSelectWeapons.length < item) {
+                        onChange("currentSelectWeapons", [...currentSelectWeapons, ...Array.from({length: item-currentSelectWeapons.length}).map((el) => ({ weaponSelect: {}}))])
+                       //onChange("currentSelectWeapons", Array.from({length: item}).reduce((acc, el) => [...acc, {weaponSelect: {}}], []))
+                    }
+                    else {
+                        const updatedSelectWeapons = [...currentSelectWeapons];
+                        updatedSelectWeapons.splice(item, 1);
+                        onChange("currentSelectWeapons", updatedSelectWeapons)
+                    }
+
+                    // console.log(currentSelectWeapons.reduce((acc, el, idx) => {
+                    //     if (idx + 1 <= item) return [...acc, el]
+                    //     return [...acc, {["weaponSelect"]: {}}]
+                    // }, []))
                 }}
                 count={weaponsCount}/>
             <WeaponsAndCartridges
