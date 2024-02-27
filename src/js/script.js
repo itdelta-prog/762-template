@@ -1,4 +1,4 @@
-import './react/FormModalReservation.jsx'
+// import './react/FormModalReservation.jsx'
 const dialog = document.querySelector('[role="dialog"]');
 const btnBurger = document.querySelector('[data-burger="menu"]');
 

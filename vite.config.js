@@ -14,6 +14,7 @@ export default defineConfig({
         main: resolve('src', 'index.html'),
         arsenal: resolve('src', 'pages/arsenal.html'),
         contact: resolve('src', 'pages/contact.html'),
+        course:  resolve('src', 'pages/courses.html'),
         newsDetail: resolve('src', 'pages/newsDetail.html'),
         catalogDetail: resolve('src', 'pages/catalogDetail.html'),
         policy: resolve('src', 'pages/policy.html'),

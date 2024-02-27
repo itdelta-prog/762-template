@@ -1,5 +1,5 @@
 import './script.js';
-import './filterCourse.js';
+import './filterProgram.js';
 import {Tabs} from "./tabs.js";
 
 // function mySli() {
